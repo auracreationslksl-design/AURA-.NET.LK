@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA NET.LK | Premier Tech & Digital Solutions</title>
-    <!-- FontAwesome for Icons -->
+    <!-- FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -34,7 +34,7 @@
             cursor: default;
         }
 
-        /* --- MOUSE TRAIL & GLOW ANIMATION --- */
+        /* --- MOUSE ANIMATION & GLOW --- */
         #cursor-glow {
             position: fixed;
             width: 350px;
@@ -64,7 +64,6 @@
             100% { opacity: 0; transform: scale(0.2) translateY(10px); }
         }
 
-        /* --- BACKGROUND GRID --- */
         .bg-grid {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
@@ -121,7 +120,7 @@
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
         }
 
-        /* Page Switcher Animation */
+        /* Page System & Slide Animation */
         .page {
             display: none;
             padding: 50px 8%;
@@ -135,7 +134,7 @@
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* Home Section */
+        /* Hero / Home Page */
         .hero {
             min-height: 65vh;
             display: flex;
@@ -198,7 +197,7 @@
 
         .page-header p { color: var(--text-sub); }
 
-        /* Services & Cards Framework */
+        /* Grid Layout */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -232,7 +231,7 @@
         .card h3 { font-size: 1.3rem; margin-bottom: 10px; }
         .card p { color: var(--text-sub); font-size: 0.95rem; }
 
-        /* Portfolio Section with Photos */
+        /* Portfolio Cards */
         .portfolio-card {
             overflow: hidden;
             border-radius: 16px;
@@ -266,7 +265,7 @@
 
         .portfolio-content { padding: 22px; }
 
-        /* Terms & Conditions Section */
+        /* Terms & Conditions Box */
         .terms-box {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -398,7 +397,7 @@
             box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
         }
 
-        /* Floating Contact Buttons */
+        /* Floating Call/WhatsApp Buttons */
         .floating-buttons {
             position: fixed;
             bottom: 25px; right: 25px;
@@ -437,11 +436,11 @@
 </head>
 <body>
 
-    <!-- Dynamic Mouse Cursor Trail FX -->
+    <!-- Mouse Trail Elements -->
     <div id="cursor-glow"></div>
     <div class="bg-grid"></div>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Header -->
     <nav>
         <div class="logo" onclick="switchPage('home')">AURA NET<span>.LK</span></div>
         <ul class="nav-links">
@@ -466,7 +465,7 @@
         </section>
     </div>
 
-    <!-- PAGE 2: SERVICES -->
+    <!-- PAGE 2: SERVICES (ALL SERVICES HERE) -->
     <div class="page" id="page-services">
         <div class="page-header">
             <h2>Our Specialized Services</h2>
@@ -496,7 +495,7 @@
         </div>
     </div>
 
-    <!-- PAGE 3: PORTFOLIO (WITH HIGH QUALITY REAL PHOTOS) -->
+    <!-- PAGE 3: PORTFOLIO -->
     <div class="page" id="page-portfolio">
         <div class="page-header">
             <h2>Our Featured Work</h2>
@@ -613,7 +612,7 @@
         </div>
     </div>
 
-    <!-- Floating Buttons -->
+    <!-- Floating Quick Contact Buttons -->
     <div class="floating-buttons">
         <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-wa">
             <i class="fa-brands fa-whatsapp"></i>
@@ -627,9 +626,9 @@
         <p>&copy; 2026 AURA NET.LK. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript Functions -->
+    <!-- JavaScript Engine For Navigation & Animations -->
     <script>
-        // Page Switcher Engine
+        // Page Switch System
         function switchPage(pageId) {
             document.querySelectorAll('.page').forEach(page => page.classList.remove('active-page'));
             document.querySelectorAll('.nav-links a').forEach(nav => nav.classList.remove('active'));
@@ -639,7 +638,7 @@
             window.scrollTo(0, 0);
         }
 
-        // Interactive Cursor Glow & Sparkle Particle Animation
+        // Interactive Mouse Glow & Particle Trail Engine
         const glow = document.getElementById('cursor-glow');
         let lastX = 0, lastY = 0;
 
