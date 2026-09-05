@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA NET.LK | Digital Solutions</title>
+    <title>AURA NET.LK | Premier Tech & Digital Solutions</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -29,8 +29,10 @@
             background-color: var(--bg-main);
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -48,22 +50,53 @@
             font-size: 24px;
             font-weight: 800;
             color: var(--text-main);
+            letter-spacing: 1px;
         }
 
         .logo span { color: var(--primary); }
 
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-sub);
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
         .hero {
-            min-height: 55vh;
+            min-height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 60px 20px;
+            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+        }
+
+        .badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: fadeInDown 0.8s ease-out;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 800;
             margin-bottom: 15px;
             animation: fadeInDown 1s ease-out;
@@ -73,19 +106,69 @@
 
         .hero p {
             color: var(--text-sub);
-            max-width: 600px;
-            margin-bottom: 25px;
+            max-width: 650px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
             animation: fadeInUp 1s ease-out 0.2s backwards;
         }
 
-        .services {
-            padding: 40px 8%;
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
         }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #000;
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+        }
+
+        .btn-whatsapp {
+            background: #22c55e;
+            color: #fff;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            background: #16a34a;
+        }
+
+        /* Sections */
+        section { padding: 80px 8%; }
 
         .section-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-header p { color: var(--text-sub); }
 
         .grid {
             display: grid;
@@ -93,11 +176,11 @@
             gap: 25px;
         }
 
-        /* Animated Cards */
+        /* Cards & Hover Animations */
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            padding: 30px;
+            padding: 32px 25px;
             border-radius: 16px;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -105,15 +188,15 @@
         }
 
         .card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-8px) scale(1.02);
             border-color: var(--primary);
             box-shadow: 0 10px 30px var(--primary-glow);
         }
 
         .card-icon {
-            font-size: 28px;
+            font-size: 30px;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             transition: transform 0.3s ease;
         }
 
@@ -141,7 +224,64 @@
         }
 
         .card:hover .click-hint {
-            transform: translateX(5px);
+            transform: translateX(6px);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: 0.3s;
+        }
+
+        .info-item i {
+            font-size: 22px;
+            color: var(--primary);
+            width: 30px;
+        }
+
+        .info-item:hover { color: var(--primary); }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            padding: 14px 18px;
+            border-radius: 8px;
+            color: #fff;
+            outline: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         /* Modal Overlay & Animations */
@@ -176,188 +316,3 @@
             padding: 35px;
             position: relative;
             box-shadow: 0 0 40px var(--primary-glow);
-            max-height: 85vh;
-            overflow-y: auto;
-            transform: scale(0.7);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            color: var(--text-sub);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .close-btn:hover { 
-            color: #fff;
-            transform: rotate(90deg);
-        }
-
-        .modal-content h2 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
-        }
-
-        .modal-content ul {
-            list-style: none;
-        }
-
-        .modal-content li {
-            position: relative;
-            padding-left: 28px;
-            margin-bottom: 14px;
-            color: var(--text-main);
-            font-size: 0.95rem;
-            animation: fadeInRight 0.5s ease forwards;
-            opacity: 0;
-        }
-
-        .modal-overlay.active .modal-content li {
-            animation: fadeInRight 0.5s ease forwards;
-        }
-
-        .modal-content li::before {
-            content: "✔";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        /* Keyframes */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(-15px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: var(--text-sub);
-            border-top: 1px solid var(--border);
-            margin-top: 50px;
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="logo">AURA NET<span>.LK</span></div>
-    </nav>
-
-    <section class="hero">
-        <h1>Welcome to <span>AURA NET.LK</span></h1>
-        <p>Click on any service card below to view the detailed Terms & Conditions.</p>
-    </section>
-
-    <section class="services">
-        <div class="section-header">
-            <h2>Our Services</h2>
-        </div>
-        <div class="grid">
-            <div class="card" onclick="openModal('webModal')">
-                <div class="card-icon"><i class="fa-solid fa-code"></i></div>
-                <h3>Web Development</h3>
-                <p>Custom modern websites built with top-tier technology.</p>
-                <span class="click-hint">Click for Terms & Conditions &rarr;</span>
-            </div>
-
-            <div class="card" onclick="openModal('internetModal')">
-                <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
-                <h3>Internet Access</h3>
-                <p>Reliable high-speed internet setup and access solutions.</p>
-                <span class="click-hint">Click for Terms & Conditions &rarr;</span>
-            </div>
-
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-video"></i></div>
-                <h3>Professional Video Editing</h3>
-                <p>High-quality edits for social media, YouTube, and reels.</p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                <h3>Photo Editing & Graphics</h3>
-                <p>Expert photo retouching, manipulation, and designs.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="modal-overlay" id="webModal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('webModal')">&times;</span>
-            <h2>WEB DEVELOPMENT — TERMS & CONDITIONS</h2>
-            <ul>
-                <li style="animation-delay: 0.1s;">A 50% advance payment is required before starting the project.</li>
-                <li style="animation-delay: 0.2s;">All required content, images, logos, and details must be provided by the client.</li>
-                <li style="animation-delay: 0.3s;">Up to 2 rounds of basic revisions are included in the package.</li>
-                <li style="animation-delay: 0.4s;">Additional revisions will be charged separately.</li>
-                <li style="animation-delay: 0.5s;">The remaining 50% payment is required upon project completion.</li>
-                <li style="animation-delay: 0.6s;">Domain and hosting charges are charged separately unless otherwise agreed.</li>
-                <li style="animation-delay: 0.7s;">The advance payment is non-refundable if the project is cancelled after work has commenced.</li>
-                <li style="animation-delay: 0.8s;">Future maintenance and site updates will be charged separately.</li>
-                <li style="animation-delay: 0.9s;">Delivery time depends on project requirements and the timely submission of content.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="internetModal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('internetModal')">&times;</span>
-            <h2>INTERNET ACCESS — TERMS & CONDITIONS</h2>
-            <ul>
-                <li style="animation-delay: 0.1s;">Internet access will be provided according to the selected package.</li>
-                <li style="animation-delay: 0.2s;">Internet access will be available during the specified service hours.</li>
-                <li style="animation-delay: 0.3s;">Internet usage is subject to the limits of the selected package.</li>
-                <li style="animation-delay: 0.4s;">Additional data or usage beyond the limit will be charged separately.</li>
-                <li style="animation-delay: 0.5s;">Internet speed will depend on the selected package and current network conditions.</li>
-                <li style="animation-delay: 0.6s;">Service availability may be affected by network interruptions or technical issues.</li>
-                <li style="animation-delay: 0.7s;">Internet access is provided for lawful and responsible use only.</li>
-            </ul>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 AURA NET.LK. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function openModal(id) {
-            const modal = document.getElementById(id);
-            modal.classList.add('active');
-        }
-
-        function closeModal(id) {
-            const modal = document.getElementById(id);
-            modal.classList.remove('active');
-        }
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.classList.remove('active');
-            }
-        }
-    </script>
-</body>
-</html>
