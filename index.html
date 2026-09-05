@@ -316,3 +316,230 @@
             padding: 35px;
             position: relative;
             box-shadow: 0 0 40px var(--primary-glow);
+            max-height: 85vh;
+            overflow-y: auto;
+            transform: scale(0.7);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: var(--text-sub);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover { 
+            color: #fff;
+            transform: rotate(90deg);
+        }
+
+        .modal-content h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .modal-content ul { list-style: none; }
+
+        .modal-content li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 14px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            opacity: 0;
+        }
+
+        .modal-overlay.active .modal-content li {
+            animation: fadeInRight 0.5s ease forwards;
+        }
+
+        .modal-content li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Keyframes */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(-15px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: var(--text-sub);
+            border-top: 1px solid var(--border);
+            background: #04060d;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.3rem; }
+            .nav-links { display: none; }
+            .contact-container { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">AURA NET<span>.LK</span></div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="badge">Digital & Technology Hub</div>
+        <h1>Empowering Your Future With <span>AURA NET.LK</span></h1>
+        <p>Specialized in Web Development, Internet Access Solutions, and Professional Video/Photo Editing.</p>
+        <div class="btn-group">
+            <a href="#services" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i> Our Services</a>
+            <a href="https://wa.me/94742274908" class="btn btn-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> Direct WhatsApp</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Specialized Services</h2>
+            <p>Click on Web Development or Internet Access cards to view Terms & Conditions</p>
+        </div>
+        <div class="grid">
+            <div class="card" onclick="openModal('webModal')">
+                <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Custom modern websites built with top-tier technology and responsive design.</p>
+                <span class="click-hint">View Terms & Conditions &rarr;</span>
+            </div>
+
+            <div class="card" onclick="openModal('internetModal')">
+                <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
+                <h3>Internet Access</h3>
+                <p>Reliable high-speed internet connection setups for seamless online activity.</p>
+                <span class="click-hint">View Terms & Conditions &rarr;</span>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-video"></i></div>
+                <h3>Professional Video Editing</h3>
+                <p>High-quality video creation for YouTube, social media reels, ads, and special events.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3>Photo Editing & Graphics</h3>
+                <p>Expert photo retouching, background removal, color grading, and creative graphic design.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for inquiries, bookings, or project quotes</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <a href="tel:+94742274908" class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+94 74 227 4908</span>
+                </a>
+                <a href="mailto:aura.creations.lksl@gmail.com" class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>aura.creations.lksl@gmail.com</span>
+                </a>
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Sri Lanka</span>
+                </div>
+            </div>
+            
+            <form action="mailto:aura.creations.lksl@gmail.com" method="post" enctype="text/plain">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email Address" required>
+                <textarea name="Message" rows="4" placeholder="Your Message or Project Details" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="webModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('webModal')">&times;</span>
+            <h2>WEB DEVELOPMENT — TERMS & CONDITIONS</h2>
+            <ul>
+                <li style="animation-delay: 0.1s;">A 50% advance payment is required before starting the project.</li>
+                <li style="animation-delay: 0.2s;">All required content, images, logos, and details must be provided by the client.</li>
+                <li style="animation-delay: 0.3s;">Up to 2 rounds of basic revisions are included in the package.</li>
+                <li style="animation-delay: 0.4s;">Additional revisions will be charged separately.</li>
+                <li style="animation-delay: 0.5s;">The remaining 50% payment is required upon project completion.</li>
+                <li style="animation-delay: 0.6s;">Domain and hosting charges are charged separately unless otherwise agreed.</li>
+                <li style="animation-delay: 0.7s;">The advance payment is non-refundable if the project is cancelled after work has commenced.</li>
+                <li style="animation-delay: 0.8s;">Future maintenance and site updates will be charged separately.</li>
+                <li style="animation-delay: 0.9s;">Delivery time depends on project requirements and the timely submission of content.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="internetModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('internetModal')">&times;</span>
+            <h2>INTERNET ACCESS — TERMS & CONDITIONS</h2>
+            <ul>
+                <li style="animation-delay: 0.1s;">Internet access will be provided according to the selected package.</li>
+                <li style="animation-delay: 0.2s;">Internet access will be available during the specified service hours.</li>
+                <li style="animation-delay: 0.3s;">Internet usage is subject to the limits of the selected package.</li>
+                <li style="animation-delay: 0.4s;">Additional data or usage beyond the limit will be charged separately.</li>
+                <li style="animation-delay: 0.5s;">Internet speed will depend on the selected package and current network conditions.</li>
+                <li style="animation-delay: 0.6s;">Service availability may be affected by network interruptions or technical issues.</li>
+                <li style="animation-delay: 0.7s;">Internet access is provided for lawful and responsible use only.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 AURA NET.LK. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
