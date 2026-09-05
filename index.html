@@ -257,38 +257,63 @@
 
         .portfolio-content { padding: 22px; }
 
-        /* Terms & Conditions Box */
-        .terms-box {
+        /* Professional Terms Section Layout */
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .terms-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 25px;
+            border-radius: 18px;
+            padding: 35px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
         }
 
-        .terms-box h3 {
+        .terms-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px var(--primary-glow);
+        }
+
+        .terms-card h3 {
             color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 18px;
+            font-size: 1.35rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
+            padding-bottom: 12px;
         }
 
-        .terms-box ul { list-style: none; }
-        .terms-box li {
+        .terms-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .terms-list li {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            line-height: 1.5;
             position: relative;
             padding-left: 28px;
-            margin-bottom: 14px;
-            color: var(--text-main);
-            font-size: 0.95rem;
         }
 
-        .terms-box li::before {
-            content: "✔";
+        .terms-list li i {
             position: absolute;
             left: 0;
+            top: 4px;
             color: var(--primary);
-            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .terms-list li strong {
+            color: #fff;
         }
 
         /* Contact Section */
@@ -523,39 +548,36 @@
         </div>
     </section>
 
-    <!-- SECTION 4: TERMS & CONDITIONS -->
+    <!-- SECTION 4: PROFESSIONAL TERMS & CONDITIONS -->
     <section id="terms">
         <div class="section-header">
             <h2>Terms & Conditions</h2>
-            <p>Official service policies and guidelines</p>
+            <p>Standard service agreements and operating guidelines for AURA NET.LK</p>
         </div>
 
-        <div class="terms-box">
-            <h3>WEB DEVELOPMENT — TERMS & CONDITIONS</h3>
-            <ul>
-                <li>A 50% advance payment is required before starting the project.</li>
-                <li>All required content, images, logos, and details must be provided by the client.</li>
-                <li>Up to 2 rounds of basic revisions are included in the package.</li>
-                <li>Additional revisions will be charged separately.</li>
-                <li>The remaining 50% payment is required upon project completion.</li>
-                <li>Domain and hosting charges are charged separately unless otherwise agreed.</li>
-                <li>The advance payment is non-refundable if the project is cancelled after work has commenced.</li>
-                <li>Future maintenance and site updates will be charged separately.</li>
-                <li>Delivery time depends on project requirements and the timely submission of content.</li>
-            </ul>
-        </div>
+        <div class="terms-grid">
+            <!-- Web Development T&C -->
+            <div class="terms-card">
+                <h3><i class="fa-solid fa-code"></i> Web Development Agreement</h3>
+                <ul class="terms-list">
+                    <li><i class="fa-solid fa-shield-halved"></i> <strong>Payment Structure:</strong> A non-refundable 50% advance deposit is required to commence development. The remaining 50% balance must be settled upon final review prior to site deployment.</li>
+                    <li><i class="fa-solid fa-folder-open"></i> <strong>Client Assets:</strong> The client is responsible for supplying all text content, high-resolution media, logos, and credentials in a timely manner.</li>
+                    <li><i class="fa-solid fa-pen-ruler"></i> <strong>Revision Policy:</strong> Includes up to 2 standard rounds of revisions. Additional major changes beyond the agreed scope will incur standard hourly charges.</li>
+                    <li><i class="fa-solid fa-server"></i> <strong>Hosting & Domain:</strong> Domain registration and web hosting services are subject to separate annual renewal fees unless explicitly bundled.</li>
+                    <li><i class="fa-solid fa-clock"></i> <strong>Delivery Timelines:</strong> Project timelines are estimates and depend on timely client feedback and content provision.</li>
+                </ul>
+            </div>
 
-        <div class="terms-box">
-            <h3>INTERNET ACCESS — TERMS & CONDITIONS</h3>
-            <ul>
-                <li>Internet access will be provided according to the selected package.</li>
-                <li>Internet access will be available during the specified service hours.</li>
-                <li>Internet usage is subject to the limits of the selected package.</li>
-                <li>Additional data or usage beyond the limit will be charged separately.</li>
-                <li>Internet speed will depend on the selected package and current network conditions.</li>
-                <li>Service availability may be affected by network interruptions or technical issues.</li>
-                <li>Internet access is provided for lawful and responsible use only.</li>
-            </ul>
+            <!-- Internet Access T&C -->
+            <div class="terms-card">
+                <h3><i class="fa-solid fa-wifi"></i> Network & Internet Services</h3>
+                <ul class="terms-list">
+                    <li><i class="fa-solid fa-sliders"></i> <strong>Service Plans:</strong> Bandwidth, speed, and usage limits are governed strictly by the client's subscribed service tier.</li>
+                    <li><i class="fa-solid fa-chart-line"></i> <strong>Bandwidth & Data:</strong> Excess data consumption beyond designated monthly plan allocations will trigger standard overage fees.</li>
+                    <li><i class="fa-solid fa-triangle-exclamation"></i> <strong>Service Uptime:</strong> While we guarantee maximum network availability, speeds may fluctuate due to upstream ISP constraints, weather, or scheduled maintenance.</li>
+                    <li><i class="fa-solid fa-lock"></i> <strong>Acceptable Use Policy:</strong> Network infrastructure is provided solely for legal operations. Any illegal activities, cyber threats, or bandwidth abuse will result in immediate termination.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
