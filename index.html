@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>AURA NET.LK | Web Development & Digital Solutions</title>
     <style>
         * {
             margin: 0;
@@ -20,42 +20,58 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 10%;
+            padding: 20px 8%;
             background-color: #1e293b;
+            border-bottom: 1px solid #334155;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         .logo {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 26px;
+            font-weight: 800;
             color: #38bdf8;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #818cf8;
         }
         .hero {
-            height: 80vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 20px;
+            padding: 40px 20px;
+            background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 75%);
         }
         .hero h1 {
             font-size: 48px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            color: #ffffff;
         }
         .hero h1 span {
             color: #38bdf8;
         }
         .hero p {
-            font-size: 20px;
+            font-size: 18px;
             color: #94a3b8;
-            max-width: 600px;
-            margin-bottom: 20px;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .btn {
             display: inline-block;
             background-color: #38bdf8;
             color: #0f172a;
-            padding: 12px 24px;
-            border-radius: 6px;
+            padding: 12px 28px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
@@ -64,73 +80,131 @@
             background-color: #0284c7;
             color: #ffffff;
         }
-        .projects {
-            padding: 60px 10%;
+        .btn-whatsapp {
+            background-color: #22c55e;
+            color: #ffffff;
+        }
+        .btn-whatsapp:hover {
+            background-color: #16a34a;
+        }
+        .services {
+            padding: 80px 8%;
             background-color: #1e293b;
         }
-        .projects h2 {
+        .services h2 {
             text-align: center;
+            font-size: 32px;
             margin-bottom: 40px;
             color: #38bdf8;
         }
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
         .card {
             background-color: #0f172a;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 30px;
+            border-radius: 12px;
             border: 1px solid #334155;
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
         }
         .card h3 {
-            margin-bottom: 10px;
+            color: #38bdf8;
+            margin-bottom: 12px;
+            font-size: 20px;
         }
         .card p {
             color: #94a3b8;
-            font-size: 14px;
+            font-size: 15px;
+        }
+        .contact {
+            padding: 80px 8%;
+            text-align: center;
+            background-color: #0f172a;
+        }
+        .contact h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #38bdf8;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-top: 20px;
+        }
+        .contact-info a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
         }
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
+            background-color: #020617;
             color: #64748b;
             font-size: 14px;
+            border-top: 1px solid #1e293b;
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">MyPortfolio</div>
+        <div class="logo">AURA NET<span>.LK</span></div>
     </nav>
 
     <section class="hero">
-        <h1>Hello, I'm <span>Your Name</span></h1>
-        <p>I am a Web Developer / Designer. I love building clean and modern websites.</p>
-        <a href="#projects" class="btn">View My Work</a>
+        <h1>Welcome to <span>AURA NET.LK</span></h1>
+        <p>Your one-stop destination for professional digital solutions, web development, multimedia editing, and high-speed internet access services.</p>
+        <div class="btn-group">
+            <a href="#services" class="btn">Explore Services</a>
+            <a href="https://wa.me/94742274908" class="btn btn-whatsapp" target="_blank">WhatsApp Us</a>
+        </div>
     </section>
 
-    <section class="projects" id="projects">
-        <h2>My Projects</h2>
+    <section class="services" id="services">
+        <h2>Our Professional Services</h2>
         <div class="grid">
             <div class="card">
-                <h3>Project 1</h3>
-                <p>A brief description of project 1 goes here. Explain what technologies were used.</p>
+                <h3>Web Development</h3>
+                <p>Custom, responsive, and modern website designs tailored for your business and personal needs.</p>
             </div>
             <div class="card">
-                <h3>Project 2</h3>
-                <p>A brief description of project 2 goes here. Explain what technologies were used.</p>
+                <h3>Internet Access</h3>
+                <p>Reliable and high-speed internet access solutions to keep you seamlessly connected.</p>
             </div>
             <div class="card">
-                <h3>Project 3</h3>
-                <p>A brief description of project 3 goes here. Explain what technologies were used.</p>
+                <h3>Video Editing</h3>
+                <p>High-quality professional video editing for YouTube, social media ads, reels, and special events.</p>
+            </div>
+            <div class="card">
+                <h3>Photo Editing</h3>
+                <p>Expert photo retouching, background removal, color grading, and creative graphic design.</p>
             </div>
         </div>
     </section>
 
+    <section class="contact">
+        <h2>Get In Touch</h2>
+        <p>Feel free to reach out to us for any inquiries or project discussions.</p>
+        <div class="contact-info">
+            <p>📞 Phone / WhatsApp: <a href="tel:+94742274908">+94 74 227 4908</a></p>
+            <p>✉️ Email: <a href="mailto:aura.creations.lksl@gmail.com">aura.creations.lksl@gmail.com</a></p>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 Your Name. All rights reserved.</p>
+        <p>&copy; 2026 AURA NET.LK. All rights reserved.</p>
     </footer>
 
 </body>
