@@ -91,7 +91,7 @@
             font-size: 24px;
             font-weight: 800;
             color: var(--text-main);
-            cursor: pointer;
+            text-decoration: none;
             letter-spacing: 1px;
         }
 
@@ -108,41 +108,33 @@
             text-decoration: none;
             font-size: 15px;
             font-weight: 500;
-            cursor: pointer;
             transition: all 0.3s ease;
             padding: 8px 16px;
             border-radius: 8px;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover {
             color: var(--primary);
             background: rgba(56, 189, 248, 0.12);
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
         }
 
-        /* Page System & Slide Animation */
-        .page {
-            display: none;
-            padding: 50px 8%;
-            animation: pageSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        /* Sections Layout */
+        section {
+            padding: 80px 8%;
+            border-bottom: 1px solid var(--border);
         }
 
-        .page.active-page { display: block; }
-
-        @keyframes pageSlideIn {
-            from { opacity: 0; transform: translateY(20px) scale(0.98); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        /* Hero / Home Page */
+        /* Hero / Home */
         .hero {
-            min-height: 65vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 40px 0;
+            border-bottom: none;
         }
 
         .badge {
@@ -184,18 +176,18 @@
             margin-bottom: 35px;
         }
 
-        .page-header {
+        .section-header {
             text-align: center;
             margin-bottom: 45px;
         }
 
-        .page-header h2 {
+        .section-header h2 {
             font-size: 2.4rem;
             color: var(--text-main);
             margin-bottom: 8px;
         }
 
-        .page-header p { color: var(--text-sub); }
+        .section-header p { color: var(--text-sub); }
 
         /* Grid Layout */
         .grid {
@@ -422,7 +414,6 @@
             text-align: center;
             padding: 25px;
             color: var(--text-sub);
-            border-top: 1px solid var(--border);
             background: #030408;
         }
 
@@ -436,38 +427,36 @@
 </head>
 <body>
 
-    <!-- Mouse Trail Elements -->
+    <!-- Mouse Trail Effects -->
     <div id="cursor-glow"></div>
     <div class="bg-grid"></div>
 
     <!-- Navigation Header -->
     <nav>
-        <div class="logo" onclick="switchPage('home')">AURA NET<span>.LK</span></div>
+        <a href="#home" class="logo">AURA NET<span>.LK</span></a>
         <ul class="nav-links">
-            <li><a onclick="switchPage('home')" id="nav-home" class="active">Home</a></li>
-            <li><a onclick="switchPage('services')" id="nav-services">Services</a></li>
-            <li><a onclick="switchPage('portfolio')" id="nav-portfolio">Portfolio</a></li>
-            <li><a onclick="switchPage('terms')" id="nav-terms">Terms & Conditions</a></li>
-            <li><a onclick="switchPage('contact')" id="nav-contact">Contact Us</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#terms">Terms & Conditions</a></li>
+            <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
 
-    <!-- PAGE 1: HOME -->
-    <div class="page active-page" id="page-home">
-        <section class="hero">
-            <div class="badge">Digital & Technology Hub</div>
-            <h1>Empowering Your Future With <span>AURA NET.LK</span></h1>
-            <p>Your premier destination for Web Development, High-Speed Internet Solutions, and Professional Visual Editing.</p>
-            <div style="display: flex; gap: 15px;">
-                <a onclick="switchPage('services')" class="btn-primary">Explore Services</a>
-                <a onclick="switchPage('contact')" class="btn-primary" style="background: transparent; color: #fff; border: 1px solid var(--border);">Get In Touch</a>
-            </div>
-        </section>
-    </div>
+    <!-- SECTION 1: HOME -->
+    <section class="hero" id="home">
+        <div class="badge">Digital & Technology Hub</div>
+        <h1>Empowering Your Future With <span>AURA NET.LK</span></h1>
+        <p>Your premier destination for Web Development, High-Speed Internet Solutions, and Professional Visual Editing.</p>
+        <div style="display: flex; gap: 15px;">
+            <a href="#services" class="btn-primary">Explore Services</a>
+            <a href="#contact" class="btn-primary" style="background: transparent; color: #fff; border: 1px solid var(--border);">Get In Touch</a>
+        </div>
+    </section>
 
-    <!-- PAGE 2: SERVICES (ALL SERVICES HERE) -->
-    <div class="page" id="page-services">
-        <div class="page-header">
+    <!-- SECTION 2: SERVICES -->
+    <section id="services">
+        <div class="section-header">
             <h2>Our Specialized Services</h2>
             <p>High-end digital solutions tailored to elevate your business</p>
         </div>
@@ -493,11 +482,11 @@
                 <p>Professional photo retouching, background removal, branding assets, and banner design.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- PAGE 3: PORTFOLIO -->
-    <div class="page" id="page-portfolio">
-        <div class="page-header">
+    <!-- SECTION 3: PORTFOLIO -->
+    <section id="portfolio">
+        <div class="section-header">
             <h2>Our Featured Work</h2>
             <p>Take a look at some of our recent creative and tech projects</p>
         </div>
@@ -532,11 +521,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- PAGE 4: TERMS & CONDITIONS -->
-    <div class="page" id="page-terms">
-        <div class="page-header">
+    <!-- SECTION 4: TERMS & CONDITIONS -->
+    <section id="terms">
+        <div class="section-header">
             <h2>Terms & Conditions</h2>
             <p>Official service policies and guidelines</p>
         </div>
@@ -568,11 +557,11 @@
                 <li>Internet access is provided for lawful and responsible use only.</li>
             </ul>
         </div>
-    </div>
+    </section>
 
-    <!-- PAGE 5: CONTACT US -->
-    <div class="page" id="page-contact">
-        <div class="page-header">
+    <!-- SECTION 5: CONTACT US -->
+    <section id="contact">
+        <div class="section-header">
             <h2>Contact Us</h2>
             <p>Reach out to us to start your next big digital project</p>
         </div>
@@ -610,9 +599,9 @@
                 <button type="submit" class="btn-primary">Send Message</button>
             </form>
         </div>
-    </div>
+    </section>
 
-    <!-- Floating Quick Contact Buttons -->
+    <!-- Floating Buttons -->
     <div class="floating-buttons">
         <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-wa">
             <i class="fa-brands fa-whatsapp"></i>
@@ -626,19 +615,8 @@
         <p>&copy; 2026 AURA NET.LK. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript Engine For Navigation & Animations -->
+    <!-- Interactive Mouse Glow & Particle Animation JS -->
     <script>
-        // Page Switch System
-        function switchPage(pageId) {
-            document.querySelectorAll('.page').forEach(page => page.classList.remove('active-page'));
-            document.querySelectorAll('.nav-links a').forEach(nav => nav.classList.remove('active'));
-
-            document.getElementById('page-' + pageId).classList.add('active-page');
-            document.getElementById('nav-' + pageId).classList.add('active');
-            window.scrollTo(0, 0);
-        }
-
-        // Interactive Mouse Glow & Particle Trail Engine
         const glow = document.getElementById('cursor-glow');
         let lastX = 0, lastY = 0;
 
