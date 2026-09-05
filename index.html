@@ -34,7 +34,6 @@
             overflow-x: hidden;
         }
 
-        /* Ambient Dynamic Background Glow */
         #cursor-glow {
             position: fixed;
             width: 400px;
@@ -56,7 +55,7 @@
             z-index: -1;
         }
 
-        /* Navigation Bar */
+        /* Nav Bar */
         nav {
             display: flex;
             justify-content: space-between;
@@ -101,7 +100,7 @@
             background: rgba(56, 189, 248, 0.1);
         }
 
-        /* General Section Styling */
+        /* Sections */
         section {
             padding: 100px 8%;
             border-bottom: 1px solid var(--border);
@@ -138,7 +137,7 @@
             margin: 10px auto 0;
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             min-height: 85vh;
             display: flex;
@@ -205,7 +204,7 @@
             color: var(--primary);
         }
 
-        /* Services Grid Layout */
+        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -244,22 +243,16 @@
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
+            width: 60px; height: 60px;
             background: rgba(56, 189, 248, 0.1);
             border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             font-size: 26px;
             color: var(--primary);
             margin-bottom: 25px;
         }
 
-        .service-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
+        .service-card h3 { font-size: 1.4rem; margin-bottom: 15px; }
 
         .service-features {
             list-style: none;
@@ -276,10 +269,7 @@
             gap: 10px;
         }
 
-        .service-features li i {
-            color: var(--primary);
-            font-size: 12px;
-        }
+        .service-features li i { color: var(--primary); font-size: 12px; }
 
         .price-tag {
             font-size: 1.1rem;
@@ -290,7 +280,7 @@
             margin-top: auto;
         }
 
-        /* Featured Work / Portfolio Section */
+        /* Featured Work */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -318,53 +308,29 @@
         }
 
         .portfolio-img img {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .portfolio-card:hover .portfolio-img img {
-            transform: scale(1.08);
-        }
+        .portfolio-card:hover .portfolio-img img { transform: scale(1.08); }
 
         .portfolio-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(3, 7, 18, 0.6);
             backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
 
-        .portfolio-card:hover .portfolio-overlay {
-            opacity: 1;
-        }
+        .portfolio-card:hover .portfolio-overlay { opacity: 1; }
+        .portfolio-content { padding: 25px; }
+        .portfolio-content h3 { font-size: 1.25rem; margin-bottom: 8px; }
+        .portfolio-content p { color: var(--text-sub); font-size: 0.95rem; margin-bottom: 15px; }
 
-        .portfolio-content {
-            padding: 25px;
-        }
-
-        .portfolio-content h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
-        }
-
-        .portfolio-content p {
-            color: var(--text-sub);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
+        .portfolio-tags { display: flex; gap: 8px; flex-wrap: wrap; }
         .portfolio-tags span {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
@@ -374,29 +340,44 @@
             border-radius: 6px;
         }
 
-        /* Terms & Conditions Section */
+        /* Modernized Terms Section */
         .terms-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .terms-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 35px;
+            padding: 30px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
         }
 
-        .terms-card h3 {
-            color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+        .terms-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px var(--primary-glow);
+        }
+
+        .terms-card-header {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
+            margin-bottom: 20px;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 12px;
+            padding-bottom: 15px;
+        }
+
+        .terms-card-header i {
+            font-size: 22px;
+            color: var(--primary);
+        }
+
+        .terms-card-header h3 {
+            font-size: 1.2rem;
+            color: var(--text-main);
         }
 
         .terms-list {
@@ -409,18 +390,19 @@
         .terms-list li {
             font-size: 0.92rem;
             color: var(--text-sub);
-            position: relative;
-            padding-left: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
             line-height: 1.5;
         }
 
         .terms-list li i {
-            position: absolute;
-            left: 0; top: 4px;
             color: var(--primary);
+            font-size: 13px;
+            margin-top: 4px;
         }
 
-        /* Redesigned Contact Section */
+        /* Contact Section */
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -432,15 +414,8 @@
             backdrop-filter: blur(12px);
         }
 
-        .contact-info-side h3 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .contact-info-side p {
-            color: var(--text-sub);
-            margin-bottom: 30px;
-        }
+        .contact-info-side h3 { font-size: 2rem; margin-bottom: 15px; }
+        .contact-info-side p { color: var(--text-sub); margin-bottom: 30px; }
 
         .channel-card {
             display: flex;
@@ -479,9 +454,7 @@
             letter-spacing: 1px;
         }
 
-        .channel-details strong {
-            font-size: 1.05rem;
-        }
+        .channel-details strong { font-size: 1.05rem; }
 
         .form-side form {
             display: flex;
@@ -520,43 +493,23 @@
         /* Floating Contact Buttons */
         .floating-container {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
+            bottom: 30px; right: 30px;
+            display: flex; flex-direction: column; gap: 14px;
             z-index: 999;
         }
 
         .float-btn {
-            width: 56px;
-            height: 56px;
+            width: 56px; height: 56px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 24px;
-            text-decoration: none;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 24px; text-decoration: none;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
+            transition: all 0.3s ease;
         }
 
-        .float-btn:hover {
-            transform: scale(1.12);
-        }
-
-        .float-whatsapp {
-            background: #25D366;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-        }
-
-        .float-call {
-            background: var(--primary);
-            color: #030712;
-            box-shadow: 0 8px 25px var(--primary-glow);
-        }
+        .float-btn:hover { transform: scale(1.12); }
+        .float-whatsapp { background: #25D366; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); }
+        .float-call { background: var(--primary); color: #030712; box-shadow: 0 8px 25px var(--primary-glow); }
 
         footer {
             text-align: center;
@@ -585,7 +538,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Featured Work</a></li>
-            <li><a href="#terms">Terms</a></li>
+            <li><a href="#terms">Policies</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
@@ -603,7 +556,7 @@
         </div>
     </section>
 
-    <!-- FULL SERVICES SECTION -->
+    <!-- SERVICES SECTION -->
     <section id="services">
         <div class="section-header">
             <span class="tag">Comprehensive Solutions</span>
@@ -612,7 +565,6 @@
         </div>
 
         <div class="services-grid">
-            <!-- 1. Web Development -->
             <div class="service-card">
                 <span class="service-badge">PREMIUM SERVICE</span>
                 <div class="service-icon"><i class="fa-solid fa-code"></i></div>
@@ -627,7 +579,6 @@
                 <div class="price-tag">Custom Quote</div>
             </div>
 
-            <!-- 2. Internet Access -->
             <div class="service-card">
                 <span class="service-badge">PREMIUM SERVICE</span>
                 <div class="service-icon"><i class="fa-solid fa-wifi"></i></div>
@@ -642,7 +593,6 @@
                 <div class="price-tag">Package Based</div>
             </div>
 
-            <!-- 3. Video Editing -->
             <div class="service-card">
                 <span class="service-badge">PREMIUM SERVICE</span>
                 <div class="service-icon"><i class="fa-solid fa-video"></i></div>
@@ -653,12 +603,10 @@
                     <li><i class="fa-solid fa-check"></i> YouTube Video Production</li>
                     <li><i class="fa-solid fa-check"></i> Cinematic Cuts & Transitions</li>
                     <li><i class="fa-solid fa-check"></i> Color Grading & Text Animations</li>
-                    <li><i class="fa-solid fa-check"></i> Background Music & Audio Sync</li>
                 </ul>
                 <div class="price-tag">Per Project / Package</div>
             </div>
 
-            <!-- 4. Photo Editing -->
             <div class="service-card">
                 <span class="service-badge">PREMIUM SERVICE</span>
                 <div class="service-icon"><i class="fa-solid fa-image"></i></div>
@@ -697,7 +645,6 @@
                     <div class="portfolio-tags">
                         <span>Web Design</span>
                         <span>UI/UX</span>
-                        <span>Development</span>
                     </div>
                 </div>
             </div>
@@ -714,7 +661,6 @@
                     <p>High-energy promotional video with dynamic text animations, transitions, and color grading.</p>
                     <div class="portfolio-tags">
                         <span>Video Editing</span>
-                        <span>Color Grading</span>
                         <span>Reels</span>
                     </div>
                 </div>
@@ -733,46 +679,66 @@
                     <div class="portfolio-tags">
                         <span>Photo Editing</span>
                         <span>Retouching</span>
-                        <span>Graphics</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TERMS & CONDITIONS SECTION -->
+    <!-- NEW REFRESHED POLICIES SECTION -->
     <section id="terms">
         <div class="section-header">
-            <span class="tag">Transparency</span>
-            <h2>Terms & Conditions</h2>
-            <p>Official service policies and operational guidelines for clients.</p>
+            <span class="tag">Service Framework</span>
+            <h2>Service Policies & Governance</h2>
+            <p>Clear, transparent, and professional operational agreements for our digital solutions.</p>
         </div>
 
         <div class="terms-grid">
             <div class="terms-card">
-                <h3><i class="fa-solid fa-code"></i> Web Development Terms</h3>
+                <div class="terms-card-header">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Project Deposits & Payments</h3>
+                </div>
                 <ul class="terms-list">
-                    <li><i class="fa-solid fa-chevron-right"></i> A 50% advance payment will be required before the project will be started.</li>
-                    <li><i class="fa-solid fa-chevron-right"></i> All required content, images, logos, and information will be provided by the client.</li>
-                    <li><i class="fa-solid fa-chevron-right"></i> Up to 2 rounds of basic revisions will be provided.</li>
-                    <li><i class="fa-solid fa-chevron-right"></i> Additional revisions will be charged separately.</li>
-                    <li><i class="fa-solid fa-chevron-right"></i> The remaining 50% payment will be required upon project completion.</li>
-                    <li><i class="fa-solid fa-chevron-right"></i> Domain and hosting charges will be charged separately unless otherwise agreed.</li>
-                    <li><i class="fa-solid fa-chevron-right"></i> Future maintenance and updates will be charged separately.</li>
-                    <li><i class="fa-solid fa-chevron-right"></i> Delivery time will depend on project requirements and timely submission of content.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 50% initial deposit required prior to project kick-off.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Final 50% payment due upon completion before deployment.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Hosting and domain fees are billed independently unless bundled.</li>
                 </ul>
             </div>
 
             <div class="terms-card">
-                <h3><i class="fa-solid fa-wifi"></i> Internet Access Terms</h3>
+                <div class="terms-card-header">
+                    <i class="fa-solid fa-sliders"></i>
+                    <h3>Scope & Revision Policy</h3>
+                </div>
                 <ul class="terms-list">
-                    <li><i class="fa-solid fa-chevron-right"></i> Internet access will be provided according to the selected package.</li>
-                    <li><i class="fa-solid fa-chevron-right"></i> Internet access will be available during specified service hours.</li>
-                    <li><i class="fa-solid fa-chevron-right"></i> Usage will be subject to selected package limits.</li>
-                    <li><i class="fa-solid fa-chevron-right"></i> Additional data usage will be charged separately.</li>
-                    <li><i class="fa-solid fa-chevron-right"></i> Speed depends on selected package and network conditions.</li>
-                    <li><i class="fa-solid fa-chevron-right"></i> Availability may be affected by network interruptions or technical issues.</li>
-                    <li><i class="fa-solid fa-chevron-right"></i> Internet access is provided for lawful and responsible use only.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Includes up to 2 rounds of standard revisions per project.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Additional modifications beyond scope are quoted separately.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Timelines depend on accurate content provision by the client.</li>
+                </ul>
+            </div>
+
+            <div class="terms-card">
+                <div class="terms-card-header">
+                    <i class="fa-solid fa-network-wired"></i>
+                    <h3>Network & Bandwidth Terms</h3>
+                </div>
+                <ul class="terms-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Internet speeds and bandwidth reflect selected package tiers.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Extra data usage beyond plan allocations is charged standard fees.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Usage is governed by legal and responsible operating standards.</li>
+                </ul>
+            </div>
+
+            <div class="terms-card">
+                <div class="terms-card-header">
+                    <i class="fa-solid fa-microchip"></i>
+                    <h3>Post-Launch Maintenance</h3>
+                </div>
+                <ul class="terms-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Ongoing system maintenance and updates are billed separately.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Uptime stability subject to upstream provider constraints.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Client retains ownership of submitted assets and final deliverables.</li>
                 </ul>
             </div>
         </div>
@@ -840,7 +806,7 @@
         </div>
     </section>
 
-    <!-- FLOATING CONTACT BUTTONS (RIGHT SIDE) -->
+    <!-- FLOATING CONTACT BUTTONS -->
     <div class="floating-container">
         <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-whatsapp" title="Chat on WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
@@ -854,7 +820,6 @@
         <p>&copy; 2026 AURA NET.LK. All Rights Reserved. Designed for Professional Services.</p>
     </footer>
 
-    <!-- Interactive Ambient Glow Script -->
     <script>
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
