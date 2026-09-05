@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA NET.LK | Premier Tech & Digital Solutions</title>
+    <title>AURA NET.LK | Premier Tech & Digital Agency</title>
     <!-- FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-main: #05070e;
-            --bg-card: rgba(15, 23, 42, 0.75);
+            --bg-main: #030712;
+            --bg-card: rgba(17, 24, 39, 0.75);
             --primary: #38bdf8;
-            --primary-glow: rgba(56, 189, 248, 0.4);
-            --accent: #818cf8;
-            --text-main: #f8fafc;
-            --text-sub: #94a3b8;
+            --primary-glow: rgba(56, 189, 248, 0.35);
+            --accent: #6366f1;
+            --text-main: #f9fafb;
+            --text-sub: #9ca3af;
             --border: rgba(255, 255, 255, 0.08);
+            --badge-bg: rgba(56, 189, 248, 0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
             scroll-behavior: smooth;
         }
 
@@ -31,45 +32,27 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
-            cursor: default;
         }
 
-        /* --- MOUSE ANIMATION & GLOW --- */
+        /* Ambient Dynamic Background Glow */
         #cursor-glow {
             position: fixed;
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
             transform: translate(-50%, -50%);
             z-index: 9999;
-            transition: transform 0.1s ease-out;
-        }
-
-        .trail-particle {
-            position: fixed;
-            pointer-events: none;
-            width: 6px;
-            height: 6px;
-            background: var(--primary);
-            border-radius: 50%;
-            z-index: 9998;
-            box-shadow: 0 0 10px var(--primary);
-            animation: fadeOutParticle 0.8s linear forwards;
-        }
-
-        @keyframes fadeOutParticle {
-            0% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(0.2) translateY(10px); }
+            transition: transform 0.05s ease-out;
         }
 
         .bg-grid {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
-            background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
             z-index: -1;
         }
 
@@ -78,8 +61,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 8%;
-            background: rgba(5, 7, 14, 0.85);
+            padding: 20px 8%;
+            background: rgba(3, 7, 18, 0.85);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
             position: sticky;
@@ -88,18 +71,18 @@
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 800;
             color: var(--text-main);
             text-decoration: none;
             letter-spacing: 1px;
         }
 
-        .logo span { color: var(--primary); text-shadow: 0 0 10px var(--primary-glow); }
+        .logo span { color: var(--primary); text-shadow: 0 0 12px var(--primary-glow); }
 
         .nav-links {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             list-style: none;
         }
 
@@ -115,120 +98,210 @@
 
         .nav-links a:hover {
             color: var(--primary);
-            background: rgba(56, 189, 248, 0.12);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+            background: rgba(56, 189, 248, 0.1);
         }
 
-        /* Sections Layout */
+        /* General Section Styling */
         section {
-            padding: 80px 8%;
+            padding: 100px 8%;
             border-bottom: 1px solid var(--border);
         }
 
-        /* Hero / Home */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header .tag {
+            background: var(--badge-bg);
+            color: var(--primary);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            font-weight: 800;
+        }
+
+        .section-header p {
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 10px auto 0;
+        }
+
+        /* Hero Section */
         .hero {
-            min-height: 80vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px 0;
             border-bottom: none;
         }
 
-        .badge {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--primary);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 13px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            animation: pulseGlow 2s infinite alternate;
-        }
-
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 5px rgba(56, 189, 248, 0.2); }
-            100% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.6); }
-        }
-
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 800;
-            margin-bottom: 20px;
             line-height: 1.2;
+            margin-bottom: 20px;
         }
 
         .hero h1 span {
-            color: var(--primary);
             background: linear-gradient(90deg, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
+            font-size: 1.2rem;
             color: var(--text-sub);
-            max-width: 650px;
-            font-size: 1.15rem;
+            max-width: 700px;
             margin-bottom: 35px;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 45px;
+        .btn-group { display: flex; gap: 15px; }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #030712;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        .section-header h2 {
-            font-size: 2.4rem;
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px var(--primary-glow);
+        }
+
+        .btn-outline {
+            background: transparent;
             color: var(--text-main);
-            margin-bottom: 8px;
+            border: 1px solid var(--border);
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        .section-header p { color: var(--text-sub); }
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
 
-        /* Grid Layout */
-        .grid {
+        /* Services Grid Layout */
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
-        .card {
+        .service-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            padding: 32px 25px;
-            border-radius: 16px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 20px;
+            padding: 35px 28px;
             backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
-        .card:hover {
-            transform: translateY(-8px) scale(1.02);
+        .service-card:hover {
+            transform: translateY(-8px);
             border-color: var(--primary);
             box-shadow: 0 15px 35px var(--primary-glow);
         }
 
-        .card-icon {
-            font-size: 35px;
-            color: var(--primary);
-            margin-bottom: 18px;
-            transition: transform 0.3s ease;
+        .service-badge {
+            position: absolute;
+            top: 20px; right: 20px;
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
         }
 
-        .card:hover .card-icon { transform: scale(1.15) rotate(5deg); }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
 
-        .card h3 { font-size: 1.3rem; margin-bottom: 10px; }
-        .card p { color: var(--text-sub); font-size: 0.95rem; }
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
 
-        /* Portfolio Cards */
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .service-features li {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-features li i {
+            color: var(--primary);
+            font-size: 12px;
+        }
+
+        .price-tag {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+            margin-top: auto;
+        }
+
+        /* Featured Work / Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
         .portfolio-card {
-            overflow: hidden;
-            border-radius: 16px;
             background: var(--bg-card);
             border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
             transition: all 0.4s ease;
         }
 
@@ -238,26 +311,70 @@
             box-shadow: 0 15px 35px var(--primary-glow);
         }
 
-        .portfolio-img-box {
-            height: 200px;
-            overflow: hidden;
+        .portfolio-img {
             position: relative;
+            height: 220px;
+            overflow: hidden;
         }
 
-        .portfolio-img-box img {
+        .portfolio-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .portfolio-card:hover .portfolio-img-box img {
-            transform: scale(1.1);
+        .portfolio-card:hover .portfolio-img img {
+            transform: scale(1.08);
         }
 
-        .portfolio-content { padding: 22px; }
+        .portfolio-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(3, 7, 18, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
-        /* Professional Terms Section Layout */
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-content {
+            padding: 25px;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-content p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-tags span {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-sub);
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        /* Terms & Conditions Section */
         .terms-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -267,20 +384,13 @@
         .terms-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 18px;
+            border-radius: 20px;
             padding: 35px;
-            backdrop-filter: blur(12px);
-            transition: all 0.3s ease;
-        }
-
-        .terms-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px var(--primary-glow);
         }
 
         .terms-card h3 {
             color: var(--primary);
-            font-size: 1.35rem;
+            font-size: 1.3rem;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -293,370 +403,463 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
         }
 
         .terms-list li {
-            font-size: 0.95rem;
-            color: var(--text-main);
-            line-height: 1.5;
+            font-size: 0.92rem;
+            color: var(--text-sub);
             position: relative;
-            padding-left: 28px;
+            padding-left: 25px;
+            line-height: 1.5;
         }
 
         .terms-list li i {
             position: absolute;
-            left: 0;
-            top: 4px;
+            left: 0; top: 4px;
             color: var(--primary);
-            font-size: 14px;
         }
 
-        .terms-list li strong {
-            color: #fff;
-        }
-
-        /* Contact Section */
-        .contact-container {
+        /* Redesigned Contact Section */
+        .contact-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1.2fr;
             gap: 40px;
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 24px;
+            padding: 50px;
+            backdrop-filter: blur(12px);
         }
 
-        .contact-info {
+        .contact-info-side h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-info-side p {
+            color: var(--text-sub);
+            margin-bottom: 30px;
+        }
+
+        .channel-card {
             display: flex;
-            flex-direction: column;
+            align-items: center;
             gap: 20px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 1rem;
-        }
-
-        .info-item i {
-            font-size: 20px;
-            color: var(--primary);
-            width: 25px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 12px;
-            margin-top: 10px;
-        }
-
-        .social-btn {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border);
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 15px;
             text-decoration: none;
+            color: var(--text-main);
             transition: all 0.3s ease;
         }
 
-        .social-btn:hover {
-            background: var(--primary);
-            color: #000;
-            transform: translateY(-4px) rotate(8deg);
-            box-shadow: 0 0 15px var(--primary-glow);
+        .channel-card:hover {
+            border-color: var(--primary);
+            background: rgba(56, 189, 248, 0.05);
+            transform: translateX(5px);
         }
 
-        form {
+        .channel-icon {
+            width: 50px; height: 50px;
+            border-radius: 12px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px;
+        }
+
+        .channel-details span {
+            display: block;
+            font-size: 12px;
+            color: var(--text-sub);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .channel-details strong {
+            font-size: 1.05rem;
+        }
+
+        .form-side form {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 18px;
         }
 
-        input, textarea {
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        .form-control {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--border);
             padding: 14px 18px;
-            border-radius: 10px;
+            border-radius: 12px;
             color: #fff;
             outline: none;
-            transition: 0.3s;
-        }
-
-        input:focus, textarea:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 10px var(--primary-glow);
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: #000;
-            padding: 14px 32px;
-            border-radius: 10px;
-            font-weight: 700;
-            border: none;
-            cursor: pointer;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
         }
 
-        /* Floating Call/WhatsApp Buttons */
-        .floating-buttons {
+        /* Floating Contact Buttons */
+        .floating-container {
             position: fixed;
-            bottom: 25px; right: 25px;
-            display: flex; flex-direction: column; gap: 12px;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
             z-index: 999;
         }
 
         .float-btn {
-            width: 52px; height: 52px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: #fff; font-size: 24px; text-decoration: none;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
         }
 
-        .float-btn:hover { transform: scale(1.15) rotate(10deg); }
-        .float-wa { background: #22c55e; }
-        .float-call { background: var(--primary); color: #000; }
+        .float-btn:hover {
+            transform: scale(1.12);
+        }
+
+        .float-whatsapp {
+            background: #25D366;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .float-call {
+            background: var(--primary);
+            color: #030712;
+            box-shadow: 0 8px 25px var(--primary-glow);
+        }
 
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 30px;
             color: var(--text-sub);
-            background: #030408;
+            background: #02040a;
+            font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.3rem; }
+        @media (max-width: 992px) {
+            .contact-wrapper { grid-template-columns: 1fr; padding: 30px; }
+            .hero h1 { font-size: 2.8rem; }
             .nav-links { display: none; }
-            .contact-container { padding: 25px; }
-            #cursor-glow { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Mouse Trail Effects -->
     <div id="cursor-glow"></div>
     <div class="bg-grid"></div>
 
-    <!-- Navigation Header -->
+    <!-- Navigation Bar -->
     <nav>
         <a href="#home" class="logo">AURA NET<span>.LK</span></a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#terms">Terms & Conditions</a></li>
+            <li><a href="#portfolio">Featured Work</a></li>
+            <li><a href="#terms">Terms</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
 
-    <!-- SECTION 1: HOME -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="badge">Digital & Technology Hub</div>
-        <h1>Empowering Your Future With <span>AURA NET.LK</span></h1>
-        <p>Your premier destination for Web Development, High-Speed Internet Solutions, and Professional Visual Editing.</p>
-        <div style="display: flex; gap: 15px;">
-            <a href="#services" class="btn-primary">Explore Services</a>
-            <a href="#contact" class="btn-primary" style="background: transparent; color: #fff; border: 1px solid var(--border);">Get In Touch</a>
+        <div class="section-header" style="margin-bottom: 20px;">
+            <span class="tag">Digital Solutions Agency</span>
+        </div>
+        <h1>Elevate Your Digital Presence With <span>AURA NET.LK</span></h1>
+        <p>Providing high-performance Web Development, reliable High-Speed Internet Access, and Professional Visual Editing Services for modern brands.</p>
+        <div class="btn-group">
+            <a href="#services" class="btn-primary">Our Services</a>
+            <a href="#contact" class="btn-outline">Contact Us</a>
         </div>
     </section>
 
-    <!-- SECTION 2: SERVICES -->
+    <!-- FULL SERVICES SECTION -->
     <section id="services">
         <div class="section-header">
+            <span class="tag">Comprehensive Solutions</span>
             <h2>Our Specialized Services</h2>
-            <p>High-end digital solutions tailored to elevate your business</p>
+            <p>End-to-end technology and digital media expertise tailored to your goals.</p>
         </div>
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+
+        <div class="services-grid">
+            <!-- 1. Web Development -->
+            <div class="service-card">
+                <span class="service-badge">PREMIUM SERVICE</span>
+                <div class="service-icon"><i class="fa-solid fa-code"></i></div>
                 <h3>Web Development</h3>
-                <p>Custom websites designed for maximum speed, modern aesthetic, and mobile responsiveness.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Custom Web Application Design</li>
+                    <li><i class="fa-solid fa-check"></i> Responsive Mobile Layouts</li>
+                    <li><i class="fa-solid fa-check"></i> High Performance & Speed Optimization</li>
+                    <li><i class="fa-solid fa-check"></i> Domain & Hosting Integration</li>
+                    <li><i class="fa-solid fa-check"></i> Basic Revisions Included</li>
+                </ul>
+                <div class="price-tag">Custom Quote</div>
             </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
+
+            <!-- 2. Internet Access -->
+            <div class="service-card">
+                <span class="service-badge">PREMIUM SERVICE</span>
+                <div class="service-icon"><i class="fa-solid fa-wifi"></i></div>
                 <h3>Internet Access</h3>
-                <p>High-speed, stable internet infrastructure setup for home and business environments.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Dedicated Speed Packages</li>
+                    <li><i class="fa-solid fa-check"></i> Stable Service Availability</li>
+                    <li><i class="fa-solid fa-check"></i> Flexible Monthly Plans</li>
+                    <li><i class="fa-solid fa-check"></i> Reliable Network Infrastructure</li>
+                    <li><i class="fa-solid fa-check"></i> Lawful & Secure Usage</li>
+                </ul>
+                <div class="price-tag">Package Based</div>
             </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-video"></i></div>
+
+            <!-- 3. Video Editing -->
+            <div class="service-card">
+                <span class="service-badge">PREMIUM SERVICE</span>
+                <div class="service-icon"><i class="fa-solid fa-video"></i></div>
                 <h3>Video Editing</h3>
-                <p>Cinematic editing, color grading, motion graphics, and audio sync for reels and YouTube videos.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Professional Video Editing</li>
+                    <li><i class="fa-solid fa-check"></i> Social Media Reels & Shorts</li>
+                    <li><i class="fa-solid fa-check"></i> YouTube Video Production</li>
+                    <li><i class="fa-solid fa-check"></i> Cinematic Cuts & Transitions</li>
+                    <li><i class="fa-solid fa-check"></i> Color Grading & Text Animations</li>
+                    <li><i class="fa-solid fa-check"></i> Background Music & Audio Sync</li>
+                </ul>
+                <div class="price-tag">Per Project / Package</div>
             </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                <h3>Photo Editing & Graphics</h3>
-                <p>Professional photo retouching, background removal, branding assets, and banner design.</p>
+
+            <!-- 4. Photo Editing -->
+            <div class="service-card">
+                <span class="service-badge">PREMIUM SERVICE</span>
+                <div class="service-icon"><i class="fa-solid fa-image"></i></div>
+                <h3>Photo Editing</h3>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Professional Retouching & Enhancement</li>
+                    <li><i class="fa-solid fa-check"></i> Background Removal & Replacement</li>
+                    <li><i class="fa-solid fa-check"></i> Color Correction & Manipulation</li>
+                    <li><i class="fa-solid fa-check"></i> Portrait Retouching & Restoration</li>
+                    <li><i class="fa-solid fa-check"></i> Social Media Graphics Export</li>
+                </ul>
+                <div class="price-tag">Per Image / Bulk</div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: PORTFOLIO -->
+    <!-- FEATURED WORK SECTION -->
     <section id="portfolio">
         <div class="section-header">
+            <span class="tag">Showcase</span>
             <h2>Our Featured Work</h2>
-            <p>Take a look at some of our recent creative and tech projects</p>
+            <p>Explore a selection of our recent projects in web design, media production, and post-processing.</p>
         </div>
-        <div class="grid">
+
+        <div class="portfolio-grid">
             <div class="portfolio-card">
-                <div class="portfolio-img-box">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Web Development Project">
+                <div class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Web Project">
+                    <div class="portfolio-overlay">
+                        <a href="#contact" class="btn-primary" style="padding: 10px 20px; font-size: 13px;">View Details</a>
+                    </div>
                 </div>
                 <div class="portfolio-content">
-                    <h3>Modern Web Development</h3>
-                    <p>Clean corporate Web UI/UX design built for speed and conversion.</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-img-box">
-                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Editing Project">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Cinematic Video Editing</h3>
-                    <p>Color-graded commercial video with motion graphics and effects.</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-img-box">
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Graphic Design Project">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Branding & Graphics</h3>
-                    <p>High-resolution branding assets and social media graphics package.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 4: PROFESSIONAL TERMS & CONDITIONS -->
-    <section id="terms">
-        <div class="section-header">
-            <h2>Terms & Conditions</h2>
-            <p>Standard service agreements and operating guidelines for AURA NET.LK</p>
-        </div>
-
-        <div class="terms-grid">
-            <!-- Web Development T&C -->
-            <div class="terms-card">
-                <h3><i class="fa-solid fa-code"></i> Web Development Agreement</h3>
-                <ul class="terms-list">
-                    <li><i class="fa-solid fa-shield-halved"></i> <strong>Payment Structure:</strong> A non-refundable 50% advance deposit is required to commence development. The remaining 50% balance must be settled upon final review prior to site deployment.</li>
-                    <li><i class="fa-solid fa-folder-open"></i> <strong>Client Assets:</strong> The client is responsible for supplying all text content, high-resolution media, logos, and credentials in a timely manner.</li>
-                    <li><i class="fa-solid fa-pen-ruler"></i> <strong>Revision Policy:</strong> Includes up to 2 standard rounds of revisions. Additional major changes beyond the agreed scope will incur standard hourly charges.</li>
-                    <li><i class="fa-solid fa-server"></i> <strong>Hosting & Domain:</strong> Domain registration and web hosting services are subject to separate annual renewal fees unless explicitly bundled.</li>
-                    <li><i class="fa-solid fa-clock"></i> <strong>Delivery Timelines:</strong> Project timelines are estimates and depend on timely client feedback and content provision.</li>
-                </ul>
-            </div>
-
-            <!-- Internet Access T&C -->
-            <div class="terms-card">
-                <h3><i class="fa-solid fa-wifi"></i> Network & Internet Services</h3>
-                <ul class="terms-list">
-                    <li><i class="fa-solid fa-sliders"></i> <strong>Service Plans:</strong> Bandwidth, speed, and usage limits are governed strictly by the client's subscribed service tier.</li>
-                    <li><i class="fa-solid fa-chart-line"></i> <strong>Bandwidth & Data:</strong> Excess data consumption beyond designated monthly plan allocations will trigger standard overage fees.</li>
-                    <li><i class="fa-solid fa-triangle-exclamation"></i> <strong>Service Uptime:</strong> While we guarantee maximum network availability, speeds may fluctuate due to upstream ISP constraints, weather, or scheduled maintenance.</li>
-                    <li><i class="fa-solid fa-lock"></i> <strong>Acceptable Use Policy:</strong> Network infrastructure is provided solely for legal operations. Any illegal activities, cyber threats, or bandwidth abuse will result in immediate termination.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5: CONTACT US -->
-    <section id="contact">
-        <div class="section-header">
-            <h2>Contact Us</h2>
-            <p>Reach out to us to start your next big digital project</p>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Get In Touch</h3>
-                <a href="tel:+94742274908" class="info-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>+94 74 227 4908</span>
-                </a>
-                <a href="mailto:aura.creations.lksl@gmail.com" class="info-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>aura.creations.lksl@gmail.com</span>
-                </a>
-                <div class="info-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Sri Lanka</span>
-                </div>
-
-                <div style="margin-top: 15px;">
-                    <p style="color: var(--text-sub); font-size: 0.9rem;">Social Media Handles:</p>
-                    <div class="social-links">
-                        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="social-btn"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+                    <h3>Corporate Web Platform</h3>
+                    <p>Modern responsive website with optimized loading speeds and custom UI components.</p>
+                    <div class="portfolio-tags">
+                        <span>Web Design</span>
+                        <span>UI/UX</span>
+                        <span>Development</span>
                     </div>
                 </div>
             </div>
 
-            <form action="mailto:aura.creations.lksl@gmail.com" method="post" enctype="text/plain">
-                <input type="text" name="Name" placeholder="Your Name" required>
-                <input type="email" name="Email" placeholder="Your Email Address" required>
-                <textarea name="Message" rows="4" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Project">
+                    <div class="portfolio-overlay">
+                        <a href="#contact" class="btn-primary" style="padding: 10px 20px; font-size: 13px;">View Details</a>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Cinematic Commercial Reel</h3>
+                    <p>High-energy promotional video with dynamic text animations, transitions, and color grading.</p>
+                    <div class="portfolio-tags">
+                        <span>Video Editing</span>
+                        <span>Color Grading</span>
+                        <span>Reels</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Photo Editing Project">
+                    <div class="portfolio-overlay">
+                        <a href="#contact" class="btn-primary" style="padding: 10px 20px; font-size: 13px;">View Details</a>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Product Branding & Retouch</h3>
+                    <p>Professional photo manipulation, background enhancement, and high-res export.</p>
+                    <div class="portfolio-tags">
+                        <span>Photo Editing</span>
+                        <span>Retouching</span>
+                        <span>Graphics</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Floating Buttons -->
-    <div class="floating-buttons">
-        <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-wa">
+    <!-- TERMS & CONDITIONS SECTION -->
+    <section id="terms">
+        <div class="section-header">
+            <span class="tag">Transparency</span>
+            <h2>Terms & Conditions</h2>
+            <p>Official service policies and operational guidelines for clients.</p>
+        </div>
+
+        <div class="terms-grid">
+            <div class="terms-card">
+                <h3><i class="fa-solid fa-code"></i> Web Development Terms</h3>
+                <ul class="terms-list">
+                    <li><i class="fa-solid fa-chevron-right"></i> A 50% advance payment will be required before the project will be started.</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> All required content, images, logos, and information will be provided by the client.</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> Up to 2 rounds of basic revisions will be provided.</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> Additional revisions will be charged separately.</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> The remaining 50% payment will be required upon project completion.</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> Domain and hosting charges will be charged separately unless otherwise agreed.</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> Future maintenance and updates will be charged separately.</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> Delivery time will depend on project requirements and timely submission of content.</li>
+                </ul>
+            </div>
+
+            <div class="terms-card">
+                <h3><i class="fa-solid fa-wifi"></i> Internet Access Terms</h3>
+                <ul class="terms-list">
+                    <li><i class="fa-solid fa-chevron-right"></i> Internet access will be provided according to the selected package.</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> Internet access will be available during specified service hours.</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> Usage will be subject to selected package limits.</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> Additional data usage will be charged separately.</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> Speed depends on selected package and network conditions.</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> Availability may be affected by network interruptions or technical issues.</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> Internet access is provided for lawful and responsible use only.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT US SECTION -->
+    <section id="contact">
+        <div class="section-header">
+            <span class="tag">Get In Touch</span>
+            <h2>Contact Us</h2>
+            <p>Have a project in mind or need assistance? Reach out to us today.</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info-side">
+                <h3>Let's Talk About Your Next Project</h3>
+                <p>We are ready to build, design, and edit for your business growth.</p>
+
+                <a href="tel:+94742274908" class="channel-card">
+                    <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="channel-details">
+                        <span>Direct Phone Call</span>
+                        <strong>+94 74 227 4908</strong>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/94742274908" target="_blank" class="channel-card">
+                    <div class="channel-icon" style="color: #25D366; background: rgba(37,211,102,0.1);"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="channel-details">
+                        <span>Instant WhatsApp</span>
+                        <strong>+94 74 227 4908</strong>
+                    </div>
+                </a>
+
+                <a href="mailto:aura.creations.lksl@gmail.com" class="channel-card">
+                    <div class="channel-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="channel-details">
+                        <span>Official Email</span>
+                        <strong>aura.creations.lksl@gmail.com</strong>
+                    </div>
+                </a>
+            </div>
+
+            <div class="form-side">
+                <form action="mailto:aura.creations.lksl@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" class="form-control" name="Name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Email Address</label>
+                        <input type="email" class="form-control" name="Email" placeholder="name@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Requested Service</label>
+                        <input type="text" class="form-control" name="Service" placeholder="Web Development / Video Editing / Internet Access" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Message</label>
+                        <textarea class="form-control" name="Message" rows="4" placeholder="Describe your project requirements..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING CONTACT BUTTONS (RIGHT SIDE) -->
+    <div class="floating-container">
+        <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-whatsapp" title="Chat on WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="tel:+94742274908" class="float-btn float-call">
+        <a href="tel:+94742274908" class="float-btn float-call" title="Call Us Now">
             <i class="fa-solid fa-phone"></i>
         </a>
     </div>
 
     <footer>
-        <p>&copy; 2026 AURA NET.LK. All rights reserved.</p>
+        <p>&copy; 2026 AURA NET.LK. All Rights Reserved. Designed for Professional Services.</p>
     </footer>
 
-    <!-- Interactive Mouse Glow & Particle Animation JS -->
+    <!-- Interactive Ambient Glow Script -->
     <script>
         const glow = document.getElementById('cursor-glow');
-        let lastX = 0, lastY = 0;
-
         document.addEventListener('mousemove', (e) => {
             glow.style.left = e.clientX + 'px';
             glow.style.top = e.clientY + 'px';
-
-            if (Math.abs(e.clientX - lastX) > 15 || Math.abs(e.clientY - lastY) > 15) {
-                const particle = document.createElement('div');
-                particle.className = 'trail-particle';
-                particle.style.left = e.clientX + 'px';
-                particle.style.top = e.clientY + 'px';
-                document.body.appendChild(particle);
-
-                setTimeout(() => particle.remove(), 800);
-                lastX = e.clientX;
-                lastY = e.clientY;
-            }
         });
     </script>
 </body>
