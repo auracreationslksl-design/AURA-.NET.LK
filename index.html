@@ -354,13 +354,16 @@
             margin-bottom: 30px;
         }
 
+        /* Category Card - Touch කරන්න පුළුවන් ලෙස සකසා ඇත */
         .pricing-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 25px;
+            padding: 30px;
             backdrop-filter: blur(12px);
             transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
         }
 
         .pricing-card:hover {
@@ -369,57 +372,34 @@
             transform: translateY(-5px);
         }
 
-        .pricing-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+        .pricing-card .cat-icon-lg {
+            font-size: 40px;
             color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 8px var(--primary-glow));
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
         }
 
         .pricing-card .sub-title {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--text-sub);
-            margin-bottom: 18px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
 
-        .package-list { list-style: none; }
-
-        .package-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px rgba(255,255,255,0.05) dashed;
-        }
-
-        /* Package Name - Touch කරන්න පුළුවන් හැඩයට සකසා ඇත */
-        .package-list li span.pkg-name {
-            font-size: 1.05rem;
-            font-weight: 800;
+        .tap-hint {
+            display: inline-block;
+            background: var(--badge-bg);
             color: var(--primary);
-            text-shadow: 0 0 10px var(--primary-glow);
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-        }
-
-        .package-list li span.pkg-name:hover {
-            transform: scale(1.05);
-            opacity: 0.8;
-        }
-
-        .package-list li span.price {
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: var(--primary);
-            background: rgba(56, 189, 248, 0.1);
-            padding: 4px 10px;
-            border-radius: 8px;
             border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
 
         .why-us-wrapper {
@@ -667,7 +647,7 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
-        /* Package Details Popup Modal Styling */
+        /* Category Detail Popup Modal Styling */
         #pkgModal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -686,7 +666,7 @@
             padding: 30px;
             border-radius: 20px;
             width: 90%;
-            max-width: 400px;
+            max-width: 450px;
             text-align: center;
             position: relative;
             animation: modalPop 0.3s ease;
@@ -699,24 +679,48 @@
 
         .modal-content h3 {
             color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            margin-bottom: 5px;
         }
 
-        .modal-details {
-            font-size: 1.1rem;
-            margin: 20px 0;
-            color: var(--text-main);
+        .modal-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .modal-package-list {
+            list-style: none;
+            max-height: 250px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .modal-package-list li {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px rgba(255,255,255,0.05) dashed;
         }
 
-        .modal-details span {
+        .modal-package-list li span.m-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .modal-package-list li span.m-price {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--primary);
             background: rgba(56, 189, 248, 0.1);
-            padding: 10px;
+            padding: 4px 10px;
             border-radius: 8px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.3);
         }
 
         .close-modal-btn {
@@ -727,7 +731,7 @@
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 10px;
+            width: 100%;
         }
 
         footer {
@@ -823,54 +827,62 @@
         </div>
     </section>
 
-    <!-- INTERNET PACKAGES SECTION (Touch package name to view details) -->
+    <!-- INTERNET PACKAGES SECTION (Touch entire category card to view full packages & prices) -->
     <section id="pricing">
         <div class="section-header">
             <span class="tag">High-Speed Connectivity</span>
             <h2>Official Internet Packages & Pricing</h2>
-            <p>Touch any package name below to view price and data limit instantly!</p>
+            <p>Touch any category below to view all available packages and prices!</p>
         </div>
 
         <div class="price-grid">
-            <div class="pricing-card">
-                <h3><i class="fa-solid fa-wifi"></i> Dialog Zoom (Router)</h3>
+            <!-- Dialog Zoom Router Card -->
+            <div class="pricing-card" onclick="openCategoryModal('Dialog Zoom (Router)', 'Supported Packages: 298 & 724', [
+                {name: '100 GB Package', price: 'LKR 280'},
+                {name: '200 GB Package', price: 'LKR 250'},
+                {name: '300 GB Package', price: 'LKR 400'},
+                {name: 'Unlimited Pack', price: 'LKR 600'}
+            ])">
+                <div class="cat-icon-lg"><i class="fa-solid fa-wifi"></i></div>
+                <h3>Dialog Zoom (Router)</h3>
                 <div class="sub-title">Supported Packages: 298 & 724</div>
-                <ul class="package-list">
-                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 100 GB Package', 'LKR 280', '100 GB High-Speed Data')">⚡ 100 GB Package</span> <span class="price">LKR 280</span></li>
-                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 200 GB Package', 'LKR 250', '200 GB High-Speed Data')">⚡ 200 GB Package</span> <span class="price">LKR 250</span></li>
-                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 300 GB Package', 'LKR 400', '300 GB High-Speed Data')">⚡ 300 GB Package</span> <span class="price">LKR 400</span></li>
-                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ Unlimited Pack', 'LKR 600', 'Unlimited High-Speed Data')">⚡ Unlimited Pack</span> <span class="price">LKR 600</span></li>
-                </ul>
+                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View Packages</span>
             </div>
 
-            <div class="pricing-card">
-                <h3><i class="fa-solid fa-mobile-screen"></i> Dialog TikTok Mobile</h3>
+            <!-- Dialog TikTok Mobile Card -->
+            <div class="pricing-card" onclick="openCategoryModal('Dialog TikTok Mobile', 'Mobile SIM Package (297 / 997)', [
+                {name: '100 GB Package', price: 'LKR 230'},
+                {name: '200 GB Package', price: 'LKR 300'},
+                {name: 'Unlimited Pack', price: 'LKR 600'}
+            ])">
+                <div class="cat-icon-lg"><i class="fa-solid fa-mobile-screen"></i></div>
+                <h3>Dialog TikTok Mobile</h3>
                 <div class="sub-title">Mobile SIM Package (297 / 997)</div>
-                <ul class="package-list">
-                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 100 GB Package', 'LKR 230', '100 GB Mobile TikTok Data')">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
-                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 200 GB Package', 'LKR 300', '200 GB Mobile TikTok Data')">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
-                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ Unlimited Pack', 'LKR 600', 'Unlimited Mobile Data')">⚡ Unlimited Pack</span> <span class="price">LKR 600</span></li>
-                </ul>
+                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View Packages</span>
             </div>
 
-            <div class="pricing-card">
-                <h3><i class="fa-solid fa-tower-cell"></i> Airtel 4G Packages</h3>
+            <!-- Airtel 4G Packages Card -->
+            <div class="pricing-card" onclick="openCategoryModal('Airtel 4G Packages', 'TikTok (297/997) | Zoom | YouTube', [
+                {name: '100 GB Package', price: 'LKR 230'},
+                {name: '200 GB Package', price: 'LKR 300'},
+                {name: 'YT Unlimited Pack', price: 'LKR 600'}
+            ])">
+                <div class="cat-icon-lg"><i class="fa-solid fa-tower-cell"></i></div>
+                <h3>Airtel 4G Packages</h3>
                 <div class="sub-title">TikTok (297/997) | Zoom | YouTube</div>
-                <ul class="package-list">
-                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 100 GB Package', 'LKR 230', '100 GB Airtel High-Speed Data')">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
-                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 200 GB Package', 'LKR 300', '200 GB Airtel High-Speed Data')">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
-                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ YT Unlimited Pack', 'LKR 600', 'YouTube Unlimited Data')">⚡ YT Unlimited Pack</span> <span class="price">LKR 600</span></li>
-                </ul>
+                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View Packages</span>
             </div>
 
-            <div class="pricing-card">
-                <h3><i class="fa-solid fa-signal"></i> Hutch 4G Packages</h3>
+            <!-- Hutch 4G Packages Card -->
+            <div class="pricing-card" onclick="openCategoryModal('Hutch 4G Packages', 'All Hutch Bypass Packages (Zoom / Social)', [
+                {name: '100 GB Package', price: 'LKR 230'},
+                {name: '200 GB Package', price: 'LKR 300'},
+                {name: '300 GB Package', price: 'LKR 400'}
+            ])">
+                <div class="cat-icon-lg"><i class="fa-solid fa-signal"></i></div>
+                <h3>Hutch 4G Packages</h3>
                 <div class="sub-title">All Hutch Bypass Packages (Zoom / Social)</div>
-                <ul class="package-list">
-                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 100 GB Package', 'LKR 230', '100 GB Hutch High-Speed Data')">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
-                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 200 GB Package', 'LKR 300', '200 GB Hutch High-Speed Data')">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
-                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 300 GB Package', 'LKR 400', '300 GB Hutch High-Speed Data')">⚡ 300 GB Package</span> <span class="price">LKR 400</span></li>
-                </ul>
+                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View Packages</span>
             </div>
         </div>
     </section>
@@ -1058,15 +1070,15 @@
         </div>
     </section>
 
-    <!-- Package Detail Popup Modal -->
-    <div id="pkgModal" onclick="closePackageModal(event)">
+    <!-- Category Detail Popup Modal -->
+    <div id="pkgModal" onclick="closeCategoryModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <h3 id="modalPkgTitle">Package Name</h3>
-            <div class="modal-details">
-                <span id="modalPkgLimit">Data Limit: --</span>
-                <span id="modalPkgPrice">Price: --</span>
-            </div>
-            <button class="close-modal-btn" onclick="closePackageModalDirect()">Close</button>
+            <h3 id="modalCatTitle">Category Name</h3>
+            <div class="modal-subtitle" id="modalCatSub">Subtitle info</div>
+            <ul class="modal-package-list" id="modalPkgList">
+                <!-- Dynamic package items injected here -->
+            </ul>
+            <button class="close-modal-btn" onclick="closeCategoryModalDirect()">Close</button>
         </div>
     </div>
 
@@ -1103,19 +1115,30 @@
             glow.style.top = e.clientY + 'px';
         });
 
-        // Package Name Click / Touch Functionality
-        function showPackageDetails(name, price, limit) {
-            document.getElementById('modalPkgTitle').innerText = name;
-            document.getElementById('modalPkgPrice').innerHTML = "Price: <strong>" + price + "</strong>";
-            document.getElementById('modalPkgLimit').innerHTML = "Data Limit: <strong>" + limit + "</strong>";
+        // Category Card Touch / Click Functionality (Displays full list of packages & prices in a Modal)
+        function openCategoryModal(title, subtitle, packages) {
+            document.getElementById('modalCatTitle').innerText = title;
+            document.getElementById('modalCatSub').innerText = subtitle;
+            
+            let listHtml = '';
+            packages.forEach(pkg => {
+                listHtml += `
+                    <li>
+                        <span class="m-name"><i class="fa-solid fa-bolt" style="color: var(--primary); margin-right: 6px;"></i> ${pkg.name}</span>
+                        <span class="m-price">${pkg.price}</span>
+                    </li>
+                `;
+            });
+            
+            document.getElementById('modalPkgList').innerHTML = listHtml;
             document.getElementById('pkgModal').style.display = 'flex';
         }
 
-        function closePackageModalDirect() {
+        function closeCategoryModalDirect() {
             document.getElementById('pkgModal').style.display = 'none';
         }
 
-        function closePackageModal(e) {
+        function closeCategoryModal(e) {
             if(e.target.id === 'pkgModal') {
                 document.getElementById('pkgModal').style.display = 'none';
             }
