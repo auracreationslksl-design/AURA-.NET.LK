@@ -44,12 +44,11 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            scroll-behavior: smooth; /* Smooth Scrolling හැම තැනකටම */
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-main);
-            /* Red / Cute Girl Theme Wallpaper */
             background-image: linear-gradient(rgba(3, 7, 18, 0.78), rgba(3, 7, 18, 0.78)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
@@ -181,7 +180,6 @@
             margin: 10px auto 0;
         }
 
-        /* Hero Section with Professional Globe */
         .hero {
             min-height: 85vh;
             display: flex;
@@ -193,7 +191,6 @@
             position: relative;
         }
 
-        /* Professional Globe Container */
         .hero-globe-container {
             width: 90px;
             height: 90px;
@@ -282,7 +279,6 @@
             color: var(--primary);
         }
 
-        /* Status Bar */
         .status-container {
             display: flex;
             justify-content: center;
@@ -317,7 +313,6 @@
             50% { opacity: 0.4; }
         }
 
-        /* General Grids */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -352,7 +347,6 @@
         .card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-main); }
         .card p { color: var(--text-sub); font-size: 0.9rem; }
 
-        /* Pricing Cards (All packages with same uniform color style) */
         .price-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -402,13 +396,20 @@
             border-bottom: 1px rgba(255,255,255,0.05) dashed;
         }
 
-        /* සියලුම package name එකම එක වර්ණයකින් (Cyan/Primary) පෙන්වීමට සකසා ඇත */
+        /* Package Name - Touch කරන්න පුළුවන් හැඩයට සකසා ඇත */
         .package-list li span.pkg-name {
             font-size: 1.05rem;
             font-weight: 800;
             color: var(--primary);
             text-shadow: 0 0 10px var(--primary-glow);
             text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .package-list li span.pkg-name:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
         }
 
         .package-list li span.price {
@@ -421,7 +422,6 @@
             border: 1px solid rgba(56, 189, 248, 0.3);
         }
 
-        /* WHY US */
         .why-us-wrapper {
             max-width: 1000px;
             margin: 0 auto;
@@ -430,7 +430,6 @@
             gap: 25px;
         }
 
-        /* Smart Calculator Box */
         .calc-box {
             max-width: 600px;
             margin: 0 auto;
@@ -463,7 +462,6 @@
             font-weight: bold;
         }
 
-        /* REVIEWS MARQUEE (Mouse hover කළත් නවත්නේ නැතිව સતෝරියට දිගටම යන සේ සකසා ඇත) */
         .reviews-marquee-container {
             overflow: hidden;
             width: 100%;
@@ -477,8 +475,6 @@
             width: max-content;
             animation: marqueeScroll 35s linear infinite;
         }
-
-        /* animation-play-state අ ඉවත් කර ඇති නිසා මවුස් එක තැබුවත් නැවටෙන්නේ නැත */
 
         @keyframes marqueeScroll {
             0% { transform: translateX(0); }
@@ -525,7 +521,6 @@
             padding: 30px;
         }
 
-        /* Contact Section */
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -582,7 +577,6 @@
 
         .form-control:focus { border-color: var(--primary); }
 
-        /* Floating Contact & Chat Buttons */
         .floating-container {
             position: fixed;
             bottom: 25px; right: 25px;
@@ -673,6 +667,69 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
+        /* Package Details Popup Modal Styling */
+        #pkgModal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(3, 7, 18, 0.75);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 30px var(--primary-glow);
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            animation: modalPop 0.3s ease;
+        }
+
+        @keyframes modalPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-content h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .modal-details {
+            font-size: 1.1rem;
+            margin: 20px 0;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .modal-details span {
+            background: rgba(56, 189, 248, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .close-modal-btn {
+            background: var(--primary);
+            color: #030712;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
         footer {
             text-align: center;
             padding: 25px;
@@ -716,9 +773,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Professional Globe -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
-        <!-- Professional 3D Animated Globe Element -->
         <div class="hero-globe-container">
             <i class="fa-solid fa-globe"></i>
         </div>
@@ -767,12 +823,12 @@
         </div>
     </section>
 
-    <!-- INTERNET PACKAGES SECTION (Uniform color style for all packages) -->
+    <!-- INTERNET PACKAGES SECTION (Touch package name to view details) -->
     <section id="pricing">
         <div class="section-header">
             <span class="tag">High-Speed Connectivity</span>
             <h2>Official Internet Packages & Pricing</h2>
-            <p>Select your preferred network provider below and activate high-speed package bypass instantly.</p>
+            <p>Touch any package name below to view price and data limit instantly!</p>
         </div>
 
         <div class="price-grid">
@@ -780,10 +836,10 @@
                 <h3><i class="fa-solid fa-wifi"></i> Dialog Zoom (Router)</h3>
                 <div class="sub-title">Supported Packages: 298 & 724</div>
                 <ul class="package-list">
-                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 280</span></li>
-                    <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 250</span></li>
-                    <li><span class="pkg-name">⚡ 300 GB Package</span> <span class="price">LKR 400</span></li>
-                    <li><span class="pkg-name">⚡ Unlimited Pack</span> <span class="price">LKR 600</span></li>
+                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 100 GB Package', 'LKR 280', '100 GB High-Speed Data')">⚡ 100 GB Package</span> <span class="price">LKR 280</span></li>
+                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 200 GB Package', 'LKR 250', '200 GB High-Speed Data')">⚡ 200 GB Package</span> <span class="price">LKR 250</span></li>
+                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 300 GB Package', 'LKR 400', '300 GB High-Speed Data')">⚡ 300 GB Package</span> <span class="price">LKR 400</span></li>
+                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ Unlimited Pack', 'LKR 600', 'Unlimited High-Speed Data')">⚡ Unlimited Pack</span> <span class="price">LKR 600</span></li>
                 </ul>
             </div>
 
@@ -791,9 +847,9 @@
                 <h3><i class="fa-solid fa-mobile-screen"></i> Dialog TikTok Mobile</h3>
                 <div class="sub-title">Mobile SIM Package (297 / 997)</div>
                 <ul class="package-list">
-                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
-                    <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
-                    <li><span class="pkg-name">⚡ Unlimited Pack</span> <span class="price">LKR 600</span></li>
+                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 100 GB Package', 'LKR 230', '100 GB Mobile TikTok Data')">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 200 GB Package', 'LKR 300', '200 GB Mobile TikTok Data')">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
+                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ Unlimited Pack', 'LKR 600', 'Unlimited Mobile Data')">⚡ Unlimited Pack</span> <span class="price">LKR 600</span></li>
                 </ul>
             </div>
 
@@ -801,9 +857,9 @@
                 <h3><i class="fa-solid fa-tower-cell"></i> Airtel 4G Packages</h3>
                 <div class="sub-title">TikTok (297/997) | Zoom | YouTube</div>
                 <ul class="package-list">
-                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
-                    <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
-                    <li><span class="pkg-name">⚡ YT Unlimited Pack</span> <span class="price">LKR 600</span></li>
+                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 100 GB Package', 'LKR 230', '100 GB Airtel High-Speed Data')">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 200 GB Package', 'LKR 300', '200 GB Airtel High-Speed Data')">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
+                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ YT Unlimited Pack', 'LKR 600', 'YouTube Unlimited Data')">⚡ YT Unlimited Pack</span> <span class="price">LKR 600</span></li>
                 </ul>
             </div>
 
@@ -811,9 +867,9 @@
                 <h3><i class="fa-solid fa-signal"></i> Hutch 4G Packages</h3>
                 <div class="sub-title">All Hutch Bypass Packages (Zoom / Social)</div>
                 <ul class="package-list">
-                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
-                    <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
-                    <li><span class="pkg-name">⚡ 300 GB Package</span> <span class="price">LKR 400</span></li>
+                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 100 GB Package', 'LKR 230', '100 GB Hutch High-Speed Data')">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 200 GB Package', 'LKR 300', '200 GB Hutch High-Speed Data')">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
+                    <li><span class="pkg-name" onclick="showPackageDetails('⚡ 300 GB Package', 'LKR 400', '300 GB Hutch High-Speed Data')">⚡ 300 GB Package</span> <span class="price">LKR 400</span></li>
                 </ul>
             </div>
         </div>
@@ -923,7 +979,6 @@
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"Gaming වලට Low Ping එනවා. Download speed එක උපරිමයි. තැන්ක්‍යූ AURA NET team!"</p>
                 </div>
-                <!-- Duplicate loop items for infinite smooth marquee effect -->
                 <div class="review-card">
                     <div class="review-header"><div class="avatar">KS</div><div class="reviewer-info"><h4>Kasun Sampath</h4><span>Dialog Router User</span></div></div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -1003,6 +1058,18 @@
         </div>
     </section>
 
+    <!-- Package Detail Popup Modal -->
+    <div id="pkgModal" onclick="closePackageModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h3 id="modalPkgTitle">Package Name</h3>
+            <div class="modal-details">
+                <span id="modalPkgLimit">Data Limit: --</span>
+                <span id="modalPkgPrice">Price: --</span>
+            </div>
+            <button class="close-modal-btn" onclick="closePackageModalDirect()">Close</button>
+        </div>
+    </div>
+
     <!-- LIVE CHAT WIDGET BOX -->
     <div class="chat-widget-box" id="chatBox">
         <div class="chat-widget-header">
@@ -1035,6 +1102,24 @@
             glow.style.left = e.clientX + 'px';
             glow.style.top = e.clientY + 'px';
         });
+
+        // Package Name Click / Touch Functionality
+        function showPackageDetails(name, price, limit) {
+            document.getElementById('modalPkgTitle').innerText = name;
+            document.getElementById('modalPkgPrice').innerHTML = "Price: <strong>" + price + "</strong>";
+            document.getElementById('modalPkgLimit').innerHTML = "Data Limit: <strong>" + limit + "</strong>";
+            document.getElementById('pkgModal').style.display = 'flex';
+        }
+
+        function closePackageModalDirect() {
+            document.getElementById('pkgModal').style.display = 'none';
+        }
+
+        function closePackageModal(e) {
+            if(e.target.id === 'pkgModal') {
+                document.getElementById('pkgModal').style.display = 'none';
+            }
+        }
 
         // Calculator Logic with Usage Types
         function calculatePackage() {
