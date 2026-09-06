@@ -9,7 +9,7 @@
     <style>
         :root {
             --bg-main: #030712;
-            --bg-card: rgba(17, 24, 39, 0.85);
+            --bg-card: rgba(17, 24, 39, 0.80);
             --primary: #38bdf8;
             --primary-glow: rgba(56, 189, 248, 0.35);
             --accent: #6366f1;
@@ -25,7 +25,7 @@
 
         body.light-theme {
             --bg-main: #f3f4f6;
-            --bg-card: rgba(255, 255, 255, 0.9);
+            --bg-card: rgba(255, 255, 255, 0.85);
             --primary: #0284c7;
             --primary-glow: rgba(2, 132, 199, 0.25);
             --accent: #4f46e5;
@@ -44,11 +44,17 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            scroll-behavior: smooth;
+            scroll-behavior: smooth; /* Smooth Scrolling හැම තැනකටම */
         }
 
         body {
             background-color: var(--bg-main);
+            /* Red / Cute Girl Theme Wallpaper */
+            background-image: linear-gradient(rgba(3, 7, 18, 0.78), rgba(3, 7, 18, 0.78)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
@@ -64,6 +70,15 @@
             transform: translate(-50%, -50%);
             z-index: 9999;
             transition: transform 0.05s ease-out;
+        }
+
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
         }
 
         nav {
@@ -133,8 +148,6 @@
         section {
             padding: 90px 8%;
             border-bottom: 1px solid var(--border);
-            position: relative;
-            background-color: var(--bg-main);
         }
 
         .section-header {
@@ -168,7 +181,7 @@
             margin: 10px auto 0;
         }
 
-        /* Hero Section */
+        /* Hero Section with Professional Globe */
         .hero {
             min-height: 85vh;
             display: flex;
@@ -176,10 +189,11 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            border-bottom: 1px solid var(--border);
+            border-bottom: none;
             position: relative;
         }
 
+        /* Professional Globe Container */
         .hero-globe-container {
             width: 90px;
             height: 90px;
@@ -268,6 +282,7 @@
             color: var(--primary);
         }
 
+        /* Status Bar */
         .status-container {
             display: flex;
             justify-content: center;
@@ -302,6 +317,7 @@
             50% { opacity: 0.4; }
         }
 
+        /* General Grids */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -336,94 +352,76 @@
         .card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-main); }
         .card p { color: var(--text-sub); font-size: 0.9rem; }
 
-        /* Professional Pricing Matrix Style */
-        .pricing-section {
+        /* Pricing Cards (All packages with same uniform color style) */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .pricing-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 40px;
-            margin: 0 auto;
+            padding: 25px;
             backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
         }
 
-        .pricing-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 35px;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            background: var(--input-bg);
-            border: 1px solid var(--border);
-            color: var(--text-sub);
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .tab-btn.active, .tab-btn:hover {
-            background: var(--badge-bg);
-            color: var(--primary);
+        .pricing-card:hover {
             border-color: var(--primary);
+            box-shadow: 0 10px 30px var(--primary-glow);
+            transform: translateY(-5px);
         }
 
-        .pricing-table-wrapper {
-            overflow-x: auto;
-        }
-
-        .pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.95rem;
-        }
-
-        .pricing-table th, .pricing-table td {
-            padding: 16px 20px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .pricing-table th {
-            color: var(--text-sub);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-            background: var(--input-bg);
-        }
-
-        .pricing-table td {
-            color: var(--text-main);
-            font-weight: 500;
-        }
-
-        .pricing-table tr:hover td {
-            background: var(--input-bg);
-        }
-
-        .badge-price {
-            background: var(--badge-bg);
+        .pricing-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
             color: var(--primary);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .package-category-pane {
-            display: none;
+        .pricing-card .sub-title {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
         }
 
-        .package-category-pane.active {
-            display: block;
+        .package-list { list-style: none; }
+
+        .package-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px rgba(255,255,255,0.05) dashed;
         }
 
+        /* සියලුම package name එකම එක වර්ණයකින් (Cyan/Primary) පෙන්වීමට සකසා ඇත */
+        .package-list li span.pkg-name {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary-glow);
+            text-transform: uppercase;
+        }
+
+        .package-list li span.price {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--primary);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 4px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        /* WHY US */
         .why-us-wrapper {
             max-width: 1000px;
             margin: 0 auto;
@@ -432,6 +430,7 @@
             gap: 25px;
         }
 
+        /* Smart Calculator Box */
         .calc-box {
             max-width: 600px;
             margin: 0 auto;
@@ -464,6 +463,7 @@
             font-weight: bold;
         }
 
+        /* REVIEWS MARQUEE (Mouse hover කළත් නවත්නේ නැතිව સતෝරියට දිගටම යන සේ සකසා ඇත) */
         .reviews-marquee-container {
             overflow: hidden;
             width: 100%;
@@ -477,6 +477,8 @@
             width: max-content;
             animation: marqueeScroll 35s linear infinite;
         }
+
+        /* animation-play-state අ ඉවත් කර ඇති නිසා මවුස් එක තැබුවත් නැවටෙන්නේ නැත */
 
         @keyframes marqueeScroll {
             0% { transform: translateX(0); }
@@ -523,6 +525,7 @@
             padding: 30px;
         }
 
+        /* Contact Section */
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -579,6 +582,7 @@
 
         .form-control:focus { border-color: var(--primary); }
 
+        /* Floating Contact & Chat Buttons */
         .floating-container {
             position: fixed;
             bottom: 25px; right: 25px;
@@ -687,6 +691,7 @@
 <body>
 
     <div id="cursor-glow"></div>
+    <div class="bg-grid"></div>
 
     <!-- Navigation Bar -->
     <nav>
@@ -711,8 +716,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Professional Globe -->
     <section class="hero" id="home">
+        <!-- Professional 3D Animated Globe Element -->
         <div class="hero-globe-container">
             <i class="fa-solid fa-globe"></i>
         </div>
@@ -761,170 +767,54 @@
         </div>
     </section>
 
-    <!-- OFFICIAL NETWORK PACKAGE MATRIX SECTION -->
+    <!-- INTERNET PACKAGES SECTION (Uniform color style for all packages) -->
     <section id="pricing">
         <div class="section-header">
-            <span class="tag">Rate Sheets</span>
-            <h2>Official Network Package Matrix</h2>
-            <p>Transparent enterprise-grade data pricing across Sri Lankan service providers.</p>
+            <span class="tag">High-Speed Connectivity</span>
+            <h2>Official Internet Packages & Pricing</h2>
+            <p>Select your preferred network provider below and activate high-speed package bypass instantly.</p>
         </div>
 
-        <div class="pricing-section">
-            <div class="pricing-tabs">
-                <button class="tab-btn active" onclick="switchTab(event, 'dialogRouter')">Dialog Zoom / Router</button>
-                <button class="tab-btn" onclick="switchTab(event, 'dialogMobile')">Dialog Mobile</button>
-                <button class="tab-btn" onclick="switchTab(event, 'airtelPack')">Airtel 4G</button>
-                <button class="tab-btn" onclick="switchTab(event, 'hutchPack')">Hutch Networks</button>
+        <div class="price-grid">
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-wifi"></i> Dialog Zoom (Router)</h3>
+                <div class="sub-title">Supported Packages: 298 & 724</div>
+                <ul class="package-list">
+                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 280</span></li>
+                    <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 250</span></li>
+                    <li><span class="pkg-name">⚡ 300 GB Package</span> <span class="price">LKR 400</span></li>
+                    <li><span class="pkg-name">⚡ Unlimited Pack</span> <span class="price">LKR 600</span></li>
+                </ul>
             </div>
 
-            <!-- Tab 1: Dialog Router -->
-            <div id="dialogRouter" class="package-category-pane active">
-                <div class="pricing-table-wrapper">
-                    <table class="pricing-table">
-                        <thead>
-                            <tr>
-                                <th>Package Plan Tier</th>
-                                <th>Supported Type</th>
-                                <th>Bandwidth Volume</th>
-                                <th>Enterprise Rate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Dialog Zoom Standard</strong></td>
-                                <td>Router Config (298 / 724)</td>
-                                <td>100 GB High-Speed Data</td>
-                                <td><span class="badge-price">LKR 280</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Dialog Zoom Advanced</strong></td>
-                                <td>Router Config (298 / 724)</td>
-                                <td>200 GB High-Speed Data</td>
-                                <td><span class="badge-price">LKR 350</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Dialog Zoom Pro</strong></td>
-                                <td>Router Config (298 / 724)</td>
-                                <td>300 GB High-Speed Data</td>
-                                <td><span class="badge-price">LKR 450</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Dialog Zoom Ultimate</strong></td>
-                                <td>Router Config (298 / 724)</td>
-                                <td>Unlimited Bandwidth Access</td>
-                                <td><span class="badge-price">LKR 650</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-mobile-screen"></i> Dialog TikTok Mobile</h3>
+                <div class="sub-title">Mobile SIM Package (297 / 997)</div>
+                <ul class="package-list">
+                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
+                    <li><span class="pkg-name">⚡ Unlimited Pack</span> <span class="price">LKR 600</span></li>
+                </ul>
             </div>
 
-            <!-- Tab 2: Dialog Mobile -->
-            <div id="dialogMobile" class="package-category-pane">
-                <div class="pricing-table-wrapper">
-                    <table class="pricing-table">
-                        <thead>
-                            <tr>
-                                <th>Package Plan Tier</th>
-                                <th>Supported Type</th>
-                                <th>Bandwidth Volume</th>
-                                <th>Enterprise Rate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Dialog TikTok Base</strong></td>
-                                <td>Mobile SIM (297 / 997)</td>
-                                <td>100 GB Data Tier</td>
-                                <td><span class="badge-price">LKR 230</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Dialog TikTok Plus</strong></td>
-                                <td>Mobile SIM (297 / 997)</td>
-                                <td>200 GB Data Tier</td>
-                                <td><span class="badge-price">LKR 300</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Dialog TikTok Infinite</strong></td>
-                                <td>Mobile SIM (297 / 997)</td>
-                                <td>Unlimited Network Bypass</td>
-                                <td><span class="badge-price">LKR 600</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-tower-cell"></i> Airtel 4G Packages</h3>
+                <div class="sub-title">TikTok (297/997) | Zoom | YouTube</div>
+                <ul class="package-list">
+                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
+                    <li><span class="pkg-name">⚡ YT Unlimited Pack</span> <span class="price">LKR 600</span></li>
+                </ul>
             </div>
 
-            <!-- Tab 3: Airtel -->
-            <div id="airtelPack" class="package-category-pane">
-                <div class="pricing-table-wrapper">
-                    <table class="pricing-table">
-                        <thead>
-                            <tr>
-                                <th>Package Plan Tier</th>
-                                <th>Supported Type</th>
-                                <th>Bandwidth Volume</th>
-                                <th>Enterprise Rate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Airtel Stream Standard</strong></td>
-                                <td>TikTok / YT (297 / 997)</td>
-                                <td>100 GB Allocation</td>
-                                <td><span class="badge-price">LKR 230</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Airtel Stream Pro</strong></td>
-                                <td>TikTok / YT (297 / 997)</td>
-                                <td>200 GB Allocation</td>
-                                <td><span class="badge-price">LKR 300</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Airtel Ultimate Stream</strong></td>
-                                <td>YouTube Unlimited Pack</td>
-                                <td>Unthrottled Unlimited Access</td>
-                                <td><span class="badge-price">LKR 600</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Tab 4: Hutch -->
-            <div id="hutchPack" class="package-category-pane">
-                <div class="pricing-table-wrapper">
-                    <table class="pricing-table">
-                        <thead>
-                            <tr>
-                                <th>Package Plan Tier</th>
-                                <th>Supported Type</th>
-                                <th>Bandwidth Volume</th>
-                                <th>Enterprise Rate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Hutch Net Base</strong></td>
-                                <td>Zoom / Social Bundle</td>
-                                <td>100 GB High Speed</td>
-                                <td><span class="badge-price">LKR 230</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Hutch Net Prime</strong></td>
-                                <td>Zoom / Social Bundle</td>
-                                <td>200 GB High Speed</td>
-                                <td><span class="badge-price">LKR 300</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Hutch Net Enterprise</strong></td>
-                                <td>Zoom / Social Bundle</td>
-                                <td>300 GB High Speed</td>
-                                <td><span class="badge-price">LKR 400</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-signal"></i> Hutch 4G Packages</h3>
+                <div class="sub-title">All Hutch Bypass Packages (Zoom / Social)</div>
+                <ul class="package-list">
+                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
+                    <li><span class="pkg-name">⚡ 300 GB Package</span> <span class="price">LKR 400</span></li>
+                </ul>
             </div>
         </div>
     </section>
@@ -1033,6 +923,17 @@
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"Gaming වලට Low Ping එනවා. Download speed එක උපරිමයි. තැන්ක්‍යූ AURA NET team!"</p>
                 </div>
+                <!-- Duplicate loop items for infinite smooth marquee effect -->
+                <div class="review-card">
+                    <div class="review-header"><div class="avatar">KS</div><div class="reviewer-info"><h4>Kasun Sampath</h4><span>Dialog Router User</span></div></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"AURA NET.LK Zoom router bypass එක මරු! Unlimited speed එකක් එනවා. Super fast service!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header"><div class="avatar">DP</div><div class="reviewer-info"><h4>Dilshan Perera</h4><span>Airtel 4G User</span></div></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Airtel Youtube pack එක bypass කරලා 300GB ගත්තා. 100% Recommended!"</p>
+                </div>
             </div>
         </div>
 
@@ -1128,21 +1029,24 @@
     </footer>
 
     <script>
+        // Cursor Glow
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             glow.style.left = e.clientX + 'px';
             glow.style.top = e.clientY + 'px';
         });
 
+        // Calculator Logic with Usage Types
         function calculatePackage() {
             const usage = document.getElementById('usageSelect').value;
             const resultBox = document.getElementById('calcResult');
             if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>100 GB Package (LKR 230 / 280)</strong> - Ideal for daily messaging & light browsing!";
             else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>200 GB or 300 GB Package (LKR 300 / 400)</strong> - Perfect for streaming & social media!";
-            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>Unlimited Package (LKR 650)</strong> - Best for uninterrupted heavy downloads & 4K streaming!";
+            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>Unlimited Package (LKR 600)</strong> - Best for uninterrupted heavy downloads & 4K streaming!";
             else resultBox.innerHTML = "Please select your usage pattern above.";
         }
 
+        // Dark / Light Theme Toggle
         function toggleTheme() {
             const body = document.body;
             const icon = document.getElementById('theme-icon');
@@ -1157,17 +1061,7 @@
             }
         }
 
-        function switchTab(evt, categoryID) {
-            const panes = document.querySelectorAll('.package-category-pane');
-            panes.forEach(pane => pane.classList.remove('active'));
-
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            document.getElementById(categoryID).classList.add('active');
-            evt.currentTarget.classList.add('active');
-        }
-
+        // Add Review Dynamically
         function addNewReview(e) {
             e.preventDefault();
             const name = document.getElementById('revName').value;
@@ -1195,6 +1089,7 @@
             document.getElementById('reviewSubmitForm').reset();
         }
 
+        // Live Chat Widget Toggle
         function toggleChat() {
             const chatBox = document.getElementById('chatBox');
             chatBox.style.display = (chatBox.style.display === 'flex') ? 'none' : 'flex';
@@ -1203,7 +1098,8 @@
         function handleChatKey(e) { if (e.key === 'Enter') sendChatMessage(); }
 
         function sendChatMessage() {
-            .trim();
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
             if(!text) return;
             const msgContainer = document.getElementById('chatMessages');
             const userMsg = document.createElement('div');
