@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA NET.LK | Premier Digital Agency & Connectivity</title>
+    <title>AURA NET.LK | Premier Tech & Digital Agency</title>
     <!-- FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
             --bg-main: #030712;
-            --bg-card: rgba(17, 24, 39, 0.75);
-            --primary: #00f0ff;
-            --primary-glow: rgba(0, 240, 255, 0.4);
+            --bg-card: rgba(17, 24, 39, 0.80);
+            --primary: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.35);
             --accent: #6366f1;
             --success: #10b981;
             --text-main: #f9fafb;
             --text-sub: #9ca3af;
             --border: rgba(255, 255, 255, 0.08);
-            --badge-bg: rgba(0, 240, 255, 0.1);
+            --badge-bg: rgba(56, 189, 248, 0.1);
             --nav-bg: rgba(3, 7, 18, 0.85);
             --footer-bg: #02040a;
             --input-bg: rgba(255, 255, 255, 0.04);
@@ -45,11 +45,15 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
             scroll-behavior: smooth;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         body {
             background-color: var(--bg-main);
+            background-image: linear-gradient(rgba(3, 7, 18, 0.88), rgba(3, 7, 18, 0.88)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
@@ -59,7 +63,7 @@
             position: fixed;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
             transform: translate(-50%, -50%);
@@ -70,8 +74,8 @@
         .bg-grid {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
-            background-image: linear-gradient(to right, rgba(128,128,128,0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(128,128,128,0.05) 1px, transparent 1px);
+            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
             background-size: 40px 40px;
             z-index: -1;
         }
@@ -118,6 +122,7 @@
             font-weight: 500;
             padding: 8px 12px;
             border-radius: 8px;
+            transition: all 0.3s ease;
         }
 
         .nav-links a:hover {
@@ -139,10 +144,6 @@
             font-weight: 600;
         }
 
-        .theme-toggle-btn:hover {
-            border-color: var(--primary);
-        }
-
         section {
             padding: 90px 8%;
             border-bottom: 1px solid var(--border);
@@ -156,7 +157,7 @@
         .section-header .tag {
             background: var(--badge-bg);
             color: var(--primary);
-            border: 1px solid var(--primary-glow);
+            border: 1px solid rgba(56, 189, 248, 0.3);
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 12px;
@@ -198,7 +199,7 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -214,13 +215,14 @@
 
         .btn-primary {
             background: var(--primary);
-            color: #000;
+            color: #030712;
             padding: 14px 32px;
             border-radius: 10px;
             font-weight: 700;
             border: none;
             cursor: pointer;
             text-decoration: none;
+            transition: all 0.3s ease;
             display: inline-block;
         }
 
@@ -238,6 +240,7 @@
             font-weight: 600;
             cursor: pointer;
             text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .btn-outline:hover {
@@ -245,7 +248,7 @@
             color: var(--primary);
         }
 
-        /* Live Status Monitors */
+        /* Status Bar */
         .status-container {
             display: flex;
             justify-content: center;
@@ -280,7 +283,7 @@
             50% { opacity: 0.4; }
         }
 
-        /* General Grid */
+        /* General Grids */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -293,6 +296,7 @@
             border-radius: 20px;
             padding: 30px;
             backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
         }
 
         .card:hover {
@@ -304,25 +308,17 @@
         .card-icon {
             width: 55px; height: 55px;
             border-radius: 14px;
-            background: var(--badge-bg);
+            background: rgba(56, 189, 248, 0.1);
             color: var(--primary);
             display: flex; align-items: center; justify-content: center;
             font-size: 24px;
             margin-bottom: 20px;
         }
 
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            color: var(--text-main);
-        }
+        .card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-main); }
+        .card p { color: var(--text-sub); font-size: 0.9rem; }
 
-        .card p {
-            color: var(--text-sub);
-            font-size: 0.9rem;
-        }
-
-        /* ENHANCED PACKAGE STYLING */
+        /* Pricing Cards & Highlight Package */
         .price-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -336,6 +332,7 @@
             border-radius: 20px;
             padding: 25px;
             backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
         }
 
         .pricing-card:hover {
@@ -368,46 +365,40 @@
             justify-content: space-between;
             align-items: center;
             padding: 12px 0;
-            border-bottom: 1px var(--border) dashed;
+            border-bottom: 1px rgba(255,255,255,0.05) dashed;
         }
 
-        /* Highlighting 100GB & Package Font Styling */
         .package-list li span.pkg-name {
             font-size: 1.05rem;
             font-weight: 800;
-            letter-spacing: 0.6px;
             color: var(--text-main);
             text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .package-list li span.pkg-name.glow-highlight {
+        .package-list li span.pkg-name.cyan-glow-highlight {
             color: var(--primary);
-            text-shadow: 0 0 10px var(--primary-glow);
+            text-shadow: 0 0 12px var(--primary-glow);
         }
 
         .package-list li span.price {
             font-size: 1.05rem;
             font-weight: 800;
             color: var(--primary);
-            background: var(--badge-bg);
+            background: rgba(56, 189, 248, 0.1);
             padding: 4px 10px;
             border-radius: 8px;
-            border: 1px solid var(--primary-glow);
+            border: 1px solid rgba(56, 189, 248, 0.3);
         }
 
-        /* SPEED TEST WITH NEON FRAME & LATENCY BAR */
-        .speedtest-wrapper {
-            max-width: 950px;
+        /* OOKLA SPEED TEST SECTION WITH PROFESSIONAL NEON FRAME */
+        .speedtest-section-wrapper {
+            max-width: 900px;
             margin: 0 auto;
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 28px;
-            padding: 35px;
-            box-shadow: 0 0 40px rgba(0, 240, 255, 0.15);
-            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            padding: 30px;
+            backdrop-filter: blur(12px);
         }
 
         .speedtest-controls {
@@ -415,111 +406,39 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .server-selector {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .server-selector label {
-            font-size: 0.88rem;
-            color: var(--text-sub);
-            font-weight: 600;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
         .server-selector select {
             background: var(--input-bg);
             border: 1px solid var(--border);
             color: var(--text-main);
-            padding: 8px 16px;
+            padding: 8px 14px;
             border-radius: 10px;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             outline: none;
             cursor: pointer;
         }
 
-        .speed-metrics {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .metric-box {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--input-bg);
-            padding: 8px 16px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        .metric-box i { color: var(--primary); font-size: 16px; }
-        .metric-box span { font-size: 0.72rem; color: var(--text-sub); display: block; }
-        .metric-box strong { font-size: 0.9rem; color: var(--text-main); }
-
-        .speedtest-frame-container {
+        .speedtest-neon-frame {
             position: relative;
             width: 100%;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             border: 2px solid var(--primary);
-            box-shadow: 0 0 25px var(--primary-glow);
+            box-shadow: 0 0 25px var(--primary-glow), inset 0 0 15px var(--primary-glow);
             background: #000;
         }
 
-        .speedtest-iframe {
+        .speedtest-neon-frame iframe {
             width: 100%;
-            height: 520px;
+            height: 480px;
             border: none;
             display: block;
         }
 
-        /* FAQ Accordion */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .faq-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 18px 22px;
-            cursor: pointer;
-        }
-
-        .faq-item:hover { border-color: var(--primary); }
-
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--text-main);
-        }
-
-        .faq-answer {
-            margin-top: 12px;
-            color: var(--text-sub);
-            font-size: 0.9rem;
-            display: none;
-        }
-
-        .faq-item.active .faq-answer { display: block; }
-        .faq-item.active .faq-icon { transform: rotate(180deg); color: var(--primary); }
-
-        /* Data Calculator */
+        /* Smart Calculator Box */
         .calc-box {
             max-width: 600px;
             margin: 0 auto;
@@ -545,31 +464,31 @@
         .calc-result {
             margin-top: 15px;
             padding: 15px;
-            background: var(--badge-bg);
+            background: rgba(56, 189, 248, 0.1);
             border: 1px solid var(--primary);
             border-radius: 12px;
             color: var(--primary);
             font-weight: bold;
         }
 
-        /* AUTO SCROLLING REVIEWS (MARQUEE) */
-        .reviews-slider-wrapper {
+        /* AUTO-SCROLLING MARQUEE REVIEWS (RIGHT TO LEFT) */
+        .reviews-marquee-container {
             overflow: hidden;
             width: 100%;
             position: relative;
             padding: 20px 0;
         }
 
-        .reviews-slider-track {
+        .reviews-track {
             display: flex;
             gap: 25px;
             width: max-content;
-            animation: scrollLeft 30s linear infinite;
+            animation: marqueeScroll 28s linear infinite;
         }
 
-        .reviews-slider-track:hover { animation-play-state: paused; }
+        .reviews-track:hover { animation-play-state: paused; }
 
-        @keyframes scrollLeft {
+        @keyframes marqueeScroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
@@ -578,7 +497,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 22px 25px;
+            padding: 25px;
             width: 320px;
             flex-shrink: 0;
             backdrop-filter: blur(12px);
@@ -588,24 +507,24 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .avatar {
-            width: 42px; height: 42px;
+            width: 45px; height: 45px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 15px; color: #000;
+            font-weight: 800; font-size: 16px; color: #000;
         }
 
-        .reviewer-info h4 { font-size: 0.9rem; color: var(--text-main); }
+        .reviewer-info h4 { font-size: 0.95rem; color: var(--text-main); }
         .reviewer-info span { font-size: 0.75rem; color: var(--text-sub); }
 
-        .stars { color: #f59e0b; margin-bottom: 8px; font-size: 12px; }
-        .review-card p { font-size: 0.88rem; color: var(--text-sub); font-style: italic; line-height: 1.5; }
+        .stars { color: #f59e0b; margin-bottom: 8px; font-size: 13px; }
+        .review-card p { font-size: 0.9rem; color: var(--text-sub); font-style: italic; }
 
-        /* SUBMIT REVIEW FORM */
+        /* Review Submission Form */
         .review-form-box {
             max-width: 600px;
             margin: 40px auto 0;
@@ -647,7 +566,7 @@
         .channel-icon {
             width: 45px; height: 45px;
             border-radius: 12px;
-            background: var(--badge-bg);
+            background: rgba(56, 189, 248, 0.1);
             color: var(--primary);
             display: flex; align-items: center; justify-content: center;
             font-size: 20px;
@@ -672,7 +591,7 @@
 
         .form-control:focus { border-color: var(--primary); }
 
-        /* TERMS MODAL POPUP */
+        /* Terms Modal */
         .modal-overlay {
             position: fixed;
             top:0; left:0; width:100%; height:100%;
@@ -689,16 +608,12 @@
             border: 1px solid var(--primary);
             border-radius: 20px;
             padding: 30px;
-            max-width: 550px;
+            max-width: 500px;
             width: 90%;
             color: var(--text-main);
-            box-shadow: 0 0 30px var(--primary-glow);
         }
 
-        .modal-content h3 { color: var(--primary); margin-bottom: 15px; }
-        .modal-content p { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 12px; }
-
-        /* Floating Contact Buttons */
+        /* Floating Contact & Chat Buttons */
         .floating-container {
             position: fixed;
             bottom: 25px; right: 25px;
@@ -716,7 +631,6 @@
 
         .float-whatsapp { background: #25D366; }
 
-        /* LIVE CHAT WIDGET BOX */
         .chat-widget-box {
             position: fixed;
             bottom: 90px; right: 25px;
@@ -744,7 +658,7 @@
 
         .chat-widget-body {
             padding: 15px;
-            max-height: 250px;
+            max-height: 230px;
             overflow-y: auto;
             font-size: 0.85rem;
             display: flex;
@@ -759,16 +673,8 @@
             max-width: 85%;
         }
 
-        .chat-msg.admin {
-            border-left: 3px solid var(--primary);
-            align-self: flex-start;
-        }
-
-        .chat-msg.user {
-            background: var(--badge-bg);
-            color: var(--primary);
-            align-self: flex-end;
-        }
+        .chat-msg.admin { border-left: 3px solid var(--primary); align-self: flex-start; }
+        .chat-msg.user { background: rgba(56, 189, 248, 0.15); color: var(--primary); align-self: flex-end; }
 
         .chat-widget-footer {
             padding: 10px;
@@ -812,7 +718,6 @@
             .contact-wrapper { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
-            .speedtest-controls { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -856,10 +761,9 @@
             <a href="#pricing" class="btn-outline">Internet Plans</a>
         </div>
 
-        <!-- Live Network Monitor Bar -->
         <div class="status-container">
             <div class="status-item"><span class="status-dot"></span> Bypass Servers: <strong>ONLINE (100%)</strong></div>
-            <div class="status-item"><i class="fa-solid fa-gauge-high" style="color: var(--primary);"></i> Network Ping: <strong>12ms - 24ms</strong></div>
+            <div class="status-item"><i class="fa-solid fa-gauge-high" style="color: var(--primary);"></i> Network Ping: <strong>14ms</strong></div>
             <div class="status-item"><i class="fa-solid fa-shield-halved" style="color: var(--success);"></i> System Security: <strong>Encrypted</strong></div>
         </div>
     </section>
@@ -891,7 +795,7 @@
         </div>
     </section>
 
-    <!-- INTERNET PACKAGES SECTION (ENHANCED FONTS & CYAN GLOW) -->
+    <!-- INTERNET PACKAGES SECTION (Cyan Glow Highlights) -->
     <section id="pricing">
         <div class="section-header">
             <span class="tag">High-Speed Connectivity</span>
@@ -900,47 +804,42 @@
         </div>
 
         <div class="price-grid">
-            <!-- DIALOG ROUTER -->
             <div class="pricing-card">
                 <h3><i class="fa-solid fa-wifi"></i> Dialog Zoom (Router)</h3>
                 <div class="sub-title">Supported Packages: 298 & 724</div>
                 <ul class="package-list">
-                    <li><span class="pkg-name glow-highlight">⚡ 100 GB Package</span> <span class="price">LKR 280</span></li>
+                    <li><span class="pkg-name cyan-glow-highlight">⚡ 100 GB Package</span> <span class="price">LKR 280</span></li>
                     <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 250</span></li>
                     <li><span class="pkg-name">⚡ 300 GB Package</span> <span class="price">LKR 400</span></li>
-                    <li><span class="pkg-name">⚡ 1 TB Package</span> <span class="price">LKR 1,500</span></li>
-                    <li><span class="pkg-name">⚡ Unlimited Package</span> <span class="price">LKR 600</span></li>
+                    <li><span class="pkg-name">⚡ Unlimited Pack</span> <span class="price">LKR 600</span></li>
                 </ul>
             </div>
 
-            <!-- DIALOG TIKTOK MOBILE -->
             <div class="pricing-card">
                 <h3><i class="fa-solid fa-mobile-screen"></i> Dialog TikTok Mobile</h3>
                 <div class="sub-title">Mobile SIM Package (297 / 997)</div>
                 <ul class="package-list">
-                    <li><span class="pkg-name glow-highlight">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span class="pkg-name cyan-glow-highlight">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
                     <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
-                    <li><span class="pkg-name">⚡ Unlimited Package</span> <span class="price">LKR 600</span></li>
+                    <li><span class="pkg-name">⚡ Unlimited Pack</span> <span class="price">LKR 600</span></li>
                 </ul>
             </div>
 
-            <!-- AIRTEL -->
             <div class="pricing-card">
                 <h3><i class="fa-solid fa-tower-cell"></i> Airtel 4G Packages</h3>
                 <div class="sub-title">TikTok (297/997) | Zoom | YouTube</div>
                 <ul class="package-list">
-                    <li><span class="pkg-name glow-highlight">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span class="pkg-name cyan-glow-highlight">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
                     <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
                     <li><span class="pkg-name">⚡ YT Unlimited Pack</span> <span class="price">LKR 600</span></li>
                 </ul>
             </div>
 
-            <!-- HUTCH -->
             <div class="pricing-card">
                 <h3><i class="fa-solid fa-signal"></i> Hutch 4G Packages</h3>
                 <div class="sub-title">All Hutch Bypass Packages (Zoom / Social)</div>
                 <ul class="package-list">
-                    <li><span class="pkg-name glow-highlight">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span class="pkg-name cyan-glow-highlight">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
                     <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
                     <li><span class="pkg-name">⚡ 300 GB Package</span> <span class="price">LKR 400</span></li>
                 </ul>
@@ -948,58 +847,26 @@
         </div>
     </section>
 
-    <!-- LIVE SPEED TEST DASHBOARD (3-SERVER SELECTOR & LATENCY INDICATORS) -->
+    <!-- OOKLA SPEED TEST SECTION WITH PROFESSIONAL NEON FRAME -->
     <section id="speedtest">
         <div class="section-header">
             <span class="tag">Network Performance</span>
-            <h2>AURA Live Internet Speed Test</h2>
-            <p>Accurately measure your real-time latency, download, and upload bandwidth speeds.</p>
+            <h2>Official Ookla Speed Test</h2>
+            <p>Accurately test your connection speed directly using the official Ookla widget framework.</p>
         </div>
 
-        <div class="speedtest-wrapper">
+        <div class="speedtest-section-wrapper">
             <div class="speedtest-controls">
-                <div class="server-selector">
-                    <label><i class="fa-solid fa-server" style="color: var(--primary);"></i> Select Server Node:</label>
-                    <select id="serverSelect" onchange="updateServerNode()">
-                        <option value="dialog">Dialog Axiata Node (Colombo)</option>
-                        <option value="mobitel">SLT-Mobitel 4G/5G Node</option>
-                        <option value="hutch">Airtel / Hutch Fast Node</option>
-                    </select>
-                </div>
-
-                <div class="speed-metrics">
-                    <div class="metric-box">
-                        <i class="fa-solid fa-network-wired"></i>
-                        <div>
-                            <span>Ping Latency</span>
-                            <strong id="pingVal">14 ms</strong>
-                        </div>
-                    </div>
-                    <div class="metric-box">
-                        <i class="fa-solid fa-wave-square"></i>
-                        <div>
-                            <span>Network Jitter</span>
-                            <strong id="jitterVal">2 ms</strong>
-                        </div>
-                    </div>
-                    <div class="metric-box">
-                        <i class="fa-solid fa-shield-halved" style="color: var(--success);"></i>
-                        <div>
-                            <span>Stability</span>
-                            <strong style="color: var(--success);">99.8% Perfect</strong>
-                        </div>
-                    </div>
-                </div>
+                <span style="font-size: 0.9rem; color: var(--text-sub);"><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Ookla Node Server Connected</span>
             </div>
-
-            <!-- Professional Speedometer Frame with Cyan Glow -->
-            <div class="speedtest-frame-container">
-                <iframe class="speedtest-iframe" id="speedFrame" src="https://openspeedtest.com/Get-widget.php" allowfullscreen></iframe>
+            
+            <div class="speedtest-neon-frame">
+                <iframe src="https://www.speedtest.net/" title="Ookla Speed Test"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- PACKAGE CALCULATOR SECTION -->
+    <!-- PACKAGE CALCULATOR SECTION (WITH USAGE TYPE OPTIONS) -->
     <section id="calculator">
         <div class="section-header">
             <span class="tag">Smart Helper</span>
@@ -1008,78 +875,47 @@
         </div>
 
         <div class="calc-box">
-            <label for="usageSelect" style="color: var(--text-sub);">Choose Your Daily Usage:</label>
+            <label for="usageSelect" style="color: var(--text-sub);">Choose Your Primary Daily Internet Usage Type:</label>
             <select id="usageSelect" onchange="calculatePackage()">
                 <option value="">-- Select Usage Type --</option>
-                <option value="light">Light Browsing & Socials (1-3 GB/day)</option>
-                <option value="medium">YouTube & Zoom Meetings (5-10 GB/day)</option>
-                <option value="heavy">HD Movies & Gaming (15+ GB/day)</option>
+                <option value="light">Light Browsing, WhatsApp & Social Media (1-3 GB/day)</option>
+                <option value="medium">YouTube Streaming, Zoom Meetings & Socials (5-10 GB/day)</option>
+                <option value="heavy">HD Video Downloads, Movies, Gaming & Work (15+ GB/day)</option>
             </select>
             <div class="calc-result" id="calcResult">Please select your usage pattern above.</div>
         </div>
     </section>
 
-    <!-- FAQ SECTION (UPDATED DETAILS) -->
+    <!-- FAQ SECTION -->
     <section id="faq">
         <div class="section-header">
             <span class="tag">Questions & Answers</span>
             <h2>Frequently Asked Questions</h2>
         </div>
 
-        <div class="faq-container">
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span>1. How does the VPN / Bypass Connection work?</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
-                </div>
-                <div class="faq-answer">
-                    Subscribe to a basic Zoom or TikTok pack from your network, load our provided setup config into the app, and route all internet traffic via high-speed encrypted bypass servers.
-                </div>
+        <div class="faq-container" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+            <div class="card" style="padding: 20px; cursor: pointer;" onclick="this.classList.toggle('active')">
+                <div style="font-weight: 600; display: flex; justify-content: space-between;"><span>1. How does the VPN / Bypass Connection work?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                <div style="margin-top: 10px; color: var(--text-sub); font-size: 0.9rem;">Subscribe to a basic network pack, load our config, and enjoy full unthrottled high-speed data.</div>
             </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span>2. What speeds can I expect from these packages?</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
-                </div>
-                <div class="faq-answer">
-                    You get 100% full maximum 4G/5G speeds supported by your local network tower without artificial throttling!
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span>3. Is this Legitimate and safe to use?</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
-                </div>
-                <div class="faq-answer">
-                    Yes, connection tunneling utilizes standard encrypted SSH/SSL protocols to maintain complete privacy and secure daily usage.
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span>4. What Payment Methods do you accept?</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
-                </div>
-                <div class="faq-answer">
-                    We accept Bank Transfers (BOC, Commercial Bank) and eZ Cash transfers.
-                </div>
+            <div class="card" style="padding: 20px; cursor: pointer;" onclick="this.classList.toggle('active')">
+                <div style="font-weight: 600; display: flex; justify-content: space-between;"><span>2. What Payment Methods do you accept?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                <div style="margin-top: 10px; color: var(--text-sub); font-size: 0.9rem;">We accept Bank Transfers (BOC, Commercial) and eZ Cash.</div>
             </div>
         </div>
     </section>
 
-    <!-- AUTO SCROLLING MARQUEE REVIEWS & SUBMISSION FORM -->
+    <!-- AUTO-SCROLLING REVIEWS (RIGHT TO LEFT MARQUEE) & SUBMISSION -->
     <section id="reviews" style="padding-left:0; padding-right:0;">
         <div class="section-header" style="padding: 0 8%;">
             <span class="tag">Client Feedback</span>
             <h2>What Our Clients Say</h2>
-            <p>Real reviews from satisfied users across Sri Lanka.</p>
+            <p>Real reviews scrolling continuously from right to left.</p>
         </div>
 
-        <!-- Marquee Slider -->
-        <div class="reviews-slider-wrapper">
-            <div class="reviews-slider-track" id="reviewsTrack">
+        <!-- Marquee Track -->
+        <div class="reviews-marquee-container">
+            <div class="reviews-track" id="reviewsTrack">
                 <div class="review-card">
                     <div class="review-header"><div class="avatar">KS</div><div class="reviewer-info"><h4>Kasun Sampath</h4><span>Dialog Router User</span></div></div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -1100,10 +936,16 @@
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"Gaming වලට Low Ping එනවා. Download speed එක උපරිමයි. තැන්ක්‍යූ AURA NET team!"</p>
                 </div>
+                <!-- Duplicate for smooth seamless loop -->
+                <div class="review-card">
+                    <div class="review-header"><div class="avatar">KS</div><div class="reviewer-info"><h4>Kasun Sampath</h4><span>Dialog Router User</span></div></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"AURA NET.LK Zoom router bypass එක මරු! Unlimited speed එකක් එනවා. Super fast service!"</p>
+                </div>
             </div>
         </div>
 
-        <!-- Customer Review Submission Form -->
+        <!-- Review Submission Form -->
         <div style="padding: 0 8%;">
             <div class="review-form-box">
                 <h3 style="margin-bottom: 15px; color: var(--text-main); text-align: center;">Submit Your Review</h3>
@@ -1145,54 +987,26 @@
             <div class="contact-info-side">
                 <h3>Let's Connect</h3>
                 <p style="color: var(--text-sub); margin-bottom: 20px;">Fast activation & support team available 24/7.</p>
-
                 <a href="tel:+94742274908" class="channel-card">
                     <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
-                    <div class="channel-details">
-                        <span>Direct Phone Call</span>
-                        <strong>+94 74 227 4908</strong>
-                    </div>
+                    <div class="channel-details"><span>Direct Phone Call</span><strong>+94 74 227 4908</strong></div>
                 </a>
-
                 <a href="https://wa.me/94742274908" target="_blank" class="channel-card">
                     <div class="channel-icon" style="color: #25D366; background: rgba(37,211,102,0.1);"><i class="fa-brands fa-whatsapp"></i></div>
-                    <div class="channel-details">
-                        <span>Instant WhatsApp</span>
-                        <strong>+94 74 227 4908</strong>
-                    </div>
+                    <div class="channel-details"><span>Instant WhatsApp</span><strong>+94 74 227 4908</strong></div>
                 </a>
             </div>
 
             <div class="form-side">
                 <form action="mailto:aura.creations.lksl@gmail.com" method="post" enctype="text/plain">
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" class="form-control" name="Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>WhatsApp Number</label>
-                        <input type="text" class="form-control" name="Phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Message / Order Details</label>
-                        <textarea class="form-control" name="Message" rows="4" required></textarea>
-                    </div>
+                    <div class="form-group"><label>Your Name</label><input type="text" class="form-control" name="Name" required></div>
+                    <div class="form-group"><label>WhatsApp Number</label><input type="text" class="form-control" name="Phone" required></div>
+                    <div class="form-group"><label>Message / Order Details</label><textarea class="form-control" name="Message" rows="4" required></textarea></div>
                     <button type="submit" class="btn-primary">Send Request</button>
                 </form>
             </div>
         </div>
     </section>
-
-    <!-- TERMS OF SERVICE & DISCLAIMER MODAL -->
-    <div class="modal-overlay" id="termsModal">
-        <div class="modal-content">
-            <h3><i class="fa-solid fa-shield-halved"></i> Terms of Service & Disclaimer</h3>
-            <p>1. <strong>Fair Usage:</strong> Services are intended for personal data optimization and standard browsing.</p>
-            <p>2. <strong>Network Availability:</strong> Connection speeds depend on local network tower coverage and ISP parameters.</p>
-            <p>3. <strong>Refund Policy:</strong> Non-working configurations are replaced instantly or refunded upon verification within 24 hours.</p>
-            <button class="btn-primary" style="width: 100%; margin-top: 15px;" onclick="closeModal()">I Understand & Agree</button>
-        </div>
-    </div>
 
     <!-- LIVE CHAT WIDGET BOX -->
     <div class="chat-widget-box" id="chatBox">
@@ -1209,40 +1023,31 @@
         </div>
     </div>
 
-    <!-- FLOATING CONTACT & CHAT BUTTONS -->
+    <!-- FLOATING BUTTONS -->
     <div class="floating-container">
-        <div class="chat-toggle-btn" onclick="toggleChat()" title="Live Chat">
-            <i class="fa-solid fa-comments"></i>
-        </div>
-        <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-whatsapp" title="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
+        <div class="chat-toggle-btn" onclick="toggleChat()" title="Live Chat"><i class="fa-solid fa-comments"></i></div>
+        <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 
     <footer>
-        <p>&copy; 2026 AURA NET.LK. All Rights Reserved. | <a onclick="openModal()">Terms of Service & Refund Policy</a></p>
+        <p>&copy; 2026 AURA NET.LK. All Rights Reserved. Designed for Professional Services.</p>
     </footer>
 
     <script>
-        // Cursor Glow Effect
+        // Cursor Glow
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             glow.style.left = e.clientX + 'px';
             glow.style.top = e.clientY + 'px';
         });
 
-        // FAQ Toggle
-        function toggleFaq(element) {
-            element.classList.toggle('active');
-        }
-
-        // Data Calculator
+        // Calculator Logic with Usage Types
         function calculatePackage() {
             const usage = document.getElementById('usageSelect').value;
             const resultBox = document.getElementById('calcResult');
-            if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>100 GB Package (LKR 230 / 280)</strong>";
-            else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>200 GB or 300 GB Package (LKR 300 / 400)</strong>";
-            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>Unlimited Package (LKR 600)</strong>";
+            if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>100 GB Package (LKR 230 / 280)</strong> - Ideal for daily messaging & light browsing!";
+            else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>200 GB or 300 GB Package (LKR 300 / 400)</strong> - Perfect for streaming & social media!";
+            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>Unlimited Package (LKR 600)</strong> - Best for uninterrupted heavy downloads & 4K streaming!";
             else resultBox.innerHTML = "Please select your usage pattern above.";
         }
 
@@ -1251,7 +1056,6 @@
             const body = document.body;
             const icon = document.getElementById('theme-icon');
             const text = document.getElementById('theme-text');
-            
             body.classList.toggle('light-theme');
             if(body.classList.contains('light-theme')) {
                 icon.className = 'fa-solid fa-sun';
@@ -1262,21 +1066,7 @@
             }
         }
 
-        // 3-Server Node Selector Updates
-        function updateServerNode() {
-            const val = document.getElementById('serverSelect').value;
-            const ping = document.getElementById('pingVal');
-            const jitter = document.getElementById('jitterVal');
-
-            if(val === 'dialog') { ping.innerText = '12 ms'; jitter.innerText = '2 ms'; }
-            else if(val === 'mobitel') { ping.innerText = '18 ms'; jitter.innerText = '3 ms'; }
-            else if(val === 'hutch') { ping.innerText = '22 ms'; jitter.innerText = '4 ms'; }
-
-            // Reload Speedtest frame
-            document.getElementById('speedFrame').src = "https://openspeedtest.com/Get-widget.php";
-        }
-
-        // Add Customer Review
+        // Add Review Dynamically
         function addNewReview(e) {
             e.preventDefault();
             const name = document.getElementById('revName').value;
@@ -1286,7 +1076,6 @@
 
             let starsHtml = '';
             for(let i=0; i<starsNum; i++) starsHtml += '<i class="fa-solid fa-star"></i>';
-
             const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0,2) || 'U';
 
             const track = document.getElementById('reviewsTrack');
@@ -1295,41 +1084,29 @@
             newCard.innerHTML = `
                 <div class="review-header">
                     <div class="avatar">${initials}</div>
-                    <div class="reviewer-info">
-                        <h4>${name}</h4>
-                        <span>${service}</span>
-                    </div>
+                    <div class="reviewer-info"><h4>${name}</h4><span>${service}</span></div>
                 </div>
                 <div class="stars">${starsHtml}</div>
                 <p>"${comment}"</p>
             `;
-
             track.prepend(newCard);
-            alert('Thank you! Your review has been added to the continuous stream.');
+            alert('Review added successfully!');
             document.getElementById('reviewSubmitForm').reset();
         }
 
-        // Terms Modal
-        function openModal() { document.getElementById('termsModal').style.display = 'flex'; }
-        function closeModal() { document.getElementById('termsModal').style.display = 'none'; }
-
-        // Live Chat Widget
+        // Live Chat Widget Toggle
         function toggleChat() {
             const chatBox = document.getElementById('chatBox');
             chatBox.style.display = (chatBox.style.display === 'flex') ? 'none' : 'flex';
         }
 
-        function handleChatKey(e) {
-            if (e.key === 'Enter') sendChatMessage();
-        }
+        function handleChatKey(e) { if (e.key === 'Enter') sendChatMessage(); }
 
         function sendChatMessage() {
             const input = document.getElementById('chatInput');
             const text = input.value.trim();
             if(!text) return;
-
             const msgContainer = document.getElementById('chatMessages');
-
             const userMsg = document.createElement('div');
             userMsg.className = 'chat-msg user';
             userMsg.innerText = text;
@@ -1339,11 +1116,10 @@
             setTimeout(() => {
                 const adminMsg = document.createElement('div');
                 adminMsg.className = 'chat-msg admin';
-                adminMsg.innerText = "Thanks for reaching out! For instant order processing, message us directly on WhatsApp (+94 74 227 4908).";
+                adminMsg.innerText = "Thanks! Please message us directly on WhatsApp (+94 74 227 4908) for instant assistance.";
                 msgContainer.appendChild(adminMsg);
                 msgContainer.scrollTop = msgContainer.scrollHeight;
             }, 1000);
-
             msgContainer.scrollTop = msgContainer.scrollHeight;
         }
     </script>
