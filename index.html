@@ -3,90 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA NET.LK | Premier Tech & Digital Agency</title>
+    <title>AURA NET.LK | Enterprise Digital Solutions & High-Speed Networks</title>
     <!-- FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-main: #030712;
-            --bg-card: rgba(17, 24, 39, 0.80);
+            --bg-main: #0a0f1d;
+            --bg-card: rgba(17, 24, 39, 0.75);
             --primary: #38bdf8;
-            --primary-glow: rgba(56, 189, 248, 0.35);
+            --primary-glow: rgba(56, 189, 248, 0.2);
             --accent: #6366f1;
             --success: #10b981;
-            --text-main: #f9fafb;
-            --text-sub: #9ca3af;
-            --border: rgba(255, 255, 255, 0.08);
-            --badge-bg: rgba(56, 189, 248, 0.1);
-            --nav-bg: rgba(3, 7, 18, 0.85);
-            --footer-bg: #02040a;
-            --input-bg: rgba(255, 255, 255, 0.04);
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --border: rgba(255, 255, 255, 0.07);
+            --badge-bg: rgba(56, 189, 248, 0.08);
+            --nav-bg: rgba(10, 15, 29, 0.9);
+            --footer-bg: #070a14;
+            --input-bg: rgba(255, 255, 255, 0.03);
         }
 
         body.light-theme {
-            --bg-main: #f3f4f6;
-            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-main: #f8fafc;
+            --bg-card: rgba(255, 255, 255, 0.9);
             --primary: #0284c7;
-            --primary-glow: rgba(2, 132, 199, 0.25);
+            --primary-glow: rgba(2, 132, 199, 0.15);
             --accent: #4f46e5;
             --success: #059669;
-            --text-main: #1f2937;
-            --text-sub: #4b5563;
-            --border: rgba(0, 0, 0, 0.1);
-            --badge-bg: rgba(2, 132, 199, 0.1);
-            --nav-bg: rgba(255, 255, 255, 0.9);
-            --footer-bg: #e5e7eb;
-            --input-bg: rgba(0, 0, 0, 0.03);
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: rgba(0, 0, 0, 0.08);
+            --badge-bg: rgba(2, 132, 199, 0.08);
+            --nav-bg: rgba(255, 255, 255, 0.92);
+            --footer-bg: #e2e8f0;
+            --input-bg: rgba(0, 0, 0, 0.02);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(3, 7, 18, 0.78), rgba(3, 7, 18, 0.78)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        #cursor-glow {
-            position: fixed;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-            transition: transform 0.05s ease-out;
-        }
-
         .bg-grid {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
-            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-image: linear-gradient(to right, var(--border) 1px, transparent 1px),
+                              linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
             z-index: -1;
         }
 
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
+            padding: 18px 8%;
             background: var(--nav-bg);
-            backdrop-filter: blur(16px);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
@@ -94,14 +78,14 @@
         }
 
         .logo {
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 800;
             color: var(--text-main);
             text-decoration: none;
-            letter-spacing: 1px;
+            letter-spacing: -0.5px;
         }
 
-        .logo span { color: var(--primary); text-shadow: 0 0 12px var(--primary-glow); }
+        .logo span { color: var(--primary); }
 
         .nav-right {
             display: flex;
@@ -111,18 +95,18 @@
 
         .nav-links {
             display: flex;
-            gap: 15px;
+            gap: 8px;
             list-style: none;
         }
 
         .nav-links a {
             color: var(--text-sub);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
         }
 
         .nav-links a:hover {
@@ -134,52 +118,55 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             color: var(--text-main);
-            padding: 8px 14px;
-            border-radius: 20px;
+            padding: 8px 12px;
+            border-radius: 8px;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 13px;
+            gap: 6px;
+            font-size: 12px;
             font-weight: 600;
         }
 
         section {
-            padding: 90px 8%;
+            padding: 100px 8%;
             border-bottom: 1px solid var(--border);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .section-header .tag {
             background: var(--badge-bg);
             color: var(--primary);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            padding: 6px 16px;
+            border: 1px solid var(--border);
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             display: inline-block;
             margin-bottom: 15px;
         }
 
         .section-header h2 {
-            font-size: 2.3rem;
+            font-size: 2.5rem;
             color: var(--text-main);
             font-weight: 800;
+            letter-spacing: -1px;
         }
 
         .section-header p {
             color: var(--text-sub);
-            max-width: 600px;
-            margin: 10px auto 0;
+            max-width: 550px;
+            margin: 12px auto 0;
+            font-size: 0.95rem;
         }
 
+        /* Hero Section */
         .hero {
             min-height: 85vh;
             display: flex;
@@ -191,87 +178,74 @@
             position: relative;
         }
 
-        .hero-globe-container {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, #38bdf8, #030712);
-            box-shadow: 0 0 35px var(--primary-glow), inset 0 0 20px rgba(0,0,0,0.8);
+        .hero-badge {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
+            background: var(--badge-bg);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
             margin-bottom: 25px;
-            position: relative;
-            animation: floatGlobe 4s ease-in-out infinite;
-        }
-
-        .hero-globe-container i {
-            font-size: 42px;
-            color: #fff;
-            filter: drop-shadow(0 0 8px var(--primary));
-            animation: rotateGlobe 10s linear infinite;
-        }
-
-        @keyframes rotateGlobe {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes floatGlobe {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
         }
 
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
             margin-bottom: 20px;
+            max-width: 900px;
         }
 
         .hero h1 span {
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--primary);
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-sub);
-            max-width: 700px;
-            margin-bottom: 35px;
+            max-width: 650px;
+            margin-bottom: 40px;
         }
 
-        .btn-group { display: flex; gap: 15px; }
+        .btn-group { display: flex; gap: 12px; }
 
         .btn-primary {
             background: var(--primary);
             color: #030712;
-            padding: 14px 32px;
-            border-radius: 10px;
-            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
             border: none;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px var(--primary-glow);
+            opacity: 0.9;
+            transform: translateY(-2px);
         }
 
         .btn-outline {
             background: transparent;
             color: var(--text-main);
             border: 1px solid var(--border);
-            padding: 14px 32px;
-            border-radius: 10px;
+            padding: 12px 28px;
+            border-radius: 8px;
             font-weight: 600;
+            font-size: 14px;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .btn-outline:hover {
@@ -279,418 +253,259 @@
             color: var(--primary);
         }
 
-        .status-container {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-top: 35px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 12px 25px;
-            border-radius: 50px;
-            backdrop-filter: blur(10px);
-        }
-
-        .status-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: var(--text-sub);
-        }
-
-        .status-dot {
-            width: 9px; height: 9px;
-            border-radius: 50%;
-            background-color: var(--success);
-            box-shadow: 0 0 10px var(--success);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        .grid-3 {
+        /* Metrics Bar */
+        .metrics-bar {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 60px auto 0;
+            width: 100%;
         }
 
-        .card {
+        .metric-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 30px;
-            backdrop-filter: blur(12px);
-            transition: all 0.3s ease;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: left;
         }
 
-        .card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px var(--primary-glow);
-            transform: translateY(-5px);
+        .metric-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 4px;
         }
 
-        .card-icon {
-            width: 55px; height: 55px;
-            border-radius: 14px;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--primary);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-main); }
-        .card p { color: var(--text-sub); font-size: 0.9rem; }
-
-        .price-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .pricing-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 25px;
-            backdrop-filter: blur(12px);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pricing-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px var(--primary-glow);
-            transform: translateY(-5px);
-        }
-
-        .pricing-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .pricing-card .sub-title {
+        .metric-card p {
             font-size: 0.8rem;
             color: var(--text-sub);
-            margin-bottom: 18px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
+            margin: 0;
         }
 
-        .package-list { list-style: none; }
-
-        .package-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px rgba(255,255,255,0.05) dashed;
-        }
-
-        .package-list li span.pkg-name {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .package-list li span.price {
-            font-size: 1rem;
-            font-weight: 800;
-            color: var(--primary);
-            background: rgba(56, 189, 248, 0.1);
-            padding: 4px 10px;
-            border-radius: 8px;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-        }
-
-        .why-us-wrapper {
-            max-width: 1000px;
-            margin: 0 auto;
+        /* Services Grid */
+        .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
         }
 
-        .calc-box {
-            max-width: 600px;
-            margin: 0 auto;
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 35px;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 48px; height: 48px;
+            border-radius: 10px;
+            background: var(--badge-bg);
+            color: var(--primary);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+        }
+
+        .service-card h3 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; }
+        .service-card p { color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; }
+
+        /* Professional Pricing Matrix */
+        .pricing-section {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 30px;
-            text-align: center;
+            padding: 40px;
+            margin: 0 auto;
         }
 
-        .calc-box select {
-            width: 100%;
-            padding: 12px 16px;
-            margin: 15px 0;
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
             background: var(--input-bg);
             border: 1px solid var(--border);
-            border-radius: 10px;
-            color: var(--text-main);
-            outline: none;
+            color: var(--text-sub);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--badge-bg);
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .pricing-table-wrapper {
+            overflow-x: auto;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
             font-size: 0.95rem;
         }
 
-        .calc-result {
-            margin-top: 15px;
-            padding: 15px;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid var(--primary);
-            border-radius: 12px;
+        .pricing-table th, .pricing-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-table th {
+            color: var(--text-sub);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            background: var(--input-bg);
+        }
+
+        .pricing-table td {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .pricing-table tr:hover td {
+            background: var(--input-bg);
+        }
+
+        .badge-price {
+            background: var(--badge-bg);
             color: var(--primary);
-            font-weight: bold;
-        }
-
-        .reviews-marquee-container {
-            overflow: hidden;
-            width: 100%;
-            position: relative;
-            padding: 20px 0;
-        }
-
-        .reviews-track {
-            display: flex;
-            gap: 25px;
-            width: max-content;
-            animation: marqueeScroll 35s linear infinite;
-        }
-
-        @keyframes marqueeScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .review-card {
-            background: var(--bg-card);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 25px;
-            width: 320px;
-            flex-shrink: 0;
-            backdrop-filter: blur(12px);
         }
 
-        .review-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
+        .package-category-pane {
+            display: none;
         }
 
-        .avatar {
-            width: 45px; height: 45px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 16px; color: #000;
+        .package-category-pane.active {
+            display: block;
         }
 
-        .reviewer-info h4 { font-size: 0.95rem; color: var(--text-main); }
-        .reviewer-info span { font-size: 0.75rem; color: var(--text-sub); }
-
-        .stars { color: #f59e0b; margin-bottom: 8px; font-size: 13px; }
-        .review-card p { font-size: 0.9rem; color: var(--text-sub); font-style: italic; }
-
-        .review-form-box {
-            max-width: 600px;
-            margin: 40px auto 0;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 30px;
-        }
-
-        .contact-wrapper {
+        /* Contact Box */
+        .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 40px;
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 40px;
+            border-radius: 20px;
+            padding: 45px;
         }
 
-        .channel-card {
+        .contact-method {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 16px;
             background: var(--input-bg);
             border: 1px solid var(--border);
             padding: 16px;
-            border-radius: 14px;
-            margin-bottom: 15px;
+            border-radius: 12px;
+            margin-bottom: 12px;
             text-decoration: none;
             color: var(--text-main);
+            transition: border-color 0.2s ease;
         }
 
-        .channel-card:hover {
+        .contact-method:hover {
             border-color: var(--primary);
-            transform: translateX(5px);
         }
 
-        .channel-icon {
-            width: 45px; height: 45px;
-            border-radius: 12px;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--primary);
-            display: flex; align-items: center; justify-content: center;
+        .contact-method i {
             font-size: 20px;
+            color: var(--primary);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--badge-bg);
+            border-radius: 8px;
         }
 
-        .channel-details span { display: block; font-size: 11px; color: var(--text-sub); text-transform: uppercase; }
-        .channel-details strong { font-size: 1rem; }
+        .contact-method span { font-size: 11px; color: var(--text-sub); display: block; text-transform: uppercase; }
+        .contact-method strong { font-size: 0.95rem; }
 
-        .form-side form { display: flex; flex-direction: column; gap: 15px; }
-        .form-group { display: flex; flex-direction: column; gap: 6px; }
-        .form-group label { font-size: 0.85rem; color: var(--text-sub); font-weight: 500; }
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-sub);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
 
         .form-control {
+            width: 100%;
             background: var(--input-bg);
             border: 1px solid var(--border);
             padding: 12px 16px;
-            border-radius: 10px;
-            color: var(--text-main);
-            outline: none;
-            font-size: 0.9rem;
-        }
-
-        .form-control:focus { border-color: var(--primary); }
-
-        .floating-container {
-            position: fixed;
-            bottom: 25px; right: 25px;
-            display: flex; flex-direction: column; gap: 12px;
-            z-index: 999;
-        }
-
-        .float-btn {
-            width: 52px; height: 52px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: #fff; font-size: 22px; text-decoration: none;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-
-        .float-whatsapp { background: #25D366; }
-
-        .chat-widget-box {
-            position: fixed;
-            bottom: 90px; right: 25px;
-            width: 320px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            z-index: 1001;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            backdrop-filter: blur(16px);
-        }
-
-        .chat-widget-header {
-            background: var(--primary);
-            color: #000;
-            padding: 12px 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: bold;
-        }
-
-        .chat-widget-body {
-            padding: 15px;
-            max-height: 230px;
-            overflow-y: auto;
-            font-size: 0.85rem;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .chat-msg {
-            background: var(--input-bg);
-            padding: 8px 12px;
-            border-radius: 10px;
-            max-width: 85%;
-        }
-
-        .chat-msg.admin { border-left: 3px solid var(--primary); align-self: flex-start; }
-        .chat-msg.user { background: rgba(56, 189, 248, 0.15); color: var(--primary); align-self: flex-end; }
-
-        .chat-widget-footer {
-            padding: 10px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            gap: 8px;
-        }
-
-        .chat-widget-footer input {
-            flex: 1;
-            background: var(--input-bg);
-            border: 1px solid var(--border);
-            padding: 8px 12px;
             border-radius: 8px;
             color: var(--text-main);
+            font-size: 0.9rem;
             outline: none;
-            font-size: 0.85rem;
+            transition: border-color 0.2s ease;
         }
 
-        .chat-toggle-btn {
-            background: var(--accent);
-            color: #fff;
-            width: 52px; height: 52px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; font-size: 20px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        .form-control:focus {
+            border-color: var(--primary);
         }
 
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 30px;
             color: var(--text-sub);
             background: var(--footer-bg);
             font-size: 0.85rem;
+            border-top: 1px solid var(--border);
         }
 
-        @media (max-width: 992px) {
-            .contact-wrapper { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.5rem; }
+        @media(max-width: 900px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.6rem; }
             .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <div id="cursor-glow"></div>
     <div class="bg-grid"></div>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav>
         <a href="#home" class="logo">AURA NET<span>.LK</span></a>
         
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#pricing">Plans</a></li>
-            <li><a href="#whyus">Why Us</a></li>
-            <li><a href="#calculator">Calculator</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#pricing">Enterprise Rates</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
@@ -704,330 +519,292 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-globe-container">
-            <i class="fa-solid fa-globe"></i>
+        <div class="hero-badge">
+            <i class="fa-solid fa-bolt" style="color: var(--primary);"></i> Enterprise-Grade Digital & Network Provider
         </div>
-
-        <div class="section-header" style="margin-bottom: 20px;">
-            <span class="tag">Digital Solutions Agency</span>
-        </div>
-        <h1>Elevate Your Digital Experience With <span>AURA NET.LK</span></h1>
-        <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass Packages, and Professional Visual Editing Services.</p>
+        <h1>Next-Gen High-Speed Connectivity & <span>Digital Engineering</span></h1>
+        <p>Empowering businesses and individuals across Sri Lanka with high-performance web solutions, secure high-speed network bypass routes, and advanced digital optimization.</p>
+        
         <div class="btn-group">
-            <a href="#services" class="btn-primary">Our Services</a>
-            <a href="#pricing" class="btn-outline">Internet Plans</a>
+            <a href="#pricing" class="btn-primary">View Rate Sheets <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#contact" class="btn-outline">Speak With Engineering</a>
         </div>
 
-        <div class="status-container">
-            <div class="status-item"><span class="status-dot"></span> Bypass Servers: <strong>ONLINE (100%)</strong></div>
-            <div class="status-item"><i class="fa-solid fa-gauge-high" style="color: var(--primary);"></i> Network Ping: <strong>14ms</strong></div>
-            <div class="status-item"><i class="fa-solid fa-shield-halved" style="color: var(--success);"></i> System Security: <strong>Encrypted</strong></div>
+        <div class="metrics-bar">
+            <div class="metric-card">
+                <h3>99.9%</h3>
+                <p>Bypass Route Uptime</p>
+            </div>
+            <div class="metric-card">
+                <h3>14 ms</h3>
+                <p>Average Network Latency</p>
+            </div>
+            <div class="metric-card">
+                <h3>10 Mins</h3>
+                <p>Instant Package Activation</p>
+            </div>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- Services Section -->
     <section id="services">
         <div class="section-header">
-            <span class="tag">What We Offer</span>
-            <h2>Our Core Services</h2>
-            <p>Comprehensive digital solutions tailored to boost your business and personal connectivity.</p>
+            <span class="tag">Capabilities</span>
+            <h2>Core Infrastructure & Services</h2>
+            <p>Engineered for speed, performance, and uncompromising security.</p>
         </div>
 
         <div class="grid-3">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                <h3>Web Development</h3>
-                <p>Custom, ultra-fast, and responsive modern websites crafted with interactive UI/UX designs to elevate your brand presence online.</p>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Enterprise Web Development</h3>
+                <p>Custom full-stack web applications, ultra-fast landing pages, and responsive corporate systems built with modern architecture.</p>
             </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
-                <h3>High-Speed Internet Bypass</h3>
-                <p>Reliable and cost-effective internet package bypass solutions for Dialog, Airtel, and Hutch with maximum high-speed bandwidth.</p>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
+                <h3>High-Speed Data Bypass</h3>
+                <p>Professional high-volume package bypass setups for major network carriers ensuring absolute stability and zero throttling.</p>
             </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                <h3>Graphic & Video Editing</h3>
-                <p>Professional visual editing services including social media posts, branding materials, promotional posters, and video edits.</p>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3>Multimedia & UI/UX Design</h3>
+                <p>High-conversion commercial branding, professional corporate design portfolios, and enterprise-level multimedia post-production.</p>
             </div>
         </div>
     </section>
 
-    <!-- INTERNET PACKAGES SECTION (Professional Structured Price Design) -->
+    <!-- Professional Rate Matrix Section -->
     <section id="pricing">
         <div class="section-header">
-            <span class="tag">High-Speed Connectivity</span>
-            <h2>Official Internet Packages & Pricing</h2>
-            <p>Select your preferred network provider below and activate high-speed package bypass instantly.</p>
+            <span class="tag">Rate Sheets</span>
+            <h2>Official Network Package Matrix</h2>
+            <p>Transparent enterprise-grade data pricing across Sri Lankan service providers.</p>
         </div>
 
-        <div class="price-grid">
-            <div class="pricing-card">
-                <h3><i class="fa-solid fa-wifi"></i> Dialog Zoom (Router)</h3>
-                <div class="sub-title">Supported Packages: 298 & 724</div>
-                <ul class="package-list">
-                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 280</span></li>
-                    <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 350</span></li>
-                    <li><span class="pkg-name">⚡ 300 GB Package</span> <span class="price">LKR 450</span></li>
-                    <li><span class="pkg-name">⚡ Unlimited Pack</span> <span class="price">LKR 650</span></li>
-                </ul>
+        <div class="pricing-section">
+            <div class="pricing-tabs">
+                <button class="tab-btn active" onclick="switchTab(event, 'dialogRouter')">Dialog Zoom / Router</button>
+                <button class="tab-btn" onclick="switchTab(event, 'dialogMobile')">Dialog Mobile</button>
+                <button class="tab-btn" onclick="switchTab(event, 'airtelPack')">Airtel 4G</button>
+                <button class="tab-btn" onclick="switchTab(event, 'hutchPack')">Hutch Networks</button>
             </div>
 
-            <div class="pricing-card">
-                <h3><i class="fa-solid fa-mobile-screen"></i> Dialog TikTok Mobile</h3>
-                <div class="sub-title">Mobile SIM Package (297 / 997)</div>
-                <ul class="package-list">
-                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
-                    <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
-                    <li><span class="pkg-name">⚡ Unlimited Pack</span> <span class="price">LKR 600</span></li>
-                </ul>
+            <!-- Tab 1: Dialog Router -->
+            <div id="dialogRouter" class="package-category-pane active">
+                <div class="pricing-table-wrapper">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Package Plan Tier</th>
+                                <th>Supported Type</th>
+                                <th>Bandwidth Volume</th>
+                                <th>Enterprise Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Dialog Zoom Standard</strong></td>
+                                <td>Router Config (298 / 724)</td>
+                                <td>100 GB High-Speed Data</td>
+                                <td><span class="badge-price">LKR 280</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dialog Zoom Advanced</strong></td>
+                                <td>Router Config (298 / 724)</td>
+                                <td>200 GB High-Speed Data</td>
+                                <td><span class="badge-price">LKR 350</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dialog Zoom Pro</strong></td>
+                                <td>Router Config (298 / 724)</td>
+                                <td>300 GB High-Speed Data</td>
+                                <td><span class="badge-price">LKR 450</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dialog Zoom Ultimate</strong></td>
+                                <td>Router Config (298 / 724)</td>
+                                <td>Unlimited Bandwidth Access</td>
+                                <td><span class="badge-price">LKR 650</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <div class="pricing-card">
-                <h3><i class="fa-solid fa-tower-cell"></i> Airtel 4G Packages</h3>
-                <div class="sub-title">TikTok (297/997) | Zoom | YouTube</div>
-                <ul class="package-list">
-                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
-                    <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
-                    <li><span class="pkg-name">⚡ YT Unlimited Pack</span> <span class="price">LKR 600</span></li>
-                </ul>
+            <!-- Tab 2: Dialog Mobile -->
+            <div id="dialogMobile" class="package-category-pane">
+                <div class="pricing-table-wrapper">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Package Plan Tier</th>
+                                <th>Supported Type</th>
+                                <th>Bandwidth Volume</th>
+                                <th>Enterprise Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Dialog TikTok Base</strong></td>
+                                <td>Mobile SIM (297 / 997)</td>
+                                <td>100 GB Data Tier</td>
+                                <td><span class="badge-price">LKR 230</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dialog TikTok Plus</strong></td>
+                                <td>Mobile SIM (297 / 997)</td>
+                                <td>200 GB Data Tier</td>
+                                <td><span class="badge-price">LKR 300</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dialog TikTok Infinite</strong></td>
+                                <td>Mobile SIM (297 / 997)</td>
+                                <td>Unlimited Network Bypass</td>
+                                <td><span class="badge-price">LKR 600</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <div class="pricing-card">
-                <h3><i class="fa-solid fa-signal"></i> Hutch 4G Packages</h3>
-                <div class="sub-title">All Hutch Bypass Packages (Zoom / Social)</div>
-                <ul class="package-list">
-                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
-                    <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
-                    <li><span class="pkg-name">⚡ 300 GB Package</span> <span class="price">LKR 400</span></li>
-                </ul>
+            <!-- Tab 3: Airtel -->
+            <div id="airtelPack" class="package-category-pane">
+                <div class="pricing-table-wrapper">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Package Plan Tier</th>
+                                <th>Supported Type</th>
+                                <th>Bandwidth Volume</th>
+                                <th>Enterprise Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Airtel Stream Standard</strong></td>
+                                <td>TikTok / YT (297 / 997)</td>
+                                <td>100 GB Allocation</td>
+                                <td><span class="badge-price">LKR 230</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Airtel Stream Pro</strong></td>
+                                <td>TikTok / YT (297 / 997)</td>
+                                <td>200 GB Allocation</td>
+                                <td><span class="badge-price">LKR 300</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Airtel Ultimate Stream</strong></td>
+                                <td>YouTube Unlimited Pack</td>
+                                <td>Unthrottled Unlimited Access</td>
+                                <td><span class="badge-price">LKR 600</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
+            <!-- Tab 4: Hutch -->
+            <div id="hutchPack" class="package-category-pane">
+                <div class="pricing-table-wrapper">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Package Plan Tier</th>
+                                <th>Supported Type</th>
+                                <th>Bandwidth Volume</th>
+                                <th>Enterprise Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Hutch Net Base</strong></td>
+                                <td>Zoom / Social Bundle</td>
+                                <td>100 GB High Speed</td>
+                                <td><span class="badge-price">LKR 230</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hutch Net Prime</strong></td>
+                                <td>Zoom / Social Bundle</td>
+                                <td>200 GB High Speed</td>
+                                <td><span class="badge-price">LKR 300</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hutch Net Enterprise</strong></td>
+                                <td>Zoom / Social Bundle</td>
+                                <td>300 GB High Speed</td>
+                                <td><span class="badge-price">LKR 400</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- WHY CHOOSE US SECTION -->
-    <section id="whyus">
-        <div class="section-header">
-            <span class="tag">Our Advantage</span>
-            <h2>Why Choose AURA NET.LK?</h2>
-            <p>We deliver the most trusted, secure, and lightning-fast digital solutions in Sri Lanka.</p>
-        </div>
-
-        <div class="why-us-wrapper">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h3>Lightning Fast Activation</h3>
-                <p>All package bypass configurations and orders are processed and activated within 5 to 10 minutes.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
-                <h3>24/7 Dedicated Support</h3>
-                <p>Our friendly customer support team is always active via WhatsApp and direct calls to assist you anytime.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-shield-cat"></i></div>
-                <h3>100% Secure & Reliable</h3>
-                <p>Optimized network setups ensuring high bandwidth, low ping, and absolute safety for all your connections.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PACKAGE CALCULATOR SECTION -->
-    <section id="calculator">
-        <div class="section-header">
-            <span class="tag">Smart Helper</span>
-            <h2>Find Your Ideal Package</h2>
-            <p>Select your daily internet usage to find the best package recommendation.</p>
-        </div>
-
-        <div class="calc-box">
-            <label for="usageSelect" style="color: var(--text-sub);">Choose Your Primary Daily Internet Usage Type:</label>
-            <select id="usageSelect" onchange="calculatePackage()">
-                <option value="">-- Select Usage Type --</option>
-                <option value="light">Light Browsing, WhatsApp & Social Media (1-3 GB/day)</option>
-                <option value="medium">YouTube Streaming, Zoom Meetings & Socials (5-10 GB/day)</option>
-                <option value="heavy">HD Video Downloads, Movies, Gaming & Work (15+ GB/day)</option>
-            </select>
-            <div class="calc-result" id="calcResult">Please select your usage pattern above.</div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section id="faq">
-        <div class="section-header">
-            <span class="tag">Questions & Answers</span>
-            <h2>Frequently Asked Questions</h2>
-        </div>
-
-        <div class="faq-container" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
-            <div class="card" style="padding: 20px; cursor: pointer;" onclick="this.classList.toggle('active')">
-                <div style="font-weight: 600; display: flex; justify-content: space-between;"><span>1. How does the VPN / Bypass Connection work?</span> <i class="fa-solid fa-chevron-down"></i></div>
-                <div style="margin-top: 10px; color: var(--text-sub); font-size: 0.9rem;">Subscribe to a basic network pack, load our config, and enjoy full unthrottled high-speed data.</div>
-            </div>
-            <div class="card" style="padding: 20px; cursor: pointer;" onclick="this.classList.toggle('active')">
-                <div style="font-weight: 600; display: flex; justify-content: space-between;"><span>2. What Payment Methods do you accept?</span> <i class="fa-solid fa-chevron-down"></i></div>
-                <div style="margin-top: 10px; color: var(--text-sub); font-size: 0.9rem;">We accept Bank Transfers (BOC, Commercial) and eZ Cash securely.</div>
-            </div>
-            <div class="card" style="padding: 20px; cursor: pointer;" onclick="this.classList.toggle('active')">
-                <div style="font-weight: 600; display: flex; justify-content: space-between;"><span>3. Is the connection speed stable for online gaming?</span> <i class="fa-solid fa-chevron-down"></i></div>
-                <div style="margin-top: 10px; color: var(--text-sub); font-size: 0.9rem;">Yes! Our bypass servers maintain a low ping (~14ms) which is fully optimized for smooth gaming and streaming.</div>
-            </div>
-            <div class="card" style="padding: 20px; cursor: pointer;" onclick="this.classList.toggle('active')">
-                <div style="font-weight: 600; display: flex; justify-content: space-between;"><span>4. How long does package activation take?</span> <i class="fa-solid fa-chevron-down"></i></div>
-                <div style="margin-top: 10px; color: var(--text-sub); font-size: 0.9rem;">Activations are processed instantly within 5 to 10 minutes after payment confirmation via WhatsApp or Call.</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- REVIEWS SECTION -->
-    <section id="reviews" style="padding-left:0; padding-right:0;">
-        <div class="section-header" style="padding: 0 8%;">
-            <span class="tag">Client Feedback</span>
-            <h2>What Our Clients Say (100+ Verified Reviews)</h2>
-            <p>Continuous scrolling reviews feed.</p>
-        </div>
-
-        <div class="reviews-marquee-container">
-            <div class="reviews-track" id="reviewsTrack">
-                <div class="review-card">
-                    <div class="review-header"><div class="avatar">KS</div><div class="reviewer-info"><h4>Kasun Sampath</h4><span>Dialog Router User</span></div></div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"AURA NET.LK Zoom router bypass එක මරු! Unlimited speed එකක් එනවා. Super fast service!"</p>
-                </div>
-                <div class="review-card">
-                    <div class="review-header"><div class="avatar">DP</div><div class="reviewer-info"><h4>Dilshan Perera</h4><span>Airtel 4G User</span></div></div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Airtel Youtube pack එක bypass කරලා 300GB ගත්තා. 100% Recommended!"</p>
-                </div>
-                <div class="review-card">
-                    <div class="review-header"><div class="avatar">NL</div><div class="reviewer-info"><h4>Nuwan Liyanage</h4><span>Web Design Client</span></div></div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"මගේ Business එකට Professional Dark Theme Website එකක් හදලා දුන්නා. Top quality design!"</p>
-                </div>
-                <div class="review-card">
-                    <div class="review-header"><div class="avatar">HM</div><div class="reviewer-info"><h4>Hashen Madusanka</h4><span>Hutch Unlimited</span></div></div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Gaming වලට Low Ping එනවා. Download speed එක උපරිමයි. තැන්ක්‍යූ AURA NET team!"</p>
-                </div>
-                <div class="review-card">
-                    <div class="review-header"><div class="avatar">KS</div><div class="reviewer-info"><h4>Kasun Sampath</h4><span>Dialog Router User</span></div></div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"AURA NET.LK Zoom router bypass එක මරු! Unlimited speed එකක් එනවා. Super fast service!"</p>
-                </div>
-                <div class="review-card">
-                    <div class="review-header"><div class="avatar">DP</div><div class="reviewer-info"><h4>Dilshan Perera</h4><span>Airtel 4G User</span></div></div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Airtel Youtube pack එක bypass කරලා 300GB ගත්තා. 100% Recommended!"</p>
-                </div>
-            </div>
-        </div>
-
-        <div style="padding: 0 8%;">
-            <div class="review-form-box">
-                <h3 style="margin-bottom: 15px; color: var(--text-main); text-align: center;">Submit Your Review</h3>
-                <form id="reviewSubmitForm" onsubmit="addNewReview(event)">
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" class="form-control" id="revName" placeholder="e.g. Kasun Silva" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Service / Network Used</label>
-                        <input type="text" class="form-control" id="revService" placeholder="e.g. Dialog Zoom / Web Design" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Star Rating</label>
-                        <select class="form-control" id="revStars">
-                            <option value="5">⭐⭐⭐⭐⭐ (5 Stars)</option>
-                            <option value="4">⭐⭐⭐⭐ (4 Stars)</option>
-                            <option value="3">⭐⭐⭐ (3 Stars)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Your Feedback</label>
-                        <textarea class="form-control" id="revComment" rows="3" placeholder="Share your experience with AURA NET..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Post Review</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
+    <!-- Contact & Order Section -->
     <section id="contact">
         <div class="section-header">
-            <span class="tag">Get In Touch</span>
-            <h2>Contact Us</h2>
+            <span class="tag">Secure Dispatch</span>
+            <h2>Direct Engineering Access</h2>
+            <p>Connect with our technical desk for fast-track package activations and service inquiries.</p>
         </div>
 
-        <div class="contact-wrapper">
-            <div class="contact-info-side">
-                <h3>Let's Connect</h3>
-                <p style="color: var(--text-sub); margin-bottom: 20px;">Fast activation & support team available 24/7.</p>
-                <a href="tel:+94742274908" class="channel-card">
-                    <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
-                    <div class="channel-details"><span>Direct Phone Call</span><strong>+94 74 227 4908</strong></div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Support Desks</h3>
+                <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 24px;">Active 24/7 for network routing and software queries.</p>
+
+                <a href="tel:+94742274908" class="contact-method">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <span>Direct Voice Line</span>
+                        <strong>+94 74 227 4908</strong>
+                    </div>
                 </a>
-                <a href="https://wa.me/94742274908" target="_blank" class="channel-card">
-                    <div class="channel-icon" style="color: #25D366; background: rgba(37,211,102,0.1);"><i class="fa-brands fa-whatsapp"></i></div>
-                    <div class="channel-details"><span>Instant WhatsApp</span><strong>+94 74 227 4908</strong></div>
+
+                <a href="https://wa.me/94742274908" target="_blank" class="contact-method">
+                    <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+                    <div>
+                        <span>WhatsApp Dispatch</span>
+                        <strong>+94 74 227 4908</strong>
+                    </div>
                 </a>
-                <a href="mailto:aura.creations.lksl@gmail.com" class="channel-card">
-                    <div class="channel-icon" style="color: #f43f5e; background: rgba(244,63,94,0.1);"><i class="fa-solid fa-envelope"></i></div>
-                    <div class="channel-details"><span>Official Gmail</span><strong>aura.creations.lksl@gmail.com</strong></div>
+
+                <a href="mailto:aura.creations.lksl@gmail.com" class="contact-method">
+                    <i class="fa-solid fa-envelope" style="color: #f43f5e;"></i>
+                    <div>
+                        <span>Official Corporate Mail</span>
+                        <strong>aura.creations.lksl@gmail.com</strong>
+                    </div>
                 </a>
             </div>
 
-            <div class="form-side">
+            <div class="contact-form-side">
                 <form action="mailto:aura.creations.lksl@gmail.com" method="post" enctype="text/plain">
-                    <div class="form-group"><label>Your Name</label><input type="text" class="form-control" name="Name" required></div>
-                    <div class="form-group"><label>WhatsApp Number</label><input type="text" class="form-control" name="Phone" required></div>
-                    <div class="form-group"><label>Message / Order Details</label><textarea class="form-control" name="Message" rows="4" required></textarea></div>
-                    <button type="submit" class="btn-primary">Send Request</button>
+                    <div class="form-group">
+                        <label>Client Name / Organization</label>
+                        <input type="text" class="form-control" name="Name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label>Active WhatsApp Contact</label>
+                        <input type="text" class="form-control" name="Phone" required placeholder="+94 7X XXX XXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>Package Selection / Request Details</label>
+                        <textarea class="form-control" name="Message" rows="4" required placeholder="Specify your provider, package tier, or development inquiry..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Submit Request</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- LIVE CHAT WIDGET BOX -->
-    <div class="chat-widget-box" id="chatBox">
-        <div class="chat-widget-header">
-            <span><i class="fa-solid fa-headset"></i> AURA Live Support</span>
-            <i class="fa-solid fa-xmark" style="cursor: pointer;" onclick="toggleChat()"></i>
-        </div>
-        <div class="chat-widget-body" id="chatMessages">
-            <div class="chat-msg admin">Hello! Welcome to AURA NET.LK 👋 How can we help you today?</div>
-        </div>
-        <div class="chat-widget-footer">
-            <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="handleChatKey(event)">
-            <button onclick="sendChatMessage()" style="background: var(--primary); border: none; color: #000; padding: 0 12px; border-radius: 8px; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-paper-plane"></i></button>
-        </div>
-    </div>
-
-    <!-- FLOATING BUTTONS -->
-    <div class="floating-container">
-        <div class="chat-toggle-btn" onclick="toggleChat()" title="Live Chat"><i class="fa-solid fa-comments"></i></div>
-        <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-    </div>
-
     <footer>
-        <p>&copy; 2026 AURA NET.LK. All Rights Reserved. Designed for Professional Services.</p>
+        <p>&copy; 2026 AURA NET.LK. All Rights Reserved. Engineered for Corporate Excellence.</p>
     </footer>
 
     <script>
-        const glow = document.getElementById('cursor-glow');
-        document.addEventListener('mousemove', (e) => {
-            glow.style.left = e.clientX + 'px';
-            glow.style.top = e.clientY + 'px';
-        });
-
-        function calculatePackage() {
-            const usage = document.getElementById('usageSelect').value;
-            const resultBox = document.getElementById('calcResult');
-            if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>100 GB Package (LKR 230 - 280)</strong> - Ideal for daily messaging & light browsing!";
-            else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>200 GB or 300 GB Package (LKR 300 - 450)</strong> - Perfect for streaming & social media!";
-            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>Unlimited Package (LKR 600 - 650)</strong> - Best for uninterrupted heavy downloads & 4K streaming!";
-            else resultBox.innerHTML = "Please select your usage pattern above.";
-        }
-
         function toggleTheme() {
             const body = document.body;
             const icon = document.getElementById('theme-icon');
@@ -1042,59 +819,15 @@
             }
         }
 
-        function addNewReview(e) {
-            e.preventDefault();
-            const name = document.getElementById('revName').value;
-            const service = document.getElementById('revService').value;
-            const comment = document.getElementById('revComment').value;
-            const starsNum = parseInt(document.getElementById('revStars').value);
+        function switchTab(evt, categoryID) {
+            const panes = document.querySelectorAll('.package-category-pane');
+            panes.forEach(pane => pane.classList.remove('active'));
 
-            let starsHtml = '';
-            for(let i=0; i<starsNum; i++) starsHtml += '<i class="fa-solid fa-star"></i>';
-            const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0,2) || 'U';
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
 
-            const track = document.getElementById('reviewsTrack');
-            const newCard = document.createElement('div');
-            newCard.className = 'review-card';
-            newCard.innerHTML = `
-                <div class="review-header">
-                    <div class="avatar">${initials}</div>
-                    <div class="reviewer-info"><h4>${name}</h4><span>${service}</span></div>
-                </div>
-                <div class="stars">${starsHtml}</div>
-                <p>"${comment}"</p>
-            `;
-            track.prepend(newCard);
-            alert('Review added successfully!');
-            document.getElementById('reviewSubmitForm').reset();
-        }
-
-        function toggleChat() {
-            const chatBox = document.getElementById('chatBox');
-            chatBox.style.display = (chatBox.style.display === 'flex') ? 'none' : 'flex';
-        }
-
-        function handleChatKey(e) { if (e.key === 'Enter') sendChatMessage(); }
-
-        function sendChatMessage() {
-            const input = document.getElementById('chatInput');
-            const text = input.value.trim();
-            if(!text) return;
-            const msgContainer = document.getElementById('chatMessages');
-            const userMsg = document.createElement('div');
-            userMsg.className = 'chat-msg user';
-            userMsg.innerText = text;
-            msgContainer.appendChild(userMsg);
-            input.value = '';
-
-            setTimeout(() => {
-                const adminMsg = document.createElement('div');
-                adminMsg.className = 'chat-msg admin';
-                adminMsg.innerText = "Thanks! Please message us directly on WhatsApp (+94 74 227 4908) for instant assistance.";
-                msgContainer.appendChild(adminMsg);
-                msgContainer.scrollTop = msgContainer.scrollHeight;
-            }, 1000);
-            msgContainer.scrollTop = msgContainer.scrollHeight;
+            document.getElementById(categoryID).classList.add('active');
+            evt.currentTarget.classList.add('active');
         }
     </script>
 </body>
