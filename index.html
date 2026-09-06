@@ -44,7 +44,8 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            scroll-behavior: smooth;
+            /* මෙතන තමයි සම්පූර්ණ වෙබ් අඩවියම Smooth Scroll වෙන්න දාලා තියෙන්නේ */
+            scroll-behavior: smooth !important;
         }
 
         body {
@@ -318,7 +319,6 @@
             50% { opacity: 0.4; }
         }
 
-        /* Network Filter Tabs */
         .filter-tabs {
             display: flex;
             justify-content: center;
@@ -389,38 +389,51 @@
             margin-bottom: 30px;
         }
 
-        /* Pricing Card */
+        /* Neon Glowing Cards */
         .pricing-card {
             background: var(--bg-card);
-            border: 1px solid var(--border);
+            border: 2px solid var(--primary);
             border-radius: 20px;
             padding: 30px;
             backdrop-filter: blur(12px);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             cursor: pointer;
             text-align: center;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            box-shadow: 0 0 20px var(--primary-glow), inset 0 0 15px rgba(56, 189, 248, 0.15);
             position: relative;
             overflow: hidden;
+            animation: neonPulseBorder 3s infinite alternate;
+        }
+
+        @keyframes neonPulseBorder {
+            0% {
+                border-color: rgba(56, 189, 248, 0.5);
+                box-shadow: 0 0 15px rgba(56, 189, 248, 0.3), inset 0 0 10px rgba(56, 189, 248, 0.1);
+            }
+            100% {
+                border-color: #38bdf8;
+                box-shadow: 0 0 35px var(--primary), inset 0 0 25px var(--primary-glow);
+            }
         }
 
         .pricing-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 0 30px var(--primary-glow);
-            transform: translateY(-5px);
+            border-color: #fff;
+            box-shadow: 0 0 45px var(--primary), 0 0 15px #fff;
+            transform: translateY(-8px) scale(1.02);
         }
 
         .pricing-card .cat-icon-lg {
             font-size: 40px;
             color: var(--primary);
             margin-bottom: 15px;
-            filter: drop-shadow(0 0 10px var(--primary-glow));
+            filter: drop-shadow(0 0 12px var(--primary));
         }
 
         .pricing-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 8px;
             color: var(--text-main);
+            text-shadow: 0 0 10px var(--primary-glow);
         }
 
         .pricing-card .sub-title {
@@ -433,14 +446,14 @@
             display: inline-block;
             background: var(--badge-bg);
             color: var(--primary);
-            border: 1px solid var(--border);
+            border: 1px solid var(--primary);
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
+            box-shadow: 0 0 10px var(--primary-glow);
         }
 
-        /* Live Speed Test Box */
         .speedtest-box {
             max-width: 600px;
             margin: 0 auto 40px;
@@ -460,7 +473,6 @@
             text-shadow: 0 0 15px var(--primary-glow);
         }
 
-        /* Payment Gateway Box */
         .payment-box {
             max-width: 800px;
             margin: 0 auto;
@@ -754,7 +766,6 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
-        /* Category Detail Popup Modal with WhatsApp Order Button */
         #pkgModal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -768,8 +779,8 @@
 
         .modal-content {
             background: var(--bg-card);
-            border: 1px solid var(--primary);
-            box-shadow: 0 0 40px var(--primary-glow);
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 45px var(--primary-glow);
             padding: 30px;
             border-radius: 20px;
             width: 90%;
@@ -850,6 +861,7 @@
             display: inline-flex;
             align-items: center;
             gap: 4px;
+            box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
         }
 
         .close-modal-btn {
@@ -958,7 +970,7 @@
         </div>
     </section>
 
-    <!-- INTERNET PACKAGES SECTION WITH NETWORK FILTER TABS -->
+    <!-- PRICING SECTION -->
     <section id="pricing">
         <div class="section-header">
             <span class="tag">High-Speed Connectivity</span>
@@ -966,7 +978,6 @@
             <p>Filter by network or touch any category below to view packages and buy via WhatsApp instantly!</p>
         </div>
 
-        <!-- Network Filter Buttons -->
         <div class="filter-tabs">
             <button class="filter-btn active" onclick="filterPackages('all', this)">All Networks</button>
             <button class="filter-btn" onclick="filterPackages('dialog', this)">Dialog</button>
@@ -975,7 +986,6 @@
         </div>
 
         <div class="price-grid" id="pricingGrid">
-            <!-- Dialog Zoom Router Card -->
             <div class="pricing-card" data-network="dialog" onclick="openCategoryModal('Dialog Zoom (Router)', 'Supported Packages: 298 & 724', [
                 {name: '100 GB Package', price: 'LKR 280'},
                 {name: '200 GB Package', price: 'LKR 350'},
@@ -988,7 +998,6 @@
                 <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
             </div>
 
-            <!-- Dialog TikTok Mobile Card -->
             <div class="pricing-card" data-network="dialog" onclick="openCategoryModal('Dialog TikTok Mobile', 'Mobile SIM Package (297 / 997)', [
                 {name: '100 GB Package', price: 'LKR 230'},
                 {name: '200 GB Package', price: 'LKR 300'},
@@ -1000,7 +1009,6 @@
                 <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
             </div>
 
-            <!-- Airtel 4G Packages Card -->
             <div class="pricing-card" data-network="airtel" onclick="openCategoryModal('Airtel 4G Packages', 'TikTok (297/997) | Zoom | YouTube', [
                 {name: '100 GB Package', price: 'LKR 230'},
                 {name: '200 GB Package', price: 'LKR 300'},
@@ -1012,7 +1020,6 @@
                 <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
             </div>
 
-            <!-- Hutch 4G Packages Card -->
             <div class="pricing-card" data-network="hutch" onclick="openCategoryModal('Hutch 4G Packages', 'All Hutch Bypass Packages (Zoom / Social)', [
                 {name: '100 GB Package', price: 'LKR 230'},
                 {name: '200 GB Package', price: 'LKR 300'},
@@ -1026,7 +1033,7 @@
         </div>
     </section>
 
-    <!-- LIVE SPEED TEST SIMULATION SECTION -->
+    <!-- SPEED TEST SECTION -->
     <section id="speedtest">
         <div class="section-header">
             <span class="tag">Network Diagnostic</span>
@@ -1042,7 +1049,7 @@
         </div>
     </section>
 
-    <!-- SECURE PAYMENT GATEWAY INFO SECTION -->
+    <!-- PAYMENT SECTION -->
     <section id="payment">
         <div class="section-header">
             <span class="tag">Secure Transactions</span>
@@ -1074,7 +1081,7 @@
         </div>
     </section>
 
-    <!-- WHY CHOOSE US SECTION -->
+    <!-- WHY CHOOSE US -->
     <section id="whyus">
         <div class="section-header">
             <span class="tag">Our Advantage</span>
@@ -1101,7 +1108,7 @@
         </div>
     </section>
 
-    <!-- PACKAGE CALCULATOR SECTION -->
+    <!-- CALCULATOR -->
     <section id="calculator">
         <div class="section-header">
             <span class="tag">Smart Helper</span>
@@ -1121,7 +1128,7 @@
         </div>
     </section>
 
-    <!-- REVIEWS SECTION -->
+    <!-- REVIEWS -->
     <section id="reviews" style="padding-left:0; padding-right:0;">
         <div class="section-header" style="padding: 0 8%;">
             <span class="tag">Client Feedback</span>
@@ -1184,7 +1191,7 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT -->
     <section id="contact">
         <div class="section-header">
             <span class="tag">Get In Touch</span>
@@ -1220,19 +1227,17 @@
         </div>
     </section>
 
-    <!-- Category Detail Popup Modal with WhatsApp Order Integration -->
+    <!-- Modal -->
     <div id="pkgModal" onclick="closeCategoryModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <h3 id="modalCatTitle">Category Name</h3>
             <div class="modal-subtitle" id="modalCatSub">Subtitle info</div>
-            <ul class="modal-package-list" id="modalPkgList">
-                <!-- Dynamic package items injected here with WhatsApp buy button -->
-            </ul>
+            <ul class="modal-package-list" id="modalPkgList"></ul>
             <button class="close-modal-btn" onclick="closeCategoryModalDirect()">Close</button>
         </div>
     </div>
 
-    <!-- LIVE CHAT WIDGET BOX -->
+    <!-- Live Chat Widget -->
     <div class="chat-widget-box" id="chatBox">
         <div class="chat-widget-header">
             <span><i class="fa-solid fa-headset"></i> AURA Live Support</span>
@@ -1247,7 +1252,7 @@
         </div>
     </div>
 
-    <!-- FLOATING BUTTONS -->
+    <!-- Floating Buttons -->
     <div class="floating-container">
         <div class="chat-toggle-btn" onclick="toggleChat()" title="Live Chat"><i class="fa-solid fa-comments"></i></div>
         <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -1258,14 +1263,12 @@
     </footer>
 
     <script>
-        // Cursor Glow
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             glow.style.left = e.clientX + 'px';
             glow.style.top = e.clientY + 'px';
         });
 
-        // Network Filter Tabs Functionality
         function filterPackages(network, btn) {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -1280,7 +1283,6 @@
             });
         }
 
-        // Category Card Modal with Direct WhatsApp Order Link
         function openCategoryModal(categoryTitle, subtitle, packages) {
             document.getElementById('modalCatTitle').innerText = categoryTitle;
             document.getElementById('modalCatSub').innerText = subtitle;
@@ -1315,7 +1317,6 @@
             }
         }
 
-        // Simulated Live Speed Test
         function runSpeedTest() {
             const display = document.getElementById('speedDisplay');
             display.innerText = "Testing...";
@@ -1332,13 +1333,11 @@
             }, 150);
         }
 
-        // Copy Text Utility
         function copyText(text) {
             navigator.clipboard.writeText(text);
             alert("Copied to clipboard: " + text);
         }
 
-        // Calculator Logic with Usage Types
         function calculatePackage() {
             const usage = document.getElementById('usageSelect').value;
             const resultBox = document.getElementById('calcResult');
@@ -1348,7 +1347,6 @@
             else resultBox.innerHTML = "Please select your usage pattern above.";
         }
 
-        // Dark / Light Theme Toggle
         function toggleTheme() {
             const body = document.body;
             const icon = document.getElementById('theme-icon');
@@ -1363,7 +1361,6 @@
             }
         }
 
-        // Add Review Dynamically
         function addNewReview(e) {
             e.preventDefault();
             const name = document.getElementById('revName').value;
@@ -1391,7 +1388,6 @@
             document.getElementById('reviewSubmitForm').reset();
         }
 
-        // Live Chat Widget Toggle
         function toggleChat() {
             const chatBox = document.getElementById('chatBox');
             chatBox.style.display = (chatBox.style.display === 'flex') ? 'none' : 'flex';
