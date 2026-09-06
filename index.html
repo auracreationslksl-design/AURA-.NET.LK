@@ -44,15 +44,12 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            scroll-behavior: smooth;
+            scroll-behavior: smooth; /* Smooth Scrolling හැම තැනකටම */
         }
 
         body {
             background-color: var(--bg-main);
-            /* ==========================================================
-               Red Cute Girl / Anime Theme Wallpaper Link එක මෙහි ඇත.
-               ඔබට අවශ්‍ය නම් වෙනත් GitHub Raw Link එකක් මෙහි url('') තුළට දමන්න හැක.
-               ========================================================== */
+            /* Red / Cute Girl Theme Wallpaper */
             background-image: linear-gradient(rgba(3, 7, 18, 0.78), rgba(3, 7, 18, 0.78)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
@@ -184,15 +181,48 @@
             margin: 10px auto 0;
         }
 
-        /* Hero Section */
+        /* Hero Section with Professional Globe */
         .hero {
-            min-height: 80vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             border-bottom: none;
+            position: relative;
+        }
+
+        /* Professional Globe Container */
+        .hero-globe-container {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #38bdf8, #030712);
+            box-shadow: 0 0 35px var(--primary-glow), inset 0 0 20px rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            position: relative;
+            animation: floatGlobe 4s ease-in-out infinite;
+        }
+
+        .hero-globe-container i {
+            font-size: 42px;
+            color: #fff;
+            filter: drop-shadow(0 0 8px var(--primary));
+            animation: rotateGlobe 10s linear infinite;
+        }
+
+        @keyframes rotateGlobe {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes floatGlobe {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         .hero h1 {
@@ -322,7 +352,7 @@
         .card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-main); }
         .card p { color: var(--text-sub); font-size: 0.9rem; }
 
-        /* Pricing Cards */
+        /* Pricing Cards (All packages with same uniform color style) */
         .price-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -372,16 +402,13 @@
             border-bottom: 1px rgba(255,255,255,0.05) dashed;
         }
 
+        /* සියලුම package name එකම එක වර්ණයකින් (Cyan/Primary) පෙන්වීමට සකසා ඇත */
         .package-list li span.pkg-name {
             font-size: 1.05rem;
             font-weight: 800;
-            color: var(--text-main);
-            text-transform: uppercase;
-        }
-
-        .package-list li span.pkg-name.cyan-glow-highlight {
             color: var(--primary);
-            text-shadow: 0 0 12px var(--primary-glow);
+            text-shadow: 0 0 10px var(--primary-glow);
+            text-transform: uppercase;
         }
 
         .package-list li span.price {
@@ -436,7 +463,7 @@
             font-weight: bold;
         }
 
-        /* REVIEWS MARQUEE */
+        /* REVIEWS MARQUEE (Mouse hover කළත් නවත්නේ නැතිව સતෝරියට දිගටම යන සේ සකසා ඇත) */
         .reviews-marquee-container {
             overflow: hidden;
             width: 100%;
@@ -448,10 +475,10 @@
             display: flex;
             gap: 25px;
             width: max-content;
-            animation: marqueeScroll 45s linear infinite;
+            animation: marqueeScroll 35s linear infinite;
         }
 
-        .reviews-track:hover { animation-play-state: paused; }
+        /* animation-play-state අ ඉවත් කර ඇති නිසා මවුස් එක තැබුවත් නැවටෙන්නේ නැත */
 
         @keyframes marqueeScroll {
             0% { transform: translateX(0); }
@@ -689,8 +716,13 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Professional Globe -->
     <section class="hero" id="home">
+        <!-- Professional 3D Animated Globe Element -->
+        <div class="hero-globe-container">
+            <i class="fa-solid fa-globe"></i>
+        </div>
+
         <div class="section-header" style="margin-bottom: 20px;">
             <span class="tag">Digital Solutions Agency</span>
         </div>
@@ -735,7 +767,7 @@
         </div>
     </section>
 
-    <!-- INTERNET PACKAGES SECTION -->
+    <!-- INTERNET PACKAGES SECTION (Uniform color style for all packages) -->
     <section id="pricing">
         <div class="section-header">
             <span class="tag">High-Speed Connectivity</span>
@@ -748,7 +780,7 @@
                 <h3><i class="fa-solid fa-wifi"></i> Dialog Zoom (Router)</h3>
                 <div class="sub-title">Supported Packages: 298 & 724</div>
                 <ul class="package-list">
-                    <li><span class="pkg-name cyan-glow-highlight">⚡ 100 GB Package</span> <span class="price">LKR 280</span></li>
+                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 280</span></li>
                     <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 250</span></li>
                     <li><span class="pkg-name">⚡ 300 GB Package</span> <span class="price">LKR 400</span></li>
                     <li><span class="pkg-name">⚡ Unlimited Pack</span> <span class="price">LKR 600</span></li>
@@ -759,7 +791,7 @@
                 <h3><i class="fa-solid fa-mobile-screen"></i> Dialog TikTok Mobile</h3>
                 <div class="sub-title">Mobile SIM Package (297 / 997)</div>
                 <ul class="package-list">
-                    <li><span class="pkg-name cyan-glow-highlight">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
                     <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
                     <li><span class="pkg-name">⚡ Unlimited Pack</span> <span class="price">LKR 600</span></li>
                 </ul>
@@ -769,7 +801,7 @@
                 <h3><i class="fa-solid fa-tower-cell"></i> Airtel 4G Packages</h3>
                 <div class="sub-title">TikTok (297/997) | Zoom | YouTube</div>
                 <ul class="package-list">
-                    <li><span class="pkg-name cyan-glow-highlight">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
                     <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
                     <li><span class="pkg-name">⚡ YT Unlimited Pack</span> <span class="price">LKR 600</span></li>
                 </ul>
@@ -779,7 +811,7 @@
                 <h3><i class="fa-solid fa-signal"></i> Hutch 4G Packages</h3>
                 <div class="sub-title">All Hutch Bypass Packages (Zoom / Social)</div>
                 <ul class="package-list">
-                    <li><span class="pkg-name cyan-glow-highlight">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span class="pkg-name">⚡ 100 GB Package</span> <span class="price">LKR 230</span></li>
                     <li><span class="pkg-name">⚡ 200 GB Package</span> <span class="price">LKR 300</span></li>
                     <li><span class="pkg-name">⚡ 300 GB Package</span> <span class="price">LKR 400</span></li>
                 </ul>
@@ -866,7 +898,7 @@
         <div class="section-header" style="padding: 0 8%;">
             <span class="tag">Client Feedback</span>
             <h2>What Our Clients Say (100+ Verified Reviews)</h2>
-            <p>Real feedback scrolling continuously from right to left.</p>
+            <p>Continuous scrolling reviews feed.</p>
         </div>
 
         <div class="reviews-marquee-container">
@@ -891,7 +923,7 @@
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"Gaming වලට Low Ping එනවා. Download speed එක උපරිමයි. තැන්ක්‍යූ AURA NET team!"</p>
                 </div>
-                <!-- Duplicate loop items for smooth marquee effect -->
+                <!-- Duplicate loop items for infinite smooth marquee effect -->
                 <div class="review-card">
                     <div class="review-header"><div class="avatar">KS</div><div class="reviewer-info"><h4>Kasun Sampath</h4><span>Dialog Router User</span></div></div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -935,7 +967,7 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION (Your Gmail: aura.creations.lksl@gmail.com) -->
+    <!-- CONTACT SECTION -->
     <section id="contact">
         <div class="section-header">
             <span class="tag">Get In Touch</span>
