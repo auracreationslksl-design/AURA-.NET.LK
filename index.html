@@ -9,7 +9,7 @@
     <style>
         :root {
             --bg-main: #030712;
-            --bg-card: rgba(17, 24, 39, 0.80);
+            --bg-card: rgba(17, 24, 39, 0.85);
             --primary: #38bdf8;
             --primary-glow: rgba(56, 189, 248, 0.35);
             --accent: #6366f1;
@@ -25,7 +25,7 @@
 
         body.light-theme {
             --bg-main: #f3f4f6;
-            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-card: rgba(255, 255, 255, 0.9);
             --primary: #0284c7;
             --primary-glow: rgba(2, 132, 199, 0.25);
             --accent: #4f46e5;
@@ -49,11 +49,6 @@
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(3, 7, 18, 0.78), rgba(3, 7, 18, 0.78)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
@@ -69,15 +64,6 @@
             transform: translate(-50%, -50%);
             z-index: 9999;
             transition: transform 0.05s ease-out;
-        }
-
-        .bg-grid {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: -1;
         }
 
         nav {
@@ -147,6 +133,8 @@
         section {
             padding: 90px 8%;
             border-bottom: 1px solid var(--border);
+            position: relative;
+            background-color: var(--bg-main);
         }
 
         .section-header {
@@ -188,7 +176,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            border-bottom: none;
+            border-bottom: 1px solid var(--border);
             position: relative;
         }
 
@@ -699,7 +687,6 @@
 <body>
 
     <div id="cursor-glow"></div>
-    <div class="bg-grid"></div>
 
     <!-- Navigation Bar -->
     <nav>
@@ -1216,8 +1203,7 @@
         function handleChatKey(e) { if (e.key === 'Enter') sendChatMessage(); }
 
         function sendChatMessage() {
-            const input = document.getElementById('chatInput');
-            const text = input.value.trim();
+            .trim();
             if(!text) return;
             const msgContainer = document.getElementById('chatMessages');
             const userMsg = document.createElement('div');
