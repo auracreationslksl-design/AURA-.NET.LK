@@ -13,6 +13,7 @@
             --primary: #38bdf8;
             --primary-glow: rgba(56, 189, 248, 0.35);
             --accent: #6366f1;
+            --success: #10b981;
             --text-main: #f9fafb;
             --text-sub: #9ca3af;
             --border: rgba(255, 255, 255, 0.08);
@@ -29,7 +30,7 @@
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(3, 7, 18, 0.8), rgba(3, 7, 18, 0.8)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(3, 7, 18, 0.85), rgba(3, 7, 18, 0.85)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -140,6 +141,7 @@
             margin: 10px auto 0;
         }
 
+        /* Hero Section */
         .hero {
             min-height: 85vh;
             display: flex;
@@ -206,7 +208,86 @@
             color: var(--primary);
         }
 
-        /* Internet Pricing Cards Grid */
+        /* Live System Status Bar */
+        .status-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 15px 25px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        .status-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background-color: var(--success);
+            box-shadow: 0 0 10px var(--success);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        /* General Grid for Services */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 35px 30px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px var(--primary-glow);
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            width: 60px; height: 60px;
+            border-radius: 14px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .card p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Cards Grid */
         .price-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -277,18 +358,121 @@
             font-size: 1.1rem;
         }
 
-        /* Reviews / Testimonials Section */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* FAQ Accordion Styling */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #fff;
+        }
+
+        .faq-answer {
+            margin-top: 12px;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        /* Data Calculator */
+        .calc-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .calc-box select {
+            width: 100%;
+            padding: 12px 16px;
+            margin: 15px 0;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: #fff;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .calc-result {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 12px;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* AUTO SCROLLING REVIEWS (MARQUEE SLIDER) */
+        .reviews-slider-wrapper {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .reviews-slider-track {
+            display: flex;
             gap: 25px;
+            width: max-content;
+            animation: scrollLeft 35s linear infinite;
+        }
+
+        .reviews-slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .review-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 30px;
+            padding: 25px 30px;
+            width: 350px;
+            flex-shrink: 0;
             backdrop-filter: blur(12px);
             transition: all 0.3s ease;
         }
@@ -296,30 +480,31 @@
         .review-card:hover {
             border-color: var(--primary);
             box-shadow: 0 10px 30px var(--primary-glow);
+            transform: translateY(-5px);
         }
 
         .review-header {
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .avatar {
-            width: 50px; height: 50px;
+            width: 48px; height: 48px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 18px; color: #000;
+            font-weight: 800; font-size: 16px; color: #000;
         }
 
-        .reviewer-info h4 { font-size: 1rem; color: #fff; }
-        .reviewer-info span { font-size: 0.8rem; color: var(--text-sub); }
+        .reviewer-info h4 { font-size: 0.95rem; color: #fff; }
+        .reviewer-info span { font-size: 0.78rem; color: var(--text-sub); }
 
-        .stars { color: #f59e0b; margin-bottom: 10px; font-size: 14px; }
-        .review-card p { font-size: 0.95rem; color: var(--text-sub); font-style: italic; }
+        .stars { color: #f59e0b; margin-bottom: 8px; font-size: 13px; }
+        .review-card p { font-size: 0.9rem; color: var(--text-sub); font-style: italic; line-height: 1.5; }
 
-        /* Contact Wrapper */
+        /* Contact Section */
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -386,6 +571,7 @@
             box-shadow: 0 0 15px var(--primary-glow);
         }
 
+        /* Floating Contact Buttons */
         .floating-container {
             position: fixed;
             bottom: 30px; right: 30px;
@@ -431,9 +617,13 @@
         <a href="#home" class="logo">AURA NET<span>.LK</span></a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#pricing">Internet Plans</a></li>
+            <li><a href="#calculator">Calculator</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -445,8 +635,62 @@
         <h1>Elevate Your Digital Experience With <span>AURA NET.LK</span></h1>
         <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass Packages, and Professional Visual Editing Services.</p>
         <div class="btn-group">
-            <a href="#pricing" class="btn-primary">View Packages</a>
-            <a href="#contact" class="btn-outline">Contact Us</a>
+            <a href="#services" class="btn-primary">Our Services</a>
+            <a href="#pricing" class="btn-outline">Internet Plans</a>
+        </div>
+
+        <!-- Live Server Status Monitor -->
+        <div class="status-container">
+            <div class="status-item"><span class="status-dot"></span> Server Status: <strong>Online (100%)</strong></div>
+            <div class="status-item"><i class="fa-solid fa-bolt" style="color: var(--primary);"></i> Bypass Servers: <strong>Active</strong></div>
+            <div class="status-item"><i class="fa-solid fa-headset" style="color: var(--accent);"></i> Support: <strong>24/7 Available</strong></div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="section-header">
+            <span class="tag">What We Offer</span>
+            <h2>Our Core Services</h2>
+            <p>Comprehensive digital solutions tailored to boost your business and personal connectivity.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Custom, ultra-fast, and responsive modern websites crafted with interactive UI/UX designs to elevate your brand presence online.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
+                <h3>High-Speed Internet Bypass</h3>
+                <p>Reliable and cost-effective internet package bypass solutions for Dialog, Airtel, and Hutch with maximum high-speed bandwidth.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3>Graphic & Video Editing</h3>
+                <p>Professional visual editing services including social media posts, branding materials, promotional posters, and video edits.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
+                <h3>Cloud & Server Setup</h3>
+                <p>Secure server configuration, VPN setups, custom domain integration, and cloud hosting solutions for your applications.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Network Security</h3>
+                <p>Ensuring data privacy, network protection, and encrypted connection setups for seamless and protected browsing experiences.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
+                <h3>24/7 Technical Support</h3>
+                <p>Dedicated technical assistance and instant client support for all internet packages, website maintenance, and digital solutions.</p>
+            </div>
         </div>
     </section>
 
@@ -454,8 +698,8 @@
     <section id="pricing">
         <div class="section-header">
             <span class="tag">High-Speed Connectivity</span>
-            <h2>Official Packages & Price List</h2>
-            <p>Select your provider below and get instant high-speed package bypass activation.</p>
+            <h2>Official Internet Packages & Pricing</h2>
+            <p>Select your preferred network provider below and activate high-speed package bypass instantly.</p>
         </div>
 
         <div class="price-grid">
@@ -520,64 +764,249 @@
             </div>
         </div>
 
-        <!-- PAYMENT & ACTIVATION INFO -->
+        <!-- PAYMENT INFO -->
         <div class="payment-info-box">
-            <h4><i class="fa-solid fa-credit-card"></i> Payment & Activation Information</h4>
+            <h4><i class="fa-solid fa-credit-card"></i> Payment & Activation Details</h4>
             <p><strong>Bank Transfers:</strong> BOC / Commercial Bank</p>
             <p><strong>eZ Cash Payment:</strong> Add LKR 50.00 extra charge for eZ Cash transactions.</p>
-            <p><strong>Activation Process:</strong> Send your payment receipt screenshot directly via WhatsApp for quick activation.</p>
+            <p><strong>Quick Activation:</strong> Send your payment receipt screenshot directly via WhatsApp for instant processing.</p>
         </div>
     </section>
 
-    <!-- CUSTOMER REVIEWS SECTION -->
-    <section id="reviews">
+    <!-- PACKAGE CALCULATOR SECTION -->
+    <section id="calculator">
         <div class="section-header">
-            <span class="tag">Feedback</span>
-            <h2>What Our Customers Say</h2>
-            <p>Read real reviews from users who trust AURA NET.LK for connectivity and digital services.</p>
+            <span class="tag">Smart Helper</span>
+            <h2>Find Your Ideal Package</h2>
+            <p>Select your daily internet usage to find the best package recommendation.</p>
         </div>
 
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="avatar">KS</div>
-                    <div class="reviewer-info">
-                        <h4>Kasun Sampath</h4>
-                        <span>Dialog Unlimited User</span>
-                    </div>
+        <div class="calc-box">
+            <label for="usageSelect" style="color: var(--text-sub);">Choose Your Primary Daily Internet Activity:</label>
+            <select id="usageSelect" onchange="calculatePackage()">
+                <option value="">-- Select Usage Type --</option>
+                <option value="light">Light Browsing, WhatsApp, & Social Media (1-3 GB/day)</option>
+                <option value="medium">YouTube Streaming, Zoom Meetings, & Socials (5-10 GB/day)</option>
+                <option value="heavy">HD Video Downloads, Movies, Gaming & Work (15+ GB/day)</option>
+            </select>
+            <div class="calc-result" id="calcResult">Please select your usage pattern above.</div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about">
+        <div class="section-header">
+            <span class="tag">Why Choose Us</span>
+            <h2>About AURA NET.LK</h2>
+            <p>We are a forward-thinking digital agency committed to delivering cutting-edge tech solutions and high-speed internet services.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Lightning Fast</h3>
+                <p>Our network solutions and websites are optimized for maximum speed and performance with minimum latency.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-lock"></i></div>
+                <h3>Trusted & Secure</h3>
+                <p>We guarantee 100% data safety, client confidentiality, and transparent operations across all services.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+                <h3>Customer First</h3>
+                <p>Dedicated to providing friendly 24/7 instant client support to address any inquiries or technical issues promptly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq">
+        <div class="section-header">
+            <span class="tag">Questions & Answers</span>
+            <h2>Frequently Asked Questions</h2>
+            <p>Find quick answers to common questions about our internet bypass packages and tech services.</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>1. How does the Internet Bypass Package activation work?</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
                 </div>
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <div class="faq-answer">
+                    After you subscribe to a basic package (like Dialog Zoom 298 or Airtel TikTok), you purchase our configuration key. We provide simple app setup files that convert your restricted package into full high-speed data.
                 </div>
-                <p>"AURA NET.LK Zoom router package bypass එක මරු! Unlimited speed එකක් එනවා. Payment දාලා විනාඩි 5න් Active කරලා දුන්නා. Superb service!"</p>
             </div>
 
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="avatar">DP</div>
-                    <div class="reviewer-info">
-                        <h4>Dilshan Perera</h4>
-                        <span>Airtel 4G User</span>
-                    </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>2. How fast is the activation process after payment?</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
                 </div>
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <div class="faq-answer">
+                    Activation takes less than 5 to 10 minutes! Once you send your bank receipt or eZ Cash transaction screenshot via WhatsApp, our team will deliver your setup instantly.
                 </div>
-                <p>"Airtel Youtube pack එක bypass කරලා 300GB ගත්තා. Data අඩුවක් නැතුව 30 days ම වැඩ කරනවා. Highly recommended service brother!"</p>
             </div>
 
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="avatar">NL</div>
-                    <div class="reviewer-info">
-                        <h4>Nuwan Liyanage</h4>
-                        <span>Web Client</span>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>3. Is this service safe and reliable for daily use?</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes, 100%! We use high-speed encrypted servers that ensure complete connection security, low ping for gaming, and stable speed 24/7.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>4. Can I use these packages on Routers and PCs?</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! We provide setups for Android, iOS, Windows PC, and supported Wi-Fi routers (such as Dialog Broadband Routers).
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTO SCROLLING CUSTOMER REVIEWS (RIGHT TO LEFT SLIDER) -->
+    <section id="reviews" style="padding-left:0; padding-right:0;">
+        <div class="section-header" style="padding: 0 8%;">
+            <span class="tag">Client Feedback</span>
+            <h2>What Our Clients Say</h2>
+            <p>Real reviews from users who trust AURA NET.LK (Hover over cards to pause scrolling).</p>
+        </div>
+
+        <div class="reviews-slider-wrapper">
+            <div class="reviews-slider-track">
+                <!-- REVIEW 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">KS</div>
+                        <div class="reviewer-info">
+                            <h4>Kasun Sampath</h4>
+                            <span>Dialog Zoom User</span>
+                        </div>
                     </div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"AURA NET.LK Zoom router bypass එක මරු! Unlimited speed එකක් එනවා. Payment දාලා විනාඩි 5න් active කරලා දුන්නා!"</p>
                 </div>
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+                <!-- REVIEW 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">DP</div>
+                        <div class="reviewer-info">
+                            <h4>Dilshan Perera</h4>
+                            <span>Airtel 4G User</span>
+                        </div>
+                    </div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Airtel Youtube pack එක bypass කරලා 300GB ගත්තා. Data අඩුවක් නැතුව 30 days ම වැඩ කරනවා. Quality service!"</p>
                 </div>
-                <p>"මගේ Business එකට Professional Dark Theme Website එකක් හදලා දුන්නා. Graphic and Animations පට්ටම Quality. 100% Trustworthy!"</p>
+
+                <!-- REVIEW 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">NL</div>
+                        <div class="reviewer-info">
+                            <h4>Nuwan Liyanage</h4>
+                            <span>Web Design Client</span>
+                        </div>
+                    </div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"මගේ Business එකට Professional Dark Theme Website එකක් හදලා දුන්නා. Design එක පට්ටම Quality. 100% Trustworthy!"</p>
+                </div>
+
+                <!-- REVIEW 4 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">MS</div>
+                        <div class="reviewer-info">
+                            <h4>Mahesh Silva</h4>
+                            <span>Dialog Router 1TB</span>
+                        </div>
+                    </div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Router 1TB Package එක මම මාස 3ක් තිස්සේ ගන්නවා. කිසිම Disconnect වීමක් නෑ, Gaming වලට Low Ping එන්නේ!"</p>
+                </div>
+
+                <!-- REVIEW 5 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">TF</div>
+                        <div class="reviewer-info">
+                            <h4>Tharindu Fernando</h4>
+                            <span>Hutch 4G User</span>
+                        </div>
+                    </div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Hutch Zoom pack එකෙන් Full Internet Access ගත්තා. Setup එක සිරාවටම වැඩ. Support එකත් 24/7 දෙනවා!"</p>
+                </div>
+
+                <!-- REVIEW 6 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">AR</div>
+                        <div class="reviewer-info">
+                            <h4>Anura Ratnayake</h4>
+                            <span>Graphic Design Client</span>
+                        </div>
+                    </div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Poster Design සහ FB Banners ටික ඉතා ඉක්මනින් සහ ලස්සනට කරලා දුන්නා. Very creative work!"</p>
+                </div>
+
+                <!-- DUPLICATES FOR INFINITE LOOP ANIMATION -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">KS</div>
+                        <div class="reviewer-info">
+                            <h4>Kasun Sampath</h4>
+                            <span>Dialog Zoom User</span>
+                        </div>
+                    </div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"AURA NET.LK Zoom router bypass එක මරු! Unlimited speed එකක් එනවා. Payment දාලා විනාඩි 5න් active කරලා දුන්නා!"</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">DP</div>
+                        <div class="reviewer-info">
+                            <h4>Dilshan Perera</h4>
+                            <span>Airtel 4G User</span>
+                        </div>
+                    </div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Airtel Youtube pack එක bypass කරලා 300GB ගත්තා. Data අඩුවක් නැතුව 30 days ම වැඩ කරනවා. Quality service!"</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">NL</div>
+                        <div class="reviewer-info">
+                            <h4>Nuwan Liyanage</h4>
+                            <span>Web Design Client</span>
+                        </div>
+                    </div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"මගේ Business එකට Professional Dark Theme Website එකක් හදලා දුන්නා. Design එක පට්ටම Quality. 100% Trustworthy!"</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">MS</div>
+                        <div class="reviewer-info">
+                            <h4>Mahesh Silva</h4>
+                            <span>Dialog Router 1TB</span>
+                        </div>
+                    </div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Router 1TB Package එක මම මාස 3ක් තිස්සේ ගන්නවා. කිසිම Disconnect වීමක් නෑ, Gaming වලට Low Ping එන්නේ!"</p>
+                </div>
             </div>
         </div>
     </section>
@@ -587,7 +1016,7 @@
         <div class="section-header">
             <span class="tag">Get In Touch</span>
             <h2>Contact Us</h2>
-            <p>Send your payment receipt or inquire about our services below.</p>
+            <p>Send your payment receipt or inquire about our web and internet services below.</p>
         </div>
 
         <div class="contact-wrapper">
@@ -631,8 +1060,8 @@
                         <input type="text" class="form-control" name="Phone" placeholder="+94 7X XXX XXXX" required>
                     </div>
                     <div class="form-group">
-                        <label>Selected Package</label>
-                        <input type="text" class="form-control" name="Package" placeholder="e.g. Dialog Zoom 300GB" required>
+                        <label>Selected Service or Package</label>
+                        <input type="text" class="form-control" name="Package" placeholder="e.g. Dialog Zoom 300GB or Web Design" required>
                     </div>
                     <div class="form-group">
                         <label>Your Message / Payment Details</label>
@@ -659,11 +1088,33 @@
     </footer>
 
     <script>
+        // Cursor Glow Effect
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             glow.style.left = e.clientX + 'px';
             glow.style.top = e.clientY + 'px';
         });
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
+
+        // Package Calculator
+        function calculatePackage() {
+            const usage = document.getElementById('usageSelect').value;
+            const resultBox = document.getElementById('calcResult');
+
+            if (usage === 'light') {
+                resultBox.innerHTML = "Recommended: <strong>100 GB Package (LKR 230 / 280)</strong> - Ideal for daily messaging & light browsing!";
+            } else if (usage === 'medium') {
+                resultBox.innerHTML = "Recommended: <strong>200 GB or 300 GB Package (LKR 300 / 400)</strong> - Perfect for streaming & social media!";
+            } else if (usage === 'heavy') {
+                resultBox.innerHTML = "Recommended: <strong>500 GB or Unlimited Package (LKR 500 / 600)</strong> - Best for uninterrupted heavy downloads & 4K streaming!";
+            } else {
+                resultBox.innerHTML = "Please select your usage pattern above.";
+            }
+        }
     </script>
 </body>
 </html>
