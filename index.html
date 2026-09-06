@@ -9,32 +9,32 @@
     <style>
         :root {
             --bg-main: #030712;
-            --bg-card: rgba(17, 24, 39, 0.80);
+            --bg-card: rgba(17, 24, 39, 0.85);
             --primary: #38bdf8;
-            --primary-glow: rgba(56, 189, 248, 0.35);
+            --primary-glow: rgba(56, 189, 248, 0.4);
             --accent: #6366f1;
             --success: #10b981;
             --text-main: #f9fafb;
             --text-sub: #9ca3af;
-            --border: rgba(255, 255, 255, 0.08);
+            --border: rgba(56, 189, 248, 0.2);
             --badge-bg: rgba(56, 189, 248, 0.1);
-            --nav-bg: rgba(3, 7, 18, 0.85);
+            --nav-bg: rgba(3, 7, 18, 0.9);
             --footer-bg: #02040a;
             --input-bg: rgba(255, 255, 255, 0.04);
         }
 
         body.light-theme {
             --bg-main: #f3f4f6;
-            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-card: rgba(255, 255, 255, 0.9);
             --primary: #0284c7;
-            --primary-glow: rgba(2, 132, 199, 0.25);
+            --primary-glow: rgba(2, 132, 199, 0.3);
             --accent: #4f46e5;
             --success: #059669;
             --text-main: #1f2937;
             --text-sub: #4b5563;
-            --border: rgba(0, 0, 0, 0.1);
+            --border: rgba(2, 132, 199, 0.25);
             --badge-bg: rgba(2, 132, 199, 0.1);
-            --nav-bg: rgba(255, 255, 255, 0.9);
+            --nav-bg: rgba(255, 255, 255, 0.95);
             --footer-bg: #e5e7eb;
             --input-bg: rgba(0, 0, 0, 0.03);
         }
@@ -49,7 +49,7 @@
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(3, 7, 18, 0.78), rgba(3, 7, 18, 0.78)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(3, 7, 18, 0.82), rgba(3, 7, 18, 0.82)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -63,7 +63,7 @@
             position: fixed;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
             transform: translate(-50%, -50%);
@@ -101,7 +101,7 @@
             letter-spacing: 1px;
         }
 
-        .logo span { color: var(--primary); text-shadow: 0 0 12px var(--primary-glow); }
+        .logo span { color: var(--primary); text-shadow: 0 0 15px var(--primary-glow); }
 
         .nav-right {
             display: flex;
@@ -157,7 +157,7 @@
         .section-header .tag {
             background: var(--badge-bg);
             color: var(--primary);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            border: 1px solid var(--primary);
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 12px;
@@ -166,6 +166,7 @@
             text-transform: uppercase;
             display: inline-block;
             margin-bottom: 15px;
+            box-shadow: 0 0 10px var(--primary-glow);
         }
 
         .section-header h2 {
@@ -196,7 +197,7 @@
             height: 90px;
             border-radius: 50%;
             background: radial-gradient(circle at 30% 30%, #38bdf8, #030712);
-            box-shadow: 0 0 35px var(--primary-glow), inset 0 0 20px rgba(0,0,0,0.8);
+            box-shadow: 0 0 40px var(--primary-glow), inset 0 0 20px rgba(0,0,0,0.8);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -208,7 +209,7 @@
         .hero-globe-container i {
             font-size: 42px;
             color: #fff;
-            filter: drop-shadow(0 0 8px var(--primary));
+            filter: drop-shadow(0 0 10px var(--primary));
             animation: rotateGlobe 10s linear infinite;
         }
 
@@ -233,6 +234,7 @@
             background: linear-gradient(90deg, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px var(--primary-glow));
         }
 
         .hero p {
@@ -255,11 +257,12 @@
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-block;
+            box-shadow: 0 0 15px var(--primary-glow);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px var(--primary-glow);
+            box-shadow: 0 0 25px var(--primary);
         }
 
         .btn-outline {
@@ -277,6 +280,7 @@
         .btn-outline:hover {
             border-color: var(--primary);
             color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
         }
 
         .status-container {
@@ -290,6 +294,7 @@
             padding: 12px 25px;
             border-radius: 50px;
             backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
         }
 
         .status-item {
@@ -313,6 +318,34 @@
             50% { opacity: 0.4; }
         }
 
+        /* Network Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-sub);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: #030712;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -326,11 +359,12 @@
             padding: 30px;
             backdrop-filter: blur(12px);
             transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         }
 
         .card:hover {
             border-color: var(--primary);
-            box-shadow: 0 10px 30px var(--primary-glow);
+            box-shadow: 0 0 25px var(--primary-glow);
             transform: translateY(-5px);
         }
 
@@ -342,6 +376,7 @@
             display: flex; align-items: center; justify-content: center;
             font-size: 24px;
             margin-bottom: 20px;
+            border: 1px solid var(--border);
         }
 
         .card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-main); }
@@ -354,7 +389,7 @@
             margin-bottom: 30px;
         }
 
-        /* Category Card - Touch කරන්න පුළුවන් ලෙස සකසා ඇත */
+        /* Pricing Card */
         .pricing-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -364,11 +399,14 @@
             transition: all 0.3s ease;
             cursor: pointer;
             text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
         }
 
         .pricing-card:hover {
             border-color: var(--primary);
-            box-shadow: 0 10px 30px var(--primary-glow);
+            box-shadow: 0 0 30px var(--primary-glow);
             transform: translateY(-5px);
         }
 
@@ -376,7 +414,7 @@
             font-size: 40px;
             color: var(--primary);
             margin-bottom: 15px;
-            filter: drop-shadow(0 0 8px var(--primary-glow));
+            filter: drop-shadow(0 0 10px var(--primary-glow));
         }
 
         .pricing-card h3 {
@@ -395,12 +433,73 @@
             display: inline-block;
             background: var(--badge-bg);
             color: var(--primary);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            border: 1px solid var(--border);
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
         }
+
+        /* Live Speed Test Box */
+        .speedtest-box {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .speed-meter {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 15px 0;
+            text-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        /* Payment Gateway Box */
+        .payment-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .bank-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .bank-card {
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 14px;
+            position: relative;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 15px; right: 15px;
+            background: var(--badge-bg);
+            border: 1px solid var(--border);
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .copy-btn:hover { background: var(--primary); color: #030712; }
 
         .why-us-wrapper {
             max-width: 1000px;
@@ -418,6 +517,7 @@
             border-radius: 20px;
             padding: 30px;
             text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         }
 
         .calc-box select {
@@ -440,6 +540,7 @@
             border-radius: 12px;
             color: var(--primary);
             font-weight: bold;
+            box-shadow: 0 0 10px var(--primary-glow);
         }
 
         .reviews-marquee-container {
@@ -469,6 +570,7 @@
             width: 320px;
             flex-shrink: 0;
             backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         }
 
         .review-header {
@@ -499,6 +601,7 @@
             border: 1px solid var(--border);
             border-radius: 20px;
             padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         }
 
         .contact-wrapper {
@@ -509,6 +612,7 @@
             border: 1px solid var(--border);
             border-radius: 24px;
             padding: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         }
 
         .channel-card {
@@ -522,11 +626,13 @@
             margin-bottom: 15px;
             text-decoration: none;
             color: var(--text-main);
+            transition: all 0.3s ease;
         }
 
         .channel-card:hover {
             border-color: var(--primary);
             transform: translateX(5px);
+            box-shadow: 0 0 15px var(--primary-glow);
         }
 
         .channel-icon {
@@ -536,6 +642,7 @@
             color: var(--primary);
             display: flex; align-items: center; justify-content: center;
             font-size: 20px;
+            border: 1px solid var(--border);
         }
 
         .channel-details span { display: block; font-size: 11px; color: var(--text-sub); text-transform: uppercase; }
@@ -555,7 +662,7 @@
             font-size: 0.9rem;
         }
 
-        .form-control:focus { border-color: var(--primary); }
+        .form-control:focus { border-color: var(--primary); box-shadow: 0 0 10px var(--primary-glow); }
 
         .floating-container {
             position: fixed;
@@ -569,7 +676,7 @@
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             color: #fff; font-size: 22px; text-decoration: none;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
         .float-whatsapp { background: #25D366; }
@@ -581,7 +688,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
             z-index: 1001;
             display: none;
             flex-direction: column;
@@ -591,7 +698,7 @@
 
         .chat-widget-header {
             background: var(--primary);
-            color: #000;
+            color: #030712;
             padding: 12px 16px;
             display: flex;
             justify-content: space-between;
@@ -644,14 +751,14 @@
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             cursor: pointer; font-size: 20px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
-        /* Category Detail Popup Modal Styling */
+        /* Category Detail Popup Modal with WhatsApp Order Button */
         #pkgModal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(3, 7, 18, 0.75);
+            background: rgba(3, 7, 18, 0.8);
             backdrop-filter: blur(8px);
             display: none;
             justify-content: center;
@@ -662,7 +769,7 @@
         .modal-content {
             background: var(--bg-card);
             border: 1px solid var(--primary);
-            box-shadow: 0 0 30px var(--primary-glow);
+            box-shadow: 0 0 40px var(--primary-glow);
             padding: 30px;
             border-radius: 20px;
             width: 90%;
@@ -681,6 +788,7 @@
             color: var(--primary);
             font-size: 1.4rem;
             margin-bottom: 5px;
+            text-shadow: 0 0 10px var(--primary-glow);
         }
 
         .modal-subtitle {
@@ -703,7 +811,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
+            padding: 12px 10px;
             border-bottom: 1px rgba(255,255,255,0.05) dashed;
         }
 
@@ -713,14 +821,35 @@
             color: var(--text-main);
         }
 
+        .modal-package-list li div.m-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .modal-package-list li span.m-price {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 800;
             color: var(--primary);
             background: rgba(56, 189, 248, 0.1);
-            padding: 4px 10px;
-            border-radius: 8px;
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 4px 8px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .buy-wa-btn {
+            background: #25D366;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
         .close-modal-btn {
@@ -732,6 +861,7 @@
             font-weight: bold;
             cursor: pointer;
             width: 100%;
+            box-shadow: 0 0 15px var(--primary-glow);
         }
 
         footer {
@@ -740,6 +870,7 @@
             color: var(--text-sub);
             background: var(--footer-bg);
             font-size: 0.85rem;
+            border-top: 1px solid var(--border);
         }
 
         @media (max-width: 992px) {
@@ -762,9 +893,9 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#pricing">Plans</a></li>
-            <li><a href="#whyus">Why Us</a></li>
+            <li><a href="#speedtest">Speed Test</a></li>
+            <li><a href="#payment">Payments</a></li>
             <li><a href="#calculator">Calculator</a></li>
-            <li><a href="#faq">FAQ</a></li>
             <li><a href="#reviews">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -827,30 +958,38 @@
         </div>
     </section>
 
-    <!-- INTERNET PACKAGES SECTION (Touch entire category card to view full packages & prices) -->
+    <!-- INTERNET PACKAGES SECTION WITH NETWORK FILTER TABS -->
     <section id="pricing">
         <div class="section-header">
             <span class="tag">High-Speed Connectivity</span>
             <h2>Official Internet Packages & Pricing</h2>
-            <p>Touch any category below to view all available packages and prices!</p>
+            <p>Filter by network or touch any category below to view packages and buy via WhatsApp instantly!</p>
         </div>
 
-        <div class="price-grid">
+        <!-- Network Filter Buttons -->
+        <div class="filter-tabs">
+            <button class="filter-btn active" onclick="filterPackages('all', this)">All Networks</button>
+            <button class="filter-btn" onclick="filterPackages('dialog', this)">Dialog</button>
+            <button class="filter-btn" onclick="filterPackages('airtel', this)">Airtel</button>
+            <button class="filter-btn" onclick="filterPackages('hutch', this)">Hutch</button>
+        </div>
+
+        <div class="price-grid" id="pricingGrid">
             <!-- Dialog Zoom Router Card -->
-            <div class="pricing-card" onclick="openCategoryModal('Dialog Zoom (Router)', 'Supported Packages: 298 & 724', [
+            <div class="pricing-card" data-network="dialog" onclick="openCategoryModal('Dialog Zoom (Router)', 'Supported Packages: 298 & 724', [
                 {name: '100 GB Package', price: 'LKR 280'},
-                {name: '200 GB Package', price: 'LKR 250'},
-                {name: '300 GB Package', price: 'LKR 400'},
+                {name: '200 GB Package', price: 'LKR 350'},
+                {name: '300 GB Package', price: 'LKR 450'},
                 {name: 'Unlimited Pack', price: 'LKR 600'}
             ])">
                 <div class="cat-icon-lg"><i class="fa-solid fa-wifi"></i></div>
                 <h3>Dialog Zoom (Router)</h3>
                 <div class="sub-title">Supported Packages: 298 & 724</div>
-                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View Packages</span>
+                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
             </div>
 
             <!-- Dialog TikTok Mobile Card -->
-            <div class="pricing-card" onclick="openCategoryModal('Dialog TikTok Mobile', 'Mobile SIM Package (297 / 997)', [
+            <div class="pricing-card" data-network="dialog" onclick="openCategoryModal('Dialog TikTok Mobile', 'Mobile SIM Package (297 / 997)', [
                 {name: '100 GB Package', price: 'LKR 230'},
                 {name: '200 GB Package', price: 'LKR 300'},
                 {name: 'Unlimited Pack', price: 'LKR 600'}
@@ -858,11 +997,11 @@
                 <div class="cat-icon-lg"><i class="fa-solid fa-mobile-screen"></i></div>
                 <h3>Dialog TikTok Mobile</h3>
                 <div class="sub-title">Mobile SIM Package (297 / 997)</div>
-                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View Packages</span>
+                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
             </div>
 
             <!-- Airtel 4G Packages Card -->
-            <div class="pricing-card" onclick="openCategoryModal('Airtel 4G Packages', 'TikTok (297/997) | Zoom | YouTube', [
+            <div class="pricing-card" data-network="airtel" onclick="openCategoryModal('Airtel 4G Packages', 'TikTok (297/997) | Zoom | YouTube', [
                 {name: '100 GB Package', price: 'LKR 230'},
                 {name: '200 GB Package', price: 'LKR 300'},
                 {name: 'YT Unlimited Pack', price: 'LKR 600'}
@@ -870,11 +1009,11 @@
                 <div class="cat-icon-lg"><i class="fa-solid fa-tower-cell"></i></div>
                 <h3>Airtel 4G Packages</h3>
                 <div class="sub-title">TikTok (297/997) | Zoom | YouTube</div>
-                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View Packages</span>
+                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
             </div>
 
             <!-- Hutch 4G Packages Card -->
-            <div class="pricing-card" onclick="openCategoryModal('Hutch 4G Packages', 'All Hutch Bypass Packages (Zoom / Social)', [
+            <div class="pricing-card" data-network="hutch" onclick="openCategoryModal('Hutch 4G Packages', 'All Hutch Bypass Packages (Zoom / Social)', [
                 {name: '100 GB Package', price: 'LKR 230'},
                 {name: '200 GB Package', price: 'LKR 300'},
                 {name: '300 GB Package', price: 'LKR 400'}
@@ -882,7 +1021,55 @@
                 <div class="cat-icon-lg"><i class="fa-solid fa-signal"></i></div>
                 <h3>Hutch 4G Packages</h3>
                 <div class="sub-title">All Hutch Bypass Packages (Zoom / Social)</div>
-                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View Packages</span>
+                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE SPEED TEST SIMULATION SECTION -->
+    <section id="speedtest">
+        <div class="section-header">
+            <span class="tag">Network Diagnostic</span>
+            <h2>Live Speed Test Simulation</h2>
+            <p>Check simulated bypass network speed right from your browser.</p>
+        </div>
+
+        <div class="speedtest-box">
+            <i class="fa-solid fa-gauge" style="font-size: 40px; color: var(--primary);"></i>
+            <div class="speed-meter" id="speedDisplay">0.0 Mbps</div>
+            <p style="color: var(--text-sub); margin-bottom: 20px;">Status: Optimized for AURA High-Speed Bypass Servers</p>
+            <button class="btn-primary" onclick="runSpeedTest()"><i class="fa-solid fa-play"></i> Start Speed Test</button>
+        </div>
+    </section>
+
+    <!-- SECURE PAYMENT GATEWAY INFO SECTION -->
+    <section id="payment">
+        <div class="section-header">
+            <span class="tag">Secure Transactions</span>
+            <h2>Official Payment Details</h2>
+            <p>Transfer funds securely and send the slip via WhatsApp for instant activation.</p>
+        </div>
+
+        <div class="payment-box">
+            <div class="bank-details-grid">
+                <div class="bank-card">
+                    <button class="copy-btn" onclick="copyText('BOC-87654321')"><i class="fa-regular fa-copy"></i> Copy</button>
+                    <span style="font-size: 11px; color: var(--primary); font-weight: bold;">BANK OF CEYLON</span>
+                    <h4 style="margin: 5px 0; color: var(--text-main);">AURA NET (Pvt) Ltd</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-sub);">Acc: <strong>87654321</strong><br>Branch: Colombo Main</p>
+                </div>
+                <div class="bank-card">
+                    <button class="copy-btn" onclick="copyText('COM-1234567890')"><i class="fa-regular fa-copy"></i> Copy</button>
+                    <span style="font-size: 11px; color: var(--primary); font-weight: bold;">COMMERCIAL BANK</span>
+                    <h4 style="margin: 5px 0; color: var(--text-main);">AURA NET (Pvt) Ltd</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-sub);">Acc: <strong>1234567890</strong><br>Branch: Wellawatte</p>
+                </div>
+                <div class="bank-card">
+                    <button class="copy-btn" onclick="copyText('0742274908')"><i class="fa-regular fa-copy"></i> Copy</button>
+                    <span style="font-size: 11px; color: #25D366; font-weight: bold;">EZ CASH / MOBILE</span>
+                    <h4 style="margin: 5px 0; color: var(--text-main);">AURA Official Line</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-sub);">Number: <strong>+94 74 227 4908</strong><br>Instant Verification</p>
+                </div>
             </div>
         </div>
     </section>
@@ -934,33 +1121,6 @@
         </div>
     </section>
 
-    <!-- FAQ SECTION -->
-    <section id="faq">
-        <div class="section-header">
-            <span class="tag">Questions & Answers</span>
-            <h2>Frequently Asked Questions</h2>
-        </div>
-
-        <div class="faq-container" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
-            <div class="card" style="padding: 20px; cursor: pointer;" onclick="this.classList.toggle('active')">
-                <div style="font-weight: 600; display: flex; justify-content: space-between;"><span>1. How does the VPN / Bypass Connection work?</span> <i class="fa-solid fa-chevron-down"></i></div>
-                <div style="margin-top: 10px; color: var(--text-sub); font-size: 0.9rem;">Subscribe to a basic network pack, load our config, and enjoy full unthrottled high-speed data.</div>
-            </div>
-            <div class="card" style="padding: 20px; cursor: pointer;" onclick="this.classList.toggle('active')">
-                <div style="font-weight: 600; display: flex; justify-content: space-between;"><span>2. What Payment Methods do you accept?</span> <i class="fa-solid fa-chevron-down"></i></div>
-                <div style="margin-top: 10px; color: var(--text-sub); font-size: 0.9rem;">We accept Bank Transfers (BOC, Commercial) and eZ Cash securely.</div>
-            </div>
-            <div class="card" style="padding: 20px; cursor: pointer;" onclick="this.classList.toggle('active')">
-                <div style="font-weight: 600; display: flex; justify-content: space-between;"><span>3. Is the connection speed stable for online gaming?</span> <i class="fa-solid fa-chevron-down"></i></div>
-                <div style="margin-top: 10px; color: var(--text-sub); font-size: 0.9rem;">Yes! Our bypass servers maintain a low ping (~14ms) which is fully optimized for smooth gaming and streaming.</div>
-            </div>
-            <div class="card" style="padding: 20px; cursor: pointer;" onclick="this.classList.toggle('active')">
-                <div style="font-weight: 600; display: flex; justify-content: space-between;"><span>4. How long does package activation take?</span> <i class="fa-solid fa-chevron-down"></i></div>
-                <div style="margin-top: 10px; color: var(--text-sub); font-size: 0.9rem;">Activations are processed instantly within 5 to 10 minutes after payment confirmation via WhatsApp or Call.</div>
-            </div>
-        </div>
-    </section>
-
     <!-- REVIEWS SECTION -->
     <section id="reviews" style="padding-left:0; padding-right:0;">
         <div class="section-header" style="padding: 0 8%;">
@@ -990,16 +1150,6 @@
                     <div class="review-header"><div class="avatar">HM</div><div class="reviewer-info"><h4>Hashen Madusanka</h4><span>Hutch Unlimited</span></div></div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"Gaming වලට Low Ping එනවා. Download speed එක උපරිමයි. තැන්ක්‍යූ AURA NET team!"</p>
-                </div>
-                <div class="review-card">
-                    <div class="review-header"><div class="avatar">KS</div><div class="reviewer-info"><h4>Kasun Sampath</h4><span>Dialog Router User</span></div></div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"AURA NET.LK Zoom router bypass එක මරු! Unlimited speed එකක් එනවා. Super fast service!"</p>
-                </div>
-                <div class="review-card">
-                    <div class="review-header"><div class="avatar">DP</div><div class="reviewer-info"><h4>Dilshan Perera</h4><span>Airtel 4G User</span></div></div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Airtel Youtube pack එක bypass කරලා 300GB ගත්තා. 100% Recommended!"</p>
                 </div>
             </div>
         </div>
@@ -1070,13 +1220,13 @@
         </div>
     </section>
 
-    <!-- Category Detail Popup Modal -->
+    <!-- Category Detail Popup Modal with WhatsApp Order Integration -->
     <div id="pkgModal" onclick="closeCategoryModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <h3 id="modalCatTitle">Category Name</h3>
             <div class="modal-subtitle" id="modalCatSub">Subtitle info</div>
             <ul class="modal-package-list" id="modalPkgList">
-                <!-- Dynamic package items injected here -->
+                <!-- Dynamic package items injected here with WhatsApp buy button -->
             </ul>
             <button class="close-modal-btn" onclick="closeCategoryModalDirect()">Close</button>
         </div>
@@ -1093,7 +1243,7 @@
         </div>
         <div class="chat-widget-footer">
             <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="handleChatKey(event)">
-            <button onclick="sendChatMessage()" style="background: var(--primary); border: none; color: #000; padding: 0 12px; border-radius: 8px; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-paper-plane"></i></button>
+            <button onclick="sendChatMessage()" style="background: var(--primary); border: none; color: #030712; padding: 0 12px; border-radius: 8px; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
     </div>
 
@@ -1115,17 +1265,38 @@
             glow.style.top = e.clientY + 'px';
         });
 
-        // Category Card Touch / Click Functionality (Displays full list of packages & prices in a Modal)
-        function openCategoryModal(title, subtitle, packages) {
-            document.getElementById('modalCatTitle').innerText = title;
+        // Network Filter Tabs Functionality
+        function filterPackages(network, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('.pricing-card');
+            cards.forEach(card => {
+                if(network === 'all' || card.getAttribute('data-network') === network) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Category Card Modal with Direct WhatsApp Order Link
+        function openCategoryModal(categoryTitle, subtitle, packages) {
+            document.getElementById('modalCatTitle').innerText = categoryTitle;
             document.getElementById('modalCatSub').innerText = subtitle;
             
             let listHtml = '';
             packages.forEach(pkg => {
+                let waMessage = encodeURIComponent(`Hi AURA NET.LK, I want to order ${categoryTitle} - ${pkg.name} (${pkg.price}). Please assist with activation.`);
+                let waUrl = `https://wa.me/94742274908?text=${waMessage}`;
+
                 listHtml += `
                     <li>
                         <span class="m-name"><i class="fa-solid fa-bolt" style="color: var(--primary); margin-right: 6px;"></i> ${pkg.name}</span>
-                        <span class="m-price">${pkg.price}</span>
+                        <div class="m-right">
+                            <span class="m-price">${pkg.price}</span>
+                            <a href="${waUrl}" target="_blank" class="buy-wa-btn"><i class="fa-brands fa-whatsapp"></i> Buy</a>
+                        </div>
                     </li>
                 `;
             });
@@ -1144,12 +1315,35 @@
             }
         }
 
+        // Simulated Live Speed Test
+        function runSpeedTest() {
+            const display = document.getElementById('speedDisplay');
+            display.innerText = "Testing...";
+            let current = 10;
+            let interval = setInterval(() => {
+                current += Math.floor(Math.random() * 25) + 5;
+                if(current >= 145) {
+                    current = 145;
+                    clearInterval(interval);
+                    display.innerText = current + " Mbps (High Speed)";
+                } else {
+                    display.innerText = current + " Mbps";
+                }
+            }, 150);
+        }
+
+        // Copy Text Utility
+        function copyText(text) {
+            navigator.clipboard.writeText(text);
+            alert("Copied to clipboard: " + text);
+        }
+
         // Calculator Logic with Usage Types
         function calculatePackage() {
             const usage = document.getElementById('usageSelect').value;
             const resultBox = document.getElementById('calcResult');
             if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>100 GB Package (LKR 230 / 280)</strong> - Ideal for daily messaging & light browsing!";
-            else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>200 GB or 300 GB Package (LKR 300 / 400)</strong> - Perfect for streaming & social media!";
+            else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>200 GB or 300 GB Package (LKR 300 / 450)</strong> - Perfect for streaming & social media!";
             else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>Unlimited Package (LKR 600)</strong> - Best for uninterrupted heavy downloads & 4K streaming!";
             else resultBox.innerHTML = "Please select your usage pattern above.";
         }
