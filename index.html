@@ -29,8 +29,7 @@
 
         body {
             background-color: var(--bg-main);
-            /* Direct Working Online Background Image with Overlay */
-            background-image: linear-gradient(rgba(3, 7, 18, 0.7), rgba(3, 7, 18, 0.7)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(3, 7, 18, 0.8), rgba(3, 7, 18, 0.8)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -61,7 +60,6 @@
             z-index: -1;
         }
 
-        /* Nav Bar */
         nav {
             display: flex;
             justify-content: space-between;
@@ -106,7 +104,6 @@
             background: rgba(56, 189, 248, 0.1);
         }
 
-        /* Sections */
         section {
             padding: 100px 8%;
             border-bottom: 1px solid var(--border);
@@ -143,7 +140,6 @@
             margin: 10px auto 0;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 85vh;
             display: flex;
@@ -210,150 +206,15 @@
             color: var(--primary);
         }
 
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 35px 28px;
-            backdrop-filter: blur(10px);
-            transition: all 0.4s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 15px 35px var(--primary-glow);
-        }
-
-        .service-badge {
-            position: absolute;
-            top: 20px; right: 20px;
-            background: rgba(99, 102, 241, 0.15);
-            color: var(--accent);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 12px;
-            text-transform: uppercase;
-        }
-
-        .service-icon {
-            width: 60px; height: 60px;
-            background: rgba(56, 189, 248, 0.1);
-            border-radius: 14px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 26px;
-            color: var(--primary);
-            margin-bottom: 25px;
-        }
-
-        .service-card h3 { font-size: 1.4rem; margin-bottom: 15px; }
-
-        .service-features {
-            list-style: none;
-            margin-bottom: 25px;
-            flex-grow: 1;
-        }
-
-        .service-features li {
-            color: var(--text-sub);
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .service-features li i { color: var(--primary); font-size: 12px; }
-
-        .price-tag {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary);
-            border-top: 1px solid var(--border);
-            padding-top: 15px;
-            margin-top: auto;
-        }
-
-        /* Featured Work */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .portfolio-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 15px 35px var(--primary-glow);
-        }
-
-        .portfolio-img {
-            position: relative;
-            height: 220px;
-            overflow: hidden;
-        }
-
-        .portfolio-img img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .portfolio-card:hover .portfolio-img img { transform: scale(1.08); }
-
-        .portfolio-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(3, 7, 18, 0.6);
-            backdrop-filter: blur(4px);
-            display: flex; align-items: center; justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .portfolio-card:hover .portfolio-overlay { opacity: 1; }
-        .portfolio-content { padding: 25px; }
-        .portfolio-content h3 { font-size: 1.25rem; margin-bottom: 8px; }
-        .portfolio-content p { color: var(--text-sub); font-size: 0.95rem; margin-bottom: 15px; }
-
-        .portfolio-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-        .portfolio-tags span {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            color: var(--text-sub);
-            font-size: 12px;
-            padding: 4px 10px;
-            border-radius: 6px;
-        }
-
-        /* Terms Section */
-        .terms-grid {
+        /* Internet Pricing Cards Grid */
+        .price-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
+            margin-bottom: 40px;
         }
 
-        .terms-card {
+        .pricing-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 20px;
@@ -362,42 +223,103 @@
             transition: all 0.3s ease;
         }
 
-        .terms-card:hover {
+        .pricing-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px var(--primary-glow);
+            transform: translateY(-5px);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-card .sub-title {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .package-list {
+            list-style: none;
+        }
+
+        .package-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px rgba(255,255,255,0.05) dashed;
+            font-size: 0.95rem;
+        }
+
+        .package-list li span.price {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .payment-info-box {
+            background: rgba(56, 189, 248, 0.05);
+            border: 1px solid var(--primary-glow);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .payment-info-box h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Reviews / Testimonials Section */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .review-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
             border-color: var(--primary);
             box-shadow: 0 10px 30px var(--primary-glow);
         }
 
-        .terms-card-header {
+        .review-header {
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 15px;
+            margin-bottom: 15px;
         }
 
-        .terms-card-header i { font-size: 22px; color: var(--primary); }
-        .terms-card-header h3 { font-size: 1.2rem; color: var(--text-main); }
-
-        .terms-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+        .avatar {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 18px; color: #000;
         }
 
-        .terms-list li {
-            font-size: 0.92rem;
-            color: var(--text-sub);
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            line-height: 1.5;
-        }
+        .reviewer-info h4 { font-size: 1rem; color: #fff; }
+        .reviewer-info span { font-size: 0.8rem; color: var(--text-sub); }
 
-        .terms-list li i { color: var(--primary); font-size: 13px; margin-top: 4px; }
+        .stars { color: #f59e0b; margin-bottom: 10px; font-size: 14px; }
+        .review-card p { font-size: 0.95rem; color: var(--text-sub); font-style: italic; }
 
-        /* Contact Section */
+        /* Contact Wrapper */
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -408,9 +330,6 @@
             padding: 50px;
             backdrop-filter: blur(12px);
         }
-
-        .contact-info-side h3 { font-size: 2rem; margin-bottom: 15px; }
-        .contact-info-side p { color: var(--text-sub); margin-bottom: 30px; }
 
         .channel-card {
             display: flex;
@@ -442,32 +361,14 @@
         }
 
         .channel-details span {
-            display: block;
-            font-size: 12px;
-            color: var(--text-sub);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            display: block; font-size: 12px; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px;
         }
 
         .channel-details strong { font-size: 1.05rem; }
 
-        .form-side form {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group label {
-            font-size: 0.9rem;
-            color: var(--text-sub);
-            font-weight: 500;
-        }
+        .form-side form { display: flex; flex-direction: column; gap: 18px; }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+        .form-group label { font-size: 0.9rem; color: var(--text-sub); font-weight: 500; }
 
         .form-control {
             background: rgba(255, 255, 255, 0.04);
@@ -485,7 +386,6 @@
             box-shadow: 0 0 15px var(--primary-glow);
         }
 
-        /* Floating Contact Buttons */
         .floating-container {
             position: fixed;
             bottom: 30px; right: 30px;
@@ -531,9 +431,8 @@
         <a href="#home" class="logo">AURA NET<span>.LK</span></a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Featured Work</a></li>
-            <li><a href="#terms">Policies</a></li>
+            <li><a href="#pricing">Internet Plans</a></li>
+            <li><a href="#reviews">Reviews</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
@@ -543,198 +442,142 @@
         <div class="section-header" style="margin-bottom: 20px;">
             <span class="tag">Digital Solutions Agency</span>
         </div>
-        <h1>Elevate Your Digital Presence With <span>AURA NET.LK</span></h1>
-        <p>Providing high-performance Web Development, reliable High-Speed Internet Access, and Professional Visual Editing Services for modern brands.</p>
+        <h1>Elevate Your Digital Experience With <span>AURA NET.LK</span></h1>
+        <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass Packages, and Professional Visual Editing Services.</p>
         <div class="btn-group">
-            <a href="#services" class="btn-primary">Our Services</a>
+            <a href="#pricing" class="btn-primary">View Packages</a>
             <a href="#contact" class="btn-outline">Contact Us</a>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="services">
+    <!-- INTERNET PACKAGES & PRICING SECTION -->
+    <section id="pricing">
         <div class="section-header">
-            <span class="tag">Comprehensive Solutions</span>
-            <h2>Our Specialized Services</h2>
-            <p>End-to-end technology and digital media expertise tailored to your goals.</p>
+            <span class="tag">High-Speed Connectivity</span>
+            <h2>Official Packages & Price List</h2>
+            <p>Select your provider below and get instant high-speed package bypass activation.</p>
         </div>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <span class="service-badge">PREMIUM SERVICE</span>
-                <div class="service-icon"><i class="fa-solid fa-code"></i></div>
-                <h3>Web Development</h3>
-                <ul class="service-features">
-                    <li><i class="fa-solid fa-check"></i> Custom Web Application Design</li>
-                    <li><i class="fa-solid fa-check"></i> Responsive Mobile Layouts</li>
-                    <li><i class="fa-solid fa-check"></i> High Performance & Speed Optimization</li>
-                    <li><i class="fa-solid fa-check"></i> Domain & Hosting Integration</li>
-                    <li><i class="fa-solid fa-check"></i> Basic Revisions Included</li>
+        <div class="price-grid">
+            <!-- DIALOG ROUTER -->
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-wifi"></i> Dialog Zoom (Router)</h3>
+                <div class="sub-title">Supported Router Packages: 298 & 724</div>
+                <ul class="package-list">
+                    <li><span>100 GB Package</span> <span class="price">LKR 280</span></li>
+                    <li><span>150 GB Package</span> <span class="price">LKR 330</span></li>
+                    <li><span>200 GB Package</span> <span class="price">LKR 250</span></li>
+                    <li><span>300 GB Package</span> <span class="price">LKR 400</span></li>
+                    <li><span>500 GB Package</span> <span class="price">LKR 500</span></li>
+                    <li><span>1 TB Package</span> <span class="price">LKR 1,500</span></li>
+                    <li><span>Unlimited Package</span> <span class="price">LKR 600</span></li>
                 </ul>
-                <div class="price-tag">Custom Quote</div>
             </div>
 
-            <div class="service-card">
-                <span class="service-badge">PREMIUM SERVICE</span>
-                <div class="service-icon"><i class="fa-solid fa-wifi"></i></div>
-                <h3>Internet Access</h3>
-                <ul class="service-features">
-                    <li><i class="fa-solid fa-check"></i> Dedicated Speed Packages</li>
-                    <li><i class="fa-solid fa-check"></i> Stable Service Availability</li>
-                    <li><i class="fa-solid fa-check"></i> Flexible Monthly Plans</li>
-                    <li><i class="fa-solid fa-check"></i> Reliable Network Infrastructure</li>
-                    <li><i class="fa-solid fa-check"></i> Lawful & Secure Usage</li>
+            <!-- DIALOG TIKTOK MOBILE -->
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-mobile-screen"></i> Dialog TikTok Mobile</h3>
+                <div class="sub-title">Mobile SIM Package (297 / 997)</div>
+                <ul class="package-list">
+                    <li><span>100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span>200 GB Package</span> <span class="price">LKR 300</span></li>
+                    <li><span>300 GB Package</span> <span class="price">LKR 400</span></li>
+                    <li><span>Unlimited (1 Month)</span> <span class="price">LKR 600</span></li>
                 </ul>
-                <div class="price-tag">Package Based</div>
             </div>
 
-            <div class="service-card">
-                <span class="service-badge">PREMIUM SERVICE</span>
-                <div class="service-icon"><i class="fa-solid fa-video"></i></div>
-                <h3>Video Editing</h3>
-                <ul class="service-features">
-                    <li><i class="fa-solid fa-check"></i> Professional Video Editing</li>
-                    <li><i class="fa-solid fa-check"></i> Social Media Reels & Shorts</li>
-                    <li><i class="fa-solid fa-check"></i> YouTube Video Production</li>
-                    <li><i class="fa-solid fa-check"></i> Cinematic Cuts & Transitions</li>
-                    <li><i class="fa-solid fa-check"></i> Color Grading & Text Animations</li>
+            <!-- DIALOG SOCIAL MEDIA -->
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-share-nodes"></i> Dialog Social Media</h3>
+                <div class="sub-title">Unlimited Social Pack Bypass (348 / 399 / 488)</div>
+                <ul class="package-list">
+                    <li><span>200 GB Package</span> <span class="price">LKR 300</span></li>
+                    <li><span>300 GB Package</span> <span class="price">LKR 400</span></li>
                 </ul>
-                <div class="price-tag">Per Project / Package</div>
             </div>
 
-            <div class="service-card">
-                <span class="service-badge">PREMIUM SERVICE</span>
-                <div class="service-icon"><i class="fa-solid fa-image"></i></div>
-                <h3>Photo Editing</h3>
-                <ul class="service-features">
-                    <li><i class="fa-solid fa-check"></i> Professional Retouching & Enhancement</li>
-                    <li><i class="fa-solid fa-check"></i> Background Removal & Replacement</li>
-                    <li><i class="fa-solid fa-check"></i> Color Correction & Manipulation</li>
-                    <li><i class="fa-solid fa-check"></i> Portrait Retouching & Restoration</li>
-                    <li><i class="fa-solid fa-check"></i> Social Media Graphics Export</li>
+            <!-- AIRTEL PACKAGES -->
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-tower-cell"></i> Airtel 4G Packages</h3>
+                <div class="sub-title">TikTok (297/997) | Zoom | YouTube (135/260)</div>
+                <ul class="package-list">
+                    <li><span>100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span>200 GB Package</span> <span class="price">LKR 300</span></li>
+                    <li><span>300 GB Package</span> <span class="price">LKR 400</span></li>
+                    <li><span>YT Unlimited Package</span> <span class="price">LKR 600</span></li>
                 </ul>
-                <div class="price-tag">Per Image / Bulk</div>
             </div>
+
+            <!-- HUTCH PACKAGES -->
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-signal"></i> Hutch 4G Packages</h3>
+                <div class="sub-title">All Hutch Bypass Packages (Zoom | Social)</div>
+                <ul class="package-list">
+                    <li><span>100 GB Package</span> <span class="price">LKR 230</span></li>
+                    <li><span>200 GB Package</span> <span class="price">LKR 300</span></li>
+                    <li><span>300 GB Package</span> <span class="price">LKR 400</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PAYMENT & ACTIVATION INFO -->
+        <div class="payment-info-box">
+            <h4><i class="fa-solid fa-credit-card"></i> Payment & Activation Information</h4>
+            <p><strong>Bank Transfers:</strong> BOC / Commercial Bank</p>
+            <p><strong>eZ Cash Payment:</strong> Add LKR 50.00 extra charge for eZ Cash transactions.</p>
+            <p><strong>Activation Process:</strong> Send your payment receipt screenshot directly via WhatsApp for quick activation.</p>
         </div>
     </section>
 
-    <!-- FEATURED WORK SECTION -->
-    <section id="portfolio">
+    <!-- CUSTOMER REVIEWS SECTION -->
+    <section id="reviews">
         <div class="section-header">
-            <span class="tag">Showcase</span>
-            <h2>Our Featured Work</h2>
-            <p>Explore a selection of our recent projects in web design, media production, and post-processing.</p>
+            <span class="tag">Feedback</span>
+            <h2>What Our Customers Say</h2>
+            <p>Read real reviews from users who trust AURA NET.LK for connectivity and digital services.</p>
         </div>
 
-        <div class="portfolio-grid">
-            <div class="portfolio-card">
-                <div class="portfolio-img">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Web Project">
-                    <div class="portfolio-overlay">
-                        <a href="#contact" class="btn-primary" style="padding: 10px 20px; font-size: 13px;">View Details</a>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="avatar">KS</div>
+                    <div class="reviewer-info">
+                        <h4>Kasun Sampath</h4>
+                        <span>Dialog Unlimited User</span>
                     </div>
                 </div>
-                <div class="portfolio-content">
-                    <h3>Corporate Web Platform</h3>
-                    <p>Modern responsive website with optimized loading speeds and custom UI components.</p>
-                    <div class="portfolio-tags">
-                        <span>Web Design</span>
-                        <span>UI/UX</span>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>"AURA NET.LK Zoom router package bypass එක මරු! Unlimited speed එකක් එනවා. Payment දාලා විනාඩි 5න් Active කරලා දුන්නා. Superb service!"</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="avatar">DP</div>
+                    <div class="reviewer-info">
+                        <h4>Dilshan Perera</h4>
+                        <span>Airtel 4G User</span>
                     </div>
                 </div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>"Airtel Youtube pack එක bypass කරලා 300GB ගත්තා. Data අඩුවක් නැතුව 30 days ම වැඩ කරනවා. Highly recommended service brother!"</p>
             </div>
 
-            <div class="portfolio-card">
-                <div class="portfolio-img">
-                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Project">
-                    <div class="portfolio-overlay">
-                        <a href="#contact" class="btn-primary" style="padding: 10px 20px; font-size: 13px;">View Details</a>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="avatar">NL</div>
+                    <div class="reviewer-info">
+                        <h4>Nuwan Liyanage</h4>
+                        <span>Web Client</span>
                     </div>
                 </div>
-                <div class="portfolio-content">
-                    <h3>Cinematic Commercial Reel</h3>
-                    <p>High-energy promotional video with dynamic text animations, transitions, and color grading.</p>
-                    <div class="portfolio-tags">
-                        <span>Video Editing</span>
-                        <span>Reels</span>
-                    </div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-img">
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Photo Editing Project">
-                    <div class="portfolio-overlay">
-                        <a href="#contact" class="btn-primary" style="padding: 10px 20px; font-size: 13px;">View Details</a>
-                    </div>
-                </div>
-                <div class="portfolio-content">
-                    <h3>Product Branding & Retouch</h3>
-                    <p>Professional photo manipulation, background enhancement, and high-res export.</p>
-                    <div class="portfolio-tags">
-                        <span>Photo Editing</span>
-                        <span>Retouching</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICE POLICIES SECTION -->
-    <section id="terms">
-        <div class="section-header">
-            <span class="tag">Service Framework</span>
-            <h2>Service Policies & Governance</h2>
-            <p>Clear, transparent, and professional operational agreements for all our digital solutions.</p>
-        </div>
-
-        <div class="terms-grid">
-            <div class="terms-card">
-                <div class="terms-card-header">
-                    <i class="fa-solid fa-code"></i>
-                    <h3>Web Development Terms</h3>
-                </div>
-                <ul class="terms-list">
-                    <li><i class="fa-solid fa-circle-check"></i> 50% advance payment required to start the project; remaining 50% upon completion.</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Includes up to 2 rounds of basic revisions; additional revisions billed separately.</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Domain, hosting, and future maintenance charges are separate unless agreed otherwise.</li>
-                </ul>
-            </div>
-
-            <div class="terms-card">
-                <div class="terms-card-header">
-                    <i class="fa-solid fa-wifi"></i>
-                    <h3>Internet Service Terms</h3>
-                </div>
-                <ul class="terms-list">
-                    <li><i class="fa-solid fa-circle-check"></i> Access, speeds, and limits depend strictly on the selected package plan.</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Extra data usage beyond plan limits will be charged separately.</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Service provided strictly for lawful, responsible, and authorized use.</li>
-                </ul>
-            </div>
-
-            <div class="terms-card">
-                <div class="terms-card-header">
-                    <i class="fa-solid fa-film"></i>
-                    <h3>Video Editing Terms</h3>
-                </div>
-                <ul class="terms-list">
-                    <li><i class="fa-solid fa-circle-check"></i> Raw footage, sound requirements, and script/references must be provided by client.</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Package includes standard revisions; major structural storyline re-edits incur extra charges.</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Final rendered videos exported in high-quality format upon full payment.</li>
-                </ul>
-            </div>
-
-            <div class="terms-card">
-                <div class="terms-card-header">
-                    <i class="fa-solid fa-camera-retro"></i>
-                    <h3>Photo Editing Terms</h3>
-                </div>
-                <ul class="terms-list">
-                    <li><i class="fa-solid fa-circle-check"></i> High-resolution source images must be provided for optimal retouching quality.</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Retouching covers background removal, color grading, and object manipulation as requested.</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Final deliverables exported in HD web/print formats; raw source files available on request.</li>
-                </ul>
+                <p>"මගේ Business එකට Professional Dark Theme Website එකක් හදලා දුන්නා. Graphic and Animations පට්ටම Quality. 100% Trustworthy!"</p>
             </div>
         </div>
     </section>
@@ -744,13 +587,13 @@
         <div class="section-header">
             <span class="tag">Get In Touch</span>
             <h2>Contact Us</h2>
-            <p>Have a project in mind or need assistance? Reach out to us today.</p>
+            <p>Send your payment receipt or inquire about our services below.</p>
         </div>
 
         <div class="contact-wrapper">
             <div class="contact-info-side">
-                <h3>Let's Talk About Your Next Project</h3>
-                <p>We are ready to build, design, and edit for your business growth.</p>
+                <h3>Let's Connect</h3>
+                <p>Fast activation & support team available 24/7.</p>
 
                 <a href="tel:+94742274908" class="channel-card">
                     <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
@@ -784,18 +627,18 @@
                         <input type="text" class="form-control" name="Name" placeholder="John Doe" required>
                     </div>
                     <div class="form-group">
-                        <label>Your Email Address</label>
-                        <input type="email" class="form-control" name="Email" placeholder="name@example.com" required>
+                        <label>Your Phone / WhatsApp Number</label>
+                        <input type="text" class="form-control" name="Phone" placeholder="+94 7X XXX XXXX" required>
                     </div>
                     <div class="form-group">
-                        <label>Requested Service</label>
-                        <input type="text" class="form-control" name="Service" placeholder="Web Development / Video Editing / Internet Access" required>
+                        <label>Selected Package</label>
+                        <input type="text" class="form-control" name="Package" placeholder="e.g. Dialog Zoom 300GB" required>
                     </div>
                     <div class="form-group">
-                        <label>Your Message</label>
-                        <textarea class="form-control" name="Message" rows="4" placeholder="Describe your project requirements..." required></textarea>
+                        <label>Your Message / Payment Details</label>
+                        <textarea class="form-control" name="Message" rows="4" placeholder="Mention transaction reference or query..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary">Send Message</button>
+                    <button type="submit" class="btn-primary">Send Request</button>
                 </form>
             </div>
         </div>
