@@ -13,6 +13,7 @@
             --primary: #38bdf8;
             --primary-glow: rgba(56, 189, 248, 0.35);
             --accent: #6366f1;
+            --success: #10b981;
             --text-main: #f9fafb;
             --text-sub: #9ca3af;
             --border: rgba(255, 255, 255, 0.08);
@@ -207,6 +208,42 @@
             color: var(--primary);
         }
 
+        /* Live System Status Bar */
+        .status-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 15px 25px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        .status-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background-color: var(--success);
+            box-shadow: 0 0 10px var(--success);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
         /* General Grid for Services and Features */
         .grid-3 {
             display: grid;
@@ -250,7 +287,7 @@
             font-size: 0.95rem;
         }
 
-        /* Internet Pricing Cards Grid */
+        /* Pricing Cards Grid */
         .price-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -321,7 +358,91 @@
             font-size: 1.1rem;
         }
 
-        /* Reviews / Testimonials Section */
+        /* FAQ Accordion Styling */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #fff;
+        }
+
+        .faq-answer {
+            margin-top: 12px;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        /* Interactive Data Calculator */
+        .calc-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .calc-box select {
+            width: 100%;
+            padding: 12px 16px;
+            margin: 15px 0;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: #fff;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .calc-result {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 12px;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Reviews Section */
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -478,7 +599,9 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#pricing">Internet Plans</a></li>
+            <li><a href="#calculator">Calculator</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#reviews">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -495,9 +618,16 @@
             <a href="#services" class="btn-primary">Our Services</a>
             <a href="#pricing" class="btn-outline">Internet Plans</a>
         </div>
+
+        <!-- Live Server Status Monitor -->
+        <div class="status-container">
+            <div class="status-item"><span class="status-dot"></span> Server Status: <strong>Online (100%)</strong></div>
+            <div class="status-item"><i class="fa-solid fa-bolt" style="color: var(--primary);"></i> Bypass Servers: <strong>Active</strong></div>
+            <div class="status-item"><i class="fa-solid fa-headset" style="color: var(--accent);"></i> Support: <strong>24/7 Available</strong></div>
+        </div>
     </section>
 
-    <!-- MAIN SERVICES SECTION (ISSELLA THIBBA SERVICES TIKA) -->
+    <!-- SERVICES SECTION -->
     <section id="services">
         <div class="section-header">
             <span class="tag">What We Offer</span>
@@ -544,7 +674,7 @@
         </div>
     </section>
 
-    <!-- INTERNET PACKAGES & PRICING SECTION (ALUTH PRICING TABLES) -->
+    <!-- INTERNET PACKAGES & PRICING SECTION -->
     <section id="pricing">
         <div class="section-header">
             <span class="tag">High-Speed Connectivity</span>
@@ -623,7 +753,27 @@
         </div>
     </section>
 
-    <!-- ABOUT US SECTION (ISSELLA THIBBA ABOUT SECTION EKA) -->
+    <!-- PACKAGE / DATA CALCULATOR SECTION -->
+    <section id="calculator">
+        <div class="section-header">
+            <span class="tag">Smart Helper</span>
+            <h2>Find Your Ideal Package</h2>
+            <p>Select your daily internet usage to find the best package recommendation.</p>
+        </div>
+
+        <div class="calc-box">
+            <label for="usageSelect" style="color: var(--text-sub);">Choose Your Primary Daily Internet Activity:</label>
+            <select id="usageSelect" onchange="calculatePackage()">
+                <option value="">-- Select Usage Type --</option>
+                <option value="light">Light Browsing, WhatsApp, & Social Media (1-3 GB/day)</option>
+                <option value="medium">YouTube Streaming, Zoom Meetings, & Socials (5-10 GB/day)</option>
+                <option value="heavy">HD Video Downloads, Movies, Gaming & Work (15+ GB/day)</option>
+            </select>
+            <div class="calc-result" id="calcResult">Please select your usage pattern above.</div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
     <section id="about">
         <div class="section-header">
             <span class="tag">Why Choose Us</span>
@@ -650,7 +800,58 @@
         </div>
     </section>
 
-    <!-- CUSTOMER REVIEWS SECTION (ALUTH TESTIMONIALS) -->
+    <!-- FREQUENTLY ASKED QUESTIONS (FAQ) SECTION -->
+    <section id="faq">
+        <div class="section-header">
+            <span class="tag">Questions & Answers</span>
+            <h2>Frequently Asked Questions</h2>
+            <p>Find quick answers to common questions about our internet bypass packages and tech services.</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>1. How does the Internet Bypass Package activation work?</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    After you subscribe to a basic package (like Dialog Zoom 298 or Airtel TikTok), you purchase our configuration key. We provide simple app setup files that convert your restricted package into full high-speed data.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>2. How fast is the activation process after payment?</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Activation takes less than 5 to 10 minutes! Once you send your bank receipt or eZ Cash transaction screenshot via WhatsApp, our team will deliver your setup instantly.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>3. Is this service safe and reliable for daily use?</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes, 100%! We use high-speed encrypted servers that ensure complete connection security, low ping for gaming, and stable speed 24/7.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>4. Can I use these packages on Routers and PCs?</span>
+                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! We provide setups for Android, iOS, Windows PC, and supported Wi-Fi routers (such as Dialog Broadband Routers).
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS SECTION -->
     <section id="reviews">
         <div class="section-header">
             <span class="tag">Feedback</span>
@@ -780,11 +981,33 @@
     </footer>
 
     <script>
+        // Cursor Glow Animation
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             glow.style.left = e.clientX + 'px';
             glow.style.top = e.clientY + 'px';
         });
+
+        // FAQ Toggle Function
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
+
+        // Package Usage Calculator Function
+        function calculatePackage() {
+            const usage = document.getElementById('usageSelect').value;
+            const resultBox = document.getElementById('calcResult');
+
+            if (usage === 'light') {
+                resultBox.innerHTML = "Recommended: <strong>100 GB Package (LKR 230 / 280)</strong> - Ideal for daily messaging & light browsing!";
+            } else if (usage === 'medium') {
+                resultBox.innerHTML = "Recommended: <strong>200 GB or 300 GB Package (LKR 300 / 400)</strong> - Perfect for streaming & social media!";
+            } else if (usage === 'heavy') {
+                resultBox.innerHTML = "Recommended: <strong>500 GB or Unlimited Package (LKR 500 / 600)</strong> - Best for uninterrupted heavy downloads & 4K streaming!";
+            } else {
+                resultBox.innerHTML = "Please select your usage pattern above.";
+            }
+        }
     </script>
 </body>
 </html>
