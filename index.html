@@ -3,393 +3,416 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYCO NET LK | Powerful Digital Infrastructure</title>
-    <!-- FontAwesome Icons -->
+    <title>AURA NET.LK | Elite Digital Infrastructure & Media</title>
+    <!-- FontAwesome Icons & Google Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-dark: #080a0f;
-            --primary-blue: #0088ff;
-            --accent-orange: #ff6b00;
+            --bg-black: #000000;
+            --bg-card: rgba(10, 10, 12, 0.75);
+            --primary-neon: #00f0ff;
+            --secondary-neon: #7000ff;
             --text-main: #ffffff;
-            --text-sub: #94a3b8;
-            --card-bg: rgba(15, 23, 42, 0.6);
-            --border-color: rgba(255, 255, 255, 0.1);
+            --text-muted: #8e8e93;
+            --border-glow: rgba(0, 240, 255, 0.2);
+            --glass-border: rgba(255, 255, 255, 0.08);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Inter, -apple-system, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-black);
             color: var(--text-main);
             overflow-x: hidden;
-            min-height: 100vh;
+            line-height: 1.6;
         }
 
-        /* Hero Section Container with Anime Background */
-        .hero-container {
+        /* Full Black Animated Wallpaper Hero Area */
+        .hero-section {
             position: relative;
             min-height: 100vh;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background-image: linear-gradient(to right, rgba(8, 10, 15, 0.95) 30%, rgba(8, 10, 15, 0.4) 100%), 
-                              url('https://i.ibb.co/C0f9v5P/anime-bg.jpg');
+            /* Animated Dark Anime Overlay with Black Tint */
+            background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.95) 100%), 
+                        url('https://i.ibb.co/C0f9v5P/anime-bg.jpg');
             background-size: cover;
-            background-position: center right;
+            background-position: center;
             background-repeat: no-repeat;
+            background-attachment: fixed;
+            animation: pulseGlow 8s infinite alternate;
         }
 
-        /* Top Navigation Bar */
+        @keyframes pulseGlow {
+            0% { filter: brightness(0.8) contrast(1.1); }
+            100% { filter: brightness(1) contrast(1.25); }
+        }
+
+        /* Particle Overlay Layer */
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        #cursor-glow {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, rgba(112, 0, 255, 0.03) 50%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            transition: transform 0.08s ease-out;
+        }
+
+        /* Navigation Bar */
         header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background: rgba(8, 10, 15, 0.5);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
+            padding: 22px 8%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
         }
 
-        .brand {
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 1.5px;
             display: flex;
             align-items: center;
             gap: 10px;
-            font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
         }
 
-        .brand i { color: var(--primary-blue); }
+        .logo span {
+            color: var(--primary-neon);
+            text-shadow: 0 0 15px var(--primary-neon);
+        }
 
         nav ul {
             display: flex;
-            gap: 20px;
+            gap: 30px;
             list-style: none;
         }
 
         nav a {
-            color: var(--text-sub);
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.82rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
 
-        nav a:hover { color: var(--text-main); }
+        nav a:hover {
+            color: var(--primary-neon);
+            text-shadow: 0 0 10px var(--primary-neon);
+        }
 
-        .nav-btns {
+        /* Hero Content */
+        .hero-main {
+            padding: 100px 8% 60px;
             display: flex;
-            gap: 12px;
-        }
-
-        .btn-sm-blue {
-            background: rgba(0, 136, 255, 0.2);
-            color: var(--primary-blue);
-            border: 1px solid var(--primary-blue);
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .btn-sm-solid {
-            background: var(--primary-blue);
-            color: #fff;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        /* Main Hero Content */
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            padding: 60px 5%;
+            flex-direction: column;
             align-items: center;
-            flex-grow: 1;
+            text-align: center;
+            z-index: 2;
         }
 
-        .left-content {
-            max-width: 650px;
-        }
-
-        .main-title {
-            font-size: 4rem;
-            font-weight: 900;
-            line-height: 1.05;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        .main-title span {
-            color: var(--primary-blue);
-            display: block;
-        }
-
-        .description {
-            color: var(--text-sub);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        /* Stats Bar */
-        .stats-bar {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: rgba(15, 23, 42, 0.7);
-            border: 1px solid var(--border-color);
-            padding: 12px 24px;
-            border-radius: 8px;
-            width: fit-content;
-            margin-bottom: 35px;
-            backdrop-filter: blur(8px);
-        }
-
-        .stat-number {
-            font-size: 1.4rem;
+        .badge-tag {
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid var(--border-glow);
+            color: var(--primary-neon);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.8rem;
             font-weight: 800;
-            color: var(--primary-blue);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+        }
+
+        .hero-title {
+            font-size: 4.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero-title span {
+            background: linear-gradient(90deg, var(--primary-neon), var(--secondary-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+        }
+
+        .hero-desc {
+            max-width: 750px;
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            margin-bottom: 40px;
+        }
+
+        .cta-group {
             display: flex;
-            align-items: center;
-            gap: 8px;
+            gap: 20px;
         }
 
-        .stat-divider {
-            width: 1px;
-            height: 20px;
-            background: var(--border-color);
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-sub);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .stat-label i { color: #10b981; }
-
-        /* Action Buttons */
-        .action-btns {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn-orange {
-            background: var(--accent-orange);
-            color: #fff;
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 700;
+        .btn-neon {
+            background: var(--primary-neon);
+            color: #000;
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
             border: none;
             cursor: pointer;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        .btn-neon:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.8);
         }
 
         .btn-dark {
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(255, 255, 255, 0.03);
             color: #fff;
-            padding: 14px 28px;
-            border-radius: 8px;
+            padding: 16px 36px;
+            border-radius: 12px;
             font-weight: 700;
-            border: 1px solid var(--border-color);
-            cursor: pointer;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
         }
 
-        /* Right Side Globe Animation Showcase */
-        .right-content {
+        .btn-dark:hover {
+            border-color: var(--primary-neon);
+            color: var(--primary-neon);
+            background: rgba(0, 240, 255, 0.05);
+        }
+
+        /* Content Sections */
+        section {
+            padding: 100px 8%;
             position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            z-index: 2;
+            border-bottom: 1px solid var(--glass-border);
+            background: var(--bg-black);
         }
 
-        .globe-wrapper {
-            position: relative;
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0,136,255,0.2) 0%, transparent 70%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
         }
 
-        .globe-sphere {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: #020617;
-            border: 2px solid rgba(0, 136, 255, 0.4);
-            box-shadow: 0 0 40px rgba(0, 136, 255, 0.3);
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-top: 10px;
+        }
+
+        /* Services Cards Grid */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            backdrop-filter: blur(15px);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .globe-sphere::after {
+        .card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(0, 136, 255, 0.1) 20px);
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-neon), transparent);
+            transform: translateX(-100%);
+            transition: 0.6s;
         }
 
-        /* Location Badges */
-        .location-badge {
-            position: absolute;
-            background: rgba(15, 23, 42, 0.85);
-            border: 1px solid var(--border-color);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-            backdrop-filter: blur(4px);
+        .card:hover::before {
+            transform: translateX(100%);
         }
 
-        .flag-icon { width: 16px; height: 11px; border-radius: 2px; }
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-glow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 240, 255, 0.15);
+        }
 
-        .loc-1 { top: 20%; left: -20px; }
-        .loc-2 { top: 45%; right: -30px; }
-        .loc-3 { bottom: 15%; left: 10px; }
+        .card-icon {
+            font-size: 2.2rem;
+            color: var(--primary-neon);
+            margin-bottom: 25px;
+            text-shadow: 0 0 15px var(--primary-neon);
+        }
 
-        /* Bottom Floating Widget */
-        .floating-widget {
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Floating Contact Buttons */
+        .float-contact {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 45px;
-            height: 45px;
+            bottom: 30px; right: 30px;
+            display: flex; flex-direction: column; gap: 15px;
+            z-index: 999;
+        }
+
+        .float-btn {
+            width: 60px; height: 60px;
             border-radius: 50%;
-            background: radial-gradient(circle, #ff0055, #0088ff);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 20px rgba(0, 136, 255, 0.6);
-            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 24px; text-decoration: none;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+            transition: 0.3s ease;
+            border: 1px solid var(--glass-border);
+        }
+
+        .float-wa { background: #25D366; box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
+        .float-call { background: var(--primary-neon); color: #000; box-shadow: 0 0 20px rgba(0, 240, 255, 0.4); }
+
+        .float-btn:hover { transform: scale(1.15) rotate(5deg); }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            background: #000;
+            border-top: 1px solid var(--glass-border);
+            font-size: 0.9rem;
         }
 
         @media (max-width: 900px) {
-            .hero-content { grid-template-columns: 1fr; }
-            .right-content { display: none; }
-            .main-title { font-size: 2.8rem; }
+            .hero-title { font-size: 2.8rem; }
+            nav ul { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="hero-container">
-        <!-- Header / Navigation -->
+    <div id="cursor-glow"></div>
+    <div class="bg-grid"></div>
+
+    <!-- MAIN HERO SECTION WITH ANIMATED DARK BLACK WALLPAPER -->
+    <div class="hero-section">
         <header>
-            <div class="brand">
-                <i class="fa-solid fa-bolt"></i>
-                SYCO NET LK
-            </div>
+            <a href="#" class="logo"><i class="fa-solid fa-cube"></i> AURA NET<span>.LK</span></a>
             <nav>
                 <ul>
-                    <li><a href="#">Cloud VPN</a></li>
-                    <li><a href="#">Monetization</a></li>
-                    <li><a href="#">Enterprise POS</a></li>
-                    <li><a href="#">Downloads</a></li>
-                    <li><a href="#">Movie Box</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">Infrastructure</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="nav-btns">
-                <a href="#" class="btn-sm-blue"><i class="fa-regular fa-user"></i> MY PROFILE</a>
-                <a href="#" class="btn-sm-solid"><i class="fa-solid fa-crown"></i> GET PRO PLAN</a>
-            </div>
         </header>
 
-        <!-- Main Content -->
-        <div class="hero-content">
-            <div class="left-content">
-                <h1 class="main-title">
-                    Powerful
-                    <span>Digital</span>
-                    Infrastructure
-                </h1>
-                <p class="description">
-                    Experience high-speed proxy tunneling, automated enterprise POS management, and high-velocity social growth strategies. Engineered for the Sri Lankan digital elite.
-                </p>
-
-                <!-- Stats Bar -->
-                <div class="stats-bar">
-                    <div class="stat-number">
-                        7,869 <i class="fa-solid fa-shield-halved" style="font-size: 0.9rem; color: #ff6b00;"></i>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-label">
-                        <i class="fa-solid fa-lock"></i> SSL Secured
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-label">
-                        <i class="fa-solid fa-circle-check"></i> Authenticated
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="action-btns">
-                    <a href="#" class="btn-orange">
-                        Start Free Trial <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                    <a href="#" class="btn-dark">
-                        <i class="fa-solid fa-briefcase"></i> Business POS
-                    </a>
-                </div>
-            </div>
-
-            <!-- Right Globe Illustration -->
-            <div class="right-content">
-                <div class="globe-wrapper">
-                    <div class="globe-sphere"></div>
-                    
-                    <!-- Floating Location Tags -->
-                    <div class="location-badge loc-1">
-                        <span style="color: #ff4757;">🇩🇪</span> GERMANY
-                    </div>
-                    <div class="location-badge loc-2">
-                        <span style="color: #2ed573;">🇮🇳</span> INDIA
-                    </div>
-                    <div class="location-badge loc-3">
-                        <span style="color: #eccc68;">🇱🇰</span> SRI LANKA <span style="color: #10b981; font-size: 10px;">ONLINE</span>
-                    </div>
-                </div>
+        <div class="hero-main">
+            <div class="badge-tag"><i class="fa-solid fa-shield-halved"></i> Next-Gen Technology & Media</div>
+            <h1 class="hero-title">Powerful <span>Digital Architecture</span> & Cyber Solutions</h1>
+            <p class="hero-desc">Delivering high-velocity Web Development, ultra-fast Proxy Tunneling & Internet Access, and Cinematic Visual Editing services crafted for modern Sri Lankan digital brands.</p>
+            
+            <div class="cta-group">
+                <a href="#services" class="btn-neon">Explore Services</a>
+                <a href="#contact" class="btn-dark">Get In Touch</a>
             </div>
         </div>
+
+        <div></div> <!-- Spacer for flexbox layout -->
     </div>
 
-    <!-- Right Bottom Widget -->
-    <div class="floating-widget">
-        <i class="fa-solid fa-atom" style="color: white; font-size: 20px;"></i>
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="section-header">
+            <div class="badge-tag">Capabilities</div>
+            <h2>Specialized Digital Services</h2>
+        </div>
+
+        <div class="grid-layout">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Custom-built responsive web applications, sleek landing pages, and API integrations with ultra-fast loading speed and dark neon aesthetics.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
+                <h3>Internet & Tunneling</h3>
+                <p>Dedicated high-speed connectivity solutions, proxy tunneling setups, and reliable server infrastructure for maximum uptime.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-video"></i></div>
+                <h3>Cinematic Video Editing</h3>
+                <p>High-energy social media Reels, Shorts, corporate videos, and promotional content featuring color grading and motion graphics.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3>Photo Manipulation</h3>
+                <p>Professional photo retouching, background swapping, digital art creation, and high-resolution graphics for social media branding.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING CONTACT BUTTONS -->
+    <div class="float-contact">
+        <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-wa" title="WhatsApp Chat">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:+94742274908" class="float-btn float-call" title="Direct Call">
+            <i class="fa-solid fa-phone"></i>
+        </a>
     </div>
 
+    <footer>
+        <p>&copy; 2026 AURA NET.LK. All Rights Reserved. Built with Black Neon Cyberpunk Theme.</p>
+    </footer>
+
+    <script>
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+    </script>
 </body>
 </html>
