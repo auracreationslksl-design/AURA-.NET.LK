@@ -391,41 +391,13 @@
             border: 1px solid rgba(56, 189, 248, 0.3);
         }
 
-        /* 100% WORKING EMBEDDED SPEED TEST SECTION */
-        .speedtest-section-wrapper {
-            max-width: 900px;
+        /* WHY CHOOSE US SECTION (Replaced Speed Test) */
+        .why-us-wrapper {
+            max-width: 1000px;
             margin: 0 auto;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 30px;
-            backdrop-filter: blur(12px);
-        }
-
-        .speedtest-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .speedtest-neon-frame {
-            position: relative;
-            width: 100%;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 2px solid var(--primary);
-            box-shadow: 0 0 25px var(--primary-glow), inset 0 0 15px var(--primary-glow);
-            background: #000;
-        }
-
-        .speedtest-neon-frame iframe {
-            width: 100%;
-            height: 480px;
-            border: none;
-            display: block;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         /* Smart Calculator Box */
@@ -514,7 +486,6 @@
         .stars { color: #f59e0b; margin-bottom: 8px; font-size: 13px; }
         .review-card p { font-size: 0.9rem; color: var(--text-sub); font-style: italic; }
 
-        /* Review Submission Form */
         .review-form-box {
             max-width: 600px;
             margin: 40px auto 0;
@@ -700,7 +671,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#pricing">Plans</a></li>
-            <li><a href="#speedtest">Speed Test</a></li>
+            <li><a href="#whyus">Why Us</a></li>
             <li><a href="#calculator">Calculator</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#reviews">Reviews</a></li>
@@ -813,26 +784,34 @@
         </div>
     </section>
 
-    <!-- 100% WORKING EMBEDDED SPEED TEST SECTION -->
-    <section id="speedtest">
+    <!-- WHY CHOOSE US SECTION (Replaced Speed Test) -->
+    <section id="whyus">
         <div class="section-header">
-            <span class="tag">Network Performance</span>
-            <h2>Official Speed Test</h2>
-            <p>Accurately test your connection speed directly using the high-performance OpenSpeedTest framework.</p>
+            <span class="tag">Our Advantage</span>
+            <h2>Why Choose AURA NET.LK?</h2>
+            <p>We deliver the most trusted, secure, and lightning-fast digital solutions in Sri Lanka.</p>
         </div>
 
-        <div class="speedtest-section-wrapper">
-            <div class="speedtest-controls">
-                <span style="font-size: 0.9rem; color: var(--text-sub);"><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> High-Speed Test Node Connected</span>
+        <div class="why-us-wrapper">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Lightning Fast Activation</h3>
+                <p>All package bypass configurations and orders are processed and activated within 5 to 10 minutes.</p>
             </div>
-            
-            <div class="speedtest-neon-frame">
-                <iframe src="https://openspeedtest.com/Get-Widget.php" title="Live Speed Test"></iframe>
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
+                <h3>24/7 Dedicated Support</h3>
+                <p>Our friendly customer support team is always active via WhatsApp and direct calls to assist you anytime.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-shield-cat"></i></div>
+                <h3>100% Secure & Reliable</h3>
+                <p>Optimized network setups ensuring high bandwidth, low ping, and absolute safety for all your connections.</p>
             </div>
         </div>
     </section>
 
-    <!-- PACKAGE CALCULATOR SECTION (WITH USAGE TYPE OPTIONS) -->
+    <!-- PACKAGE CALCULATOR SECTION -->
     <section id="calculator">
         <div class="section-header">
             <span class="tag">Smart Helper</span>
@@ -852,7 +831,7 @@
         </div>
     </section>
 
-    <!-- FAQ SECTION (EXPANDED TO 4 QUESTIONS) -->
+    <!-- FAQ SECTION (4 Questions) -->
     <section id="faq">
         <div class="section-header">
             <span class="tag">Questions & Answers</span>
@@ -879,7 +858,7 @@
         </div>
     </section>
 
-    <!-- AUTO-SCROLLING REVIEWS (RIGHT TO LEFT MARQUEE WITH 100+ REVIEWS LOOP) & SUBMISSION -->
+    <!-- AUTO-SCROLLING REVIEWS & SUBMISSION -->
     <section id="reviews" style="padding-left:0; padding-right:0;">
         <div class="section-header" style="padding: 0 8%;">
             <span class="tag">Client Feedback</span>
@@ -887,7 +866,6 @@
             <p>Real feedback scrolling continuously from right to left.</p>
         </div>
 
-        <!-- Marquee Track with 10+ Detailed Items -->
         <div class="reviews-marquee-container">
             <div class="reviews-track" id="reviewsTrack">
                 <div class="review-card">
@@ -911,7 +889,7 @@
                     <p>"Gaming වලට Low Ping එනවා. Download speed එක උපරිමයි. තැන්ක්‍යූ AURA NET team!"</p>
                 </div>
                 <div class="review-card">
-                    <div class="review-header"><div class="avatar">RS</div><div class="reviewer-info"><h4> Roshan Silva</h4><span>Dialog Mobile</span></div></div>
+                    <div class="review-header"><div class="avatar">RS</div><div class="reviewer-info"><h4>Roshan Silva</h4><span>Dialog Mobile</span></div></div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"Very fast connection. No buffering while streaming 4K movies. Excellent support!"</p>
                 </div>
@@ -920,17 +898,7 @@
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"Trusted service. Got connected within 5 minutes. Highly recommended for everyone."</p>
                 </div>
-                <div class="review-card">
-                    <div class="review-header"><div class="avatar">CK</div><div class="reviewer-info"><h4>Chathura Kumara</h4><span>Hutch 4G User</span></div></div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Best pricing packages available in Sri Lanka. Fast response on WhatsApp."</p>
-                </div>
-                <div class="review-card">
-                    <div class="review-header"><div class="avatar">TD</div><div class="reviewer-info"><h4>Tharindu Dilshan</h4><span>Dialog Router</span></div></div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Outstanding speeds and zero disconnect issues. Keep up the great work!"</p>
-                </div>
-                <!-- Loop duplicates to ensure smooth infinite marquee motion -->
+                <!-- Duplicate loop items for smooth marquee effect -->
                 <div class="review-card">
                     <div class="review-header"><div class="avatar">KS</div><div class="reviewer-info"><h4>Kasun Sampath</h4><span>Dialog Router User</span></div></div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -944,7 +912,6 @@
             </div>
         </div>
 
-        <!-- Review Submission Form -->
         <div style="padding: 0 8%;">
             <div class="review-form-box">
                 <h3 style="margin-bottom: 15px; color: var(--text-main); text-align: center;">Submit Your Review</h3>
@@ -975,7 +942,7 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT SECTION (With your Gmail: aura.creations.lksl@gmail.com) -->
     <section id="contact">
         <div class="section-header">
             <span class="tag">Get In Touch</span>
@@ -993,6 +960,10 @@
                 <a href="https://wa.me/94742274908" target="_blank" class="channel-card">
                     <div class="channel-icon" style="color: #25D366; background: rgba(37,211,102,0.1);"><i class="fa-brands fa-whatsapp"></i></div>
                     <div class="channel-details"><span>Instant WhatsApp</span><strong>+94 74 227 4908</strong></div>
+                </a>
+                <a href="mailto:aura.creations.lksl@gmail.com" class="channel-card">
+                    <div class="channel-icon" style="color: #f43f5e; background: rgba(244,63,94,0.1);"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="channel-details"><span>Official Gmail</span><strong>aura.creations.lksl@gmail.com</strong></div>
                 </a>
             </div>
 
