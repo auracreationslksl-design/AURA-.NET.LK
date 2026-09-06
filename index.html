@@ -13,31 +13,10 @@
             --primary: #38bdf8;
             --primary-glow: rgba(56, 189, 248, 0.35);
             --accent: #6366f1;
-            --success: #10b981;
             --text-main: #f9fafb;
             --text-sub: #9ca3af;
             --border: rgba(255, 255, 255, 0.08);
             --badge-bg: rgba(56, 189, 248, 0.1);
-            --nav-bg: rgba(3, 7, 18, 0.85);
-            --footer-bg: #02040a;
-            --input-bg: rgba(255, 255, 255, 0.04);
-        }
-
-        /* Light Theme Variables */
-        body.light-theme {
-            --bg-main: #f3f4f6;
-            --bg-card: rgba(255, 255, 255, 0.85);
-            --primary: #0284c7;
-            --primary-glow: rgba(2, 132, 199, 0.25);
-            --accent: #4f46e5;
-            --success: #059669;
-            --text-main: #1f2937;
-            --text-sub: #4b5563;
-            --border: rgba(0, 0, 0, 0.1);
-            --badge-bg: rgba(2, 132, 199, 0.1);
-            --nav-bg: rgba(255, 255, 255, 0.9);
-            --footer-bg: #e5e7eb;
-            --input-bg: rgba(0, 0, 0, 0.03);
         }
 
         * {
@@ -46,11 +25,16 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
             scroll-behavior: smooth;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         body {
             background-color: var(--bg-main);
+            /* Direct Working Online Background Image with Overlay */
+            background-image: linear-gradient(rgba(3, 7, 18, 0.7), rgba(3, 7, 18, 0.7)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
@@ -60,7 +44,7 @@
             position: fixed;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
             transform: translate(-50%, -50%);
@@ -71,18 +55,19 @@
         .bg-grid {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
-            background-image: linear-gradient(to right, rgba(128,128,128,0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(128,128,128,0.05) 1px, transparent 1px);
+            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
             background-size: 40px 40px;
             z-index: -1;
         }
 
+        /* Nav Bar */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            background: var(--nav-bg);
+            background: rgba(3, 7, 18, 0.85);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
             position: sticky;
@@ -100,65 +85,42 @@
 
         .logo span { color: var(--primary); text-shadow: 0 0 12px var(--primary-glow); }
 
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
         .nav-links {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             list-style: none;
         }
 
         .nav-links a {
             color: var(--text-sub);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 500;
-            padding: 8px 12px;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
             border-radius: 8px;
         }
 
         .nav-links a:hover {
             color: var(--primary);
-            background: var(--badge-bg);
+            background: rgba(56, 189, 248, 0.1);
         }
 
-        /* Dark/Light Mode Toggle Switch */
-        .theme-toggle-btn {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 8px 14px;
-            border-radius: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .theme-toggle-btn:hover {
-            border-color: var(--primary);
-        }
-
+        /* Sections */
         section {
-            padding: 90px 8%;
+            padding: 100px 8%;
             border-bottom: 1px solid var(--border);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .section-header .tag {
             background: var(--badge-bg);
             color: var(--primary);
-            border: 1px solid var(--primary-glow);
+            border: 1px solid rgba(56, 189, 248, 0.3);
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 12px;
@@ -170,7 +132,7 @@
         }
 
         .section-header h2 {
-            font-size: 2.3rem;
+            font-size: 2.5rem;
             color: var(--text-main);
             font-weight: 800;
         }
@@ -183,7 +145,7 @@
 
         /* Hero Section */
         .hero {
-            min-height: 80vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -193,20 +155,20 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 20px;
         }
 
         .hero h1 span {
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--text-sub);
             max-width: 700px;
             margin-bottom: 35px;
@@ -216,14 +178,14 @@
 
         .btn-primary {
             background: var(--primary);
-            color: #fff;
+            color: #030712;
             padding: 14px 32px;
             border-radius: 10px;
             font-weight: 700;
             border: none;
             cursor: pointer;
             text-decoration: none;
-            display: inline-block;
+            transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
@@ -240,6 +202,7 @@
             font-weight: 600;
             cursor: pointer;
             text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .btn-outline:hover {
@@ -247,298 +210,192 @@
             color: var(--primary);
         }
 
-        /* Live System Status Bar */
-        .status-container {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-top: 35px;
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            padding: 12px 25px;
-            border-radius: 50px;
+            border-radius: 20px;
+            padding: 35px 28px;
             backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
-        .status-item {
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px var(--primary-glow);
+        }
+
+        .service-badge {
+            position: absolute;
+            top: 20px; right: 20px;
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+
+        .service-icon {
+            width: 60px; height: 60px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 26px;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 { font-size: 1.4rem; margin-bottom: 15px; }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .service-features li {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
+            gap: 10px;
+        }
+
+        .service-features li i { color: var(--primary); font-size: 12px; }
+
+        .price-tag {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+            margin-top: auto;
+        }
+
+        /* Featured Work */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px var(--primary-glow);
+        }
+
+        .portfolio-img {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .portfolio-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-card:hover .portfolio-img img { transform: scale(1.08); }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(3, 7, 18, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-card:hover .portfolio-overlay { opacity: 1; }
+        .portfolio-content { padding: 25px; }
+        .portfolio-content h3 { font-size: 1.25rem; margin-bottom: 8px; }
+        .portfolio-content p { color: var(--text-sub); font-size: 0.95rem; margin-bottom: 15px; }
+
+        .portfolio-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portfolio-tags span {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
             color: var(--text-sub);
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 6px;
         }
 
-        .status-dot {
-            width: 9px; height: 9px;
-            border-radius: 50%;
-            background-color: var(--success);
-            box-shadow: 0 0 10px var(--success);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        /* General Cards & Grids */
-        .grid-3 {
+        /* Terms Section */
+        .terms-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
 
-        .card {
+        .terms-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 20px;
             padding: 30px;
             backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
         }
 
-        .card:hover {
+        .terms-card:hover {
             border-color: var(--primary);
             box-shadow: 0 10px 30px var(--primary-glow);
-            transform: translateY(-5px);
         }
 
-        .card-icon {
-            width: 55px; height: 55px;
-            border-radius: 14px;
-            background: var(--badge-bg);
-            color: var(--primary);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            color: var(--text-main);
-        }
-
-        .card p {
-            color: var(--text-sub);
-            font-size: 0.9rem;
-        }
-
-        /* Pricing Cards */
-        .price-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .pricing-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 25px;
-            backdrop-filter: blur(12px);
-        }
-
-        .pricing-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px var(--primary-glow);
-            transform: translateY(-5px);
-        }
-
-        .pricing-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            color: var(--primary);
+        .terms-card-header {
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        .pricing-card .sub-title {
-            font-size: 0.8rem;
-            color: var(--text-sub);
-            margin-bottom: 18px;
+            gap: 15px;
+            margin-bottom: 20px;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
 
-        .package-list { list-style: none; }
+        .terms-card-header i { font-size: 22px; color: var(--primary); }
+        .terms-card-header h3 { font-size: 1.2rem; color: var(--text-main); }
 
-        .package-list li {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px var(--border) dashed;
-            font-size: 0.9rem;
-        }
-
-        .package-list li span.price {
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        /* FEATURE 1: LIVE SPEED TEST WIDGET */
-        .speedtest-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 30px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .speedtest-iframe {
-            width: 100%;
-            height: 480px;
-            border: none;
-            border-radius: 16px;
-            background: transparent;
-        }
-
-        /* FAQ Accordion */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
+        .terms-list {
+            list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 15px;
-        }
-
-        .faq-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 18px 22px;
-            cursor: pointer;
-        }
-
-        .faq-item:hover { border-color: var(--primary); }
-
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--text-main);
-        }
-
-        .faq-answer {
-            margin-top: 12px;
-            color: var(--text-sub);
-            font-size: 0.9rem;
-            display: none;
-        }
-
-        .faq-item.active .faq-answer { display: block; }
-        .faq-item.active .faq-icon { transform: rotate(180deg); color: var(--primary); }
-
-        /* Data Calculator */
-        .calc-box {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .calc-box select {
-            width: 100%;
-            padding: 12px 16px;
-            margin: 15px 0;
-            background: var(--input-bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            color: var(--text-main);
-            outline: none;
-            font-size: 0.95rem;
-        }
-
-        .calc-result {
-            margin-top: 15px;
-            padding: 15px;
-            background: var(--badge-bg);
-            border: 1px solid var(--primary);
-            border-radius: 12px;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        /* AUTO SCROLLING REVIEWS (MARQUEE) */
-        .reviews-slider-wrapper {
-            overflow: hidden;
-            width: 100%;
-            position: relative;
-            padding: 20px 0;
-        }
-
-        .reviews-slider-track {
-            display: flex;
-            gap: 25px;
-            width: max-content;
-            animation: scrollLeft 35s linear infinite;
-        }
-
-        .reviews-slider-track:hover { animation-play-state: paused; }
-
-        @keyframes scrollLeft {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .review-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 22px 25px;
-            width: 320px;
-            flex-shrink: 0;
-            backdrop-filter: blur(12px);
-        }
-
-        .review-header {
-            display: flex;
-            align-items: center;
             gap: 12px;
-            margin-bottom: 10px;
         }
 
-        .avatar {
-            width: 42px; height: 42px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 15px; color: #fff;
-        }
-
-        .reviewer-info h4 { font-size: 0.9rem; color: var(--text-main); }
-        .reviewer-info span { font-size: 0.75rem; color: var(--text-sub); }
-
-        .stars { color: #f59e0b; margin-bottom: 8px; font-size: 12px; }
-        .review-card p { font-size: 0.88rem; color: var(--text-sub); font-style: italic; line-height: 1.5; }
-
-        /* FEATURE 2: SUBMIT REVIEW FORM */
-        .review-form-box {
-            max-width: 600px;
-            margin: 40px auto 0;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 30px;
-        }
-
-        .star-rating-select {
+        .terms-list li {
+            font-size: 0.92rem;
+            color: var(--text-sub);
             display: flex;
+            align-items: flex-start;
             gap: 10px;
-            font-size: 22px;
-            color: #f59e0b;
-            cursor: pointer;
-            margin-bottom: 15px;
+            line-height: 1.5;
         }
+
+        .terms-list li i { color: var(--primary); font-size: 13px; margin-top: 4px; }
 
         /* Contact Section */
         .contact-wrapper {
@@ -548,167 +405,118 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 24px;
-            padding: 40px;
+            padding: 50px;
+            backdrop-filter: blur(12px);
         }
+
+        .contact-info-side h3 { font-size: 2rem; margin-bottom: 15px; }
+        .contact-info-side p { color: var(--text-sub); margin-bottom: 30px; }
 
         .channel-card {
             display: flex;
             align-items: center;
-            gap: 18px;
-            background: var(--input-bg);
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border);
-            padding: 16px;
-            border-radius: 14px;
+            padding: 20px;
+            border-radius: 16px;
             margin-bottom: 15px;
             text-decoration: none;
             color: var(--text-main);
+            transition: all 0.3s ease;
         }
 
         .channel-card:hover {
             border-color: var(--primary);
+            background: rgba(56, 189, 248, 0.05);
             transform: translateX(5px);
         }
 
         .channel-icon {
-            width: 45px; height: 45px;
+            width: 50px; height: 50px;
             border-radius: 12px;
-            background: var(--badge-bg);
+            background: rgba(56, 189, 248, 0.1);
             color: var(--primary);
             display: flex; align-items: center; justify-content: center;
-            font-size: 20px;
+            font-size: 22px;
         }
 
-        .channel-details span { display: block; font-size: 11px; color: var(--text-sub); text-transform: uppercase; }
-        .channel-details strong { font-size: 1rem; }
+        .channel-details span {
+            display: block;
+            font-size: 12px;
+            color: var(--text-sub);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-        .form-side form { display: flex; flex-direction: column; gap: 15px; }
-        .form-group { display: flex; flex-direction: column; gap: 6px; }
-        .form-group label { font-size: 0.85rem; color: var(--text-sub); font-weight: 500; }
+        .channel-details strong { font-size: 1.05rem; }
+
+        .form-side form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
 
         .form-control {
-            background: var(--input-bg);
+            background: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--border);
-            padding: 12px 16px;
-            border-radius: 10px;
-            color: var(--text-main);
+            padding: 14px 18px;
+            border-radius: 12px;
+            color: #fff;
             outline: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
 
-        .form-control:focus { border-color: var(--primary); }
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
 
         /* Floating Contact Buttons */
         .floating-container {
             position: fixed;
-            bottom: 25px; right: 25px;
-            display: flex; flex-direction: column; gap: 12px;
+            bottom: 30px; right: 30px;
+            display: flex; flex-direction: column; gap: 14px;
             z-index: 999;
         }
 
         .float-btn {
-            width: 52px; height: 52px;
+            width: 56px; height: 56px;
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            color: #fff; font-size: 22px; text-decoration: none;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            color: #fff; font-size: 24px; text-decoration: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
         }
 
-        .float-whatsapp { background: #25D366; }
-        .float-call { background: var(--primary); }
-
-        /* FEATURE 7: ON-SITE LIVE CHAT WIDGET BOX */
-        .chat-widget-box {
-            position: fixed;
-            bottom: 90px; right: 25px;
-            width: 320px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            z-index: 1001;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            backdrop-filter: blur(16px);
-        }
-
-        .chat-widget-header {
-            background: var(--primary);
-            color: #fff;
-            padding: 12px 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: bold;
-        }
-
-        .chat-widget-body {
-            padding: 15px;
-            max-height: 250px;
-            overflow-y: auto;
-            font-size: 0.85rem;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .chat-msg {
-            background: var(--input-bg);
-            padding: 8px 12px;
-            border-radius: 10px;
-            max-width: 85%;
-        }
-
-        .chat-msg.admin {
-            border-left: 3px solid var(--primary);
-            align-self: flex-start;
-        }
-
-        .chat-msg.user {
-            background: var(--badge-bg);
-            color: var(--primary);
-            align-self: flex-end;
-        }
-
-        .chat-widget-footer {
-            padding: 10px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            gap: 8px;
-        }
-
-        .chat-widget-footer input {
-            flex: 1;
-            background: var(--input-bg);
-            border: 1px solid var(--border);
-            padding: 8px 12px;
-            border-radius: 8px;
-            color: var(--text-main);
-            outline: none;
-            font-size: 0.85rem;
-        }
-
-        .chat-toggle-btn {
-            background: var(--accent);
-            color: #fff;
-            width: 52px; height: 52px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; font-size: 20px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
+        .float-btn:hover { transform: scale(1.12); }
+        .float-whatsapp { background: #25D366; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); }
+        .float-call { background: var(--primary); color: #030712; box-shadow: 0 8px 25px var(--primary-glow); }
 
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 30px;
             color: var(--text-sub);
-            background: var(--footer-bg);
-            font-size: 0.85rem;
+            background: #02040a;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 992px) {
-            .contact-wrapper { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.5rem; }
+            .contact-wrapper { grid-template-columns: 1fr; padding: 30px; }
+            .hero h1 { font-size: 2.8rem; }
             .nav-links { display: none; }
         }
     </style>
@@ -721,25 +529,13 @@
     <!-- Navigation Bar -->
     <nav>
         <a href="#home" class="logo">AURA NET<span>.LK</span></a>
-        
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#pricing">Plans</a></li>
-            <li><a href="#speedtest">Speed Test</a></li>
-            <li><a href="#calculator">Calculator</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#portfolio">Featured Work</a></li>
+            <li><a href="#terms">Policies</a></li>
+            <li><a href="#contact">Contact Us</a></li>
         </ul>
-
-        <!-- FEATURE 6: DARK / LIGHT MODE TOGGLE -->
-        <div class="nav-right">
-            <button class="theme-toggle-btn" onclick="toggleTheme()">
-                <i class="fa-solid fa-moon" id="theme-icon"></i>
-                <span id="theme-text">Dark</span>
-            </button>
-        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -747,254 +543,214 @@
         <div class="section-header" style="margin-bottom: 20px;">
             <span class="tag">Digital Solutions Agency</span>
         </div>
-        <h1>Elevate Your Digital Experience With <span>AURA NET.LK</span></h1>
-        <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass Packages, and Professional Visual Editing Services.</p>
+        <h1>Elevate Your Digital Presence With <span>AURA NET.LK</span></h1>
+        <p>Providing high-performance Web Development, reliable High-Speed Internet Access, and Professional Visual Editing Services for modern brands.</p>
         <div class="btn-group">
             <a href="#services" class="btn-primary">Our Services</a>
-            <a href="#pricing" class="btn-outline">Internet Plans</a>
-        </div>
-
-        <div class="status-container">
-            <div class="status-item"><span class="status-dot"></span> Server Status: <strong>Online (100%)</strong></div>
-            <div class="status-item"><i class="fa-solid fa-bolt" style="color: var(--primary);"></i> Bypass Servers: <strong>Active</strong></div>
-            <div class="status-item"><i class="fa-solid fa-headset" style="color: var(--accent);"></i> Support: <strong>24/7 Available</strong></div>
+            <a href="#contact" class="btn-outline">Contact Us</a>
         </div>
     </section>
 
     <!-- SERVICES SECTION -->
     <section id="services">
         <div class="section-header">
-            <span class="tag">What We Offer</span>
-            <h2>Our Core Services</h2>
-            <p>Comprehensive digital solutions tailored to boost your business and personal connectivity.</p>
+            <span class="tag">Comprehensive Solutions</span>
+            <h2>Our Specialized Services</h2>
+            <p>End-to-end technology and digital media expertise tailored to your goals.</p>
         </div>
 
-        <div class="grid-3">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-badge">PREMIUM SERVICE</span>
+                <div class="service-icon"><i class="fa-solid fa-code"></i></div>
                 <h3>Web Development</h3>
-                <p>Custom, ultra-fast, and responsive modern websites crafted with interactive UI/UX designs to elevate your brand presence online.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Custom Web Application Design</li>
+                    <li><i class="fa-solid fa-check"></i> Responsive Mobile Layouts</li>
+                    <li><i class="fa-solid fa-check"></i> High Performance & Speed Optimization</li>
+                    <li><i class="fa-solid fa-check"></i> Domain & Hosting Integration</li>
+                    <li><i class="fa-solid fa-check"></i> Basic Revisions Included</li>
+                </ul>
+                <div class="price-tag">Custom Quote</div>
             </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
-                <h3>High-Speed Internet Bypass</h3>
-                <p>Reliable and cost-effective internet package bypass solutions for Dialog, Airtel, and Hutch with maximum high-speed bandwidth.</p>
+
+            <div class="service-card">
+                <span class="service-badge">PREMIUM SERVICE</span>
+                <div class="service-icon"><i class="fa-solid fa-wifi"></i></div>
+                <h3>Internet Access</h3>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Dedicated Speed Packages</li>
+                    <li><i class="fa-solid fa-check"></i> Stable Service Availability</li>
+                    <li><i class="fa-solid fa-check"></i> Flexible Monthly Plans</li>
+                    <li><i class="fa-solid fa-check"></i> Reliable Network Infrastructure</li>
+                    <li><i class="fa-solid fa-check"></i> Lawful & Secure Usage</li>
+                </ul>
+                <div class="price-tag">Package Based</div>
             </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                <h3>Graphic & Video Editing</h3>
-                <p>Professional visual editing services including social media posts, branding materials, promotional posters, and video edits.</p>
+
+            <div class="service-card">
+                <span class="service-badge">PREMIUM SERVICE</span>
+                <div class="service-icon"><i class="fa-solid fa-video"></i></div>
+                <h3>Video Editing</h3>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Professional Video Editing</li>
+                    <li><i class="fa-solid fa-check"></i> Social Media Reels & Shorts</li>
+                    <li><i class="fa-solid fa-check"></i> YouTube Video Production</li>
+                    <li><i class="fa-solid fa-check"></i> Cinematic Cuts & Transitions</li>
+                    <li><i class="fa-solid fa-check"></i> Color Grading & Text Animations</li>
+                </ul>
+                <div class="price-tag">Per Project / Package</div>
+            </div>
+
+            <div class="service-card">
+                <span class="service-badge">PREMIUM SERVICE</span>
+                <div class="service-icon"><i class="fa-solid fa-image"></i></div>
+                <h3>Photo Editing</h3>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Professional Retouching & Enhancement</li>
+                    <li><i class="fa-solid fa-check"></i> Background Removal & Replacement</li>
+                    <li><i class="fa-solid fa-check"></i> Color Correction & Manipulation</li>
+                    <li><i class="fa-solid fa-check"></i> Portrait Retouching & Restoration</li>
+                    <li><i class="fa-solid fa-check"></i> Social Media Graphics Export</li>
+                </ul>
+                <div class="price-tag">Per Image / Bulk</div>
             </div>
         </div>
     </section>
 
-    <!-- INTERNET PACKAGES SECTION -->
-    <section id="pricing">
+    <!-- FEATURED WORK SECTION -->
+    <section id="portfolio">
         <div class="section-header">
-            <span class="tag">High-Speed Connectivity</span>
-            <h2>Official Internet Packages & Pricing</h2>
-            <p>Select your preferred network provider below and activate high-speed package bypass instantly.</p>
+            <span class="tag">Showcase</span>
+            <h2>Our Featured Work</h2>
+            <p>Explore a selection of our recent projects in web design, media production, and post-processing.</p>
         </div>
 
-        <div class="price-grid">
-            <div class="pricing-card">
-                <h3><i class="fa-solid fa-wifi"></i> Dialog Zoom (Router)</h3>
-                <div class="sub-title">Supported Packages: 298 & 724</div>
-                <ul class="package-list">
-                    <li><span>100 GB Package</span> <span class="price">LKR 280</span></li>
-                    <li><span>200 GB Package</span> <span class="price">LKR 250</span></li>
-                    <li><span>300 GB Package</span> <span class="price">LKR 400</span></li>
-                    <li><span>1 TB Package</span> <span class="price">LKR 1,500</span></li>
-                    <li><span>Unlimited Package</span> <span class="price">LKR 600</span></li>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Web Project">
+                    <div class="portfolio-overlay">
+                        <a href="#contact" class="btn-primary" style="padding: 10px 20px; font-size: 13px;">View Details</a>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Corporate Web Platform</h3>
+                    <p>Modern responsive website with optimized loading speeds and custom UI components.</p>
+                    <div class="portfolio-tags">
+                        <span>Web Design</span>
+                        <span>UI/UX</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Project">
+                    <div class="portfolio-overlay">
+                        <a href="#contact" class="btn-primary" style="padding: 10px 20px; font-size: 13px;">View Details</a>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Cinematic Commercial Reel</h3>
+                    <p>High-energy promotional video with dynamic text animations, transitions, and color grading.</p>
+                    <div class="portfolio-tags">
+                        <span>Video Editing</span>
+                        <span>Reels</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Photo Editing Project">
+                    <div class="portfolio-overlay">
+                        <a href="#contact" class="btn-primary" style="padding: 10px 20px; font-size: 13px;">View Details</a>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Product Branding & Retouch</h3>
+                    <p>Professional photo manipulation, background enhancement, and high-res export.</p>
+                    <div class="portfolio-tags">
+                        <span>Photo Editing</span>
+                        <span>Retouching</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE POLICIES SECTION -->
+    <section id="terms">
+        <div class="section-header">
+            <span class="tag">Service Framework</span>
+            <h2>Service Policies & Governance</h2>
+            <p>Clear, transparent, and professional operational agreements for all our digital solutions.</p>
+        </div>
+
+        <div class="terms-grid">
+            <div class="terms-card">
+                <div class="terms-card-header">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Web Development Terms</h3>
+                </div>
+                <ul class="terms-list">
+                    <li><i class="fa-solid fa-circle-check"></i> 50% advance payment required to start the project; remaining 50% upon completion.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Includes up to 2 rounds of basic revisions; additional revisions billed separately.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Domain, hosting, and future maintenance charges are separate unless agreed otherwise.</li>
                 </ul>
             </div>
 
-            <div class="pricing-card">
-                <h3><i class="fa-solid fa-mobile-screen"></i> Dialog TikTok Mobile</h3>
-                <div class="sub-title">Mobile SIM Package (297 / 997)</div>
-                <ul class="package-list">
-                    <li><span>100 GB Package</span> <span class="price">LKR 230</span></li>
-                    <li><span>200 GB Package</span> <span class="price">LKR 300</span></li>
-                    <li><span>Unlimited (1 Month)</span> <span class="price">LKR 600</span></li>
+            <div class="terms-card">
+                <div class="terms-card-header">
+                    <i class="fa-solid fa-wifi"></i>
+                    <h3>Internet Service Terms</h3>
+                </div>
+                <ul class="terms-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Access, speeds, and limits depend strictly on the selected package plan.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Extra data usage beyond plan limits will be charged separately.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Service provided strictly for lawful, responsible, and authorized use.</li>
                 </ul>
             </div>
 
-            <div class="pricing-card">
-                <h3><i class="fa-solid fa-tower-cell"></i> Airtel 4G Packages</h3>
-                <div class="sub-title">TikTok (297/997) | Zoom | YouTube</div>
-                <ul class="package-list">
-                    <li><span>100 GB Package</span> <span class="price">LKR 230</span></li>
-                    <li><span>200 GB Package</span> <span class="price">LKR 300</span></li>
-                    <li><span>YT Unlimited Package</span> <span class="price">LKR 600</span></li>
+            <div class="terms-card">
+                <div class="terms-card-header">
+                    <i class="fa-solid fa-film"></i>
+                    <h3>Video Editing Terms</h3>
+                </div>
+                <ul class="terms-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Raw footage, sound requirements, and script/references must be provided by client.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Package includes standard revisions; major structural storyline re-edits incur extra charges.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Final rendered videos exported in high-quality format upon full payment.</li>
                 </ul>
             </div>
 
-            <div class="pricing-card">
-                <h3><i class="fa-solid fa-signal"></i> Hutch 4G Packages</h3>
-                <div class="sub-title">All Hutch Bypass Packages (Zoom / Social)</div>
-                <ul class="package-list">
-                    <li><span>100 GB Package</span> <span class="price">LKR 230</span></li>
-                    <li><span>200 GB Package</span> <span class="price">LKR 300</span></li>
-                    <li><span>300 GB Package</span> <span class="price">LKR 400</span></li>
+            <div class="terms-card">
+                <div class="terms-card-header">
+                    <i class="fa-solid fa-camera-retro"></i>
+                    <h3>Photo Editing Terms</h3>
+                </div>
+                <ul class="terms-list">
+                    <li><i class="fa-solid fa-circle-check"></i> High-resolution source images must be provided for optimal retouching quality.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Retouching covers background removal, color grading, and object manipulation as requested.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Final deliverables exported in HD web/print formats; raw source files available on request.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- FEATURE 1: LIVE SPEED TEST WIDGET SECTION -->
-    <section id="speedtest">
-        <div class="section-header">
-            <span class="tag">Network Performance</span>
-            <h2>Test Your Live Internet Speed</h2>
-            <p>Check your current download and upload speeds directly below.</p>
-        </div>
-
-        <div class="speedtest-container">
-            <iframe class="speedtest-iframe" src="https://openspeedtest.com/Get-widget.php" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <!-- PACKAGE CALCULATOR SECTION -->
-    <section id="calculator">
-        <div class="section-header">
-            <span class="tag">Smart Helper</span>
-            <h2>Find Your Ideal Package</h2>
-            <p>Select your daily internet usage to find the best package recommendation.</p>
-        </div>
-
-        <div class="calc-box">
-            <label for="usageSelect" style="color: var(--text-sub);">Choose Your Daily Usage:</label>
-            <select id="usageSelect" onchange="calculatePackage()">
-                <option value="">-- Select Usage Type --</option>
-                <option value="light">Light Browsing & Socials (1-3 GB/day)</option>
-                <option value="medium">YouTube & Zoom Meetings (5-10 GB/day)</option>
-                <option value="heavy">HD Movies & Gaming (15+ GB/day)</option>
-            </select>
-            <div class="calc-result" id="calcResult">Please select your usage pattern above.</div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section id="faq">
-        <div class="section-header">
-            <span class="tag">Questions & Answers</span>
-            <h2>Frequently Asked Questions</h2>
-        </div>
-
-        <div class="faq-container">
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span>1. How does the Internet Bypass Package work?</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
-                </div>
-                <div class="faq-answer">
-                    Subscribe to a basic zoom/tiktok pack, purchase our configuration setup key, and convert your restricted package into full unlimited data.
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span>2. How fast is the activation process?</span>
-                    <i class="fa-solid fa-chevron-down faq-icon"></i>
-                </div>
-                <div class="faq-answer">
-                    Activation takes less than 5 minutes after sending your payment receipt via WhatsApp!
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- REVIEWS & REVIEW SUBMISSION FORM SECTION -->
-    <section id="reviews" style="padding-left:0; padding-right:0;">
-        <div class="section-header" style="padding: 0 8%;">
-            <span class="tag">Client Feedback</span>
-            <h2>What Our Clients Say</h2>
-            <p>Real reviews from satisfied users across Sri Lanka.</p>
-        </div>
-
-        <!-- AUTO SCROLLING REVIEWS -->
-        <div class="reviews-slider-wrapper">
-            <div class="reviews-slider-track" id="reviewsTrack">
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="avatar">KS</div>
-                        <div class="reviewer-info">
-                            <h4>Kasun Sampath</h4>
-                            <span>Dialog Zoom User</span>
-                        </div>
-                    </div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"AURA NET.LK Zoom router bypass එක මරු! Unlimited speed එකක් එනවා. Super fast service!"</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="avatar">DP</div>
-                        <div class="reviewer-info">
-                            <h4>Dilshan Perera</h4>
-                            <span>Airtel 4G User</span>
-                        </div>
-                    </div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Airtel Youtube pack එක bypass කරලා 300GB ගත්තා. 100% Recommended!"</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="avatar">NL</div>
-                        <div class="reviewer-info">
-                            <h4>Nuwan Liyanage</h4>
-                            <span>Web Design Client</span>
-                        </div>
-                    </div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"මගේ Business එකට Professional Dark Theme Website එකක් හදලා දුන්නා. Top quality design!"</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- FEATURE 2: SUBMIT CUSTOMER REVIEW FORM -->
-        <div style="padding: 0 8%;">
-            <div class="review-form-box">
-                <h3 style="margin-bottom: 15px; color: var(--text-main); text-align: center;">Leave a Customer Review</h3>
-                <form id="reviewSubmitForm" onsubmit="addNewReview(event)">
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" class="form-control" id="revName" placeholder="Kasun Perera" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Service / Package Used</label>
-                        <input type="text" class="form-control" id="revService" placeholder="e.g. Dialog Zoom or Web Design" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Select Rating</label>
-                        <select class="form-control" id="revStars">
-                            <option value="5">⭐⭐⭐⭐⭐ (5 Stars)</option>
-                            <option value="4">⭐⭐⭐⭐ (4 Stars)</option>
-                            <option value="3">⭐⭐⭐ (3 Stars)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Your Review Message</label>
-                        <textarea class="form-control" id="revComment" rows="3" placeholder="Share your experience..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Submit Review</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT US SECTION -->
     <section id="contact">
         <div class="section-header">
             <span class="tag">Get In Touch</span>
             <h2>Contact Us</h2>
+            <p>Have a project in mind or need assistance? Reach out to us today.</p>
         </div>
 
         <div class="contact-wrapper">
             <div class="contact-info-side">
-                <h3>Let's Connect</h3>
-                <p style="color: var(--text-sub); margin-bottom: 20px;">Fast activation & support team available 24/7.</p>
+                <h3>Let's Talk About Your Next Project</h3>
+                <p>We are ready to build, design, and edit for your business growth.</p>
 
                 <a href="tel:+94742274908" class="channel-card">
                     <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1011,166 +767,60 @@
                         <strong>+94 74 227 4908</strong>
                     </div>
                 </a>
+
+                <a href="mailto:aura.creations.lksl@gmail.com" class="channel-card">
+                    <div class="channel-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="channel-details">
+                        <span>Official Email</span>
+                        <strong>aura.creations.lksl@gmail.com</strong>
+                    </div>
+                </a>
             </div>
 
             <div class="form-side">
                 <form action="mailto:aura.creations.lksl@gmail.com" method="post" enctype="text/plain">
                     <div class="form-group">
                         <label>Your Name</label>
-                        <input type="text" class="form-control" name="Name" required>
+                        <input type="text" class="form-control" name="Name" placeholder="John Doe" required>
                     </div>
                     <div class="form-group">
-                        <label>WhatsApp Number</label>
-                        <input type="text" class="form-control" name="Phone" required>
+                        <label>Your Email Address</label>
+                        <input type="email" class="form-control" name="Email" placeholder="name@example.com" required>
                     </div>
                     <div class="form-group">
-                        <label>Message / Order Details</label>
-                        <textarea class="form-control" name="Message" rows="4" required></textarea>
+                        <label>Requested Service</label>
+                        <input type="text" class="form-control" name="Service" placeholder="Web Development / Video Editing / Internet Access" required>
                     </div>
-                    <button type="submit" class="btn-primary">Send Request</button>
+                    <div class="form-group">
+                        <label>Your Message</label>
+                        <textarea class="form-control" name="Message" rows="4" placeholder="Describe your project requirements..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FEATURE 7: ON-SITE LIVE CHAT WIDGET POPUP -->
-    <div class="chat-widget-box" id="chatBox">
-        <div class="chat-widget-header">
-            <span><i class="fa-solid fa-headset"></i> AURA Live Support</span>
-            <i class="fa-solid fa-xmark" style="cursor: pointer;" onclick="toggleChat()"></i>
-        </div>
-        <div class="chat-widget-body" id="chatMessages">
-            <div class="chat-msg admin">Hello! Welcome to AURA NET.LK 👋 How can we help you today?</div>
-        </div>
-        <div class="chat-widget-footer">
-            <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="handleChatKey(event)">
-            <button onclick="sendChatMessage()" style="background: var(--primary); border: none; color: #fff; padding: 0 12px; border-radius: 8px; cursor: pointer;"><i class="fa-solid fa-paper-plane"></i></button>
-        </div>
-    </div>
-
-    <!-- FLOATING BUTTONS -->
+    <!-- FLOATING CONTACT BUTTONS -->
     <div class="floating-container">
-        <!-- Live Chat Toggle Button -->
-        <div class="chat-toggle-btn" onclick="toggleChat()" title="Live Chat">
-            <i class="fa-solid fa-comments"></i>
-        </div>
-        <!-- WhatsApp Floating Button -->
-        <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-whatsapp" title="WhatsApp">
+        <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-whatsapp" title="Chat on WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:+94742274908" class="float-btn float-call" title="Call Us Now">
+            <i class="fa-solid fa-phone"></i>
         </a>
     </div>
 
     <footer>
-        <p>&copy; 2026 AURA NET.LK. All Rights Reserved.</p>
+        <p>&copy; 2026 AURA NET.LK. All Rights Reserved. Designed for Professional Services.</p>
     </footer>
 
     <script>
-        // Cursor Glow
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             glow.style.left = e.clientX + 'px';
             glow.style.top = e.clientY + 'px';
         });
-
-        // FAQ Toggle
-        function toggleFaq(element) {
-            element.classList.toggle('active');
-        }
-
-        // Calculator
-        function calculatePackage() {
-            const usage = document.getElementById('usageSelect').value;
-            const resultBox = document.getElementById('calcResult');
-            if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>100 GB Package (LKR 230 / 280)</strong>";
-            else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>200 GB or 300 GB Package (LKR 300 / 400)</strong>";
-            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>Unlimited Package (LKR 600)</strong>";
-            else resultBox.innerHTML = "Please select your usage pattern above.";
-        }
-
-        // FEATURE 6: DARK / LIGHT MODE SWITCHER
-        function toggleTheme() {
-            const body = document.body;
-            const icon = document.getElementById('theme-icon');
-            const text = document.getElementById('theme-text');
-            
-            body.classList.toggle('light-theme');
-            if(body.classList.contains('light-theme')) {
-                icon.className = 'fa-solid fa-sun';
-                text.innerText = 'Light';
-            } else {
-                icon.className = 'fa-solid fa-moon';
-                text.innerText = 'Dark';
-            }
-        }
-
-        // FEATURE 2: SUBMIT REVIEW FORM FUNCTION
-        function addNewReview(e) {
-            e.preventDefault();
-            const name = document.getElementById('revName').value;
-            const service = document.getElementById('revService').value;
-            const comment = document.getElementById('revComment').value;
-            const starsNum = parseInt(document.getElementById('revStars').value);
-
-            let starsHtml = '';
-            for(let i=0; i<starsNum; i++) starsHtml += '<i class="fa-solid fa-star"></i>';
-
-            const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0,2) || 'U';
-
-            const track = document.getElementById('reviewsTrack');
-            const newCard = document.createElement('div');
-            newCard.className = 'review-card';
-            newCard.innerHTML = `
-                <div class="review-header">
-                    <div class="avatar">${initials}</div>
-                    <div class="reviewer-info">
-                        <h4>${name}</h4>
-                        <span>${service}</span>
-                    </div>
-                </div>
-                <div class="stars">${starsHtml}</div>
-                <p>"${comment}"</p>
-            `;
-
-            track.prepend(newCard);
-            alert('Thank you for your review! It has been added.');
-            document.getElementById('reviewSubmitForm').reset();
-        }
-
-        // FEATURE 7: ON-SITE LIVE CHAT FUNCTIONS
-        function toggleChat() {
-            const chatBox = document.getElementById('chatBox');
-            chatBox.style.display = (chatBox.style.display === 'flex') ? 'none' : 'flex';
-        }
-
-        function handleChatKey(e) {
-            if (e.key === 'Enter') sendChatMessage();
-        }
-
-        function sendChatMessage() {
-            const input = document.getElementById('chatInput');
-            const text = input.value.trim();
-            if(!text) return;
-
-            const msgContainer = document.getElementById('chatMessages');
-
-            // Append User Message
-            const userMsg = document.createElement('div');
-            userMsg.className = 'chat-msg user';
-            userMsg.innerText = text;
-            msgContainer.appendChild(userMsg);
-            input.value = '';
-
-            // Auto Auto-reply Bot Response
-            setTimeout(() => {
-                const adminMsg = document.createElement('div');
-                adminMsg.className = 'chat-msg admin';
-                adminMsg.innerText = "Thanks for your message! For immediate assistance, feel free to contact us via WhatsApp (+94 74 227 4908).";
-                msgContainer.appendChild(adminMsg);
-                msgContainer.scrollTop = msgContainer.scrollHeight;
-            }, 1000);
-
-            msgContainer.scrollTop = msgContainer.scrollHeight;
-        }
     </script>
 </body>
 </html>
