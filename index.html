@@ -29,7 +29,7 @@
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(3, 7, 18, 0.8), rgba(3, 7, 18, 0.8)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(3, 7, 18, 0.85), rgba(3, 7, 18, 0.85)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -140,6 +140,7 @@
             margin: 10px auto 0;
         }
 
+        /* Hero Section */
         .hero {
             min-height: 85vh;
             display: flex;
@@ -204,6 +205,49 @@
         .btn-outline:hover {
             border-color: var(--primary);
             color: var(--primary);
+        }
+
+        /* General Grid for Services and Features */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 35px 30px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px var(--primary-glow);
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            width: 60px; height: 60px;
+            border-radius: 14px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .card p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
         }
 
         /* Internet Pricing Cards Grid */
@@ -319,7 +363,7 @@
         .stars { color: #f59e0b; margin-bottom: 10px; font-size: 14px; }
         .review-card p { font-size: 0.95rem; color: var(--text-sub); font-style: italic; }
 
-        /* Contact Wrapper */
+        /* Contact Section */
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -386,6 +430,7 @@
             box-shadow: 0 0 15px var(--primary-glow);
         }
 
+        /* Floating Contact Buttons */
         .floating-container {
             position: fixed;
             bottom: 30px; right: 30px;
@@ -431,9 +476,11 @@
         <a href="#home" class="logo">AURA NET<span>.LK</span></a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#pricing">Internet Plans</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -445,17 +492,64 @@
         <h1>Elevate Your Digital Experience With <span>AURA NET.LK</span></h1>
         <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass Packages, and Professional Visual Editing Services.</p>
         <div class="btn-group">
-            <a href="#pricing" class="btn-primary">View Packages</a>
-            <a href="#contact" class="btn-outline">Contact Us</a>
+            <a href="#services" class="btn-primary">Our Services</a>
+            <a href="#pricing" class="btn-outline">Internet Plans</a>
         </div>
     </section>
 
-    <!-- INTERNET PACKAGES & PRICING SECTION -->
+    <!-- MAIN SERVICES SECTION (ISSELLA THIBBA SERVICES TIKA) -->
+    <section id="services">
+        <div class="section-header">
+            <span class="tag">What We Offer</span>
+            <h2>Our Core Services</h2>
+            <p>Comprehensive digital solutions tailored to boost your business and personal connectivity.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Custom, ultra-fast, and responsive modern websites crafted with interactive UI/UX designs to elevate your brand presence online.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
+                <h3>High-Speed Internet Bypass</h3>
+                <p>Reliable and cost-effective internet package bypass solutions for Dialog, Airtel, and Hutch with maximum high-speed bandwidth.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3>Graphic & Video Editing</h3>
+                <p>Professional visual editing services including social media posts, branding materials, promotional posters, and video edits.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
+                <h3>Cloud & Server Setup</h3>
+                <p>Secure server configuration, VPN setups, custom domain integration, and cloud hosting solutions for your applications.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Network Security</h3>
+                <p>Ensuring data privacy, network protection, and encrypted connection setups for seamless and protected browsing experiences.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
+                <h3>24/7 Technical Support</h3>
+                <p>Dedicated technical assistance and instant client support for all internet packages, website maintenance, and digital solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERNET PACKAGES & PRICING SECTION (ALUTH PRICING TABLES) -->
     <section id="pricing">
         <div class="section-header">
             <span class="tag">High-Speed Connectivity</span>
-            <h2>Official Packages & Price List</h2>
-            <p>Select your provider below and get instant high-speed package bypass activation.</p>
+            <h2>Official Internet Packages & Pricing</h2>
+            <p>Select your preferred network provider below and activate high-speed package bypass instantly.</p>
         </div>
 
         <div class="price-grid">
@@ -520,21 +614,48 @@
             </div>
         </div>
 
-        <!-- PAYMENT & ACTIVATION INFO -->
+        <!-- PAYMENT INFO -->
         <div class="payment-info-box">
-            <h4><i class="fa-solid fa-credit-card"></i> Payment & Activation Information</h4>
+            <h4><i class="fa-solid fa-credit-card"></i> Payment & Activation Details</h4>
             <p><strong>Bank Transfers:</strong> BOC / Commercial Bank</p>
             <p><strong>eZ Cash Payment:</strong> Add LKR 50.00 extra charge for eZ Cash transactions.</p>
-            <p><strong>Activation Process:</strong> Send your payment receipt screenshot directly via WhatsApp for quick activation.</p>
+            <p><strong>Quick Activation:</strong> Send your payment receipt screenshot directly via WhatsApp for instant processing.</p>
         </div>
     </section>
 
-    <!-- CUSTOMER REVIEWS SECTION -->
+    <!-- ABOUT US SECTION (ISSELLA THIBBA ABOUT SECTION EKA) -->
+    <section id="about">
+        <div class="section-header">
+            <span class="tag">Why Choose Us</span>
+            <h2>About AURA NET.LK</h2>
+            <p>We are a forward-thinking digital agency committed to delivering cutting-edge tech solutions and high-speed internet services.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Lightning Fast</h3>
+                <p>Our network solutions and websites are optimized for maximum speed and performance with minimum latency.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-lock"></i></div>
+                <h3>Trusted & Secure</h3>
+                <p>We guarantee 100% data safety, client confidentiality, and transparent operations across all services.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+                <h3>Customer First</h3>
+                <p>Dedicated to providing friendly 24/7 instant client support to address any inquiries or technical issues promptly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS SECTION (ALUTH TESTIMONIALS) -->
     <section id="reviews">
         <div class="section-header">
             <span class="tag">Feedback</span>
-            <h2>What Our Customers Say</h2>
-            <p>Read real reviews from users who trust AURA NET.LK for connectivity and digital services.</p>
+            <h2>What Our Clients Say</h2>
+            <p>Real reviews from users who trust AURA NET.LK for connectivity and digital services.</p>
         </div>
 
         <div class="reviews-grid">
@@ -571,7 +692,7 @@
                     <div class="avatar">NL</div>
                     <div class="reviewer-info">
                         <h4>Nuwan Liyanage</h4>
-                        <span>Web Client</span>
+                        <span>Web Design Client</span>
                     </div>
                 </div>
                 <div class="stars">
@@ -587,7 +708,7 @@
         <div class="section-header">
             <span class="tag">Get In Touch</span>
             <h2>Contact Us</h2>
-            <p>Send your payment receipt or inquire about our services below.</p>
+            <p>Send your payment receipt or inquire about our web and internet services below.</p>
         </div>
 
         <div class="contact-wrapper">
@@ -631,8 +752,8 @@
                         <input type="text" class="form-control" name="Phone" placeholder="+94 7X XXX XXXX" required>
                     </div>
                     <div class="form-group">
-                        <label>Selected Package</label>
-                        <input type="text" class="form-control" name="Package" placeholder="e.g. Dialog Zoom 300GB" required>
+                        <label>Selected Service or Package</label>
+                        <input type="text" class="form-control" name="Package" placeholder="e.g. Dialog Zoom 300GB or Web Design" required>
                     </div>
                     <div class="form-group">
                         <label>Your Message / Payment Details</label>
