@@ -9,7 +9,7 @@
     <style>
         :root {
             --bg-main: #0a0305;
-            --bg-card: rgba(24, 12, 16, 0.80);
+            --bg-card: rgba(24, 12, 16, 0.85);
             --primary: #f43f5e;
             --primary-glow: rgba(244, 63, 94, 0.4);
             --accent: #fb7185;
@@ -21,13 +21,13 @@
             --nav-bg: rgba(10, 3, 5, 0.85);
             --footer-bg: #050102;
             --input-bg: rgba(255, 255, 255, 0.04);
-            /* ඔයා දුන් රූපය (Dark Anime Girl Wallpaper) මෙහි සෙට් කර ඇත */
-            --bg-wallpaper: url('https://i.ibb.co/6y4j156/images.jpg');
+            /* අලුත් ක්‍රමයට හරියටම වැඩ කරන wallpaper direct link එක */
+            --bg-wallpaper: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop');
         }
 
         .light-theme {
             --bg-main: #fdf2f4;
-            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-card: rgba(255, 255, 255, 0.9);
             --primary: #e11d48;
             --primary-glow: rgba(225, 29, 72, 0.2);
             --accent: #f43f5e;
@@ -39,7 +39,7 @@
             --nav-bg: rgba(253, 242, 244, 0.9);
             --footer-bg: #fbcfe8;
             --input-bg: rgba(0, 0, 0, 0.03);
-            --bg-wallpaper: url('https://i.ibb.co/6y4j156/images.jpg');
+            --bg-wallpaper: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop');
         }
 
         * {
@@ -54,7 +54,7 @@
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(10, 3, 5, 0.75), rgba(10, 3, 5, 0.75)), var(--bg-wallpaper);
+            background-image: linear-gradient(rgba(10, 3, 5, 0.82), rgba(10, 3, 5, 0.82)), var(--bg-wallpaper);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -1553,7 +1553,7 @@
             userMsg.className = 'chat-msg user';
             userMsg.innerText = text;
             msgContainer.appendChild(userMsg);
-            input.value = '';
+            input.value = ``;
 
             setTimeout(() => {
                 let adminMsg = document.createElement('div');
