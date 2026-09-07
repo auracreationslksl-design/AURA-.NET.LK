@@ -3,43 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA NET.LK | Cyber Blue Edition</title>
+    <title>AURA NET.LK | Red Cyber Edition</title>
     <!-- FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-main: #030712;
-            --bg-card: rgba(10, 15, 30, 0.85);
-            --primary: #3b82f6;
-            --primary-glow: rgba(59, 130, 246, 0.4);
-            --accent: #60a5fa;
+            --bg-main: #030305;
+            --bg-card: rgba(15, 10, 15, 0.85);
+            --primary: #ff2a5f;
+            --primary-glow: rgba(255, 42, 95, 0.4);
+            --accent: #ff477e;
             --success: #10b981;
             --text-main: #f9fafb;
             --text-sub: #9ca3af;
-            --border: rgba(59, 130, 246, 0.2);
-            --badge-bg: rgba(59, 130, 246, 0.1);
-            --nav-bg: rgba(3, 7, 18, 0.85);
-            --footer-bg: #02040a;
+            --border: rgba(255, 42, 95, 0.2);
+            --badge-bg: rgba(255, 42, 95, 0.1);
+            --nav-bg: rgba(3, 3, 5, 0.85);
+            --footer-bg: #020203;
             --input-bg: rgba(255, 255, 255, 0.04);
-            /* Blue Anime Wallpaper Direct Link */
-            --bg-wallpaper: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1920&auto=format&fit=crop');
+            /* Red Anime Girl Wallpaper Direct Link */
+            --bg-wallpaper: url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1920&auto=format&fit=crop');
         }
 
         .light-theme {
-            --bg-main: #f0f4ff;
+            --bg-main: #fff0f3;
             --bg-card: rgba(255, 255, 255, 0.9);
-            --primary: #2563eb;
-            --primary-glow: rgba(37, 99, 235, 0.2);
-            --accent: #3b82f6;
+            --primary: #e11d48;
+            --primary-glow: rgba(225, 29, 72, 0.2);
+            --accent: #f43f5e;
             --success: #059669;
             --text-main: #0f172a;
             --text-sub: #475569;
-            --border: rgba(37, 99, 235, 0.2);
-            --badge-bg: rgba(37, 99, 235, 0.08);
-            --nav-bg: rgba(240, 244, 255, 0.9);
-            --footer-bg: #dbeafe;
+            --border: rgba(225, 29, 72, 0.2);
+            --badge-bg: rgba(225, 29, 72, 0.08);
+            --nav-bg: rgba(255, 240, 243, 0.9);
+            --footer-bg: #ffe4e6;
             --input-bg: rgba(0, 0, 0, 0.03);
-            --bg-wallpaper: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1920&auto=format&fit=crop');
+            --bg-wallpaper: url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1920&auto=format&fit=crop');
         }
 
         * {
@@ -54,7 +54,7 @@
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(3, 7, 18, 0.82), rgba(3, 7, 18, 0.82)), var(--bg-wallpaper);
+            background-image: linear-gradient(rgba(3, 3, 5, 0.82), rgba(3, 3, 5, 0.82)), var(--bg-wallpaper);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -78,7 +78,7 @@
         }
 
         .notice-board {
-            background: linear-gradient(90deg, #1d4ed8, #3b82f6, #1d4ed8);
+            background: linear-gradient(90deg, #9f1239, #ff2a5f, #9f1239);
             background-size: 200% auto;
             color: #fff;
             padding: 10px 20px;
@@ -238,7 +238,7 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(90deg, #3b82f6, #93c5fd);
+            background: linear-gradient(90deg, #ff2a5f, #ffa3be);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 20px var(--primary-glow));
@@ -495,7 +495,7 @@
         }
 
         @keyframes neonPulseBorder {
-            0% { border-color: rgba(59, 130, 246, 0.5); box-shadow: 0 0 15px var(--primary-glow); }
+            0% { border-color: rgba(255, 42, 95, 0.5); box-shadow: 0 0 15px var(--primary-glow); }
             100% { border-color: var(--primary); box-shadow: 0 0 35px var(--primary); }
         }
 
@@ -589,12 +589,12 @@
         .referral-box {
             max-width: 800px;
             margin: 0 auto;
-            background: linear-gradient(135deg, var(--bg-card), rgba(59, 130, 246, 0.1));
+            background: linear-gradient(135deg, var(--bg-card), rgba(255, 42, 95, 0.1));
             border: 2px solid var(--accent);
             border-radius: 24px;
             padding: 40px;
             text-align: center;
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 0 30px rgba(255, 42, 95, 0.2);
         }
 
         .referral-box h3 { font-size: 2rem; margin-bottom: 15px; color: var(--text-main); }
@@ -619,11 +619,11 @@
             transition: all 0.3s ease;
         }
 
-        /* Text Box Blue Animation / Focus Glow */
+        /* Text Box Red Animation / Focus Glow (Blue Animations Removed completely) */
         .referral-link-group input:focus, .form-control:focus, .calc-box select:focus, .chat-widget-footer input:focus {
             border-color: var(--primary);
             box-shadow: 0 0 15px var(--primary-glow);
-            background: rgba(59, 130, 246, 0.05);
+            background: rgba(255, 42, 95, 0.05);
         }
 
         .speedtest-box {
@@ -931,7 +931,7 @@
         #pkgModal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(3, 7, 18, 0.8);
+            background: rgba(3, 3, 5, 0.8);
             backdrop-filter: blur(8px);
             display: none;
             justify-content: center;
