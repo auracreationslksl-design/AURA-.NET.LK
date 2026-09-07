@@ -3,241 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Elegance | Anime Aesthetic Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #0b0b0e;
-            color: #e0e0e0;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* Glowing Background Effect */
-        .glow-sphere {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(186, 85, 211, 0.15) 0%, rgba(11, 11, 14, 0) 70%);
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            position: relative;
-            z-index: 10;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: #fff;
-            text-shadow: 0 0 10px rgba(186, 85, 211, 0.5);
-        }
-
-        nav a {
-            color: #aaa;
-            text-decoration: none;
-            margin-left: 30px;
-            transition: color 0.3s;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        nav a:hover {
-            color: #da70d6;
-        }
-
-        .main-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: calc(100vh - 80px);
-            padding: 40px;
-            position: relative;
-            z-index: 5;
-            gap: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .content-box {
-            flex: 1;
-            max-width: 550px;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 6px 14px;
-            background: rgba(186, 85, 211, 0.1);
-            color: #da70d6;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(186, 85, 211, 0.3);
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: #fff;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        h1 span {
-            color: #da70d6;
-            text-shadow: 0 0 15px rgba(218, 112, 214, 0.4);
-        }
-
-        p {
-            color: #999;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #8a2be2, #da70d6);
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(138, 43, 226, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(218, 112, 214, 0.6);
-        }
-
-        .btn-outline {
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
-        }
-
-        .btn-outline:hover {
-            border-color: #da70d6;
-            color: #da70d6;
-        }
-
-        .image-box {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            position: relative;
-        }
-
-        .image-wrapper {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(186, 85, 211, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 360px;
-        }
-
-        .image-wrapper img {
-            width: 100%;
-            display: block;
-            filter: contrast(110%);
-        }
-
-        /* Halo glow effect on image top */
-        .halo-glow {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 20px;
-            border: 2px solid #da70d6;
-            border-radius: 50%;
-            box-shadow: 0 0 15px #da70d6, inset 0 0 10px #da70d6;
-            pointer-events: none;
-        }
-
-        @media(max-width: 900px) {
-            .main-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .btn-group {
-                justify-content: center;
-            }
-            h1 {
-                font-size: 2.3rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="glow-sphere"></div>
-
-    <header>
-        <div class="logo">AURA.</div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Gallery</a>
-            <a href="#">Aesthetic</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
-
-    <div class="main-container">
-        <div class="content-box">
-            <div class="tag">DARK MOOD AESTHETIC</div>
-            <h1>Embrace the <span>Shadows</span> & Neon Light</h1>
-            <p>Step into an immersive dark fantasy universe where minimalism meets captivating character design. Clean code, responsive layout, and striking visual atmosphere.</p>
-            <div class="btn-group">
-                <a href="#" class="btn btn-primary">Explore Gallery</a>
-                <a href="#" class="btn btn-outline">Learn More</a>
-            </div>
-        </div>
-
-        <div class="image-box">
-            <div class="image-wrapper">
-                <div class="halo-glow"></div>
-                <!-- ඔයාගේ පින්තූරයේ නම මෙතැනට දෙන්න (උදා: your-image.jpg) -->
-                <img src="input_file_4.png" alt="Dark Anime Aesthetic Character">
-            </div>
-        </div>
-    </div>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA NET.LK | Premier Tech & Digital Agency</title>
     <!-- FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -284,7 +49,8 @@
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(3, 7, 18, 0.88), rgba(3, 7, 18, 0.88)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
+            /* Updated background wallpaper image URL applied below */
+            background-image: linear-gradient(rgba(3, 7, 18, 0.82), rgba(3, 7, 18, 0.82)), url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -304,6 +70,15 @@
             transform: translate(-50%, -50%);
             z-index: 9999;
             transition: transform 0.05s ease-out;
+        }
+
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
         }
 
         nav {
@@ -790,7 +565,7 @@
             display: flex;
             gap: 25px;
             width: max-content;
-            animation: marqueeScroll 25s linear infinite;
+            animation: marqueeScroll 35s linear infinite;
         }
 
         @keyframes marqueeScroll {
@@ -1119,6 +894,7 @@
 <body>
 
     <div id="cursor-glow"></div>
+    <div class="bg-grid"></div>
 
     <!-- Navigation Bar -->
     <nav>
@@ -1232,6 +1008,7 @@
                 <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
             </div>
 
+            <!-- Normal NB Category Added -->
             <div class="pricing-card" data-network="dialog" onclick="openCategoryModal('Normal NB Packages', 'Standard Network Data Packages', [
                 {name: '50 GB Normal NB', price: 'LKR 250'},
                 {name: '100 GB Normal NB', price: 'LKR 400'},
@@ -1370,9 +1147,8 @@
             <p>Continuous scrolling reviews feed.</p>
         </div>
 
-        <div class="reviews-marquee-container" id="marqueeContainer">
+        <div class="reviews-marquee-container">
             <div class="reviews-track" id="reviewsTrack">
-                <!-- Original Set -->
                 <div class="review-card">
                     <div class="review-header"><div class="avatar">KS</div><div class="reviewer-info"><h4>Kasun Sampath</h4><span>Dialog Router User</span></div></div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -1494,10 +1270,6 @@
     </footer>
 
     <script>
-        // Seamless Marquee Loop Duplication (Prevents pausing/stopping completely)
-        const track = document.getElementById('reviewsTrack');
-        track.innerHTML += track.innerHTML;
-
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             glow.style.left = e.clientX + 'px';
@@ -1568,7 +1340,7 @@
             }, 150);
         }
 
-        function copyTest(text) {
+        function copyText(text) {
             navigator.clipboard.writeText(text);
             alert("Copied to clipboard: " + text);
         }
@@ -1607,7 +1379,7 @@
             for(let i=0; i<starsNum; i++) starsHtml += '<i class="fa-solid fa-star"></i>';
             const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0,2) || 'U';
 
-            const trackElement = document.getElementById('reviewsTrack');
+            const track = document.getElementById('reviewsTrack');
             const newCard = document.createElement('div');
             newCard.className = 'review-card';
             newCard.innerHTML = `
@@ -1618,7 +1390,7 @@
                 <div class="stars">${starsHtml}</div>
                 <p>"${comment}"</p>
             `;
-            trackElement.prepend(newCard);
+            track.prepend(newCard);
             alert('Review added successfully!');
             document.getElementById('reviewSubmitForm').reset();
         }
@@ -1635,14 +1407,14 @@
             const text = input.value.trim();
             if(!text) return;
             const msgContainer = document.getElementById('chatMessages');
-            let userMsg = document.createElement('div');
+            const userMsg = document.createElement('div');
             userMsg.className = 'chat-msg user';
             userMsg.innerText = text;
             msgContainer.appendChild(userMsg);
             input.value = '';
 
             setTimeout(() => {
-                let adminMsg = document.createElement('div');
+                const adminMsg = document.createElement('div');
                 adminMsg.className = 'chat-msg admin';
                 adminMsg.innerText = "Thanks! Please message us directly on WhatsApp (+94 74 225 1615) for instant assistance.";
                 msgContainer.appendChild(adminMsg);
