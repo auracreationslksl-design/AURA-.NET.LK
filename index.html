@@ -44,7 +44,6 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            /* මෙතන තමයි සම්පූර්ණ වෙබ් අඩවියම Smooth Scroll වෙන්න දාලා තියෙන්නේ */
             scroll-behavior: smooth !important;
         }
 
@@ -389,7 +388,6 @@
             margin-bottom: 30px;
         }
 
-        /* Neon Glowing Cards */
         .pricing-card {
             background: var(--bg-card);
             border: 2px solid var(--primary);
@@ -1072,10 +1070,10 @@
                     <p style="font-size: 0.85rem; color: var(--text-sub);">Acc: <strong>1234567890</strong><br>Branch: Wellawatte</p>
                 </div>
                 <div class="bank-card">
-                    <button class="copy-btn" onclick="copyText('0742274908')"><i class="fa-regular fa-copy"></i> Copy</button>
-                    <span style="font-size: 11px; color: #25D366; font-weight: bold;">EZ CASH / MOBILE</span>
+                    <button class="copy-btn" onclick="copyText('0742251615')"><i class="fa-regular fa-copy"></i> Copy</button>
+                    <span style="font-size: 11px; color: #25D366; font-weight: bold;">WHATSAPP ONLY / MOBILE</span>
                     <h4 style="margin: 5px 0; color: var(--text-main);">AURA Official Line</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-sub);">Number: <strong>+94 74 227 4908</strong><br>Instant Verification</p>
+                    <p style="font-size: 0.85rem; color: var(--text-sub);">Number: <strong>+94 74 225 1615</strong><br>Instant Verification</p>
                 </div>
             </div>
         </div>
@@ -1098,7 +1096,7 @@
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
                 <h3>24/7 Dedicated Support</h3>
-                <p>Our friendly customer support team is always active via WhatsApp and direct calls to assist you anytime.</p>
+                <p>Our friendly customer support team is always active via WhatsApp to assist you anytime.</p>
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-shield-cat"></i></div>
@@ -1201,14 +1199,10 @@
         <div class="contact-wrapper">
             <div class="contact-info-side">
                 <h3>Let's Connect</h3>
-                <p style="color: var(--text-sub); margin-bottom: 20px;">Fast activation & support team available 24/7.</p>
-                <a href="tel:+94742274908" class="channel-card">
-                    <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
-                    <div class="channel-details"><span>Direct Phone Call</span><strong>+94 74 227 4908</strong></div>
-                </a>
-                <a href="https://wa.me/94742274908" target="_blank" class="channel-card">
+                <p style="color: var(--text-sub); margin-bottom: 20px;">Fast activation & support team available via WhatsApp 24/7.</p>
+                <a href="https://wa.me/94742251615" target="_blank" class="channel-card">
                     <div class="channel-icon" style="color: #25D366; background: rgba(37,211,102,0.1);"><i class="fa-brands fa-whatsapp"></i></div>
-                    <div class="channel-details"><span>Instant WhatsApp</span><strong>+94 74 227 4908</strong></div>
+                    <div class="channel-details"><span>WhatsApp Only</span><strong>+94 74 225 1615</strong></div>
                 </a>
                 <a href="mailto:aura.creations.lksl@gmail.com" class="channel-card">
                     <div class="channel-icon" style="color: #f43f5e; background: rgba(244,63,94,0.1);"><i class="fa-solid fa-envelope"></i></div>
@@ -1255,7 +1249,7 @@
     <!-- Floating Buttons -->
     <div class="floating-container">
         <div class="chat-toggle-btn" onclick="toggleChat()" title="Live Chat"><i class="fa-solid fa-comments"></i></div>
-        <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://wa.me/94742251615" target="_blank" class="float-btn float-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 
     <footer>
@@ -1290,7 +1284,7 @@
             let listHtml = '';
             packages.forEach(pkg => {
                 let waMessage = encodeURIComponent(`Hi AURA NET.LK, I want to order ${categoryTitle} - ${pkg.name} (${pkg.price}). Please assist with activation.`);
-                let waUrl = `https://wa.me/94742274908?text=${waMessage}`;
+                let waUrl = `https://wa.me/94742251615?text=${waMessage}`;
 
                 listHtml += `
                     <li>
@@ -1409,7 +1403,7 @@
             setTimeout(() => {
                 const adminMsg = document.createElement('div');
                 adminMsg.className = 'chat-msg admin';
-                adminMsg.innerText = "Thanks! Please message us directly on WhatsApp (+94 74 227 4908) for instant assistance.";
+                adminMsg.innerText = "Thanks! Please message us directly on WhatsApp (+94 74 225 1615) for instant assistance.";
                 msgContainer.appendChild(adminMsg);
                 msgContainer.scrollTop = msgContainer.scrollHeight;
             }, 1000);
