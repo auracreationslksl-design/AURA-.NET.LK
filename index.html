@@ -212,11 +212,16 @@
             display: none;
         }
 
-        footer {
-            margin-top: 25px;
-            font-size: 0.8rem;
-            color: var(--text-sub);
-            letter-spacing: 0.5px;
+        .admin-floating-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 9999;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid var(--primary);
+            padding: 8px 15px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
         }
     </style>
 </head>
@@ -248,24 +253,28 @@
         </div>
     </div>
 
-    <!-- Admin ලොග් වූ පසු පෙනෙන සැබෑ වෙබ් අඩවිය -->
-    <div id="fullWebsiteView" style="display: none; width: 100%;">
-        <!-- මෙතැනට ඔබේ සාමාන්‍ය වෙබ් අඩවියේ කෝඩ් එක දමාගන්න පුළුවන් -->
-        <div style="text-align:center; padding: 60px; background: var(--bg-card); border-radius: 20px; max-width: 600px; margin: 0 auto; border: 1px solid var(--primary); backdrop-filter: blur(20px);">
-            <h2 style="color: var(--primary); margin-bottom: 15px;"><i class="fa-solid fa-shield-halved"></i> Admin Mode Active</h2>
-            <p style="color: var(--text-sub); margin-bottom: 25px;">ඔබ සාර්ථකව Admin ප්‍රවේශය ලබාගෙන ඇත. වෙනත් අයට තවමත් පෙනෙන්නේ Upgrade Screen එක පමණි.</p>
-            <button onclick="location.reload()" style="background: #f43f5e; color: #fff; border:none; padding: 10px 20px; border-radius: 10px; font-weight: bold; cursor: pointer;">Lock / Exit Admin</button>
+    <!-- Admin ලොග් වූ පසු පෙනෙන සැබෑ වෙබ් අඩවිය (ඔබේ මුල් සයිට් එක) -->
+    <div id="fullWebsiteView" style="display: none; width: 100%; min-height: 100vh;">
+        <!-- උඩින් පෙන්වන කුඩා Lock බටන් එක -->
+        <div class="admin-floating-bar">
+            <button onclick="location.reload()" style="background: #f43f5e; color: #fff; border:none; padding: 6px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 0.8rem;">
+                <i class="fa-solid fa-lock"></i> Lock Site Again
+            </button>
         </div>
-    </div>
 
-    <footer>
-        <p>&copy; 2026 AURA NET.LK Infrastructure. All Rights Reserved.</p>
-    </footer>
+        <!-- 👇 මෙතැනට ඔබේ මුල් වෙබ් අඩවියේ සම්පූර්ණ HTML කෝඩ් එක Paste කරන්න 👇 -->
+        
+        <div style="text-align:center; padding: 100px 20px;">
+            <h1 style="color: #38bdf8;">ඔබේ මුල් වෙබ් අඩවියේ කෝඩ් එක මෙතැනට දාන්න</h1>
+            <p style="color: #94a3b8; margin-top: 10px;">(මෙම තාවකාලික කොටස මකා දමා ඔබේ Normal NB සහ අනෙකුත් පැකේජ සහිත මුල් කෝඩ් එක මෙතැනට අලවන්න)</p>
+        </div>
+
+        <!-- 👆 උඩ සඳහන් කළ තැනට ඔබේ කෝඩ් එක දමන්න 👆 -->
+    </div>
 
     <script>
         function checkAdmin() {
             const pass = document.getElementById('adminPass').value;
-            // රහස් වචනය ලෙස 'AURA2008' සකසා ඇත
             if (pass === 'AURA2008') {
                 document.getElementById('maintenanceView').style.display = 'none';
                 document.getElementById('fullWebsiteView').style.display = 'block';
