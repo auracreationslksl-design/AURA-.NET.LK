@@ -1289,4 +1289,279 @@
 
                 <div class="bank-card" onclick="copyText('0742251615')">
                     <button class="copy-btn" onclick="event.stopPropagation(); copyText('0742251615')"><i class="fa-regular fa-copy"></i> Copy</button>
-                    <span style="font-size: 11px; color: #f59e0b; font-weight: bold;">EZ CASH / MOBILE
+                    <span style="font-size: 11px; color: #f59e0b; font-weight: bold;">EZ CASH / MOBILE PAY</span>
+                    <h4 style="margin: 5px 0; color: var(--text-main);">Dialog EZ Cash</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-sub);">Number: <strong>074 225 1615</strong><br>Instant Auto-Verify</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator">
+        <div class="section-header">
+            <span class="tag">Smart Helper</span>
+            <h2>Find Your Ideal Package</h2>
+            <p>Select your daily internet usage to find the best package recommendation.</p>
+        </div>
+
+        <div class="calc-box">
+            <label for="usageSelect" style="color: var(--text-sub);">Choose Your Primary Daily Internet Usage Type:</label>
+            <select id="usageSelect" onchange="calculatePackage()">
+                <option value="">-- Select Usage Type --</option>
+                <option value="light">Light Browsing, WhatsApp & Social Media (1-3 GB/day)</option>
+                <option value="medium">YouTube Streaming, Zoom Meetings & Socials (5-10 GB/day)</option>
+                <option value="heavy">HD Video Downloads, Movies, Gaming & Work (15+ GB/day)</option>
+            </select>
+            <div class="calc-result" id="calcResult">Please select your usage pattern above.</div>
+        </div>
+    </section>
+
+    <section id="reviews" style="padding-left:0; padding-right:0;">
+        <div class="section-header" style="padding: 0 8%;">
+            <span class="tag">Client Feedback</span>
+            <h2>What Our Clients Say (100+ Verified Reviews)</h2>
+            <p>Continuous scrolling reviews feed with smooth unstopped loop.</p>
+        </div>
+
+        <div class="reviews-marquee-container" id="marqueeContainer">
+            <div class="reviews-track" id="reviewsTrack">
+                <div class="review-card">
+                    <div class="review-header"><div class="avatar">KS</div><div class="reviewer-info"><h4>Kasun Sampath</h4><span>Dialog Router User</span></div></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"AURA NET.LK Zoom router bypass එක මරු! Unlimited speed එකක් එනවා. Super fast service!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header"><div class="avatar">DP</div><div class="reviewer-info"><h4>Dilshan Perera</h4><span>Bypass User</span></div></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Package එක විනාඩි 30කින් වගේ ඉක්මනට ඇක්ටිව් කරලා දුන්නා. Excellent service!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header"><div class="avatar">AN</div><div class="reviewer-info"><h4>Asanka Niroshan</h4><span>Unlimited User</span></div></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Unlimited package එක ගොඩක් හොදයි, කිසිම ඩාටා කප් එකක් නැතිව වැඩ කරනවා. Highly recommended!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header"><div class="avatar">SM</div><div class="reviewer-info"><h4>Sahan Madhushanka</h4><span>Airtel 4G User</span></div></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Airtel tiktok pack එකට speed එක සුපිරියටම එනවා. Trustworthy site!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header">
+            <span class="tag">Get In Touch</span>
+            <h2>Contact Us</h2>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info-side">
+                <h3>Let's Connect</h3>
+                <p style="color: var(--text-sub); margin-bottom: 20px;">Fast activation & support team available via WhatsApp 24/7.</p>
+                <a href="https://wa.me/94742251615" target="_blank" class="channel-card">
+                    <div class="channel-icon" style="color: #25D366;"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="channel-details"><span>WhatsApp Only</span><strong>+94 74 225 1615</strong></div>
+                </a>
+                <a href="mailto:aura.creations.lksl@gmail.com" class="channel-card">
+                    <div class="channel-icon" style="color: #f43f5e;"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="channel-details"><span>Official Gmail</span><strong>aura.creations.lksl@gmail.com</strong></div>
+                </a>
+            </div>
+
+            <div class="form-side">
+                <form action="mailto:aura.creations.lksl@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group"><label>Your Name</label><input type="text" class="form-control" name="Name" required></div>
+                    <div class="form-group"><label>WhatsApp Number</label><input type="text" class="form-control" name="Phone" required></div>
+                    <div class="form-group"><label>Message / Order Details</label><textarea class="form-control" name="Message" rows="4" required></textarea></div>
+                    <button type="submit" class="btn-primary">Send Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="pkgModal" onclick="closeCategoryModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h3 id="modalCatTitle">Category Name</h3>
+            <div class="modal-subtitle" id="modalCatSub">Subtitle info</div>
+            <ul class="modal-package-list" id="modalPkgList"></ul>
+            <button class="close-modal-btn" onclick="closeCategoryModalDirect()">Close</button>
+        </div>
+    </div>
+
+    <div class="chat-widget-box" id="chatBox">
+        <div class="chat-widget-header">
+            <span><i class="fa-solid fa-headset"></i> AURA Live Support</span>
+            <i class="fa-solid fa-xmark" style="cursor: pointer;" onclick="toggleChat()"></i>
+        </div>
+        <div class="chat-widget-body" id="chatMessages">
+            <div class="chat-msg admin">Hello! Welcome to AURA NET.LK 👋 How can we help you today?</div>
+        </div>
+        <div class="chat-widget-footer">
+            <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="handleChatKey(event)">
+            <button onclick="sendChatMessage()" style="background: var(--primary); border: none; color: #fff; padding: 0 12px; border-radius: 8px; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <div class="floating-container">
+        <div class="chat-toggle-btn" onclick="toggleChat()" title="Live Chat"><i class="fa-solid fa-comments"></i></div>
+        <a href="https://wa.me/94742251615" target="_blank" class="float-btn float-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 AURA NET.LK. All Rights Reserved. Designed for Professional Services.</p>
+    </footer>
+
+    <script>
+        const currentTheme = localStorage.getItem('aura_theme') || 'dark';
+        if(currentTheme === 'light') {
+            document.documentElement.classList.add('light-theme');
+            document.getElementById('themeIcon').className = 'fa-solid fa-sun';
+        }
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('light-theme');
+            let theme = 'dark';
+            if(document.documentElement.classList.contains('light-theme')) {
+                theme = 'light';
+                document.getElementById('themeIcon').className = 'fa-solid fa-sun';
+            } else {
+                document.getElementById('themeIcon').className = 'fa-solid fa-moon';
+            }
+            localStorage.setItem('aura_theme', theme);
+        }
+
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+
+            if(!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        function copyReferralLink() {
+            const input = document.getElementById('refLinkInput');
+            input.select();
+            navigator.clipboard.writeText(input.value);
+            alert("Referral link copied to clipboard: " + input.value);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('reviewsTrack');
+            if(track) { 
+                track.innerHTML += track.innerHTML;
+            }
+        });
+
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+        function filterPackages(network, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('.pricing-card');
+            cards.forEach(card => {
+                if(network === 'all' || card.getAttribute('data-network') === network) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function openCategoryModal(categoryTitle, subtitle, packages) {
+            document.getElementById('modalCatTitle').innerText = categoryTitle;
+            document.getElementById('modalCatSub').innerText = subtitle;
+            
+            let listHtml = '';
+            packages.forEach(pkg => {
+                let waMessage = encodeURIComponent(`Hi AURA NET.LK, I want to order ${categoryTitle} - ${pkg.name} (${pkg.price}). Please assist.`);
+                let waUrl = `https://wa.me/94742251615?text=${waMessage}`;
+
+                listHtml += `
+                    <li>
+                        <span class="m-name"><i class="fa-solid fa-bolt" style="color: var(--primary); margin-right: 6px;"></i> ${pkg.name}</span>
+                        <div class="m-right">
+                            <span class="m-price">${pkg.price}</span>
+                            <a href="${waUrl}" target="_blank" class="buy-wa-btn"><i class="fa-brands fa-whatsapp"></i> Buy</a>
+                        </div>
+                    </li>
+                `;
+            });
+            
+            document.getElementById('modalPkgList').innerHTML = listHtml;
+            document.getElementById('pkgModal').style.display = 'flex';
+        }
+
+        function closeCategoryModalDirect() { document.getElementById('pkgModal').style.display = 'none'; }
+        function closeCategoryModal(e) { if(e.target.id === 'pkgModal') document.getElementById('pkgModal').style.display = 'none'; }
+
+        function runSpeedTest() {
+            const display = document.getElementById('speedDisplay');
+            display.innerText = "Testing...";
+            let current = 10;
+            let interval = setInterval(() => {
+                current += Math.floor(Math.random() * 25) + 5;
+                if(current >= 145) {
+                    current = 145;
+                    clearInterval(interval);
+                    display.innerText = current + " Mbps (High Speed)";
+                } else {
+                    display.innerText = current + " Mbps";
+                }
+            }, 150);
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text);
+            alert("Copied to clipboard: " + text);
+        }
+
+        function calculatePackage() {
+            const usage = document.getElementById('usageSelect').value;
+            const resultBox = document.getElementById('calcResult');
+            if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>100 GB Package (LKR 230 - 280)</strong> - Ideal for daily messaging & light browsing!";
+            else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>200 GB Package (LKR 300 - 350)</strong> - Perfect for streaming & social media!";
+            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>Unlimited Package (LKR 600)</strong> - Best for heavy downloads & streaming!";
+            else resultBox.innerHTML = "Please select your usage pattern above.";
+        }
+
+        function toggleChat() {
+            const chatBox = document.getElementById('chatBox');
+            chatBox.style.display = (chatBox.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function handleChatKey(e) { if (e.key === 'Enter') sendChatMessage(); }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if(!text) return;
+            const msgContainer = document.getElementById('chatMessages');
+            let userMsg = document.createElement('div');
+            userMsg.className = 'chat-msg user';
+            userMsg.innerText = text;
+            msgContainer.appendChild(userMsg);
+            input.value = '';
+
+            setTimeout(() => {
+                let adminMsg = document.createElement('div');
+                adminMsg.className = 'chat-msg admin';
+                adminMsg.innerText = "Thanks! Please message us directly on WhatsApp (+94 74 225 1615) for instant assistance.";
+                msgContainer.appendChild(adminMsg);
+                msgContainer.scrollTop = msgContainer.scrollHeight;
+            }, 1000);
+            msgContainer.scrollTop = msgContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>
