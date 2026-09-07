@@ -928,14 +928,14 @@
             <span class="tag">Digital Solutions Agency</span>
         </div>
         <h1>Elevate Your Digital Experience With <span>AURA NET.LK</span></h1>
-        <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass Packages, and Professional Visual Editing Services.</p>
+        <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass & Normal NB Packages, and Professional Visual Editing Services.</p>
         <div class="btn-group">
             <a href="#services" class="btn-primary">Our Services</a>
             <a href="#pricing" class="btn-outline">Internet Plans</a>
         </div>
 
         <div class="status-container">
-            <div class="status-item"><span class="status-dot"></span> Bypass Servers: <strong>ONLINE (100%)</strong></div>
+            <div class="status-item"><span class="status-dot"></span> Bypass & NB Servers: <strong>ONLINE (100%)</strong></div>
             <div class="status-item"><i class="fa-solid fa-gauge-high" style="color: var(--primary);"></i> Network Ping: <strong>14ms</strong></div>
             <div class="status-item"><i class="fa-solid fa-shield-halved" style="color: var(--success);"></i> System Security: <strong>Encrypted</strong></div>
         </div>
@@ -957,8 +957,8 @@
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
-                <h3>High-Speed Internet Bypass</h3>
-                <p>Reliable and cost-effective internet package bypass solutions for Dialog, Airtel, and Hutch with maximum high-speed bandwidth.</p>
+                <h3>Internet Bypass & Normal NB</h3>
+                <p>Reliable high-speed bypass and standard Normal NB package solutions for Dialog, Airtel, and Hutch networks.</p>
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
@@ -1007,6 +1007,18 @@
                 <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
             </div>
 
+            <!-- Normal NB Category Added -->
+            <div class="pricing-card" data-network="dialog" onclick="openCategoryModal('Normal NB Packages', 'Standard Network Data Packages', [
+                {name: '50 GB Normal NB', price: 'LKR 250'},
+                {name: '100 GB Normal NB', price: 'LKR 400'},
+                {name: '200 GB Normal NB', price: 'LKR 750'}
+            ])">
+                <div class="cat-icon-lg"><i class="fa-solid fa-globe"></i></div>
+                <h3>Normal NB Packages</h3>
+                <div class="sub-title">Standard Network Data Packages</div>
+                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
+            </div>
+
             <div class="pricing-card" data-network="airtel" onclick="openCategoryModal('Airtel 4G Packages', 'TikTok (297/997) | Zoom | YouTube', [
                 {name: '100 GB Package', price: 'LKR 230'},
                 {name: '200 GB Package', price: 'LKR 300'},
@@ -1036,13 +1048,13 @@
         <div class="section-header">
             <span class="tag">Network Diagnostic</span>
             <h2>Live Speed Test Simulation</h2>
-            <p>Check simulated bypass network speed right from your browser.</p>
+            <p>Check simulated bypass and normal network speed right from your browser.</p>
         </div>
 
         <div class="speedtest-box">
             <i class="fa-solid fa-gauge" style="font-size: 40px; color: var(--primary);"></i>
             <div class="speed-meter" id="speedDisplay">0.0 Mbps</div>
-            <p style="color: var(--text-sub); margin-bottom: 20px;">Status: Optimized for AURA High-Speed Bypass Servers</p>
+            <p style="color: var(--text-sub); margin-bottom: 20px;">Status: Optimized for AURA High-Speed Servers</p>
             <button class="btn-primary" onclick="runSpeedTest()"><i class="fa-solid fa-play"></i> Start Speed Test</button>
         </div>
     </section>
@@ -1091,7 +1103,7 @@
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
                 <h3>Lightning Fast Activation</h3>
-                <p>All package bypass configurations and orders are processed and activated within 5 to 10 minutes.</p>
+                <p>All package configurations and orders are processed and activated within 5 to 10 minutes.</p>
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
@@ -1142,9 +1154,9 @@
                     <p>"AURA NET.LK Zoom router bypass එක මරු! Unlimited speed එකක් එනවා. Super fast service!"</p>
                 </div>
                 <div class="review-card">
-                    <div class="review-header"><div class="avatar">DP</div><div class="reviewer-info"><h4>Dilshan Perera</h4><span>Airtel 4G User</span></div></div>
+                    <div class="review-header"><div class="avatar">DP</div><div class="reviewer-info"><h4>Dilshan Perera</h4><span>Normal NB User</span></div></div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Airtel Youtube pack එක bypass කරලා 300GB ගත්තා. 100% Recommended!"</p>
+                    <p>"Normal NB package එක ගොඩක් ඉක්මනට ඇක්ටිව් කරලා දුන්නා. Excellent service!"</p>
                 </div>
                 <div class="review-card">
                     <div class="review-header"><div class="avatar">NL</div><div class="reviewer-info"><h4>Nuwan Liyanage</h4><span>Web Design Client</span></div></div>
@@ -1169,7 +1181,7 @@
                     </div>
                     <div class="form-group">
                         <label>Service / Network Used</label>
-                        <input type="text" class="form-control" id="revService" placeholder="e.g. Dialog Zoom / Web Design" required>
+                        <input type="text" class="form-control" id="revService" placeholder="e.g. Normal NB / Web Design" required>
                     </div>
                     <div class="form-group">
                         <label>Star Rating</label>
@@ -1335,9 +1347,9 @@
         function calculatePackage() {
             const usage = document.getElementById('usageSelect').value;
             const resultBox = document.getElementById('calcResult');
-            if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>100 GB Package (LKR 230 / 280)</strong> - Ideal for daily messaging & light browsing!";
-            else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>200 GB or 300 GB Package (LKR 300 / 450)</strong> - Perfect for streaming & social media!";
-            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>Unlimited Package (LKR 600)</strong> - Best for uninterrupted heavy downloads & 4K streaming!";
+            if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>50 GB Normal NB or 100 GB Package (LKR 230 - 280)</strong> - Ideal for daily messaging & light browsing!";
+            else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>100 GB Normal NB or 200 GB Package (LKR 300 - 400)</strong> - Perfect for streaming & social media!";
+            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>200 GB Normal NB / Unlimited Package (LKR 600 - 750)</strong> - Best for uninterrupted heavy downloads & 4K streaming!";
             else resultBox.innerHTML = "Please select your usage pattern above.";
         }
 
