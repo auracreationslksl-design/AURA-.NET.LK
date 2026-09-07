@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA NET.LK | Premier Tech & Digital Agency</title>
+    <!-- FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -20,7 +21,6 @@
             --nav-bg: rgba(3, 7, 18, 0.85);
             --footer-bg: #02040a;
             --input-bg: rgba(255, 255, 255, 0.04);
-            /* Dark Anime Cute Wallpaper */
             --bg-wallpaper: url('images (1).jpg');
         }
 
@@ -38,7 +38,6 @@
             --nav-bg: rgba(240, 244, 248, 0.9);
             --footer-bg: #cbd5e1;
             --input-bg: rgba(0, 0, 0, 0.03);
-            /* Light Wallpaper */
             --bg-wallpaper: url('images (1).jpg');
         }
 
@@ -54,7 +53,7 @@
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(3, 7, 18, 0.8), rgba(3, 7, 18, 0.8)), var(--bg-wallpaper);
+            background-image: linear-gradient(rgba(3, 7, 18, 0.75), rgba(3, 7, 18, 0.75)), var(--bg-wallpaper);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -1057,6 +1056,7 @@
 
         <div class="network-monitor-box">
             <div class="monitor-grid">
+                <!-- Dialog -->
                 <div class="network-card-pro">
                     <div class="net-card-header">
                         <div class="net-name"><i class="fa-solid fa-signal" style="color: var(--primary);"></i> Dialog Axiata</div>
@@ -1069,6 +1069,7 @@
                     </ul>
                 </div>
 
+                <!-- Airtel -->
                 <div class="network-card-pro">
                     <div class="net-card-header">
                         <div class="net-name"><i class="fa-solid fa-tower-cell" style="color: var(--primary);"></i> Airtel Lanka</div>
@@ -1081,6 +1082,7 @@
                     </ul>
                 </div>
 
+                <!-- Hutch -->
                 <div class="network-card-pro">
                     <div class="net-card-header">
                         <div class="net-name"><i class="fa-solid fa-wifi" style="color: var(--primary);"></i> Hutch Lanka</div>
@@ -1093,6 +1095,7 @@
                     </ul>
                 </div>
 
+                <!-- Normal NB Servers -->
                 <div class="network-card-pro">
                     <div class="net-card-header">
                         <div class="net-name"><i class="fa-solid fa-database" style="color: var(--primary);"></i> Normal NB Servers</div>
@@ -1193,6 +1196,7 @@
         </div>
     </section>
 
+    <!-- FAQ ACCORDION SECTION (SINHALA) -->
     <section id="faq">
         <div class="section-header">
             <span class="tag">Help Center</span>
@@ -1243,6 +1247,7 @@
         </div>
     </section>
 
+    <!-- REFERRAL / AFFILIATE PROGRAM SECTION -->
     <section id="referral">
         <div class="section-header">
             <span class="tag">Earn Rewards</span>
@@ -1276,6 +1281,7 @@
         </div>
     </section>
 
+    <!-- OFFICIAL PAYMENT DETAILS & EZ CASH -->
     <section id="payment">
         <div class="section-header">
             <span class="tag">Secure Transactions</span>
@@ -1299,6 +1305,7 @@
                     <p style="font-size: 0.85rem; color: var(--text-sub);">Acc: <strong>1234567890</strong><br>Branch: Wellawatte</p>
                 </div>
 
+                <!-- EZ Cash -->
                 <div class="bank-card" onclick="copyText('0742251615')">
                     <button class="copy-btn" onclick="event.stopPropagation(); copyText('0742251615')"><i class="fa-regular fa-copy"></i> Copy</button>
                     <span style="font-size: 11px; color: #f59e0b; font-weight: bold;">EZ CASH / MOBILE PAY</span>
@@ -1328,6 +1335,7 @@
         </div>
     </section>
 
+    <!-- UNLIMITED REVIEWS MARQUEE FEED -->
     <section id="reviews" style="padding-left:0; padding-right:0;">
         <div class="section-header" style="padding: 0 8%;">
             <span class="tag">Client Feedback</span>
@@ -1563,6 +1571,7 @@
             userMsg.className = 'chat-msg user';
             userMsg.innerText = text;
             msgContainer.appendChild(userMsg);
+            input.value = andClearInput = '';
             input.value = '';
 
             setTimeout(() => {
