@@ -21,7 +21,7 @@
             --nav-bg: rgba(3, 7, 18, 0.85);
             --footer-bg: #02040a;
             --input-bg: rgba(255, 255, 255, 0.04);
-            /* Custom 4K upscale-adjusted Cute Anime Cyberpunk Girl Wallpaper */
+            /* Original Cute Anime Cyberpunk Red/Pink Wallpaper kept intact */
             --bg-wallpaper: url('https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=3840&q=100');
         }
 
@@ -78,7 +78,7 @@
         }
 
         .notice-board {
-            background: linear-gradient(90deg, #0284c7, #38bdf8, #0284c7);
+            background: linear-gradient(90deg, #dc2626, #ef4444, #dc2626);
             background-size: 200% auto;
             color: #fff;
             padding: 10px 20px;
@@ -732,7 +732,6 @@
             animation: marqueeScroll 25s linear infinite;
         }
 
-        /* Fixed infinite scroll keyframes loop */
         @keyframes marqueeScroll { 
             0% { transform: translateX(0); } 
             100% { transform: translateX(-50%); } 
@@ -1454,7 +1453,6 @@
             alert("Referral link copied to clipboard: " + input.value);
         }
 
-        // Fixed marquee duplication for smooth infinite scrolling loop
         window.addEventListener('DOMContentLoaded', () => {
             const track = document.getElementById('reviewsTrack');
             if(track) { 
@@ -1523,7 +1521,6 @@
                     display.innerText = current + " Mbps";
                 }
             }, 150);
-           [cite: 2]
         }
 
         function copyText(text) {
@@ -1563,7 +1560,7 @@
                 adminMsg.className = 'chat-msg admin';
                 adminMsg.innerText = "Thanks! Please message us directly on WhatsApp (+94 74 225 1615) for instant assistance.";
                 msgContainer.appendChild(adminMsg);
-                msgContainer.scrollTop = msgContainer.scrollHeight;
+                msgManagerScroll();
             }, 1000);
             msgContainer.scrollTop = msgContainer.scrollHeight;
         }
