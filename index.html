@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA NET.LK | Website Update in Progress</title>
-    <!-- FontAwesome Icons -->
+    <title>AURA NET.LK | Scheduled System Upgrade</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
             --bg-main: #030712;
-            --bg-card: rgba(17, 24, 39, 0.85);
+            --bg-card: rgba(15, 23, 42, 0.85);
             --primary: #38bdf8;
-            --primary-glow: rgba(56, 189, 248, 0.4);
+            --primary-glow: rgba(56, 189, 248, 0.3);
             --accent: #6366f1;
-            --success: #10b981;
-            --text-main: #f9fafb;
-            --text-sub: #9ca3af;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
             --border: rgba(56, 189, 248, 0.2);
-            --badge-bg: rgba(56, 189, 248, 0.1);
-            --input-bg: rgba(255, 255, 255, 0.04);
+            --badge-bg: rgba(56, 189, 248, 0.08);
+            --input-bg: rgba(2, 6, 23, 0.6);
         }
 
         * {
@@ -30,7 +28,9 @@
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(3, 7, 18, 0.85), rgba(3, 7, 18, 0.85)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
+            background-image: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.1), transparent 50%),
+                              linear-gradient(rgba(3, 7, 18, 0.9), rgba(3, 7, 18, 0.9)), 
+                              url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             color: var(--text-main);
@@ -40,66 +40,90 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
-            overflow-x: hidden;
         }
 
-        .maintenance-card {
+        .upgrade-card {
             background: var(--bg-card);
-            border: 2px solid var(--primary);
+            border: 1px solid var(--border);
             border-radius: 24px;
-            padding: 45px 30px;
-            max-width: 550px;
+            padding: 45px 35px;
+            max-width: 500px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 0 50px var(--primary-glow);
-            backdrop-filter: blur(16px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px var(--primary-glow);
+            backdrop-filter: blur(20px);
             position: relative;
-            animation: popIn 0.5s ease;
+            animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        @keyframes popIn {
-            0% { transform: scale(0.9); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .update-icon {
-            width: 80px; height: 80px;
+        .brand-logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--text-sub);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .brand-logo span { color: var(--primary); }
+
+        .icon-box {
+            width: 75px;
+            height: 75px;
             background: var(--badge-bg);
-            border: 2px solid var(--primary);
-            border-radius: 50%;
+            border: 1px solid var(--border);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
+            font-size: 30px;
             color: var(--primary);
             margin: 0 auto 25px;
             box-shadow: 0 0 20px var(--primary-glow);
-            animation: pulseGlow 2s infinite alternate;
         }
 
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 10px var(--primary-glow); }
-            100% { box-shadow: 0 0 30px var(--primary); }
-        }
-
-        .tag {
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             background: var(--badge-bg);
             color: var(--primary);
-            border: 1px solid var(--primary);
+            border: 1px solid var(--border);
             padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 11px;
+            border-radius: 30px;
+            font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            display: inline-block;
             margin-bottom: 15px;
+        }
+
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.6); opacity: 0.4; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
+            font-weight: 800;
             margin-bottom: 15px;
             color: var(--text-main);
+            line-height: 1.2;
         }
 
         h1 span {
@@ -115,91 +139,145 @@
             margin-bottom: 30px;
         }
 
-        .btn-whatsapp {
-            background: #25D366;
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 10px;
-            font-weight: 700;
-            text-decoration: none;
+        .support-btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
-            transition: 0.3s;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+            background: #25D366;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
         }
 
-        .btn-whatsapp:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(37, 211, 102, 0.7);
+        .support-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
         }
 
-        .bypass-toggle {
-            margin-top: 15px;
-            font-size: 0.8rem;
-            color: var(--text-sub);
-            background: transparent;
+        .admin-access-box {
+            border-top: 1px solid var(--border);
+            padding-top: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .admin-input-group {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .admin-input-group input {
+            flex: 1;
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            border-radius: 10px;
+            color: var(--text-main);
+            outline: none;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+        }
+
+        .admin-input-group input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .admin-input-group button {
+            background: var(--primary);
+            color: #030712;
             border: none;
+            padding: 0 16px;
+            border-radius: 10px;
+            font-weight: 700;
             cursor: pointer;
-            text-decoration: underline;
+            transition: opacity 0.2s;
         }
 
-        .bypass-toggle:hover {
-            color: var(--primary);
+        .admin-input-group button:hover { opacity: 0.9; }
+
+        .error-text {
+            color: #f43f5e;
+            font-size: 0.8rem;
+            display: none;
         }
 
         footer {
-            margin-top: 30px;
+            margin-top: 25px;
             font-size: 0.8rem;
             color: var(--text-sub);
-            text-align: center;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
-<body id="bodyTag">
+<body>
 
-    <!-- මුළු වෙබ් අඩවියම Maintenance මෝඩ් එකට දමා ඇත -->
-    <div class="maintenance-card" id="maintenanceBox">
-        <div class="update-icon">
-            <i class="fa-solid fa-arrows-rotate fa-spin"></i>
+    <!-- සාමාන්‍ය අයට පෙනෙන Professional Update Screen එක -->
+    <div class="upgrade-card" id="maintenanceView">
+        <div class="brand-logo">AURA NET<span>.LK</span></div>
+        <div class="icon-box">
+            <i class="fa-solid fa-server fa-spin" style="--fa-animation-duration: 6s;"></i>
         </div>
-        <span class="tag">System Upgrade</span>
-        <h1>AURA NET.LK is <span>Updating!</span></h1>
-        <p>අපගේ වෙබ් අඩවිය වඩාත් දියුණු අංග සහ නව පැකේජ සමඟින් යාවත්කාලීන කරමින් පවතී. හදිසි පැකේජ අවශ්‍යතා සඳහා අපගේ WhatsApp අංකය හරහා සම්බන්ධ වන්න.</p>
+        <div class="status-badge">
+            <span class="pulse-dot"></span> System Optimization
+        </div>
+        <h1>We Are Elevating <span>Our Platform</span></h1>
+        <p>අපගේ වෙබ් අඩවිය සහ සේවාදායකයන් වඩාත් වේගවත් හා උසස් අත්දැකීමක් ලබා දීම සඳහා යාවත්කාලීන කරමින් පවතී. හදිසි සේවා අවශ්‍යතා සඳහා අපගේ නිල WhatsApp අංකය හරහා සම්බන්ධ වන්න.</p>
         
-        <a href="https://wa.me/94742251615" target="_blank" class="btn-whatsapp">
-            <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Chat via WhatsApp (074-225-1615)
+        <a href="https://wa.me/94742251615" target="_blank" class="support-btn">
+            <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Instant WhatsApp Support
         </a>
-        
-        <br>
-        <!-- ඔබට ඇමිනි කෙනෙකු ලෙස සයිට් එක බලන්න අවශ්‍ය නම් මෙම බටන් එක ක්ලික් කරන්න -->
-        <button class="bypass-toggle" onclick="disableMaintenance()">[ Admin: View Website Anyway ]</button>
+
+        <!-- Admin Login Section -->
+        <div class="admin-access-box">
+            <div class="admin-input-group">
+                <input type="password" id="adminPass" placeholder="Admin Passkey" onkeypress="handleKey(event)">
+                <button onclick="checkAdmin()">Access</button>
+            </div>
+            <span class="error-text" id="errorMsg"><i class="fa-solid fa-circle-exclamation"></i> වැරදි මුරපදයකි! (Invalid Key)</span>
+        </div>
     </div>
 
-    <!-- සාමාන්‍ය සම්පූර්ණ වෙබ් අඩවිය (Maintenance අක්‍රීය කළ විට පෙන්වීමට) -->
-    <div id="fullWebsiteContent" style="display: none; width: 100%;">
-        <!-- මෙහි කලින් දුන් සම්පූර්ණ වෙබ් අඩවි කෝඩ් එක අඩංගු වේ -->
-        <div style="text-align:center; padding: 50px;">
-            <h1 style="color:var(--primary); margin-bottom:20px;">Welcome Back! Website is Live.</h1>
-            <button onclick="enableMaintenance()" class="btn-whatsapp" style="background:var(--primary); color:#030712;">Enable Maintenance Mode Again</button>
+    <!-- Admin ලොග් වූ පසු පෙනෙන සැබෑ වෙබ් අඩවිය -->
+    <div id="fullWebsiteView" style="display: none; width: 100%;">
+        <!-- මෙතැනට ඔබේ සාමාන්‍ය වෙබ් අඩවියේ කෝඩ් එක දමාගන්න පුළුවන් -->
+        <div style="text-align:center; padding: 60px; background: var(--bg-card); border-radius: 20px; max-width: 600px; margin: 0 auto; border: 1px solid var(--primary); backdrop-filter: blur(20px);">
+            <h2 style="color: var(--primary); margin-bottom: 15px;"><i class="fa-solid fa-shield-halved"></i> Admin Mode Active</h2>
+            <p style="color: var(--text-sub); margin-bottom: 25px;">ඔබ සාර්ථකව Admin ප්‍රවේශය ලබාගෙන ඇත. වෙනත් අයට තවමත් පෙනෙන්නේ Upgrade Screen එක පමණි.</p>
+            <button onclick="location.reload()" style="background: #f43f5e; color: #fff; border:none; padding: 10px 20px; border-radius: 10px; font-weight: bold; cursor: pointer;">Lock / Exit Admin</button>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 AURA NET.LK. All Rights Reserved.</p>
+        <p>&copy; 2026 AURA NET.LK Infrastructure. All Rights Reserved.</p>
     </footer>
 
     <script>
-        function disableMaintenance() {
-            document.getElementById('maintenanceBox').style.display = 'none';
-            document.getElementById('fullWebsiteContent').style.display = 'block';
+        function checkAdmin() {
+            const pass = document.getElementById('adminPass').value;
+            // ඔබට අවශ්‍ය ඕනෑම රහස් වචනයක් මෙහි 'aura@2026' වෙනුවට දමාගත හැක
+            if (pass === 'aura@2026') {
+                document.getElementById('maintenanceView').style.display = 'none';
+                document.getElementById('fullWebsiteView').style.display = 'block';
+            } else {
+                const err = document.getElementById('errorMsg');
+                err.style.display = 'block';
+                setTimeout(() => { err.style.display = 'none'; }, 3000);
+            }
         }
 
-        function enableMaintenance() {
-            document.getElementById('maintenanceBox').style.display = 'block';
-            document.getElementById('fullWebsiteContent').style.display = 'none';
+        function handleKey(e) {
+            if (e.key === 'Enter') checkAdmin();
         }
     </script>
 </body>
