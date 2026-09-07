@@ -568,8 +568,8 @@
         }
 
         @keyframes marqueeScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
         }
 
         .review-card {
@@ -1339,7 +1339,7 @@
             }, 150);
         }
 
-        function copyText(text) {
+        function copyTest(text) {
             navigator.clipboard.writeText(text);
             alert("Copied to clipboard: " + text);
         }
@@ -1406,14 +1406,14 @@
             const text = input.value.trim();
             if(!text) return;
             const msgContainer = document.getElementById('chatMessages');
-            const userMsg = document.createElement('div');
+            let userMsg = document.createElement('div');
             userMsg.className = 'chat-msg user';
             userMsg.innerText = text;
             msgContainer.appendChild(userMsg);
             input.value = '';
 
             setTimeout(() => {
-                const adminMsg = document.createElement('div');
+                let adminMsg = document.createElement('div');
                 adminMsg.className = 'chat-msg admin';
                 adminMsg.innerText = "Thanks! Please message us directly on WhatsApp (+94 74 225 1615) for instant assistance.";
                 msgContainer.appendChild(adminMsg);
@@ -1424,3 +1424,4 @@
     </script>
 </body>
 </html>
+```[cite: 1]
