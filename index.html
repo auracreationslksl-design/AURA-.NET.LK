@@ -10,36 +10,36 @@
         :root {
             --bg-main: #030712;
             --bg-card: rgba(17, 24, 39, 0.80);
-            --primary: #ff758c;
-            --primary-glow: rgba(255, 117, 140, 0.4);
-            --accent: #ff7eb3;
+            --primary: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.4);
+            --accent: #6366f1;
             --success: #10b981;
             --text-main: #f9fafb;
-            --text-sub: #d1d5db;
-            --border: rgba(255, 117, 140, 0.3);
-            --badge-bg: rgba(255, 117, 140, 0.15);
+            --text-sub: #9ca3af;
+            --border: rgba(56, 189, 248, 0.2);
+            --badge-bg: rgba(56, 189, 248, 0.1);
             --nav-bg: rgba(3, 7, 18, 0.85);
             --footer-bg: #02040a;
-            --input-bg: rgba(255, 255, 255, 0.06);
-            /* Cute anime wallpaper background URL requested by user */
-            --bg-wallpaper: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=3840&q=100');
+            --input-bg: rgba(255, 255, 255, 0.04);
+            /* Updated Cute Girl Wallpaper URL */
+            --bg-wallpaper: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=3840&q=100');
         }
 
         .light-theme {
-            --bg-main: #fff0f3;
-            --bg-card: rgba(255, 255, 255, 0.90);
-            --primary: #ff477e;
-            --primary-glow: rgba(255, 71, 126, 0.25);
-            --accent: #ff758c;
+            --bg-main: #f0f4f8;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --primary: #0284c7;
+            --primary-glow: rgba(2, 132, 199, 0.2);
+            --accent: #4f46e5;
             --success: #059669;
-            --text-main: #4a0e17;
-            --text-sub: #6b2130;
-            --border: rgba(255, 71, 126, 0.3);
-            --badge-bg: rgba(255, 71, 126, 0.1);
-            --nav-bg: rgba(255, 240, 243, 0.9);
-            --footer-bg: #ffccd5;
-            --input-bg: rgba(0, 0, 0, 0.04);
-            --bg-wallpaper: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=3840&q=100');
+            --text-main: #0f172a;
+            --text-sub: #475569;
+            --border: rgba(2, 132, 199, 0.2);
+            --badge-bg: rgba(2, 132, 199, 0.08);
+            --nav-bg: rgba(240, 244, 248, 0.9);
+            --footer-bg: #cbd5e1;
+            --input-bg: rgba(0, 0, 0, 0.03);
+            --bg-wallpaper: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=3840&q=100');
         }
 
         * {
@@ -54,7 +54,7 @@
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(3, 7, 18, 0.70), rgba(3, 7, 18, 0.70)), var(--bg-wallpaper);
+            background-image: linear-gradient(rgba(3, 7, 18, 0.65), rgba(3, 7, 18, 0.65)), var(--bg-wallpaper);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -78,7 +78,7 @@
         }
 
         .notice-board {
-            background: linear-gradient(90deg, #ff758c, #ff7eb3, #ff758c);
+            background: linear-gradient(90deg, #0284c7, #6366f1, #0284c7);
             background-size: 200% auto;
             color: #fff;
             padding: 10px 20px;
@@ -238,7 +238,7 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(90deg, #ff758c, #ff7eb3);
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 20px var(--primary-glow));
@@ -495,7 +495,7 @@
         }
 
         @keyframes neonPulseBorder {
-            0% { border-color: rgba(255, 117, 140, 0.5); box-shadow: 0 0 15px var(--primary-glow); }
+            0% { border-color: rgba(56, 189, 248, 0.5); box-shadow: 0 0 15px var(--primary-glow); }
             100% { border-color: var(--primary); box-shadow: 0 0 35px var(--primary); }
         }
 
@@ -589,12 +589,12 @@
         .referral-box {
             max-width: 800px;
             margin: 0 auto;
-            background: linear-gradient(135deg, var(--bg-card), rgba(255, 126, 179, 0.1));
+            background: linear-gradient(135deg, var(--bg-card), rgba(99, 102, 241, 0.1));
             border: 2px solid var(--accent);
             border-radius: 24px;
             padding: 40px;
             text-align: center;
-            box-shadow: 0 0 30px rgba(255, 126, 179, 0.2);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
         }
 
         .referral-box h3 { font-size: 2rem; margin-bottom: 15px; color: var(--text-main); }
@@ -1361,9 +1361,9 @@
             <div class="contact-info-side">
                 <h3>Let's Connect</h3>
                 <p style="color: var(--text-sub); margin-bottom: 20px;">Fast activation & support team available via WhatsApp 24/7.</p>
-                <a href="https://wa.me/94742551615" target="_blank" class="channel-card">
+                <a href="https://wa.me/94742251615" target="_blank" class="channel-card">
                     <div class="channel-icon" style="color: #25D366;"><i class="fa-brands fa-whatsapp"></i></div>
-                    <div class="channel-details"><span>WhatsApp Only</span><strong>+94 74 255 1615</strong></div>
+                    <div class="channel-details"><span>WhatsApp Only</span><strong>+94 74 225 1615</strong></div>
                 </a>
                 <a href="mailto:aura.creations.lksl@gmail.com" class="channel-card">
                     <div class="channel-icon" style="color: #f43f5e;"><i class="fa-solid fa-envelope"></i></div>
@@ -1407,7 +1407,7 @@
 
     <div class="floating-container">
         <div class="chat-toggle-btn" onclick="toggleChat()" title="Live Chat"><i class="fa-solid fa-comments"></i></div>
-        <a href="https://wa.me/94742551615" target="_blank" class="float-btn float-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://wa.me/94742251615" target="_blank" class="float-btn float-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 
     <footer>
@@ -1487,7 +1487,7 @@
             let listHtml = '';
             packages.forEach(pkg => {
                 let waMessage = encodeURIComponent(`Hi AURA NET.LK, I want to order ${categoryTitle} - ${pkg.name} (${pkg.price}). Please assist.`);
-                let waUrl = `https://wa.me/94742551615?text=${waMessage}`;
+                let waUrl = `https://wa.me/94742251615?text=${waMessage}`;
 
                 listHtml += `
                     <li>
@@ -1533,7 +1533,7 @@
             const resultBox = document.getElementById('calcResult');
             if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>100 GB Package (LKR 230 - 280)</strong> - Ideal for daily messaging & light browsing!";
             else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>200 GB Package (LKR 300 - 350)</strong> - Perfect for streaming & social media!";
-            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: **Unlimited Package (LKR 600)** - Best for heavy downloads & streaming!";
+            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>Unlimited Package (LKR 600)</strong> - Best for heavy downloads & streaming!";
             else resultBox.innerHTML = "Please select your usage pattern above.";
         }
 
@@ -1558,7 +1558,7 @@
             setTimeout(() => {
                 let adminMsg = document.createElement('div');
                 adminMsg.className = 'chat-msg admin';
-                adminMsg.innerText = "Thanks! Please message us directly on WhatsApp (+94 74 255 1615) for instant assistance.";
+                adminMsg.innerText = "Thanks! Please message us directly on WhatsApp (+94 74 225 1615) for instant assistance.";
                 msgContainer.appendChild(adminMsg);
                 msgContainer.scrollTop = msgContainer.scrollHeight;
             }, 1000);
