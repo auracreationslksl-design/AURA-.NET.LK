@@ -49,7 +49,7 @@
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(3, 7, 18, 0.82), rgba(3, 7, 18, 0.82)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(3, 7, 18, 0.88), rgba(3, 7, 18, 0.88)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -69,15 +69,6 @@
             transform: translate(-50%, -50%);
             z-index: 9999;
             transition: transform 0.05s ease-out;
-        }
-
-        .bg-grid {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: -1;
         }
 
         nav {
@@ -564,12 +555,12 @@
             display: flex;
             gap: 25px;
             width: max-content;
-            animation: marqueeScroll 35s linear infinite;
+            animation: marqueeScroll 25s linear infinite;
         }
 
         @keyframes marqueeScroll {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0); }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .review-card {
@@ -893,7 +884,6 @@
 <body>
 
     <div id="cursor-glow"></div>
-    <div class="bg-grid"></div>
 
     <!-- Navigation Bar -->
     <nav>
@@ -1007,7 +997,6 @@
                 <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
             </div>
 
-            <!-- Normal NB Category Added -->
             <div class="pricing-card" data-network="dialog" onclick="openCategoryModal('Normal NB Packages', 'Standard Network Data Packages', [
                 {name: '50 GB Normal NB', price: 'LKR 250'},
                 {name: '100 GB Normal NB', price: 'LKR 400'},
@@ -1146,8 +1135,9 @@
             <p>Continuous scrolling reviews feed.</p>
         </div>
 
-        <div class="reviews-marquee-container">
+        <div class="reviews-marquee-container" id="marqueeContainer">
             <div class="reviews-track" id="reviewsTrack">
+                <!-- Original Set -->
                 <div class="review-card">
                     <div class="review-header"><div class="avatar">KS</div><div class="reviewer-info"><h4>Kasun Sampath</h4><span>Dialog Router User</span></div></div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -1269,6 +1259,10 @@
     </footer>
 
     <script>
+        // Seamless Marquee Loop Duplication (Prevents pausing/stopping completely)
+        const track = document.getElementById('reviewsTrack');
+        track.innerHTML += track.innerHTML;
+
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             glow.style.left = e.clientX + 'px';
@@ -1378,7 +1372,7 @@
             for(let i=0; i<starsNum; i++) starsHtml += '<i class="fa-solid fa-star"></i>';
             const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0,2) || 'U';
 
-            const track = document.getElementById('reviewsTrack');
+            const trackElement = document.getElementById('reviewsTrack');
             const newCard = document.createElement('div');
             newCard.className = 'review-card';
             newCard.innerHTML = `
@@ -1389,7 +1383,7 @@
                 <div class="stars">${starsHtml}</div>
                 <p>"${comment}"</p>
             `;
-            track.prepend(newCard);
+            trackElement.prepend(newCard);
             alert('Review added successfully!');
             document.getElementById('reviewSubmitForm').reset();
         }
@@ -1424,4 +1418,3 @@
     </script>
 </body>
 </html>
-```[cite: 1]
