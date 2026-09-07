@@ -9,7 +9,7 @@
     <style>
         :root {
             --bg-main: #030712;
-            --bg-card: rgba(17, 24, 39, 0.85);
+            --bg-card: rgba(17, 24, 39, 0.80);
             --primary: #38bdf8;
             --primary-glow: rgba(56, 189, 248, 0.4);
             --accent: #6366f1;
@@ -18,16 +18,16 @@
             --text-sub: #9ca3af;
             --border: rgba(56, 189, 248, 0.2);
             --badge-bg: rgba(56, 189, 248, 0.1);
-            --nav-bg: rgba(3, 7, 18, 0.9);
+            --nav-bg: rgba(3, 7, 18, 0.85);
             --footer-bg: #02040a;
             --input-bg: rgba(255, 255, 255, 0.04);
-            /* Dark Cute Wallpaper */
-            --bg-wallpaper: url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1920&q=80');
+            /* Updated Cute Anime Cyberpunk Girl Wallpaper */
+            --bg-wallpaper: url('https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1920&q=80');
         }
 
         .light-theme {
             --bg-main: #f0f4f8;
-            --bg-card: rgba(255, 255, 255, 0.9);
+            --bg-card: rgba(255, 255, 255, 0.85);
             --primary: #0284c7;
             --primary-glow: rgba(2, 132, 199, 0.2);
             --accent: #4f46e5;
@@ -36,10 +36,9 @@
             --text-sub: #475569;
             --border: rgba(2, 132, 199, 0.2);
             --badge-bg: rgba(2, 132, 199, 0.08);
-            --nav-bg: rgba(240, 244, 248, 0.95);
+            --nav-bg: rgba(240, 244, 248, 0.9);
             --footer-bg: #cbd5e1;
             --input-bg: rgba(0, 0, 0, 0.03);
-            /* Light Wallpaper */
             --bg-wallpaper: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1920&q=80');
         }
 
@@ -55,7 +54,7 @@
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(3, 7, 18, 0.88), rgba(3, 7, 18, 0.88)), var(--bg-wallpaper);
+            background-image: linear-gradient(rgba(3, 7, 18, 0.65), rgba(3, 7, 18, 0.65)), var(--bg-wallpaper);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -323,7 +322,6 @@
 
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-        /* PROFESSIONAL LIVE NETWORK MONITOR STYLES */
         .network-monitor-box {
             max-width: 1000px;
             margin: 0 auto;
@@ -535,7 +533,6 @@
             font-weight: 600;
         }
 
-        /* FAQ ACCORDION SECTION */
         .faq-wrapper {
             max-width: 800px;
             margin: 0 auto;
@@ -652,7 +649,7 @@
 
         .bank-details-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
@@ -735,7 +732,11 @@
             animation: marqueeScroll 25s linear infinite;
         }
 
-        @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        /* Fixed infinite scroll keyframes loop */
+        @keyframes marqueeScroll { 
+            0% { transform: translateX(0); } 
+            100% { transform: translateX(-50%); } 
+        }
 
         .review-card {
             background: var(--bg-card);
@@ -1012,7 +1013,7 @@
 
     <div class="notice-board">
         <i class="fa-solid fa-bullhorn"></i>
-        <span>Notice: All Servers 100% Online & Smooth! Contact WhatsApp for Instant Package Activations.</span>
+        <span>Notice: All Servers 100% Online & Smooth! Package activations take around 30 minutes. Contact WhatsApp for orders.</span>
     </div>
 
     <nav>
@@ -1035,7 +1036,7 @@
         <div class="hero-globe-container"><i class="fa-solid fa-globe"></i></div>
         <div class="section-header" style="margin-bottom: 20px;"><span class="tag">Digital Solutions Agency</span></div>
         <h1>Elevate Your Digital Experience With <span>AURA NET.LK</span></h1>
-        <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass & Normal NB Packages, and Professional Services.</p>
+        <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass Packages, and Professional Services.</p>
         <div class="btn-group">
             <a href="#services" class="btn-primary">Our Services</a>
             <a href="#pricing" class="btn-outline">Internet Plans</a>
@@ -1048,7 +1049,6 @@
         </div>
     </section>
 
-    <!-- PROFESSIONAL LIVE NETWORK MONITOR SECTION -->
     <section id="monitor">
         <div class="section-header">
             <span class="tag">Live Performance</span>
@@ -1096,19 +1096,6 @@
                         <li><span>Server Latency:</span> <strong>15ms</strong></li>
                     </ul>
                 </div>
-
-                <!-- Normal NB -->
-                <div class="network-card-pro">
-                    <div class="net-card-header">
-                        <div class="net-name"><i class="fa-solid fa-globe" style="color: var(--primary);"></i> Normal NB Servers</div>
-                        <span class="net-badge-status active"><i class="fa-solid fa-circle" style="font-size: 7px;"></i> Online</span>
-                    </div>
-                    <ul class="net-details-list">
-                        <li><span>Package Type:</span> <strong>Standard Data Volume</strong></li>
-                        <li><span>Speed Status:</span> <strong style="color: var(--success);">95 Mbps (Stable)</strong></li>
-                        <li><span>Server Latency:</span> <strong>18ms</strong></li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
@@ -1128,8 +1115,8 @@
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
-                <h3>Internet Bypass & NB</h3>
-                <p>Reliable high-speed bypass and standard Normal NB package solutions for Dialog, Airtel, and Hutch.</p>
+                <h3>Internet Bypass</h3>
+                <p>Reliable high-speed bypass solutions for Dialog, Airtel, and Hutch.</p>
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
@@ -1176,16 +1163,6 @@
                 <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
             </div>
 
-            <div class="pricing-card" data-network="dialog" onclick="openCategoryModal('Normal NB Packages', 'Standard Network Data Packages', [
-                {name: '50 GB Normal NB', price: 'LKR 250'},
-                {name: '100 GB Normal NB', price: 'LKR 400'}
-            ])">
-                <div class="cat-icon-lg"><i class="fa-solid fa-globe"></i></div>
-                <h3>Normal NB Packages</h3>
-                <div class="sub-title">Standard Network Data Packages</div>
-                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
-            </div>
-
             <div class="pricing-card" data-network="airtel" onclick="openCategoryModal('Airtel 4G Packages', 'TikTok (297/997) | Zoom | YouTube', [
                 {name: '100 GB Package', price: 'LKR 230'},
                 {name: '200 GB Package', price: 'LKR 300'}
@@ -1208,7 +1185,7 @@
         </div>
     </section>
 
-    <!-- FAQ ACCORDION SECTION (SINHALA FONTS CORRECTED) -->
+    <!-- FAQ ACCORDION SECTION -->
     <section id="faq">
         <div class="section-header">
             <span class="tag">Help Center</span>
@@ -1223,7 +1200,7 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>සාමාන්‍යයෙන් ඔබ මුදල් ගෙවා විස්තර ලබා දී මිනිත්තු 5ත් 10ත් අතර කාලයක් ඇතුළත පැකේජය සම්පූර්ණයෙන්ම ඇක්ටිව් කරනු ලැබේ.</p>
+                    <p>සාමාන්‍යයෙන් ඔබ මුදල් ගෙවා විස්තර ලබා දී විනාඩි 30ක පමණ කාලයක් ඇතුළත පැකේජය සම්පූර්ණයෙන්ම ඇක්ටිව් කරනු ලැබේ.</p>
                 </div>
             </div>
 
@@ -1282,7 +1259,7 @@
         <div class="section-header">
             <span class="tag">Network Diagnostic</span>
             <h2>Live Speed Test Simulation</h2>
-            <p>Check simulated bypass and normal network speed right from your browser.</p>
+            <p>Check simulated bypass speed right from your browser.</p>
         </div>
 
         <div class="speedtest-box">
@@ -1293,12 +1270,12 @@
         </div>
     </section>
 
-    <!-- OFFICIAL PAYMENT DETAILS (WITH EZ CASH & NB) -->
+    <!-- OFFICIAL PAYMENT DETAILS -->
     <section id="payment">
         <div class="section-header">
             <span class="tag">Secure Transactions</span>
-            <h2>Official Payment Details & EZ Cash / NB</h2>
-            <p>Transfer funds securely via Bank, EZ Cash, or contact us for Normal Budget (NB) top-up orders.</p>
+            <h2>Official Payment Details & EZ Cash</h2>
+            <p>Transfer funds securely via Bank or EZ Cash instantly.</p>
         </div>
 
         <div class="payment-box">
@@ -1317,20 +1294,12 @@
                     <p style="font-size: 0.85rem; color: var(--text-sub);">Acc: <strong>1234567890</strong><br>Branch: Wellawatte</p>
                 </div>
 
-                <!-- EZ Cash Added Here -->
+                <!-- EZ Cash -->
                 <div class="bank-card" onclick="copyText('0742251615')">
                     <button class="copy-btn" onclick="event.stopPropagation(); copyText('0742251615')"><i class="fa-regular fa-copy"></i> Copy</button>
                     <span style="font-size: 11px; color: #f59e0b; font-weight: bold;">EZ CASH / MOBILE PAY</span>
                     <h4 style="margin: 5px 0; color: var(--text-main);">Dialog EZ Cash</h4>
                     <p style="font-size: 0.85rem; color: var(--text-sub);">Number: <strong>074 225 1615</strong><br>Instant Auto-Verify</p>
-                </div>
-
-                <!-- NB Top-up Option Added Here -->
-                <div class="bank-card" onclick="openPaymentPopup('Normal Budget (NB) & Direct Pay', 'You can purchase Normal Budget (NB) data bundles or make direct mobile payments by messaging our WhatsApp support line.')" style="border-color: #25D366; background: rgba(37, 211, 102, 0.05);">
-                    <div style="position: absolute; top: 15px; right: 15px; background: #25D366; color: #fff; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: bold;"><i class="fa-solid fa-bolt"></i> NB</div>
-                    <span style="font-size: 11px; color: #25D366; font-weight: bold;">NB & CASH ORDERS</span>
-                    <h4 style="margin: 5px 0; color: var(--text-main);">Normal Budget Data</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-sub);">Tap here for standard NB bundle instructions.</p>
                 </div>
             </div>
         </div>
@@ -1370,9 +1339,9 @@
                     <p>"AURA NET.LK Zoom router bypass එක මරු! Unlimited speed එකක් එනවා. Super fast service!"</p>
                 </div>
                 <div class="review-card">
-                    <div class="review-header"><div class="avatar">DP</div><div class="reviewer-info"><h4>Dilshan Perera</h4><span>Normal NB User</span></div></div>
+                    <div class="review-header"><div class="avatar">DP</div><div class="reviewer-info"><h4>Dilshan Perera</h4><span>Bypass User</span></div></div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Normal NB package එක ගොඩක් ඉක්මනට ඇක්ටිව් කරලා දුන්නා. Excellent service!"</p>
+                    <p>"Package එක විනාඩි 30කින් වගේ ඉක්මනට ඇක්ටිව් කරලා දුන්නා. Excellent service!"</p>
                 </div>
             </div>
         </div>
@@ -1415,16 +1384,6 @@
             <div class="modal-subtitle" id="modalCatSub">Subtitle info</div>
             <ul class="modal-package-list" id="modalPkgList"></ul>
             <button class="close-modal-btn" onclick="closeCategoryModalDirect()">Close</button>
-        </div>
-    </div>
-
-    <div id="paymentModal" onclick="closePaymentModal(event)">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <h3 id="payModalTitle" style="color: #25D366;">Payment Info</h3>
-            <div class="modal-subtitle" id="payModalSub">Instructions</div>
-            <p id="payModalDesc" style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 20px; text-align: left; line-height: 1.6;"></p>
-            <a href="https://wa.me/94742251615?text=Hi%20AURA%20NET.LK,%20I%20want%20to%20know%20about%20NB%20and%20Cash%20Payment%20options." target="_blank" class="buy-wa-btn" style="width: 100%; justify-content: center; padding: 10px; margin-bottom: 10px; font-size: 14px;"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp for Orders</a>
-            <button class="close-modal-btn" onclick="closePaymentModalDirect()">Close</button>
         </div>
     </div>
 
@@ -1490,8 +1449,13 @@
             alert("Referral link copied to clipboard: " + input.value);
         }
 
-        const track = document.getElementById('reviewsTrack');
-        if(track) { track.innerHTML += track.innerHTML; }
+        // Fixed marquee duplication for smooth infinite scrolling loop
+        window.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('reviewsTrack');
+            if(track) { 
+                track.innerHTML += track.innerHTML; 
+            }
+        });
 
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
@@ -1540,16 +1504,6 @@
         function closeCategoryModalDirect() { document.getElementById('pkgModal').style.display = 'none'; }
         function closeCategoryModal(e) { if(e.target.id === 'pkgModal') document.getElementById('pkgModal').style.display = 'none'; }
 
-        function openPaymentPopup(title, desc) {
-            document.getElementById('payModalTitle').innerText = title;
-            document.getElementById('payModalSub').innerText = "Instant Verification Option";
-            document.getElementById('payModalDesc').innerText = desc;
-            document.getElementById('paymentModal').style.display = 'flex';
-        }
-
-        function closePaymentPopupDirect() { document.getElementById('paymentModal').style.display = 'none'; }
-        function closePaymentPopup(e) { if(e.target.id === 'paymentModal') document.getElementById('paymentModal').style.display = 'none'; }
-
         function runSpeedTest() {
             const display = document.getElementById('speedDisplay');
             display.innerText = "Testing...";
@@ -1574,9 +1528,9 @@
         function calculatePackage() {
             const usage = document.getElementById('usageSelect').value;
             const resultBox = document.getElementById('calcResult');
-            if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>50 GB Normal NB or 100 GB Package (LKR 230 - 280)</strong> - Ideal for daily messaging & light browsing!";
-            else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>100 GB Normal NB or 200 GB Package (LKR 300 - 400)</strong> - Perfect for streaming & social media!";
-            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>200 GB Normal NB / Unlimited Package (LKR 600 - 750)</strong> - Best for heavy downloads & streaming!";
+            if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>100 GB Package (LKR 230 - 280)</strong> - Ideal for daily messaging & light browsing!";
+            else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>200 GB Package (LKR 300 - 350)</strong> - Perfect for streaming & social media!";
+            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>Unlimited Package (LKR 600)</strong> - Best for heavy downloads & streaming!";
             else resultBox.innerHTML = "Please select your usage pattern above.";
         }
 
