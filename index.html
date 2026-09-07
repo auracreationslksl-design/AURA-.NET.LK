@@ -25,6 +25,7 @@
             background-size: cover; background-position: center;
             color: var(--text-main); min-height: 100vh;
             display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px;
+            position: relative;
         }
         .upgrade-card {
             background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px;
@@ -60,11 +61,16 @@
             background: rgba(15, 23, 42, 0.95); border: 1px solid var(--primary);
             padding: 8px 16px; border-radius: 12px; backdrop-filter: blur(10px);
         }
+        /* රහස් ලොගින් වීමට ස්ක්‍රීන් එකේ යටම කෙළවරේ ඇති කුඩා නොපෙනෙන තිත */
+        .secret-admin-trigger {
+            position: fixed; bottom: 5px; right: 5px; width: 15px; height: 15px;
+            background: transparent; cursor: pointer; z-index: 9999;
+        }
     </style>
 </head>
 <body>
 
-    <!-- 1. සාමාන්‍ය පාරිභෝගිකයන්ට පෙනෙන Upgrade Screen එක (කිසිම පාස්වර්ඩ් කොටුවක් පේන්නේ නැත) -->
+    <!-- 1. සාමාන්‍ය පාරිභෝගිකයන්ට පෙනෙන Upgrade Screen එක -->
     <div class="upgrade-card" id="maintenanceView">
         <div class="brand-logo">AURA NET<span>.LK</span></div>
         <div class="icon-box">
@@ -81,7 +87,10 @@
         </a>
     </div>
 
-    <!-- 2. ඔබ Ctrl + Shift + A ඔබලා 'AURA2008' දුන් පසු පෙනෙන ඔබේ මුල් වෙබ් අඩවිය -->
+    <!-- රහස් ක්ලික් කරන බොත්තම (ස්ක්‍රීන් එකේ දකුණුපස යටම කෙළවරේ ඇත) -->
+    <div class="secret-admin-trigger" onclick="triggerAdmin()" title="Admin Login"></div>
+
+    <!-- 2. පාස්වර්ඩ් දුන් පසු පෙනෙන ඔබේ මුල් වෙබ් අඩවිය -->
     <div id="fullWebsiteView" style="display: none; width: 100%; min-height: 100vh;">
         <div class="admin-floating-bar">
             <button onclick="location.reload()" style="background: #f43f5e; color: #fff; border:none; padding: 6px 14px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.85rem;">
@@ -1515,6 +1524,23 @@
                 msgContainer.scrollTop = msgContainer.scrollHeight;
             }, 1000);
             msgContainer.scrollTop = msgContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>
+
+        <!-- 👆 ------------------------------------------------ 👆 -->
+    </div>
+
+    <script>
+        function triggerAdmin() {
+            const pass = prompt('Enter Admin Passkey:');
+            if (pass === 'AURA2008') {
+                document.getElementById('maintenanceView').style.display = 'none';
+                document.getElementById('fullWebsiteView').style.display = 'block';
+            } else if (pass !== null) {
+                alert('වැරදි මුරපදයකි! (Invalid Key)');
+            }
         }
     </script>
 </body>
