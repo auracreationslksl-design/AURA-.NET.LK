@@ -3,110 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA NET.LK | Scheduled System Upgrade</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --bg-main: #030712;
-            --bg-card: rgba(15, 23, 42, 0.85);
-            --primary: #38bdf8;
-            --primary-glow: rgba(56, 189, 248, 0.3);
-            --text-main: #f8fafc;
-            --text-sub: #94a3b8;
-            --border: rgba(56, 189, 248, 0.2);
-            --badge-bg: rgba(56, 189, 248, 0.08);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body {
-            background-color: var(--bg-main);
-            background-image: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.1), transparent 50%),
-                              linear-gradient(rgba(3, 7, 18, 0.9), rgba(3, 7, 18, 0.9)), 
-                              url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover; background-position: center;
-            color: var(--text-main); min-height: 100vh;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px;
-            position: relative;
-        }
-        .upgrade-card {
-            background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px;
-            padding: 50px 35px; max-width: 500px; width: 100%; text-align: center;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px var(--primary-glow);
-            backdrop-filter: blur(20px);
-        }
-        .brand-logo { font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; color: var(--text-sub); margin-bottom: 25px; text-transform: uppercase; }
-        .brand-logo span { color: var(--primary); }
-        .icon-box {
-            width: 75px; height: 75px; background: var(--badge-bg); border: 1px solid var(--border);
-            border-radius: 20px; display: flex; align-items: center; justify-content: center;
-            font-size: 30px; color: var(--primary); margin: 0 auto 25px; box-shadow: 0 0 20px var(--primary-glow);
-        }
-        .status-badge {
-            display: inline-flex; align-items: center; gap: 8px; background: var(--badge-bg);
-            color: var(--primary); border: 1px solid var(--border); padding: 6px 16px;
-            border-radius: 30px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;
-            text-transform: uppercase; margin-bottom: 15px;
-        }
-        .pulse-dot { width: 7px; height: 7px; background-color: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary); animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.6); opacity: 0.4; } 100% { transform: scale(1); opacity: 1; } }
-        h1 { font-size: 2rem; font-weight: 800; margin-bottom: 15px; line-height: 1.2; }
-        h1 span { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        p { color: var(--text-sub); font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px; }
-        .support-btn {
-            display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #fff;
-            padding: 12px 24px; border-radius: 12px; font-weight: 600; text-decoration: none; font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-        .admin-floating-bar {
-            position: fixed; top: 15px; right: 15px; z-index: 9999;
-            background: rgba(15, 23, 42, 0.95); border: 1px solid var(--primary);
-            padding: 8px 16px; border-radius: 12px; backdrop-filter: blur(10px);
-        }
-        /* රහස් ලොගින් වීමට ස්ක්‍රීන් එකේ යටම කෙළවරේ ඇති කුඩා නොපෙනෙන තිත */
-        .secret-admin-trigger {
-            position: fixed; bottom: 5px; right: 5px; width: 15px; height: 15px;
-            background: transparent; cursor: pointer; z-index: 9999;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- 1. සාමාන්‍ය පාරිභෝගිකයන්ට පෙනෙන Upgrade Screen එක -->
-    <div class="upgrade-card" id="maintenanceView">
-        <div class="brand-logo">AURA NET<span>.LK</span></div>
-        <div class="icon-box">
-            <i class="fa-solid fa-server fa-spin" style="--fa-animation-duration: 6s;"></i>
-        </div>
-        <div class="status-badge">
-            <span class="pulse-dot"></span> System Optimization
-        </div>
-        <h1>We Are Elevating <span>Our Platform</span></h1>
-        <p>අපගේ වෙබ් අඩවිය සහ සේවාදායකයන් වඩාත් වේගවත් හා උසස් අත්දැකීමක් ලබා දීම සඳහා යාවත්කාලීන කරමින් පවතී. හදිසි සේවා අවශ්‍යතා සඳහා අපගේ නිල WhatsApp අංකය හරහා සම්බන්ධ වන්න.</p>
-        
-        <a href="https://wa.me/94742251615" target="_blank" class="support-btn">
-            <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Instant WhatsApp Support
-        </a>
-    </div>
-
-    <!-- රහස් ක්ලික් කරන බොත්තම (ස්ක්‍රීන් එකේ දකුණුපස යටම කෙළවරේ ඇත) -->
-    <div class="secret-admin-trigger" onclick="triggerAdmin()" title="Admin Login"></div>
-
-    <!-- 2. පාස්වර්ඩ් දුන් පසු පෙනෙන ඔබේ මුල් වෙබ් අඩවිය -->
-    <div id="fullWebsiteView" style="display: none; width: 100%; min-height: 100vh;">
-        <div class="admin-floating-bar">
-            <button onclick="location.reload()" style="background: #f43f5e; color: #fff; border:none; padding: 6px 14px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.85rem;">
-                <i class="fa-solid fa-lock"></i> Lock Site Again
-            </button>
-        </div>
-
-        <!-- 👇 මෙතැනට ඔබේ මුල් වෙබ් අඩවියේ සම්පූර්ණ HTML කෝඩ් එක දාන්න 👇 -->
-        <div style="text-align:center; padding: 100px 20px; background: #030712; color: #fff;">
-            <h1 style="color: #38bdf8;">මෙතැනට ඔබේ මුල් වෙබ් අඩවියේ කෝඩ් එක දාන්න</h1>
-        </div>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA NET.LK | Premier Tech & Digital Agency</title>
     <!-- FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -148,6 +44,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            /* මෙතන තමයි සම්පූර්ණ වෙබ් අඩවියම Smooth Scroll වෙන්න දාලා තියෙන්නේ */
             scroll-behavior: smooth !important;
         }
 
@@ -492,6 +389,7 @@
             margin-bottom: 30px;
         }
 
+        /* Neon Glowing Cards */
         .pricing-card {
             background: var(--bg-card);
             border: 2px solid var(--primary);
@@ -1032,14 +930,14 @@
             <span class="tag">Digital Solutions Agency</span>
         </div>
         <h1>Elevate Your Digital Experience With <span>AURA NET.LK</span></h1>
-        <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass & Normal NB Packages, and Professional Visual Editing Services.</p>
+        <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass Packages, and Professional Visual Editing Services.</p>
         <div class="btn-group">
             <a href="#services" class="btn-primary">Our Services</a>
             <a href="#pricing" class="btn-outline">Internet Plans</a>
         </div>
 
         <div class="status-container">
-            <div class="status-item"><span class="status-dot"></span> Bypass & NB Servers: <strong>ONLINE (100%)</strong></div>
+            <div class="status-item"><span class="status-dot"></span> Bypass Servers: <strong>ONLINE (100%)</strong></div>
             <div class="status-item"><i class="fa-solid fa-gauge-high" style="color: var(--primary);"></i> Network Ping: <strong>14ms</strong></div>
             <div class="status-item"><i class="fa-solid fa-shield-halved" style="color: var(--success);"></i> System Security: <strong>Encrypted</strong></div>
         </div>
@@ -1061,8 +959,8 @@
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
-                <h3>Internet Bypass & Normal NB</h3>
-                <p>Reliable high-speed bypass and standard Normal NB package solutions for Dialog, Airtel, and Hutch networks.</p>
+                <h3>High-Speed Internet Bypass</h3>
+                <p>Reliable and cost-effective internet package bypass solutions for Dialog, Airtel, and Hutch with maximum high-speed bandwidth.</p>
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
@@ -1111,18 +1009,6 @@
                 <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
             </div>
 
-            <!-- Normal NB Category Added -->
-            <div class="pricing-card" data-network="dialog" onclick="openCategoryModal('Normal NB Packages', 'Standard Network Data Packages', [
-                {name: '50 GB Normal NB', price: 'LKR 250'},
-                {name: '100 GB Normal NB', price: 'LKR 400'},
-                {name: '200 GB Normal NB', price: 'LKR 750'}
-            ])">
-                <div class="cat-icon-lg"><i class="fa-solid fa-globe"></i></div>
-                <h3>Normal NB Packages</h3>
-                <div class="sub-title">Standard Network Data Packages</div>
-                <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
-            </div>
-
             <div class="pricing-card" data-network="airtel" onclick="openCategoryModal('Airtel 4G Packages', 'TikTok (297/997) | Zoom | YouTube', [
                 {name: '100 GB Package', price: 'LKR 230'},
                 {name: '200 GB Package', price: 'LKR 300'},
@@ -1152,13 +1038,13 @@
         <div class="section-header">
             <span class="tag">Network Diagnostic</span>
             <h2>Live Speed Test Simulation</h2>
-            <p>Check simulated bypass and normal network speed right from your browser.</p>
+            <p>Check simulated bypass network speed right from your browser.</p>
         </div>
 
         <div class="speedtest-box">
             <i class="fa-solid fa-gauge" style="font-size: 40px; color: var(--primary);"></i>
             <div class="speed-meter" id="speedDisplay">0.0 Mbps</div>
-            <p style="color: var(--text-sub); margin-bottom: 20px;">Status: Optimized for AURA High-Speed Servers</p>
+            <p style="color: var(--text-sub); margin-bottom: 20px;">Status: Optimized for AURA High-Speed Bypass Servers</p>
             <button class="btn-primary" onclick="runSpeedTest()"><i class="fa-solid fa-play"></i> Start Speed Test</button>
         </div>
     </section>
@@ -1186,10 +1072,10 @@
                     <p style="font-size: 0.85rem; color: var(--text-sub);">Acc: <strong>1234567890</strong><br>Branch: Wellawatte</p>
                 </div>
                 <div class="bank-card">
-                    <button class="copy-btn" onclick="copyText('0742251615')"><i class="fa-regular fa-copy"></i> Copy</button>
-                    <span style="font-size: 11px; color: #25D366; font-weight: bold;">WHATSAPP ONLY / MOBILE</span>
+                    <button class="copy-btn" onclick="copyText('0742274908')"><i class="fa-regular fa-copy"></i> Copy</button>
+                    <span style="font-size: 11px; color: #25D366; font-weight: bold;">EZ CASH / MOBILE</span>
                     <h4 style="margin: 5px 0; color: var(--text-main);">AURA Official Line</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-sub);">Number: <strong>+94 74 225 1615</strong><br>Instant Verification</p>
+                    <p style="font-size: 0.85rem; color: var(--text-sub);">Number: <strong>+94 74 227 4908</strong><br>Instant Verification</p>
                 </div>
             </div>
         </div>
@@ -1207,12 +1093,12 @@
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
                 <h3>Lightning Fast Activation</h3>
-                <p>All package configurations and orders are processed and activated within 5 to 10 minutes.</p>
+                <p>All package bypass configurations and orders are processed and activated within 5 to 10 minutes.</p>
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
                 <h3>24/7 Dedicated Support</h3>
-                <p>Our friendly customer support team is always active via WhatsApp to assist you anytime.</p>
+                <p>Our friendly customer support team is always active via WhatsApp and direct calls to assist you anytime.</p>
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-shield-cat"></i></div>
@@ -1258,9 +1144,9 @@
                     <p>"AURA NET.LK Zoom router bypass එක මරු! Unlimited speed එකක් එනවා. Super fast service!"</p>
                 </div>
                 <div class="review-card">
-                    <div class="review-header"><div class="avatar">DP</div><div class="reviewer-info"><h4>Dilshan Perera</h4><span>Normal NB User</span></div></div>
+                    <div class="review-header"><div class="avatar">DP</div><div class="reviewer-info"><h4>Dilshan Perera</h4><span>Airtel 4G User</span></div></div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Normal NB package එක ගොඩක් ඉක්මනට ඇක්ටිව් කරලා දුන්නා. Excellent service!"</p>
+                    <p>"Airtel Youtube pack එක bypass කරලා 300GB ගත්තා. 100% Recommended!"</p>
                 </div>
                 <div class="review-card">
                     <div class="review-header"><div class="avatar">NL</div><div class="reviewer-info"><h4>Nuwan Liyanage</h4><span>Web Design Client</span></div></div>
@@ -1285,7 +1171,7 @@
                     </div>
                     <div class="form-group">
                         <label>Service / Network Used</label>
-                        <input type="text" class="form-control" id="revService" placeholder="e.g. Normal NB / Web Design" required>
+                        <input type="text" class="form-control" id="revService" placeholder="e.g. Dialog Zoom / Web Design" required>
                     </div>
                     <div class="form-group">
                         <label>Star Rating</label>
@@ -1315,10 +1201,14 @@
         <div class="contact-wrapper">
             <div class="contact-info-side">
                 <h3>Let's Connect</h3>
-                <p style="color: var(--text-sub); margin-bottom: 20px;">Fast activation & support team available via WhatsApp 24/7.</p>
-                <a href="https://wa.me/94742251615" target="_blank" class="channel-card">
+                <p style="color: var(--text-sub); margin-bottom: 20px;">Fast activation & support team available 24/7.</p>
+                <a href="tel:+94742274908" class="channel-card">
+                    <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="channel-details"><span>Direct Phone Call</span><strong>+94 74 227 4908</strong></div>
+                </a>
+                <a href="https://wa.me/94742274908" target="_blank" class="channel-card">
                     <div class="channel-icon" style="color: #25D366; background: rgba(37,211,102,0.1);"><i class="fa-brands fa-whatsapp"></i></div>
-                    <div class="channel-details"><span>WhatsApp Only</span><strong>+94 74 225 1615</strong></div>
+                    <div class="channel-details"><span>Instant WhatsApp</span><strong>+94 74 227 4908</strong></div>
                 </a>
                 <a href="mailto:aura.creations.lksl@gmail.com" class="channel-card">
                     <div class="channel-icon" style="color: #f43f5e; background: rgba(244,63,94,0.1);"><i class="fa-solid fa-envelope"></i></div>
@@ -1365,7 +1255,7 @@
     <!-- Floating Buttons -->
     <div class="floating-container">
         <div class="chat-toggle-btn" onclick="toggleChat()" title="Live Chat"><i class="fa-solid fa-comments"></i></div>
-        <a href="https://wa.me/94742251615" target="_blank" class="float-btn float-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://wa.me/94742274908" target="_blank" class="float-btn float-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 
     <footer>
@@ -1400,7 +1290,7 @@
             let listHtml = '';
             packages.forEach(pkg => {
                 let waMessage = encodeURIComponent(`Hi AURA NET.LK, I want to order ${categoryTitle} - ${pkg.name} (${pkg.price}). Please assist with activation.`);
-                let waUrl = `https://wa.me/94742251615?text=${waMessage}`;
+                let waUrl = `https://wa.me/94742274908?text=${waMessage}`;
 
                 listHtml += `
                     <li>
@@ -1451,9 +1341,9 @@
         function calculatePackage() {
             const usage = document.getElementById('usageSelect').value;
             const resultBox = document.getElementById('calcResult');
-            if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>50 GB Normal NB or 100 GB Package (LKR 230 - 280)</strong> - Ideal for daily messaging & light browsing!";
-            else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>100 GB Normal NB or 200 GB Package (LKR 300 - 400)</strong> - Perfect for streaming & social media!";
-            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>200 GB Normal NB / Unlimited Package (LKR 600 - 750)</strong> - Best for uninterrupted heavy downloads & 4K streaming!";
+            if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>100 GB Package (LKR 230 / 280)</strong> - Ideal for daily messaging & light browsing!";
+            else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>200 GB or 300 GB Package (LKR 300 / 450)</strong> - Perfect for streaming & social media!";
+            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>Unlimited Package (LKR 600)</strong> - Best for uninterrupted heavy downloads & 4K streaming!";
             else resultBox.innerHTML = "Please select your usage pattern above.";
         }
 
@@ -1519,28 +1409,11 @@
             setTimeout(() => {
                 const adminMsg = document.createElement('div');
                 adminMsg.className = 'chat-msg admin';
-                adminMsg.innerText = "Thanks! Please message us directly on WhatsApp (+94 74 225 1615) for instant assistance.";
+                adminMsg.innerText = "Thanks! Please message us directly on WhatsApp (+94 74 227 4908) for instant assistance.";
                 msgContainer.appendChild(adminMsg);
                 msgContainer.scrollTop = msgContainer.scrollHeight;
             }, 1000);
             msgContainer.scrollTop = msgContainer.scrollHeight;
-        }
-    </script>
-</body>
-</html>
-
-        <!-- 👆 ------------------------------------------------ 👆 -->
-    </div>
-
-    <script>
-        function triggerAdmin() {
-            const pass = prompt('Enter Admin Passkey:');
-            if (pass === 'AURA2008') {
-                document.getElementById('maintenanceView').style.display = 'none';
-                document.getElementById('fullWebsiteView').style.display = 'block';
-            } else if (pass !== null) {
-                alert('වැරදි මුරපදයකි! (Invalid Key)');
-            }
         }
     </script>
 </body>
