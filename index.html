@@ -214,20 +214,21 @@
 
         .admin-floating-bar {
             position: fixed;
-            top: 10px;
-            right: 10px;
+            top: 15px;
+            right: 15px;
             z-index: 9999;
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15, 23, 42, 0.95);
             border: 1px solid var(--primary);
-            padding: 8px 15px;
-            border-radius: 8px;
+            padding: 8px 16px;
+            border-radius: 12px;
             backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
     </style>
 </head>
 <body>
 
-    <!-- සාමාන්‍ය අයට පෙනෙන Professional Update Screen එක -->
+    <!-- 1. පාරිභෝගිකයන්ට (Customers ලට) පෙනෙන Upgrade Screen එක -->
     <div class="upgrade-card" id="maintenanceView">
         <div class="brand-logo">AURA NET<span>.LK</span></div>
         <div class="icon-box">
@@ -243,7 +244,7 @@
             <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Instant WhatsApp Support
         </a>
 
-        <!-- Admin Login Section -->
+        <!-- Admin Login Section (ඔබට Passkey එක ගහලා ඇතුළට යන්න පුළුවන් තැන) -->
         <div class="admin-access-box">
             <div class="admin-input-group">
                 <input type="password" id="adminPass" placeholder="Admin Passkey" onkeypress="handleKey(event)">
@@ -253,23 +254,25 @@
         </div>
     </div>
 
-    <!-- Admin ලොග් වූ පසු පෙනෙන සැබෑ වෙබ් අඩවිය (ඔබේ මුල් සයිට් එක) -->
+    <!-- 2. ඔබට (Admin ට AURA2008 ගැහුවාම) පෙනෙන සැබෑ වෙබ් අඩවිය -->
     <div id="fullWebsiteView" style="display: none; width: 100%; min-height: 100vh;">
-        <!-- උඩින් පෙන්වන කුඩා Lock බටන් එක -->
+        <!-- උඩින් පෙනෙන Admin Lock බටන් එක -->
         <div class="admin-floating-bar">
-            <button onclick="location.reload()" style="background: #f43f5e; color: #fff; border:none; padding: 6px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 0.8rem;">
-                <i class="fa-solid fa-lock"></i> Lock Site Again
+            <button onclick="location.reload()" style="background: #f43f5e; color: #fff; border:none; padding: 6px 14px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-lock"></i> Lock Site (Exit Admin)
             </button>
         </div>
 
-        <!-- 👇 මෙතැනට ඔබේ මුල් වෙබ් අඩවියේ සම්පූර්ණ HTML කෝඩ් එක Paste කරන්න 👇 -->
+        <!-- 👇 මෙතැනට ඔබේ සාමාන්‍ය වෙබ් අඩවියේ (Normal NB සහ පැකේජ තියෙන) සම්පූර්ණ කෝඩ් එක දමාගන්න 👇 -->
         
-        <div style="text-align:center; padding: 100px 20px;">
-            <h1 style="color: #38bdf8;">ඔබේ මුල් වෙබ් අඩවියේ කෝඩ් එක මෙතැනට දාන්න</h1>
-            <p style="color: #94a3b8; margin-top: 10px;">(මෙම තාවකාලික කොටස මකා දමා ඔබේ Normal NB සහ අනෙකුත් පැකේජ සහිත මුල් කෝඩ් එක මෙතැනට අලවන්න)</p>
+        <div style="text-align:center; padding: 100px 20px; background: #030712; color: #fff;">
+            <h1 style="color: #38bdf8; margin-bottom: 15px;">මෙතැනට ඔබේ මුල් වෙබ් අඩවියේ කෝඩ් එක දාන්න</h1>
+            <p style="color: #94a3b8; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+                ඔබේ සාමාන්‍ය වෙබ් අඩවියේ HTML කෝඩ් එක මීට පහතින් හෝ මෙම කොටස වෙනුවට Paste කරන්න. පාරිභෝගිකයන්ට තවමත් පෙනෙන්නේ Update screen එක පමණි. ඔබට පමණක් මෙම කොටස දර්ශනය වේ.
+            </p>
         </div>
 
-        <!-- 👆 උඩ සඳහන් කළ තැනට ඔබේ කෝඩ් එක දමන්න 👆 -->
+        <!-- 👆 ඔබේ මුල් වෙබ් අඩවියේ කෝඩ් එක මෙතැනට අලවන්න 👆 -->
     </div>
 
     <script>
