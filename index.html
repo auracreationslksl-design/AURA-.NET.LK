@@ -23,19 +23,19 @@
             --input-bg: rgba(255, 255, 255, 0.04);
         }
 
-        body.light-theme {
-            --bg-main: #f3f4f6;
+        .light-theme {
+            --bg-main: #f0f4f8;
             --bg-card: rgba(255, 255, 255, 0.9);
             --primary: #0284c7;
-            --primary-glow: rgba(2, 132, 199, 0.3);
+            --primary-glow: rgba(2, 132, 199, 0.2);
             --accent: #4f46e5;
             --success: #059669;
-            --text-main: #1f2937;
-            --text-sub: #4b5563;
-            --border: rgba(2, 132, 199, 0.25);
-            --badge-bg: rgba(2, 132, 199, 0.1);
-            --nav-bg: rgba(255, 255, 255, 0.95);
-            --footer-bg: #e5e7eb;
+            --text-main: #0f172a;
+            --text-sub: #475569;
+            --border: rgba(2, 132, 199, 0.2);
+            --badge-bg: rgba(2, 132, 199, 0.08);
+            --nav-bg: rgba(240, 244, 248, 0.95);
+            --footer-bg: #cbd5e1;
             --input-bg: rgba(0, 0, 0, 0.03);
         }
 
@@ -47,9 +47,11 @@
             scroll-behavior: smooth !important;
         }
 
+        html { scroll-behavior: smooth; }
+
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(3, 7, 18, 0.88), rgba(3, 7, 18, 0.88)), url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(var(--bg-main), var(--bg-main)), url('https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -57,18 +59,43 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         #cursor-glow {
             position: fixed;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
             transform: translate(-50%, -50%);
             z-index: 9999;
             transition: transform 0.05s ease-out;
+        }
+
+        /* Top Notice Board Bar */
+        .notice-board {
+            background: linear-gradient(90deg, #0284c7, #6366f1, #0284c7);
+            background-size: 200% auto;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1001;
+            animation: gradientAnim 5s linear infinite;
+        }
+
+        @keyframes gradientAnim {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
         }
 
         nav {
@@ -94,24 +121,19 @@
 
         .logo span { color: var(--primary); text-shadow: 0 0 15px var(--primary-glow); }
 
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
         .nav-links {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
             color: var(--text-sub);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
-            padding: 8px 12px;
+            padding: 8px 10px;
             border-radius: 8px;
             transition: all 0.3s ease;
         }
@@ -122,18 +144,18 @@
         }
 
         .theme-toggle-btn {
-            background: var(--bg-card);
+            background: var(--badge-bg);
             border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 8px 14px;
-            border-radius: 20px;
+            color: var(--primary);
+            width: 38px; height: 38px;
+            border-radius: 50%;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            font-weight: 600;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px;
+            transition: all 0.3s ease;
         }
+
+        .theme-toggle-btn:hover { background: var(--primary); color: #fff; }
 
         section {
             padding: 90px 8%;
@@ -187,13 +209,12 @@
             width: 90px;
             height: 90px;
             border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, #38bdf8, #030712);
+            background: radial-gradient(circle at 30% 30%, var(--primary), var(--bg-main));
             box-shadow: 0 0 40px var(--primary-glow), inset 0 0 20px rgba(0,0,0,0.8);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 25px;
-            position: relative;
             animation: floatGlobe 4s ease-in-out infinite;
         }
 
@@ -204,15 +225,8 @@
             animation: rotateGlobe 10s linear infinite;
         }
 
-        @keyframes rotateGlobe {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes floatGlobe {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
+        @keyframes rotateGlobe { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes floatGlobe { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
         .hero h1 {
             font-size: 3.5rem;
@@ -239,7 +253,7 @@
 
         .btn-primary {
             background: var(--primary);
-            color: #030712;
+            color: #fff;
             padding: 14px 32px;
             border-radius: 10px;
             font-weight: 700;
@@ -285,7 +299,7 @@
             padding: 12px 25px;
             border-radius: 50px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
         }
 
         .status-item {
@@ -304,10 +318,48 @@
             animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        /* LIVE NETWORK MONITOR TABLE */
+        .network-monitor-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            overflow-x: auto;
         }
+
+        .monitor-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .monitor-table th, .monitor-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .monitor-table th { color: var(--primary); font-weight: 700; }
+        .monitor-table td { color: var(--text-main); }
+
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .live-indicator.green { background: rgba(16, 185, 129, 0.15); color: var(--success); border: 1px solid var(--success); }
+        .live-indicator.red { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid #ef4444; }
 
         .filter-tabs {
             display: flex;
@@ -331,7 +383,7 @@
 
         .filter-btn.active, .filter-btn:hover {
             background: var(--primary);
-            color: #030712;
+            color: #fff;
             border-color: var(--primary);
             box-shadow: 0 0 15px var(--primary-glow);
         }
@@ -349,7 +401,7 @@
             padding: 30px;
             backdrop-filter: blur(12px);
             transition: all 0.3s ease;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
         }
 
         .card:hover {
@@ -361,7 +413,7 @@
         .card-icon {
             width: 55px; height: 55px;
             border-radius: 14px;
-            background: rgba(56, 189, 248, 0.1);
+            background: var(--badge-bg);
             color: var(--primary);
             display: flex; align-items: center; justify-content: center;
             font-size: 24px;
@@ -388,26 +440,18 @@
             transition: all 0.4s ease;
             cursor: pointer;
             text-align: center;
-            box-shadow: 0 0 20px var(--primary-glow), inset 0 0 15px rgba(56, 189, 248, 0.15);
+            box-shadow: 0 0 20px var(--primary-glow), inset 0 0 15px var(--primary-glow);
             position: relative;
             overflow: hidden;
             animation: neonPulseBorder 3s infinite alternate;
         }
 
         @keyframes neonPulseBorder {
-            0% {
-                border-color: rgba(56, 189, 248, 0.5);
-                box-shadow: 0 0 15px rgba(56, 189, 248, 0.3), inset 0 0 10px rgba(56, 189, 248, 0.1);
-            }
-            100% {
-                border-color: #38bdf8;
-                box-shadow: 0 0 35px var(--primary), inset 0 0 25px var(--primary-glow);
-            }
+            0% { border-color: rgba(56, 189, 248, 0.5); box-shadow: 0 0 15px var(--primary-glow); }
+            100% { border-color: var(--primary); box-shadow: 0 0 35px var(--primary); }
         }
 
         .pricing-card:hover {
-            border-color: #fff;
-            box-shadow: 0 0 45px var(--primary), 0 0 15px #fff;
             transform: translateY(-8px) scale(1.02);
         }
 
@@ -422,7 +466,6 @@
             font-size: 1.4rem;
             margin-bottom: 8px;
             color: var(--text-main);
-            text-shadow: 0 0 10px var(--primary-glow);
         }
 
         .pricing-card .sub-title {
@@ -440,18 +483,104 @@
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
-            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        /* FAQ ACCORDION SECTION */
+        .faq-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 1.05rem;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover { background: var(--badge-bg); }
+
+        .faq-question i {
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 20px 20px 20px;
+        }
+
+        /* REFERRAL & AFFILIATE SECTION */
+        .referral-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--bg-card), rgba(99, 102, 241, 0.1));
+            border: 2px solid var(--accent);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
+        }
+
+        .referral-box h3 { font-size: 2rem; margin-bottom: 15px; color: var(--text-main); }
+        .referral-box p { color: var(--text-sub); margin-bottom: 25px; font-size: 1rem; }
+
+        .referral-link-group {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .referral-link-group input {
+            flex: 1;
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            border-radius: 10px;
+            color: var(--text-main);
+            outline: none;
+            font-size: 0.9rem;
         }
 
         .speedtest-box {
             max-width: 600px;
-            margin: 0 auto 40px;
+            margin: 0 auto;
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 20px;
             padding: 30px;
             text-align: center;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
         }
 
         .speed-meter {
@@ -463,13 +592,13 @@
         }
 
         .payment-box {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 20px;
             padding: 30px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
         }
 
         .bank-details-grid {
@@ -485,6 +614,14 @@
             padding: 20px;
             border-radius: 14px;
             position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .bank-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px var(--primary-glow);
         }
 
         .copy-btn {
@@ -500,7 +637,7 @@
             font-weight: bold;
         }
 
-        .copy-btn:hover { background: var(--primary); color: #030712; }
+        .copy-btn:hover { background: var(--primary); color: #fff; }
 
         .why-us-wrapper {
             max-width: 1000px;
@@ -518,7 +655,7 @@
             border-radius: 20px;
             padding: 30px;
             text-align: center;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
         }
 
         .calc-box select {
@@ -536,12 +673,11 @@
         .calc-result {
             margin-top: 15px;
             padding: 15px;
-            background: rgba(56, 189, 248, 0.1);
+            background: var(--badge-bg);
             border: 1px solid var(--primary);
             border-radius: 12px;
             color: var(--primary);
             font-weight: bold;
-            box-shadow: 0 0 10px var(--primary-glow);
         }
 
         .reviews-marquee-container {
@@ -558,10 +694,7 @@
             animation: marqueeScroll 25s linear infinite;
         }
 
-        @keyframes marqueeScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+        @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         .review-card {
             background: var(--bg-card);
@@ -571,7 +704,7 @@
             width: 320px;
             flex-shrink: 0;
             backdrop-filter: blur(12px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
         }
 
         .review-header {
@@ -586,7 +719,7 @@
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 16px; color: #000;
+            font-weight: 800; font-size: 16px; color: #fff;
         }
 
         .reviewer-info h4 { font-size: 0.95rem; color: var(--text-main); }
@@ -602,7 +735,7 @@
             border: 1px solid var(--border);
             border-radius: 20px;
             padding: 30px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
         }
 
         .contact-wrapper {
@@ -613,7 +746,7 @@
             border: 1px solid var(--border);
             border-radius: 24px;
             padding: 40px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
         }
 
         .channel-card {
@@ -639,7 +772,7 @@
         .channel-icon {
             width: 45px; height: 45px;
             border-radius: 12px;
-            background: rgba(56, 189, 248, 0.1);
+            background: var(--badge-bg);
             color: var(--primary);
             display: flex; align-items: center; justify-content: center;
             font-size: 20px;
@@ -689,7 +822,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 18px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             z-index: 1001;
             display: none;
             flex-direction: column;
@@ -699,7 +832,7 @@
 
         .chat-widget-header {
             background: var(--primary);
-            color: #030712;
+            color: #fff;
             padding: 12px 16px;
             display: flex;
             justify-content: space-between;
@@ -725,7 +858,7 @@
         }
 
         .chat-msg.admin { border-left: 3px solid var(--primary); align-self: flex-start; }
-        .chat-msg.user { background: rgba(56, 189, 248, 0.15); color: var(--primary); align-self: flex-end; }
+        .chat-msg.user { background: var(--badge-bg); color: var(--primary); align-self: flex-end; }
 
         .chat-widget-footer {
             padding: 10px;
@@ -755,7 +888,7 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
-        #pkgModal {
+        #pkgModal, #paymentModal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(3, 7, 18, 0.8);
@@ -776,19 +909,12 @@
             max-width: 450px;
             text-align: center;
             position: relative;
-            animation: modalPop 0.3s ease;
-        }
-
-        @keyframes modalPop {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
         }
 
         .modal-content h3 {
             color: var(--primary);
             font-size: 1.4rem;
             margin-bottom: 5px;
-            text-shadow: 0 0 10px var(--primary-glow);
         }
 
         .modal-subtitle {
@@ -815,54 +941,22 @@
             border-bottom: 1px rgba(255,255,255,0.05) dashed;
         }
 
-        .modal-package-list li span.m-name {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .modal-package-list li div.m-right {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
+        .modal-package-list li span.m-name { font-size: 0.95rem; font-weight: 700; color: var(--text-main); }
+        .modal-package-list li div.m-right { display: flex; align-items: center; gap: 10px; }
         .modal-package-list li span.m-price {
-            font-size: 0.9rem;
-            font-weight: 800;
-            color: var(--primary);
-            background: rgba(56, 189, 248, 0.1);
-            padding: 4px 8px;
-            border-radius: 6px;
-            border: 1px solid var(--border);
+            font-size: 0.9rem; font-weight: 800; color: var(--primary);
+            background: var(--badge-bg); padding: 4px 8px; border-radius: 6px; border: 1px solid var(--border);
         }
 
         .buy-wa-btn {
-            background: #25D366;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
+            background: #25D366; color: #fff; border: none; padding: 5px 10px;
+            border-radius: 6px; font-size: 12px; font-weight: bold; cursor: pointer;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
         }
 
         .close-modal-btn {
-            background: var(--primary);
-            color: #030712;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            box-shadow: 0 0 15px var(--primary-glow);
+            background: var(--primary); color: #fff; border: none; padding: 10px 25px;
+            border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%;
         }
 
         footer {
@@ -885,49 +979,92 @@
 
     <div id="cursor-glow"></div>
 
+    <!-- Notice Board Bar -->
+    <div class="notice-board">
+        <i class="fa-solid fa-bullhorn"></i>
+        <span>Notice: All Servers 100% Online & Smooth! Contact WhatsApp for Instant Package Activations.</span>
+    </div>
+
     <!-- Navigation Bar -->
     <nav>
         <a href="#home" class="logo">AURA NET<span>.LK</span></a>
         
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="#monitor">Network Status</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#pricing">Plans</a></li>
-            <li><a href="#speedtest">Speed Test</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#referral">Affiliate</a></li>
             <li><a href="#payment">Payments</a></li>
-            <li><a href="#calculator">Calculator</a></li>
-            <li><a href="#reviews">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle Dark/Light Mode"><i class="fa-solid fa-moon" id="themeIcon"></i></button></li>
         </ul>
-
-        <div class="nav-right">
-            <button class="theme-toggle-btn" onclick="toggleTheme()">
-                <i class="fa-solid fa-moon" id="theme-icon"></i>
-                <span id="theme-text">Dark</span>
-            </button>
-        </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-globe-container">
-            <i class="fa-solid fa-globe"></i>
-        </div>
-
-        <div class="section-header" style="margin-bottom: 20px;">
-            <span class="tag">Digital Solutions Agency</span>
-        </div>
+        <div class="hero-globe-container"><i class="fa-solid fa-globe"></i></div>
+        <div class="section-header" style="margin-bottom: 20px;"><span class="tag">Digital Solutions Agency</span></div>
         <h1>Elevate Your Digital Experience With <span>AURA NET.LK</span></h1>
-        <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass & Normal NB Packages, and Professional Visual Editing Services.</p>
+        <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass & Normal NB Packages, and Professional Services.</p>
         <div class="btn-group">
             <a href="#services" class="btn-primary">Our Services</a>
             <a href="#pricing" class="btn-outline">Internet Plans</a>
         </div>
 
         <div class="status-container">
-            <div class="status-item"><span class="status-dot"></span> Bypass & NB Servers: <strong>ONLINE (100%)</strong></div>
-            <div class="status-item"><i class="fa-solid fa-gauge-high" style="color: var(--primary);"></i> Network Ping: <strong>14ms</strong></div>
-            <div class="status-item"><i class="fa-solid fa-shield-halved" style="color: var(--success);"></i> System Security: <strong>Encrypted</strong></div>
+            <div class="status-item"><span class="status-dot"></span> Servers: <strong>ONLINE</strong></div>
+            <div class="status-item"><i class="fa-solid fa-gauge-high" style="color: var(--primary);"></i> Ping: <strong>14ms</strong></div>
+            <div class="status-item"><i class="fa-solid fa-shield-halved" style="color: var(--success);"></i> Security: <strong>Encrypted</strong></div>
+        </div>
+    </section>
+
+    <!-- NETWORK STATUS LIVE MONITOR -->
+    <section id="monitor">
+        <div class="section-header">
+            <span class="tag">Live Performance</span>
+            <h2>Network Status Monitor</h2>
+            <p>Real-time server speed and signal health indicators for major Sri Lankan networks.</p>
+        </div>
+
+        <div class="network-monitor-box">
+            <table class="monitor-table">
+                <thead>
+                    <tr>
+                        <th>Network Provider</th>
+                        <th>Bypass / NB Type</th>
+                        <th>Speed Status</th>
+                        <th>Indicator</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Dialog Axiata</strong></td>
+                        <td>Zoom / TikTok Bypass (298/724/297)</td>
+                        <td>145 Mbps (Optimal)</td>
+                        <td><span class="live-indicator green"><i class="fa-solid fa-circle"></i> Live (Normal)</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Airtel Lanka</strong></td>
+                        <td>TikTok & YouTube Unlimited Packs</td>
+                        <td>120 Mbps (Stable)</td>
+                        <td><span class="live-indicator green"><i class="fa-solid fa-circle"></i> Live (Normal)</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hutch Lanka</strong></td>
+                        <td>4G Social & Zoom Bypass Packages</td>
+                        <td>135 Mbps (High Speed)</td>
+                        <td><span class="live-indicator green"><i class="fa-solid fa-circle"></i> Live (Normal)</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Normal NB Servers</strong></td>
+                        <td>Standard Data Volume Packages</td>
+                        <td>95 Mbps (Stable)</td>
+                        <td><span class="live-indicator green"><i class="fa-solid fa-circle"></i> Live (Normal)</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
@@ -936,24 +1073,24 @@
         <div class="section-header">
             <span class="tag">What We Offer</span>
             <h2>Our Core Services</h2>
-            <p>Comprehensive digital solutions tailored to boost your business and personal connectivity.</p>
+            <p>Comprehensive digital solutions tailored to boost your business and connectivity.</p>
         </div>
 
         <div class="grid-3">
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
                 <h3>Web Development</h3>
-                <p>Custom, ultra-fast, and responsive modern websites crafted with interactive UI/UX designs to elevate your brand presence online.</p>
+                <p>Custom, ultra-fast, and responsive modern websites crafted with interactive UI/UX designs.</p>
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
-                <h3>Internet Bypass & Normal NB</h3>
-                <p>Reliable high-speed bypass and standard Normal NB package solutions for Dialog, Airtel, and Hutch networks.</p>
+                <h3>Internet Bypass & NB</h3>
+                <p>Reliable high-speed bypass and standard Normal NB package solutions for Dialog, Airtel, and Hutch.</p>
             </div>
             <div class="card">
                 <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                 <h3>Graphic & Video Editing</h3>
-                <p>Professional visual editing services including social media posts, branding materials, promotional posters, and video edits.</p>
+                <p>Professional visual editing services including social media posts, branding materials, and video editing.</p>
             </div>
         </div>
     </section>
@@ -977,7 +1114,6 @@
             <div class="pricing-card" data-network="dialog" onclick="openCategoryModal('Dialog Zoom (Router)', 'Supported Packages: 298 & 724', [
                 {name: '100 GB Package', price: 'LKR 280'},
                 {name: '200 GB Package', price: 'LKR 350'},
-                {name: '300 GB Package', price: 'LKR 450'},
                 {name: 'Unlimited Pack', price: 'LKR 600'}
             ])">
                 <div class="cat-icon-lg"><i class="fa-solid fa-wifi"></i></div>
@@ -999,8 +1135,7 @@
 
             <div class="pricing-card" data-network="dialog" onclick="openCategoryModal('Normal NB Packages', 'Standard Network Data Packages', [
                 {name: '50 GB Normal NB', price: 'LKR 250'},
-                {name: '100 GB Normal NB', price: 'LKR 400'},
-                {name: '200 GB Normal NB', price: 'LKR 750'}
+                {name: '100 GB Normal NB', price: 'LKR 400'}
             ])">
                 <div class="cat-icon-lg"><i class="fa-solid fa-globe"></i></div>
                 <h3>Normal NB Packages</h3>
@@ -1010,8 +1145,7 @@
 
             <div class="pricing-card" data-network="airtel" onclick="openCategoryModal('Airtel 4G Packages', 'TikTok (297/997) | Zoom | YouTube', [
                 {name: '100 GB Package', price: 'LKR 230'},
-                {name: '200 GB Package', price: 'LKR 300'},
-                {name: 'YT Unlimited Pack', price: 'LKR 600'}
+                {name: '200 GB Package', price: 'LKR 300'}
             ])">
                 <div class="cat-icon-lg"><i class="fa-solid fa-tower-cell"></i></div>
                 <h3>Airtel 4G Packages</h3>
@@ -1019,15 +1153,84 @@
                 <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
             </div>
 
-            <div class="pricing-card" data-network="hutch" onclick="openCategoryModal('Hutch 4G Packages', 'All Hutch Bypass Packages (Zoom / Social)', [
+            <div class="pricing-card" data-network="hutch" onclick="openCategoryModal('Hutch 4G Packages', 'All Hutch Bypass Packages', [
                 {name: '100 GB Package', price: 'LKR 230'},
-                {name: '200 GB Package', price: 'LKR 300'},
-                {name: '300 GB Package', price: 'LKR 400'}
+                {name: '200 GB Package', price: 'LKR 300'}
             ])">
                 <div class="cat-icon-lg"><i class="fa-solid fa-signal"></i></div>
                 <h3>Hutch 4G Packages</h3>
-                <div class="sub-title">All Hutch Bypass Packages (Zoom / Social)</div>
+                <div class="sub-title">All Hutch Bypass Packages</div>
                 <span class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Tap to View & Order</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section id="faq">
+        <div class="section-header">
+            <span class="tag">Help Center</span>
+            <h2>Frequently Asked Questions</h2>
+            <p>Find quick answers to common questions about our packages and services.</p>
+        </div>
+
+        <div class="faq-wrapper">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Packages ඇක්ටිව් වෙන්න කොච්චර වෙලා යනවද?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>සාමාන්‍යයෙන් ඔබ මුදල් ගෙවා විස්තර ලබා දී මිනිත්තු 5ත් 10ත් අතර කාලයක් ඇතුළත පැකේජය සම්පූර්ණයෙන්ම ඇක්ටිව් කරනු ලැබේ.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>ငွေ گෙවන්නේ කොහොමද? (Payment Methods)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>ඔබට බැංකු මාරුකිරීම් (Bank Transfers - BOC, Commercial Bank) හෝ WhatsApp හරහා සම්බන්ධ වී Cash payments / Mobile payments පහසුකම් පාවිච්චි කරන්න පුළුවන්.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>මෙම Bypass packages වලට Speed සීමාවන් තිබේද?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>නැත, අපගේ සර්වර්ස් සම්පූර්ණයෙන්ම ඔප්ටිමයිස් කර ඇති බැවින් ඔබට උපරිම 4G/5G ස්පීඩ් එක ලබාගත හැක.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>ගැටළුවක් වුණොත් සම්බන්ධ වෙසෙන්නේ කෙසේද?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>ඔබට වෙබ් අඩවියේ ඇති WhatsApp බටන් එක හරහා හෝ 24/7 ක්‍රියාත්මක Live Chat හරහා අපගේ සහායක කණ්ඩායම අමතන්න පුළුවන්.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFERRAL / AFFILIATE PROGRAM SECTION -->
+    <section id="referral">
+        <div class="section-header">
+            <span class="tag">Earn Rewards</span>
+            <h2>Referral & Affiliate Program</h2>
+            <p>Invite your friends to AURA NET.LK and earn special discounts and bonus data!</p>
+        </div>
+
+        <div class="referral-box">
+            <h3>Share & Earn Free Rewards</h3>
+            <p>Get your unique referral link below. When your friends join or purchase packages using your link, you get special discounts on your next package!</p>
+            
+            <div class="referral-link-group">
+                <input type="text" id="refLinkInput" value="https://auranet.lk/?ref=user_boost99" readonly>
+                <button class="btn-primary" onclick="copyReferralLink()"><i class="fa-regular fa-copy"></i> Copy</button>
             </div>
         </div>
     </section>
@@ -1053,56 +1256,29 @@
         <div class="section-header">
             <span class="tag">Secure Transactions</span>
             <h2>Official Payment Details</h2>
-            <p>Transfer funds securely and send the slip via WhatsApp for instant activation.</p>
+            <p>Transfer funds securely or click Cash Payment to place orders via WhatsApp easily.</p>
         </div>
 
         <div class="payment-box">
             <div class="bank-details-grid">
-                <div class="bank-card">
-                    <button class="copy-btn" onclick="copyText('BOC-87654321')"><i class="fa-regular fa-copy"></i> Copy</button>
+                <div class="bank-card" onclick="copyText('BOC-87654321')">
+                    <button class="copy-btn" onclick="event.stopPropagation(); copyText('BOC-87654321')"><i class="fa-regular fa-copy"></i> Copy</button>
                     <span style="font-size: 11px; color: var(--primary); font-weight: bold;">BANK OF CEYLON</span>
                     <h4 style="margin: 5px 0; color: var(--text-main);">AURA NET (Pvt) Ltd</h4>
                     <p style="font-size: 0.85rem; color: var(--text-sub);">Acc: <strong>87654321</strong><br>Branch: Colombo Main</p>
                 </div>
-                <div class="bank-card">
-                    <button class="copy-btn" onclick="copyText('COM-1234567890')"><i class="fa-regular fa-copy"></i> Copy</button>
+                <div class="bank-card" onclick="copyText('COM-1234567890')">
+                    <button class="copy-btn" onclick="event.stopPropagation(); copyText('COM-1234567890')"><i class="fa-regular fa-copy"></i> Copy</button>
                     <span style="font-size: 11px; color: var(--primary); font-weight: bold;">COMMERCIAL BANK</span>
                     <h4 style="margin: 5px 0; color: var(--text-main);">AURA NET (Pvt) Ltd</h4>
                     <p style="font-size: 0.85rem; color: var(--text-sub);">Acc: <strong>1234567890</strong><br>Branch: Wellawatte</p>
                 </div>
-                <div class="bank-card">
-                    <button class="copy-btn" onclick="copyText('0742251615')"><i class="fa-regular fa-copy"></i> Copy</button>
-                    <span style="font-size: 11px; color: #25D366; font-weight: bold;">WHATSAPP ONLY / MOBILE</span>
-                    <h4 style="margin: 5px 0; color: var(--text-main);">AURA Official Line</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-sub);">Number: <strong>+94 74 225 1615</strong><br>Instant Verification</p>
+                <div class="bank-card" onclick="openPaymentPopup('Cash Payment / Direct Deposit', 'You can pay via Bank Transfer or choose Cash payment options by contacting our team directly.')" style="border-color: #25D366; background: rgba(37, 211, 102, 0.05);">
+                    <div style="position: absolute; top: 15px; right: 15px; background: #25D366; color: #fff; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: bold;"><i class="fa-solid fa-money-bill-wave"></i> Info</div>
+                    <span style="font-size: 11px; color: #25D366; font-weight: bold;">CASH & OTHER PAYMENTS</span>
+                    <h4 style="margin: 5px 0; color: var(--text-main);">Cash / Mobile Payments</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-sub);">Tap here for instructions & WhatsApp verification.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY CHOOSE US -->
-    <section id="whyus">
-        <div class="section-header">
-            <span class="tag">Our Advantage</span>
-            <h2>Why Choose AURA NET.LK?</h2>
-            <p>We deliver the most trusted, secure, and lightning-fast digital solutions in Sri Lanka.</p>
-        </div>
-
-        <div class="why-us-wrapper">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h3>Lightning Fast Activation</h3>
-                <p>All package configurations and orders are processed and activated within 5 to 10 minutes.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
-                <h3>24/7 Dedicated Support</h3>
-                <p>Our friendly customer support team is always active via WhatsApp to assist you anytime.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-shield-cat"></i></div>
-                <h3>100% Secure & Reliable</h3>
-                <p>Optimized network setups ensuring high bandwidth, low ping, and absolute safety for all your connections.</p>
             </div>
         </div>
     </section>
@@ -1137,7 +1313,6 @@
 
         <div class="reviews-marquee-container" id="marqueeContainer">
             <div class="reviews-track" id="reviewsTrack">
-                <!-- Original Set -->
                 <div class="review-card">
                     <div class="review-header"><div class="avatar">KS</div><div class="reviewer-info"><h4>Kasun Sampath</h4><span>Dialog Router User</span></div></div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -1148,45 +1323,6 @@
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"Normal NB package එක ගොඩක් ඉක්මනට ඇක්ටිව් කරලා දුන්නා. Excellent service!"</p>
                 </div>
-                <div class="review-card">
-                    <div class="review-header"><div class="avatar">NL</div><div class="reviewer-info"><h4>Nuwan Liyanage</h4><span>Web Design Client</span></div></div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"මගේ Business එකට Professional Dark Theme Website එකක් හදලා දුන්නා. Top quality design!"</p>
-                </div>
-                <div class="review-card">
-                    <div class="review-header"><div class="avatar">HM</div><div class="reviewer-info"><h4>Hashen Madusanka</h4><span>Hutch Unlimited</span></div></div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Gaming වලට Low Ping එනවා. Download speed එක උපරිමයි. තැන්ක්‍යූ AURA NET team!"</p>
-                </div>
-            </div>
-        </div>
-
-        <div style="padding: 0 8%;">
-            <div class="review-form-box">
-                <h3 style="margin-bottom: 15px; color: var(--text-main); text-align: center;">Submit Your Review</h3>
-                <form id="reviewSubmitForm" onsubmit="addNewReview(event)">
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" class="form-control" id="revName" placeholder="e.g. Kasun Silva" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Service / Network Used</label>
-                        <input type="text" class="form-control" id="revService" placeholder="e.g. Normal NB / Web Design" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Star Rating</label>
-                        <select class="form-control" id="revStars">
-                            <option value="5">⭐⭐⭐⭐⭐ (5 Stars)</option>
-                            <option value="4">⭐⭐⭐⭐ (4 Stars)</option>
-                            <option value="3">⭐⭐⭐ (3 Stars)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Your Feedback</label>
-                        <textarea class="form-control" id="revComment" rows="3" placeholder="Share your experience with AURA NET..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Post Review</button>
-                </form>
             </div>
         </div>
     </section>
@@ -1203,11 +1339,11 @@
                 <h3>Let's Connect</h3>
                 <p style="color: var(--text-sub); margin-bottom: 20px;">Fast activation & support team available via WhatsApp 24/7.</p>
                 <a href="https://wa.me/94742251615" target="_blank" class="channel-card">
-                    <div class="channel-icon" style="color: #25D366; background: rgba(37,211,102,0.1);"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="channel-icon" style="color: #25D366;"><i class="fa-brands fa-whatsapp"></i></div>
                     <div class="channel-details"><span>WhatsApp Only</span><strong>+94 74 225 1615</strong></div>
                 </a>
                 <a href="mailto:aura.creations.lksl@gmail.com" class="channel-card">
-                    <div class="channel-icon" style="color: #f43f5e; background: rgba(244,63,94,0.1);"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="channel-icon" style="color: #f43f5e;"><i class="fa-solid fa-envelope"></i></div>
                     <div class="channel-details"><span>Official Gmail</span><strong>aura.creations.lksl@gmail.com</strong></div>
                 </a>
             </div>
@@ -1223,13 +1359,24 @@
         </div>
     </section>
 
-    <!-- Modal -->
+    <!-- Package Modal -->
     <div id="pkgModal" onclick="closeCategoryModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <h3 id="modalCatTitle">Category Name</h3>
             <div class="modal-subtitle" id="modalCatSub">Subtitle info</div>
             <ul class="modal-package-list" id="modalPkgList"></ul>
             <button class="close-modal-btn" onclick="closeCategoryModalDirect()">Close</button>
+        </div>
+    </div>
+
+    <!-- Payment Popup Modal -->
+    <div id="paymentModal" onclick="closePaymentModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h3 id="payModalTitle" style="color: #25D366;">Cash Payment Info</h3>
+            <div class="modal-subtitle" id="payModalSub">Instructions</div>
+            <p id="payModalDesc" style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 20px; text-align: left; line-height: 1.6;"></p>
+            <a href="https://wa.me/94742251615?text=Hi%20AURA%20NET.LK,%20I%20want%20to%20know%20about%20Cash%20Payment%20options." target="_blank" class="buy-wa-btn" style="width: 100%; justify-content: center; padding: 10px; margin-bottom: 10px; font-size: 14px;"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp for Cash Orders</a>
+            <button class="close-modal-btn" onclick="closePaymentModalDirect()">Close</button>
         </div>
     </div>
 
@@ -1244,7 +1391,7 @@
         </div>
         <div class="chat-widget-footer">
             <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="handleChatKey(event)">
-            <button onclick="sendChatMessage()" style="background: var(--primary); border: none; color: #030712; padding: 0 12px; border-radius: 8px; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-paper-plane"></i></button>
+            <button onclick="sendChatMessage()" style="background: var(--primary); border: none; color: #fff; padding: 0 12px; border-radius: 8px; cursor: pointer; font-weight: bold;"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
     </div>
 
@@ -1259,9 +1406,50 @@
     </footer>
 
     <script>
-        // Seamless Marquee Loop Duplication (Prevents pausing/stopping completely)
+        // Theme Memory & Toggle (localStorage)
+        const currentTheme = localStorage.getItem('aura_theme') || 'dark';
+        if(currentTheme === 'light') {
+            document.documentElement.classList.add('light-theme');
+            document.getElementById('themeIcon').className = 'fa-solid fa-sun';
+        }
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('light-theme');
+            let theme = 'dark';
+            if(document.documentElement.classList.contains('light-theme')) {
+                theme = 'light';
+                document.getElementById('themeIcon').className = 'fa-solid fa-sun';
+            } else {
+                document.getElementById('themeIcon').className = 'fa-solid fa-moon';
+            }
+            localStorage.setItem('aura_theme', theme);
+        }
+
+        // FAQ Accordion Script
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+
+            if(!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Referral Copy Script
+        function copyReferralLink() {
+            const input = document.getElementById('refLinkInput');
+            input.select();
+            navigator.clipboard.writeText(input.value);
+            alert("Referral link copied to clipboard: " + input.value);
+        }
+
+        // Seamless Marquee Loop Duplication
         const track = document.getElementById('reviewsTrack');
-        track.innerHTML += track.innerHTML;
+        if(track) { track.innerHTML += track.innerHTML; }
 
         const glow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
@@ -1289,7 +1477,7 @@
             
             let listHtml = '';
             packages.forEach(pkg => {
-                let waMessage = encodeURIComponent(`Hi AURA NET.LK, I want to order ${categoryTitle} - ${pkg.name} (${pkg.price}). Please assist with activation.`);
+                let waMessage = encodeURIComponent(`Hi AURA NET.LK, I want to order ${categoryTitle} - ${pkg.name} (${pkg.price}). Please assist.`);
                 let waUrl = `https://wa.me/94742251615?text=${waMessage}`;
 
                 listHtml += `
@@ -1307,15 +1495,18 @@
             document.getElementById('pkgModal').style.display = 'flex';
         }
 
-        function closeCategoryModalDirect() {
-            document.getElementById('pkgModal').style.display = 'none';
+        function closeCategoryModalDirect() { document.getElementById('pkgModal').style.display = 'none'; }
+        function closeCategoryModal(e) { if(e.target.id === 'pkgModal') document.getElementById('pkgModal').style.display = 'none'; }
+
+        function openPaymentPopup(title, desc) {
+            document.getElementById('payModalTitle').innerText = title;
+            document.getElementById('payModalSub').innerText = "Instant Verification Option";
+            document.getElementById('payModalDesc').innerText = desc;
+            document.getElementById('paymentModal').style.display = 'flex';
         }
 
-        function closeCategoryModal(e) {
-            if(e.target.id === 'pkgModal') {
-                document.getElementById('pkgModal').style.display = 'none';
-            }
-        }
+        function closePaymentModalDirect() { document.getElementById('paymentModal').style.display = 'none'; }
+        function closePaymentModal(e) { if(e.target.id === 'paymentModal') document.getElementById('paymentModal').style.display = 'none'; }
 
         function runSpeedTest() {
             const display = document.getElementById('speedDisplay');
@@ -1333,7 +1524,7 @@
             }, 150);
         }
 
-        function copyTest(text) {
+        function copyText(text) {
             navigator.clipboard.writeText(text);
             alert("Copied to clipboard: " + text);
         }
@@ -1343,49 +1534,8 @@
             const resultBox = document.getElementById('calcResult');
             if (usage === 'light') resultBox.innerHTML = "Recommended: <strong>50 GB Normal NB or 100 GB Package (LKR 230 - 280)</strong> - Ideal for daily messaging & light browsing!";
             else if (usage === 'medium') resultBox.innerHTML = "Recommended: <strong>100 GB Normal NB or 200 GB Package (LKR 300 - 400)</strong> - Perfect for streaming & social media!";
-            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>200 GB Normal NB / Unlimited Package (LKR 600 - 750)</strong> - Best for uninterrupted heavy downloads & 4K streaming!";
+            else if (usage === 'heavy') resultBox.innerHTML = "Recommended: <strong>200 GB Normal NB / Unlimited Package (LKR 600 - 750)</strong> - Best for heavy downloads & streaming!";
             else resultBox.innerHTML = "Please select your usage pattern above.";
-        }
-
-        function toggleTheme() {
-            const body = document.body;
-            const icon = document.getElementById('theme-icon');
-            const text = document.getElementById('theme-text');
-            body.classList.toggle('light-theme');
-            if(body.classList.contains('light-theme')) {
-                icon.className = 'fa-solid fa-sun';
-                text.innerText = 'Light';
-            } else {
-                icon.className = 'fa-solid fa-moon';
-                text.innerText = 'Dark';
-            }
-        }
-
-        function addNewReview(e) {
-            e.preventDefault();
-            const name = document.getElementById('revName').value;
-            const service = document.getElementById('revService').value;
-            const comment = document.getElementById('revComment').value;
-            const starsNum = parseInt(document.getElementById('revStars').value);
-
-            let starsHtml = '';
-            for(let i=0; i<starsNum; i++) starsHtml += '<i class="fa-solid fa-star"></i>';
-            const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0,2) || 'U';
-
-            const trackElement = document.getElementById('reviewsTrack');
-            const newCard = document.createElement('div');
-            newCard.className = 'review-card';
-            newCard.innerHTML = `
-                <div class="review-header">
-                    <div class="avatar">${initials}</div>
-                    <div class="reviewer-info"><h4>${name}</h4><span>${service}</span></div>
-                </div>
-                <div class="stars">${starsHtml}</div>
-                <p>"${comment}"</p>
-            `;
-            trackElement.prepend(newCard);
-            alert('Review added successfully!');
-            document.getElementById('reviewSubmitForm').reset();
         }
 
         function toggleChat() {
