@@ -8,38 +8,38 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-main: #0a0305;
-            --bg-card: rgba(24, 12, 16, 0.85);
-            --primary: #f43f5e;
-            --primary-glow: rgba(244, 63, 94, 0.4);
-            --accent: #fb7185;
+            --bg-main: #030712;
+            --bg-card: rgba(17, 24, 39, 0.80);
+            --primary: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.4);
+            --accent: #6366f1;
             --success: #10b981;
             --text-main: #f9fafb;
             --text-sub: #9ca3af;
-            --border: rgba(244, 63, 94, 0.2);
-            --badge-bg: rgba(244, 63, 94, 0.1);
-            --nav-bg: rgba(10, 3, 5, 0.85);
-            --footer-bg: #050102;
+            --border: rgba(56, 189, 248, 0.2);
+            --badge-bg: rgba(56, 189, 248, 0.1);
+            --nav-bg: rgba(3, 7, 18, 0.85);
+            --footer-bg: #02040a;
             --input-bg: rgba(255, 255, 255, 0.04);
-            /* Red/Dark Theme Anime Girl Wallpaper Direct Link */
-            --bg-wallpaper: url('https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1920&auto=format&fit=crop');
+            /* Custom 4K upscale-adjusted Cute Anime Cyberpunk Girl Wallpaper */
+            --bg-wallpaper: url('https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=3840&q=100');
         }
 
         .light-theme {
-            --bg-main: #fdf2f4;
-            --bg-card: rgba(255, 255, 255, 0.9);
-            --primary: #e11d48;
-            --primary-glow: rgba(225, 29, 72, 0.2);
-            --accent: #f43f5e;
+            --bg-main: #f0f4f8;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --primary: #0284c7;
+            --primary-glow: rgba(2, 132, 199, 0.2);
+            --accent: #4f46e5;
             --success: #059669;
             --text-main: #0f172a;
             --text-sub: #475569;
-            --border: rgba(225, 29, 72, 0.2);
-            --badge-bg: rgba(225, 29, 72, 0.08);
-            --nav-bg: rgba(253, 242, 244, 0.9);
-            --footer-bg: #fbcfe8;
+            --border: rgba(2, 132, 199, 0.2);
+            --badge-bg: rgba(2, 132, 199, 0.08);
+            --nav-bg: rgba(240, 244, 248, 0.9);
+            --footer-bg: #cbd5e1;
             --input-bg: rgba(0, 0, 0, 0.03);
-            --bg-wallpaper: url('https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1920&auto=format&fit=crop');
+            --bg-wallpaper: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=3840&q=100');
         }
 
         * {
@@ -54,7 +54,7 @@
 
         body {
             background-color: var(--bg-main);
-            background-image: linear-gradient(rgba(10, 3, 5, 0.82), rgba(10, 3, 5, 0.82)), var(--bg-wallpaper);
+            background-image: linear-gradient(rgba(3, 7, 18, 0.65), rgba(3, 7, 18, 0.65)), var(--bg-wallpaper);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -78,7 +78,7 @@
         }
 
         .notice-board {
-            background: linear-gradient(90deg, #e11d48, #f43f5e, #e11d48);
+            background: linear-gradient(90deg, #0284c7, #6366f1, #0284c7);
             background-size: 200% auto;
             color: #fff;
             padding: 10px 20px;
@@ -238,7 +238,7 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(90deg, #f43f5e, #fb7185);
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 20px var(--primary-glow));
@@ -495,7 +495,7 @@
         }
 
         @keyframes neonPulseBorder {
-            0% { border-color: rgba(244, 63, 94, 0.5); box-shadow: 0 0 15px var(--primary-glow); }
+            0% { border-color: rgba(56, 189, 248, 0.5); box-shadow: 0 0 15px var(--primary-glow); }
             100% { border-color: var(--primary); box-shadow: 0 0 35px var(--primary); }
         }
 
@@ -589,12 +589,12 @@
         .referral-box {
             max-width: 800px;
             margin: 0 auto;
-            background: linear-gradient(135deg, var(--bg-card), rgba(244, 63, 94, 0.1));
+            background: linear-gradient(135deg, var(--bg-card), rgba(99, 102, 241, 0.1));
             border: 2px solid var(--accent);
             border-radius: 24px;
             padding: 40px;
             text-align: center;
-            box-shadow: 0 0 30px rgba(244, 63, 94, 0.2);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
         }
 
         .referral-box h3 { font-size: 2rem; margin-bottom: 15px; color: var(--text-main); }
@@ -732,6 +732,7 @@
             animation: marqueeScroll 25s linear infinite;
         }
 
+        /* Fixed infinite scroll keyframes loop */
         @keyframes marqueeScroll { 
             0% { transform: translateX(0); } 
             100% { transform: translateX(-50%); } 
@@ -922,7 +923,7 @@
         #pkgModal, #paymentModal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(10, 3, 5, 0.8);
+            background: rgba(3, 7, 18, 0.8);
             backdrop-filter: blur(8px);
             display: none;
             justify-content: center;
@@ -1057,6 +1058,7 @@
 
         <div class="network-monitor-box">
             <div class="monitor-grid">
+                <!-- Dialog -->
                 <div class="network-card-pro">
                     <div class="net-card-header">
                         <div class="net-name"><i class="fa-solid fa-signal" style="color: var(--primary);"></i> Dialog Axiata</div>
@@ -1069,6 +1071,7 @@
                     </ul>
                 </div>
 
+                <!-- Airtel -->
                 <div class="network-card-pro">
                     <div class="net-card-header">
                         <div class="net-name"><i class="fa-solid fa-tower-cell" style="color: var(--primary);"></i> Airtel Lanka</div>
@@ -1081,6 +1084,7 @@
                     </ul>
                 </div>
 
+                <!-- Hutch -->
                 <div class="network-card-pro">
                     <div class="net-card-header">
                         <div class="net-name"><i class="fa-solid fa-wifi" style="color: var(--primary);"></i> Hutch Lanka</div>
@@ -1181,6 +1185,7 @@
         </div>
     </section>
 
+    <!-- FAQ ACCORDION SECTION -->
     <section id="faq">
         <div class="section-header">
             <span class="tag">Help Center</span>
@@ -1231,6 +1236,7 @@
         </div>
     </section>
 
+    <!-- REFERRAL / AFFILIATE PROGRAM SECTION -->
     <section id="referral">
         <div class="section-header">
             <span class="tag">Earn Rewards</span>
@@ -1264,6 +1270,7 @@
         </div>
     </section>
 
+    <!-- OFFICIAL PAYMENT DETAILS -->
     <section id="payment">
         <div class="section-header">
             <span class="tag">Secure Transactions</span>
@@ -1287,6 +1294,7 @@
                     <p style="font-size: 0.85rem; color: var(--text-sub);">Acc: <strong>1234567890</strong><br>Branch: Wellawatte</p>
                 </div>
 
+                <!-- EZ Cash -->
                 <div class="bank-card" onclick="copyText('0742251615')">
                     <button class="copy-btn" onclick="event.stopPropagation(); copyText('0742251615')"><i class="fa-regular fa-copy"></i> Copy</button>
                     <span style="font-size: 11px; color: #f59e0b; font-weight: bold;">EZ CASH / MOBILE PAY</span>
@@ -1446,6 +1454,7 @@
             alert("Referral link copied to clipboard: " + input.value);
         }
 
+        // Fixed marquee duplication for smooth infinite scrolling loop
         window.addEventListener('DOMContentLoaded', () => {
             const track = document.getElementById('reviewsTrack');
             if(track) { 
@@ -1546,7 +1555,7 @@
             userMsg.className = 'chat-msg user';
             userMsg.innerText = text;
             msgContainer.appendChild(userMsg);
-            input.value = ``;
+            input.value = '';
 
             setTimeout(() => {
                 let adminMsg = document.createElement('div');
