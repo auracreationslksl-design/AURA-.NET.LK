@@ -1982,12 +1982,12 @@
                     <div class="form-group-dash">
                         <label>SELECT DATA BANDWIDTH LIMIT *</label>
                         <select class="form-input-dash" id="bandwidthSelect" onchange="updatePrice()">
-                            <option value="250" style="color: #38bdf8; font-weight: bold;">100 GB - LKR.250</option>
-                            <option value="350" style="color: #38bdf8; font-weight: bold;">150 GB - LKR.350</option>
-                            <option value="400" style="color: #10b981; font-weight: bold;">300 GB - LKR.400</option>
-                            <option value="1200" style="color: #f59e0b; font-weight: bold;">1 TB - LKR.1,200</option>
-                            <option value="650" style="color: #ec4899; font-weight: bold;">Unlimited Ultra - LKR.650</option>
-                            <option value="7000" style="color: #6366f1; font-weight: bold;">1 Year Unlimited - LKR.7,000</option>
+                            <option value="250" style="color: #38bdf8; font-weight: bold;">100GB - LKR 250</option>
+                            <option value="300" style="color: #38bdf8; font-weight: bold;">200GB - LKR 300</option>
+                            <option value="400" style="color: #10b981; font-weight: bold;">300GB - LKR 400</option>
+                            <option value="1400" style="color: #f59e0b; font-weight: bold;">1TB - LKR 1400</option>
+                            <option value="650" style="color: #ec4899; font-weight: bold;">UNLIMITED ULTRA - LKR 650</option>
+                            <option value="7000" style="color: #6366f1; font-weight: bold;">1 Year Unlimited - LKR 7000</option>
                         </select>
                     </div>
 
@@ -2211,10 +2211,10 @@
                 </button>
             </div>
 
-            <!-- Card 2: 150GB Tunnel -->
+            <!-- Card 2: 200GB Tunnel -->
             <div class="pricing-card-ss">
-                <h3 class="plan-title-ss">150GB Tunnel</h3>
-                <div class="plan-price-ss">Rs.350<span>/month</span></div>
+                <h3 class="plan-title-ss">200GB Tunnel</h3>
+                <div class="plan-price-ss">Rs.300<span>/month</span></div>
                 <ul class="plan-features-ss">
                     <li><i class="fa-solid fa-check"></i> SG & LK Dual Server Support</li>
                     <li><i class="fa-solid fa-check"></i> 4K Video Streaming Ready</li>
@@ -2244,7 +2244,7 @@
             <!-- Card 4: 1 TB Tunnel -->
             <div class="pricing-card-ss">
                 <h3 class="plan-title-ss">1 TB Tunnel</h3>
-                <div class="plan-price-ss">Rs.1,200<span>/month</span></div>
+                <div class="plan-price-ss">Rs.1,400<span>/month</span></div>
                 <ul class="plan-features-ss">
                     <li><i class="fa-solid fa-check"></i> Massive 1TB High Speed Data</li>
                     <li><i class="fa-solid fa-check"></i> SG & LK Dual Server Support</li>
@@ -2728,27 +2728,23 @@
             if(priceVal === "7000") formattedPrice = "LKR. 7,000";
 
             if(!v2user) {
-                alert("Please enter a valid V2Ray Username (no spaces allowed)!");
+                alert("Please enter a valid V2Ray Username!");
                 document.getElementById('v2rayUser').focus();
                 return;
             }
 
-            if(!uploadedFileName) {
-                alert("Please upload your payment receipt image (screenshot) to verify your transaction!");
-                return;
-            }
+            let waMsg = `🚀 *NEW V2RAY ORDER - AURA NET.LK* 🚀%00` +
+                        `----------------------------------------%00` +
+                        `📌 *Package:* ${currentSelectedPackage}%00` +
+                        `👤 *V2Ray Username:* ${v2user}%00` +
+                        `📊 *Data Bandwidth Limit:* ${selectedBandwidthText}%00` +
+                        `💰 *Total Amount:* ${formattedPrice}%00` +
+                        `💳 *Payment Method:* ${currentSelectedPayment}%00` +
+                        `🖼️ *Receipt File:* ${uploadedFileName ? uploadedFileName : 'Not Attached Yet'}%00` +
+                        `----------------------------------------%00` +
+                        `Please verify my payment and activate my account!`;
 
-            let message = `🚀 *NEW AURA NET.LK V2RAY ORDER* 🚀\n\n` +
-                          `📌 *Package:* ${currentSelectedPackage}\n` +
-                          `👤 *V2Ray Username:* ${v2user}\n` +
-                          `⚡ *Bandwidth:* ${selectedBandwidthText}\n` +
-                          `💰 *Total Amount:* ${formattedPrice}\n` +
-                          `💳 *Payment Method:* ${currentSelectedPayment}\n` +
-                          `📎 *Receipt Attached:* ${uploadedFileName}\n\n` +
-                          `Please verify and activate my tunnel package!`;
-
-            let encodedUrl = `https://wa.me/94742251615?text=` + encodeURIComponent(message);
-            window.open(encodedUrl, '_blank');
+            window.open(`https://wa.me/94742251615?text=${waMsg}`, '_blank');
         }
     </script>
 </body>
