@@ -376,10 +376,13 @@
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
         /* ========================================================
-           ULTRA-MODERN PROFESSIONAL BOMB DASHBOARD STYLING
+           ULTRA-MODERN NEON DASHBOARD STYLING (UPDATED WITH WALLPAPER & HIGH NEON GLOW)
            ======================================================== */
         #adminDashboardSection {
-            background: radial-gradient(circle at 50% 50%, #060919 0%, #02040a 100%);
+            background-image: linear-gradient(rgba(3, 7, 18, 0.82), rgba(3, 7, 18, 0.82)), var(--bg-wallpaper);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: #ffffff;
             display: none;
             height: 100vh;
@@ -388,7 +391,7 @@
             top: 0; left: 0;
             z-index: 99999;
             overflow: hidden;
-            backdrop-filter: blur(30px);
+            backdrop-filter: blur(25px);
         }
 
         .dashboard-container {
@@ -397,17 +400,17 @@
             height: 100vh;
         }
 
-        /* LEFT SIDEBAR - HIGH-END CYBERPUNK BOMB LOOK */
+        /* LEFT SIDEBAR - HIGH-END CYBERPUNK NEON LOOK */
         .sidebar {
             width: 300px;
-            background: rgba(6, 10, 20, 0.95);
+            background: rgba(3, 7, 18, 0.92);
             backdrop-filter: blur(25px);
-            border-right: 1px solid rgba(56, 189, 248, 0.2);
+            border-right: 1px solid rgba(56, 189, 248, 0.4);
             display: flex;
             flex-direction: column;
             padding: 28px 22px;
             justify-content: space-between;
-            box-shadow: 10px 0 40px rgba(0,0,0,0.6);
+            box-shadow: 10px 0 50px rgba(56, 189, 248, 0.15);
         }
 
         .sidebar-top .brand {
@@ -416,22 +419,22 @@
             color: #38bdf8;
             letter-spacing: 0.5px;
             margin-bottom: 28px;
-            text-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+            text-shadow: 0 0 25px rgba(56, 189, 248, 0.8);
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
         .user-profile-box {
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(99, 102, 241, 0.08));
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(99, 102, 241, 0.12));
+            border: 1px solid rgba(56, 189, 248, 0.5);
             padding: 15px;
             border-radius: 14px;
             display: flex;
             align-items: center;
             gap: 12px;
             margin-bottom: 28px;
-            box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.08), 0 0 15px rgba(0,0,0,0.3);
+            box-shadow: inset 0 0 25px rgba(56, 189, 248, 0.15), 0 0 20px rgba(56, 189, 248, 0.2);
         }
 
         .user-avatar {
@@ -440,11 +443,11 @@
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-weight: 800; font-size: 17px; color: #fff;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.8);
         }
 
         .user-info span { font-size: 10px; color: #94a3b8; display: block; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
-        .user-info strong { font-size: 12px; color: #ffffff; font-weight: 600; word-break: break-all; }
+        .user-info strong { font-size: 12px; color: #ffffff; font-weight: 600; word-break: break-all; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
 
         .side-nav {
             list-style: none;
@@ -469,9 +472,9 @@
 
         .side-nav li a:hover, .side-nav li a.active {
             color: #38bdf8;
-            background: rgba(56, 189, 248, 0.15);
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+            background: rgba(56, 189, 248, 0.22);
+            border-color: rgba(56, 189, 248, 0.7);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
             transform: translateX(4px);
         }
 
@@ -494,11 +497,11 @@
             cursor: pointer;
         }
 
-        .btn-website { background: rgba(56, 189, 248, 0.12); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
-        .btn-website:hover { background: #38bdf8; color: #030712; box-shadow: 0 0 25px rgba(56, 189, 248, 0.6); }
+        .btn-website { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
+        .btn-website:hover { background: #38bdf8; color: #030712; box-shadow: 0 0 35px rgba(56, 189, 248, 0.9); }
         
-        .btn-logout { background: rgba(239, 68, 68, 0.12); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.35); }
-        .btn-logout:hover { background: #ef4444; color: #fff; box-shadow: 0 0 25px rgba(239, 68, 68, 0.6); }
+        .btn-logout { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.45); box-shadow: 0 0 15px rgba(239, 68, 68, 0.2); }
+        .btn-logout:hover { background: #ef4444; color: #fff; box-shadow: 0 0 35px rgba(239, 68, 68, 0.9); }
 
         /* MAIN DASHBOARD CONTENT AREA */
         .dash-main-pane {
@@ -506,7 +509,7 @@
             display: grid;
             grid-template-columns: 1fr 480px;
             overflow: hidden;
-            background: radial-gradient(circle at top right, rgba(56,189,248,0.06), transparent 70%);
+            background: radial-gradient(circle at top right, rgba(56,189,248,0.12), transparent 70%);
         }
 
         /* LEFT PANE: PACKAGES SELECTION */
@@ -523,8 +526,8 @@
         }
 
         .net-tab {
-            background: rgba(12, 18, 34, 0.85);
-            border: 1px solid rgba(56, 189, 248, 0.25);
+            background: rgba(3, 7, 18, 0.85);
+            border: 1px solid rgba(56, 189, 248, 0.35);
             color: #94a3b8;
             padding: 10px 20px;
             border-radius: 30px;
@@ -535,13 +538,14 @@
             align-items: center;
             gap: 8px;
             transition: 0.3s ease;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.1);
         }
 
         .net-tab.active, .net-tab:hover {
-            background: rgba(56, 189, 248, 0.2);
+            background: rgba(56, 189, 248, 0.28);
             color: #38bdf8;
             border-color: #38bdf8;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
             transform: translateY(-2px);
         }
 
@@ -556,21 +560,22 @@
         }
 
         .pkg-card-item {
-            background: rgba(12, 18, 34, 0.9);
-            border: 1px solid rgba(56, 189, 248, 0.25);
+            background: rgba(3, 7, 18, 0.88);
+            border: 1px solid rgba(56, 189, 248, 0.35);
             border-radius: 16px;
             padding: 22px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4), inset 0 0 15px rgba(56, 189, 248, 0.05);
         }
 
         .pkg-card-item:hover, .pkg-card-item.selected {
             border-color: #38bdf8;
-            box-shadow: 0 10px 35px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.5), inset 0 0 20px rgba(56, 189, 248, 0.2);
             transform: translateY(-3px);
-            background: rgba(15, 23, 42, 0.98);
+            background: rgba(3, 7, 18, 0.96);
         }
 
         .pkg-header-row {
@@ -588,6 +593,7 @@
             align-items: center;
             gap: 10px;
             letter-spacing: -0.01em;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
         }
 
         .pkg-sub {
@@ -605,7 +611,7 @@
             gap: 12px;
             font-size: 12px;
             color: #cbd5e1;
-            border-top: 1px dashed rgba(56, 189, 248, 0.25);
+            border-top: 1px dashed rgba(56, 189, 248, 0.3);
             padding-top: 14px;
             font-weight: 500;
         }
@@ -616,18 +622,18 @@
             gap: 8px;
         }
 
-        .pkg-features-grid div i { color: #10b981; font-size: 12px; }
+        .pkg-features-grid div i { color: #10b981; font-size: 12px; filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6)); }
 
         /* RIGHT PANE: ORDER & PAYMENT CHECKOUT */
         .checkout-pane {
-            background: rgba(8, 12, 24, 0.95);
-            backdrop-filter: blur(25px);
-            border-left: 1px solid rgba(56, 189, 248, 0.25);
+            background: rgba(3, 7, 18, 0.94);
+            backdrop-filter: blur(30px);
+            border-left: 1px solid rgba(56, 189, 248, 0.4);
             padding: 38px;
             display: flex;
             flex-direction: column;
             overflow-y: auto;
-            box-shadow: -15px 0 50px rgba(0,0,0,0.6);
+            box-shadow: -20px 0 60px rgba(0,0,0,0.8);
         }
 
         .checkout-title {
@@ -644,7 +650,7 @@
             font-weight: 800;
             color: #38bdf8;
             margin-bottom: 22px;
-            text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
             letter-spacing: -0.01em;
         }
 
@@ -663,8 +669,8 @@
 
         .form-input-dash {
             width: 100%;
-            background: rgba(12, 18, 34, 0.92);
-            border: 1px solid rgba(56, 189, 248, 0.35);
+            background: rgba(3, 7, 18, 0.92);
+            border: 1px solid rgba(56, 189, 248, 0.45);
             padding: 13px 16px;
             border-radius: 12px;
             color: #ffffff;
@@ -672,34 +678,34 @@
             font-weight: 600;
             outline: none;
             transition: all 0.3s ease;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.4);
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.6), 0 0 10px rgba(56, 189, 248, 0.1);
         }
 
         .form-input-dash:focus {
             border-color: #38bdf8;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4), inset 0 2px 5px rgba(0,0,0,0.4);
-            background: rgba(15, 23, 42, 1);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.7), inset 0 2px 8px rgba(0,0,0,0.6);
+            background: rgba(3, 7, 18, 1);
         }
 
         .form-input-dash option {
-            background-color: #0b1329;
+            background-color: #030712;
             color: #ffffff;
             padding: 12px;
             font-weight: 600;
         }
 
         .total-amount-box {
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(99, 102, 241, 0.06));
-            border: 1px solid rgba(56, 189, 248, 0.35);
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.1));
+            border: 1px solid rgba(56, 189, 248, 0.5);
             padding: 18px;
             border-radius: 14px;
             text-align: center;
             margin-bottom: 22px;
-            box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.1);
+            box-shadow: inset 0 0 25px rgba(56, 189, 248, 0.15), 0 0 20px rgba(56, 189, 248, 0.2);
         }
 
         .total-amount-box span { font-size: 10.5px; color: #94a3b8; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
-        .total-amount-box h2 { font-size: 26px; color: #38bdf8; font-weight: 900; margin-top: 4px; text-shadow: 0 0 20px rgba(56, 189, 248, 0.6); }
+        .total-amount-box h2 { font-size: 26px; color: #38bdf8; font-weight: 900; margin-top: 4px; text-shadow: 0 0 30px rgba(56, 189, 248, 0.9); }
 
         .payment-methods-grid {
             display: grid;
@@ -709,8 +715,8 @@
         }
 
         .pay-method-btn {
-            background: rgba(12, 18, 34, 0.85);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: rgba(3, 7, 18, 0.85);
+            border: 1px solid rgba(56, 189, 248, 0.4);
             padding: 14px 10px;
             border-radius: 12px;
             text-align: center;
@@ -719,27 +725,28 @@
             color: #cbd5e1;
             font-size: 12px;
             font-weight: 700;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.08);
         }
 
-        .pay-method-btn i { display: block; font-size: 18px; margin-bottom: 6px; color: #38bdf8; transition: transform 0.3s ease; }
+        .pay-method-btn i { display: block; font-size: 18px; margin-bottom: 6px; color: #38bdf8; transition: transform 0.3s ease; filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6)); }
 
         .pay-method-btn.active, .pay-method-btn:hover {
-            background: rgba(56, 189, 248, 0.2);
+            background: rgba(56, 189, 248, 0.25);
             border-color: #38bdf8;
             color: #ffffff;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
             transform: translateY(-2px);
         }
         .pay-method-btn.active i { transform: scale(1.1); }
 
         .bank-details-card {
-            background: rgba(12, 18, 34, 0.95);
-            border: 1px solid rgba(56, 189, 248, 0.35);
+            background: rgba(3, 7, 18, 0.95);
+            border: 1px solid rgba(56, 189, 248, 0.45);
             padding: 16px;
             border-radius: 12px;
             margin-bottom: 20px;
             display: none;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 25px rgba(0,0,0,0.6), 0 0 20px rgba(56, 189, 248, 0.15);
             animation: fadeIn 0.3s ease forwards;
         }
 
@@ -758,7 +765,7 @@
             align-items: center;
             font-size: 12px;
             padding: 6px 0;
-            border-bottom: 1px dashed rgba(56, 189, 248, 0.2);
+            border-bottom: 1px dashed rgba(56, 189, 248, 0.25);
         }
 
         .bank-row:last-child {
@@ -766,23 +773,66 @@
         }
 
         .bank-row span { color: #94a3b8; font-weight: 600; }
-        .bank-row strong { color: #38bdf8; font-family: monospace; font-size: 13px; font-weight: 700; }
+        .bank-row strong { color: #38bdf8; font-family: monospace; font-size: 13px; font-weight: 700; text-shadow: 0 0 8px rgba(56, 189, 248, 0.4); }
+
+        /* ========================================================
+           MODERN CLEAN EZ CASH NOTICE TAB STYLING (NEWLY ADDED)
+           ======================================================== */
+        .ez-notice-tab-modern {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.18), rgba(239, 68, 68, 0.08));
+            border: 1px solid rgba(239, 68, 68, 0.6);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.25), inset 0 0 15px rgba(239, 68, 68, 0.1);
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .ez-notice-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ef4444;
+            font-size: 11.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+        }
+
+        .ez-notice-content {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 11.5px;
+            color: #f1f5f9;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .ez-notice-content div {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
 
         .upload-receipt-box {
-            border: 1px dashed rgba(56, 189, 248, 0.4);
-            background: rgba(12, 18, 34, 0.7);
+            border: 1px dashed rgba(56, 189, 248, 0.5);
+            background: rgba(3, 7, 18, 0.75);
             padding: 14px;
             border-radius: 12px;
             text-align: center;
             cursor: pointer;
             margin-bottom: 24px;
             transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
         }
 
         .upload-receipt-box:hover {
             border-color: #38bdf8;
-            background: rgba(56, 189, 248, 0.08);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+            background: rgba(56, 189, 248, 0.12);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
         }
 
         .upload-receipt-box label { font-size: 11.5px; color: #cbd5e1; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; }
@@ -800,14 +850,14 @@
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.7);
             transition: all 0.3s ease;
         }
 
         .submit-order-btn:hover {
             filter: brightness(1.15);
             transform: translateY(-3px);
-            box-shadow: 0 0 40px rgba(56, 189, 248, 0.8);
+            box-shadow: 0 0 50px rgba(56, 189, 248, 0.95);
         }
 
         /* LIVE AGENT CHAT OVERLAY WINDOW (ONLY INSIDE DASHBOARD POPUP) */
@@ -817,11 +867,11 @@
             right: 25px;
             width: 370px;
             height: 490px;
-            background: rgba(8, 12, 24, 0.98);
+            background: rgba(3, 7, 18, 0.98);
             backdrop-filter: blur(30px);
-            border: 1px solid rgba(56, 189, 248, 0.5);
+            border: 1px solid rgba(56, 189, 248, 0.7);
             border-radius: 18px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.7), 0 0 35px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.8), 0 0 40px rgba(56, 189, 248, 0.4);
             z-index: 100000;
             display: none;
             flex-direction: column;
@@ -835,9 +885,9 @@
         }
 
         .chat-header {
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(99, 102, 241, 0.15));
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(99, 102, 241, 0.2));
             padding: 14px 18px;
-            border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.4);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -857,7 +907,7 @@
             color: #030712;
             font-weight: 800;
             font-size: 15px;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.9);
             position: relative;
         }
 
@@ -868,11 +918,12 @@
             width: 8px; height: 8px;
             background: #10b981;
             border-radius: 50%;
-            border: 2px solid #080c18;
+            border: 2px solid #030712;
+            box-shadow: 0 0 8px #10b981;
         }
 
-        .chat-agent-details h4 { font-size: 12.5px; color: #fff; font-weight: 800; }
-        .chat-agent-details span { font-size: 10px; color: #10b981; font-weight: 700; display: flex; align-items: center; gap: 4px; }
+        .chat-agent-details h4 { font-size: 12.5px; color: #fff; font-weight: 800; text-shadow: 0 0 8px rgba(255,255,255,0.4); }
+        .chat-agent-details span { font-size: 10px; color: #10b981; font-weight: 700; display: flex; align-items: center; gap: 4px; text-shadow: 0 0 8px rgba(16,185,129,0.5); }
 
         .chat-close-btn {
             background: transparent;
@@ -891,7 +942,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            background: rgba(3, 7, 18, 0.6);
+            background: rgba(3, 7, 18, 0.7);
         }
 
         .chat-bubble {
@@ -904,11 +955,12 @@
         }
 
         .chat-bubble.agent {
-            background: rgba(12, 18, 34, 0.92);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: rgba(3, 7, 18, 0.95);
+            border: 1px solid rgba(56, 189, 248, 0.4);
             color: #e2e8f0;
             align-self: flex-start;
             border-top-left-radius: 3px;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
         }
 
         .chat-bubble.user {
@@ -917,21 +969,21 @@
             font-weight: 700;
             align-self: flex-end;
             border-top-right-radius: 3px;
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35);
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.5);
         }
 
         .chat-input-footer {
             padding: 12px;
-            background: rgba(8, 12, 24, 0.98);
-            border-top: 1px solid rgba(56, 189, 248, 0.25);
+            background: rgba(3, 7, 18, 0.98);
+            border-top: 1px solid rgba(56, 189, 248, 0.35);
             display: flex;
             gap: 8px;
         }
 
         .chat-input {
             flex: 1;
-            background: rgba(12, 18, 34, 0.92);
-            border: 1px solid rgba(56, 189, 248, 0.35);
+            background: rgba(3, 7, 18, 0.92);
+            border: 1px solid rgba(56, 189, 248, 0.45);
             padding: 10px 14px;
             border-radius: 9px;
             color: #fff;
@@ -939,7 +991,7 @@
             font-weight: 600;
             outline: none;
         }
-        .chat-input:focus { border-color: #38bdf8; box-shadow: 0 0 12px rgba(56, 189, 248, 0.35); }
+        .chat-input:focus { border-color: #38bdf8; box-shadow: 0 0 15px rgba(56, 189, 248, 0.5); }
 
         .chat-send-btn {
             background: #38bdf8;
@@ -951,10 +1003,10 @@
             display: flex; align-items: center; justify-content: center;
             font-size: 13px;
             font-weight: bold;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
             transition: 0.3s;
         }
-        .chat-send-btn:hover { background: #fff; transform: scale(1.05); }
+        .chat-send-btn:hover { background: #fff; transform: scale(1.05); box-shadow: 0 0 25px #38bdf8; }
 
         /* MISSION SECTION */
         .mission-section {
@@ -2013,11 +2065,19 @@
                         <div class="bank-row"><span>Branch:</span> <strong>Ambalanthota Branch</strong></div>
                     </div>
 
-                    <!-- EZ Cash Details Card -->
+                    <!-- EZ Cash Details Card with Modern Clean Tab & Notice Added -->
                     <div class="bank-details-card" id="ezDetailsCard">
                         <div class="bank-row"><span>EZ Cash Mobile:</span> <strong>074 225 1615</strong></div>
                         <div class="bank-row"><span>Account Holder:</span> <strong>AURA NET.LK</strong></div>
-                        <div class="bank-row"><span>Notice:</span> <strong style="color: #ef4444;">+ LKR 60 Up Policy</strong></div>
+                        <div class="ez-notice-tab-modern">
+                            <div class="ez-notice-header">
+                                <i class="fa-solid fa-triangle-exclamation"></i> EZ Cash Service Fee Notice / සේවා ගාස්තු දැනුම්දීම
+                            </div>
+                            <div class="ez-notice-content">
+                                <div><span>🇱🇰</span> <strong>Ez Cash payment එකක් කරද්දී ඔබ තෝරාගත් ගණනට අමතරව Rs. 60 ක් වැඩිපුර ඇතුළත් කළ යුතුය.</strong></div>
+                                <div><span>🇬🇧</span> <strong>For EZ Cash payments, please add an additional LKR 60 to your selected package amount.</strong></div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="upload-receipt-box">
