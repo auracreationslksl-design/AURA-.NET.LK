@@ -1908,119 +1908,144 @@
 }
 
 
-/* AURA NET.LK — AURA Community Entry Popup */
-.aura-community-overlay{
+/* AURA NET.LK — Community popup disabled */
+#auraCommunityPopup,
+.aura-community-overlay,
+.community-card-widget,
+.aura-community-widget,
+.community-widget,
+[class*="community-card"]{
+  display:none !important;
+}
+
+/* ===== AURA COMMUNITY — FIXED RIGHT SIDE WHATSAPP TAB ===== */
+.aura-community-side-tab{
   position:fixed;
-  inset:0;
-  z-index:99999;
+  right:18px;
+  bottom:22px;
+  z-index:99990;
+  width:255px;
+  min-height:68px;
   display:flex;
   align-items:center;
-  justify-content:center;
-  padding:18px;
-  background:rgba(0,0,0,.72);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  opacity:0;
-  visibility:hidden;
-  transition:opacity .35s ease, visibility .35s ease;
-}
-.aura-community-overlay.aura-show{
-  opacity:1;
-  visibility:visible;
-}
-.aura-community-modal{
-  position:relative;
-  width:min(430px, 94vw);
-  padding:30px 26px 24px;
-  border:1px solid rgba(0,220,255,.35);
-  border-radius:24px;
-  text-align:center;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(0,210,255,.18), transparent 48%),
-    linear-gradient(145deg, rgba(16,22,30,.98), rgba(5,9,14,.98));
-  box-shadow:0 25px 80px rgba(0,0,0,.65), 0 0 45px rgba(0,210,255,.12);
-  transform:translateY(18px) scale(.96);
-  transition:transform .35s cubic-bezier(.2,.8,.2,1);
-}
-.aura-community-overlay.aura-show .aura-community-modal{
-  transform:translateY(0) scale(1);
-}
-.aura-community-close{
-  position:absolute;
-  top:10px;
-  right:12px;
-  width:34px;
-  height:34px;
-  border:0;
-  border-radius:50%;
+  gap:11px;
+  padding:11px 13px;
+  box-sizing:border-box;
+  text-decoration:none;
   color:#fff;
-  background:rgba(255,255,255,.08);
-  font-size:24px;
-  line-height:34px;
-  cursor:pointer;
+  border:1px solid rgba(0,210,255,.30);
+  border-radius:16px;
+  background:
+    radial-gradient(circle at 100% 0%,rgba(0,210,255,.16),transparent 48%),
+    linear-gradient(145deg,rgba(10,20,32,.97),rgba(3,9,16,.98));
+  box-shadow:0 14px 40px rgba(0,0,0,.48),0 0 25px rgba(0,210,255,.09);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
 }
-.aura-community-icon{
-  width:68px;
-  height:68px;
-  margin:0 auto 12px;
+.aura-community-side-tab:hover{
+  transform:translateY(-3px);
+  border-color:rgba(0,220,255,.58);
+  box-shadow:0 18px 45px rgba(0,0,0,.55),0 0 32px rgba(0,210,255,.15);
+}
+.aura-community-side-icon{
+  width:40px;
+  height:40px;
+  flex:0 0 40px;
   display:grid;
   place-items:center;
-  border-radius:20px;
-  font-size:31px;
-  background:rgba(0,210,255,.10);
-  border:1px solid rgba(0,210,255,.28);
-  box-shadow:0 0 30px rgba(0,210,255,.14);
-}
-.aura-community-badge{
-  display:inline-block;
-  padding:6px 11px;
-  border-radius:999px;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1.5px;
-  color:#8eeeff;
+  border-radius:11px;
+  font-size:20px;
   background:rgba(0,210,255,.10);
   border:1px solid rgba(0,210,255,.22);
 }
-.aura-community-modal h2{
-  margin:14px 0 8px;
-  color:#fff;
-  font-size:28px;
-  line-height:1.15;
-}
-.aura-community-modal p{
-  margin:0 auto 20px;
-  max-width:340px;
-  color:rgba(255,255,255,.68);
-  font-size:14px;
-  line-height:1.6;
-}
-.aura-community-whatsapp{
+.aura-community-side-content{
+  min-width:0;
   display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  width:100%;
-  min-height:48px;
-  border-radius:13px;
-  color:#fff;
-  text-decoration:none;
-  font-weight:800;
-  background:linear-gradient(135deg,#12d66f,#079b50);
-  box-shadow:0 10px 28px rgba(18,214,111,.18);
-  transition:transform .2s ease, filter .2s ease;
+  flex-direction:column;
+  gap:3px;
 }
-.aura-community-whatsapp:hover{
-  transform:translateY(-2px);
-  filter:brightness(1.08);
+.aura-community-side-content strong{
+  font-size:13px;
+  line-height:1.2;
+  white-space:nowrap;
 }
-.aura-community-later{
-  margin-top:12px;
-  border:0;
-  background:transparent;
-  color:rgba(255,255,255,.45);
-  cursor:pointer;
-  font-size:12px;
+.aura-community-side-content small{
+  color:rgba(255,255,255,.58);
+  font-size:10px;
+  line-height:1.2;
+}
+.aura-community-side-arrow{
+  margin-left:auto;
+  font-size:25px;
+  color:#55ddff;
+  line-height:1;
+}
+@media(max-width:600px){
+  .aura-community-side-tab{
+    right:10px;
+    bottom:12px;
+    width:220px;
+    min-height:59px;
+    padding:9px 10px;
+    border-radius:13px;
+  }
+  .aura-community-side-icon{
+    width:34px;
+    height:34px;
+    flex-basis:34px;
+    font-size:17px;
+  }
+  .aura-community-side-content strong{font-size:11px}
+  .aura-community-side-content small{font-size:9px}
+  .aura-community-side-arrow{font-size:22px}
+}
+
+
+/* ===== AURA COMMUNITY — SMOOTH SCROLL BEHAVIOUR ===== */
+.aura-community-side-tab{
+  position:fixed !important;
+  right:18px;
+  bottom:22px;
+  transform:translate3d(0,0,0);
+  will-change:transform;
+  transition:
+    transform .35s cubic-bezier(.22,.61,.36,1),
+    opacity .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease !important;
+  animation:auraCommunityFloat 3.8s ease-in-out infinite;
+}
+.aura-community-side-tab:hover{
+  transform:translate3d(0,-4px,0) !important;
+}
+@keyframes auraCommunityFloat{
+  0%,100%{translate:0 0}
+  50%{translate:0 -3px}
+}
+/* Slightly hide while actively scrolling, then return smoothly. */
+.aura-community-side-tab.aura-scrolling{
+  transform:translate3d(0,5px,0) !important;
+  opacity:.92;
+}
+@media(max-width:600px){
+  .aura-community-side-tab{
+    right:10px;
+    bottom:12px;
+  }
+}
+
+
+/* ===== AURA NET.LK — ULTRA SMOOTH WHOLE-SITE SCROLL ===== */
+html{
+  scroll-behavior:smooth !important;
+  scroll-padding-top:90px;
+}
+body{
+  overscroll-behavior-y:none;
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto !important;}
 }
 
 </style>
@@ -3158,7 +3183,7 @@
                 <h3>Direct Support Channels</h3>
                 <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 15px;">Connect with our active management and support team instantly.</p>
                 <div class="contact-table-box">
-                    <a href="https://wa.me/94742251615" target="_blank" class="contact-channel-row">
+                    <a href="https://wa.me/94742251615?text=Hi%20AURA%20NET.LK%2C%20I%20want%20to%20join%20the%20AURA%20Community." target="_blank" class="contact-channel-row">
                         <div class="channel-left-info">
                             <div class="channel-icon"><i class="fa-brands fa-whatsapp"></i></div>
                             <div class="channel-details">
@@ -3197,7 +3222,7 @@
                 <h4>AURA NET.LK</h4>
                 <p>Providing cutting-edge digital web solutions, high-speed tunnel packages, and professional editing services across Sri Lanka.</p>
                 <div class="footer-socials">
-                    <a href="https://wa.me/94742251615" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://wa.me/94742251615?text=Hi%20AURA%20NET.LK%2C%20I%20want%20to%20join%20the%20AURA%20Community." target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#"><i class="fa-brands fa-telegram"></i></a>
                     <a href="#"><i class="fa-brands fa-github"></i></a>
@@ -3231,18 +3256,7 @@
             <div class="created-by">Designed & Developed by AURA NET.LK Agency</div>
         </div>
     </footer>
-
-    <div class="community-card-widget">
-        <div class="comm-header">
-            <span>AURA Community</span>
-            <i class="fa-solid fa-circle-check"></i>
-        </div>
-        <div class="comm-desc">Join our official WhatsApp group for instant updates, server configs & promotions!</div>
-        <div class="comm-badge"><i class="fa-solid fa-users"></i> 1,450+ Members</div>
-        <a href="https://chat.whatsapp.com/invite/your-group-link" target="_blank" class="comm-btn"><i class="fa-brands fa-whatsapp"></i> Join WhatsApp Group</a>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC (Updated with new WhatsApp number 0742251615) -->
+<!-- JAVASCRIPT LOGIC (Updated with new WhatsApp number 0742251615) -->
     <script>
         // Cursor Glow
         const cursorGlow = document.getElementById('cursor-glow');
@@ -3767,56 +3781,110 @@
             window.open(`https://wa.me/94742251615?text=${text}`, '_blank');
         }
     </script>
+<script>
 
-<!-- AURA COMMUNITY POPUP -->
-<div id="auraCommunityPopup" class="aura-community-overlay" aria-hidden="true">
-  <div class="aura-community-modal" role="dialog" aria-modal="true" aria-labelledby="auraCommunityTitle">
-    <button class="aura-community-close" id="auraCommunityClose" aria-label="Close">×</button>
-    <div class="aura-community-icon">🌐</div>
-    <div class="aura-community-badge">AURA COMMUNITY</div>
-    <h2 id="auraCommunityTitle">Join AURA Community</h2>
-    <p>Stay updated with AURA NET.LK packages, offers, service updates and support.</p>
-    <a class="aura-community-whatsapp"
-       href="https://wa.me/94742251615"
-       target="_blank"
-       rel="noopener noreferrer">
-      <span>💬</span> Join on WhatsApp
-    </a>
-    <button class="aura-community-later" id="auraCommunityLater">Maybe Later</button>
-  </div>
-</div>
+
+
+<!-- AURA COMMUNITY — RIGHT SIDE WHATSAPP TAB -->
+<a
+  class="aura-community-side-tab"
+  href="https://wa.me/94742251615?text=Hi%20AURA%20NET.LK%2C%20I%20want%20to%20join%20the%20AURA%20Community."
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Join AURA Community on WhatsApp"
+>
+  <span class="aura-community-side-icon">💬</span>
+  <span class="aura-community-side-content">
+    <strong>AURA Community</strong>
+    <small>Join us on WhatsApp</small>
+  </span>
+  <span class="aura-community-side-arrow">›</span>
+</a>
 
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const popup = document.getElementById("auraCommunityPopup");
-  const closeBtn = document.getElementById("auraCommunityClose");
-  const laterBtn = document.getElementById("auraCommunityLater");
+/* Smooth movement while the page is being scrolled */
+(function(){
+  const tab = document.querySelector('.aura-community-side-tab');
+  if(!tab) return;
 
-  if (!popup) return;
+  let scrollTimer;
+  window.addEventListener('scroll', function(){
+    tab.classList.add('aura-scrolling');
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(function(){
+      tab.classList.remove('aura-scrolling');
+    }, 140);
+  }, {passive:true});
+})();
+</script>
 
-  function closeCommunityPopup() {
-    popup.classList.remove("aura-show");
-    popup.setAttribute("aria-hidden", "true");
+
+<script>
+/* ===== AURA NET.LK — Smooth mouse-wheel scrolling ===== */
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let targetY = window.scrollY;
+  let currentY = window.scrollY;
+  let rafId = null;
+  let isAnimating = false;
+
+  function clamp(value, min, max){
+    return Math.max(min, Math.min(max, value));
   }
 
-  // Show automatically when the site opens.
-  setTimeout(() => {
-    popup.classList.add("aura-show");
-    popup.setAttribute("aria-hidden", "false");
-  }, 700);
+  function animate(){
+    currentY += (targetY - currentY) * 0.12;
 
-  closeBtn?.addEventListener("click", closeCommunityPopup);
-  laterBtn?.addEventListener("click", closeCommunityPopup);
+    if (Math.abs(targetY - currentY) < 0.5){
+      currentY = targetY;
+      window.scrollTo(0, currentY);
+      rafId = null;
+      isAnimating = false;
+      return;
+    }
 
-  popup.addEventListener("click", function(e) {
-    if (e.target === popup) closeCommunityPopup();
+    window.scrollTo(0, currentY);
+    rafId = requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('wheel', function(e){
+    // Keep browser zoom and horizontal gestures untouched.
+    if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+
+    e.preventDefault();
+
+    const maxY = Math.max(
+      0,
+      document.documentElement.scrollHeight - window.innerHeight
+    );
+
+    targetY = clamp(targetY + e.deltaY * 0.72, 0, maxY);
+
+    if (!isAnimating){
+      currentY = window.scrollY;
+      isAnimating = true;
+      rafId = requestAnimationFrame(animate);
+    }
+  }, {passive:false});
+
+  // Keep programmatic anchor scrolling and keyboard scrolling in sync.
+  window.addEventListener('scroll', function(){
+    if (!isAnimating){
+      targetY = window.scrollY;
+      currentY = window.scrollY;
+    }
+  }, {passive:true});
+
+  // Smooth Home/End/PageUp/PageDown behaviour.
+  window.addEventListener('keydown', function(e){
+    if (['Home','End','PageUp','PageDown'].includes(e.key)){
+      targetY = window.scrollY;
+      currentY = window.scrollY;
+    }
   });
-
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") closeCommunityPopup();
-  });
-});
+})();
 </script>
 
 </body>
