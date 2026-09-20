@@ -258,11 +258,11 @@
         }
 
         .hero-globe-container {
-            width: 90px;
-            height: 90px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             background: radial-gradient(circle at 30% 30%, var(--primary), var(--bg-main));
-            box-shadow: 0 0 40px var(--primary-glow), inset 0 0 20px rgba(0,0,0,0.8);
+            box-shadow: 0 0 50px var(--primary-glow), inset 0 0 25px rgba(0,0,0,0.8);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -272,15 +272,15 @@
         }
 
         .hero-globe-container i {
-            font-size: 42px;
+            font-size: 46px;
             color: #fff;
-            filter: drop-shadow(0 0 15px var(--primary));
+            filter: drop-shadow(0 0 20px var(--primary));
         }
 
-        @keyframes floatRobot { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes floatRobot { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 
         .hero h1 {
-            font-size: 3.4rem;
+            font-size: 3.6rem;
             font-weight: 800;
             line-height: 1.15;
             margin-bottom: 20px;
@@ -288,14 +288,16 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(90deg, #38bdf8, #0284c7);
+            background: linear-gradient(90deg, #38bdf8, #6366f1, #38bdf8);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 20px var(--primary-glow));
+            filter: drop-shadow(0 0 25px var(--primary-glow));
+            animation: gradientAnim 4s linear infinite;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-sub);
             max-width: 700px;
             margin-bottom: 35px;
@@ -376,7 +378,7 @@
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
         /* ========================================================
-           ULTRA-MODERN NEON DASHBOARD STYLING (UPDATED WITH WALLPAPER & HIGH NEON GLOW)
+           ULTRA-MODERN NEON DASHBOARD STYLING
            ======================================================== */
         #adminDashboardSection {
             background-image: linear-gradient(rgba(3, 7, 18, 0.82), rgba(3, 7, 18, 0.82)), var(--bg-wallpaper);
@@ -775,9 +777,6 @@
         .bank-row span { color: #94a3b8; font-weight: 600; }
         .bank-row strong { color: #38bdf8; font-family: monospace; font-size: 13px; font-weight: 700; text-shadow: 0 0 8px rgba(56, 189, 248, 0.4); }
 
-        /* ========================================================
-           MODERN CLEAN EZ CASH NOTICE TAB STYLING (NEWLY ADDED)
-           ======================================================== */
         .ez-notice-tab-modern {
             background: linear-gradient(135deg, rgba(220, 38, 38, 0.18), rgba(239, 68, 68, 0.08));
             border: 1px solid rgba(239, 68, 68, 0.6);
@@ -785,7 +784,6 @@
             padding: 14px 16px;
             margin-bottom: 20px;
             box-shadow: 0 0 25px rgba(239, 68, 68, 0.25), inset 0 0 15px rgba(239, 68, 68, 0.1);
-            animation: fadeIn 0.3s ease forwards;
         }
 
         .ez-notice-header {
@@ -860,7 +858,7 @@
             box-shadow: 0 0 50px rgba(56, 189, 248, 0.95);
         }
 
-        /* LIVE AGENT CHAT OVERLAY WINDOW (ONLY INSIDE DASHBOARD POPUP) */
+        /* LIVE AGENT CHAT OVERLAY WINDOW */
         #agentChatModal {
             position: absolute;
             bottom: 25px;
@@ -1129,18 +1127,21 @@
 
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
+        /* PROFESSIONALLY REFINED & COMPACT SERVICE CARDS */
         .service-card-pro {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.7));
             border: 1px solid rgba(56, 189, 248, 0.3);
-            border-radius: 24px;
-            padding: 35px 30px;
+            border-radius: 18px;
+            padding: 24px 20px;
             backdrop-filter: blur(16px);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3), inset 0 0 15px rgba(56, 189, 248, 0.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3), inset 0 0 15px rgba(56, 189, 248, 0.05);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -1151,7 +1152,7 @@
         .service-card-pro::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 4px;
+            top: 0; left: 0; width: 100%; height: 3px;
             background: linear-gradient(90deg, #38bdf8, #ef4444, #38bdf8);
             background-size: 200% auto;
             animation: gradientAnim 4s linear infinite;
@@ -1159,20 +1160,20 @@
 
         .service-card-pro:hover {
             border-color: #38bdf8;
-            box-shadow: 0 15px 45px rgba(56, 189, 248, 0.35), inset 0 0 20px rgba(56, 189, 248, 0.15);
-            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(56, 189, 248, 0.35), inset 0 0 20px rgba(56, 189, 248, 0.15);
+            transform: translateY(-6px);
         }
 
         .service-icon-wrap {
-            width: 65px; height: 65px;
-            border-radius: 18px;
+            width: 50px; height: 50px;
+            border-radius: 14px;
             background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(239, 68, 68, 0.15));
             color: #38bdf8;
             display: flex; align-items: center; justify-content: center;
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 22px;
+            margin-bottom: 15px;
             border: 1px solid rgba(56, 189, 248, 0.4);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
             transition: all 0.3s ease;
         }
 
@@ -1180,46 +1181,46 @@
             background: linear-gradient(135deg, #38bdf8, #ef4444);
             color: #fff;
             border-color: #fff;
-            box-shadow: 0 0 35px rgba(56, 189, 248, 0.8);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.8);
             transform: scale(1.05) rotate(5deg);
         }
 
         .service-card-pro h3 { 
-            font-size: 1.4rem; 
-            margin-bottom: 10px; 
+            font-size: 1.15rem; 
+            margin-bottom: 8px; 
             color: #f9fafb; 
             font-weight: 800;
         }
 
         .service-card-pro p { 
             color: #cbd5e1; 
-            font-size: 0.95rem; 
-            line-height: 1.65;
-            margin-bottom: 20px;
+            font-size: 0.88rem; 
+            line-height: 1.55;
+            margin-bottom: 15px;
         }
 
         .service-badge-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
             width: 100%;
             margin-top: auto;
             border-top: 1px dashed rgba(56, 189, 248, 0.3);
-            padding-top: 15px;
-            font-size: 0.9rem;
+            padding-top: 12px;
+            font-size: 0.84rem;
             color: #e2e8f0;
         }
 
         .service-badge-list li {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .service-badge-list li i {
             color: #10b981;
-            font-size: 12px;
+            font-size: 11px;
         }
 
         .price-grid {
@@ -1409,118 +1410,6 @@
             padding: 0 20px 20px 20px;
         }
 
-        .payment-box {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            backdrop-filter: blur(20px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .payment-box::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 4px;
-            background: linear-gradient(90deg, #38bdf8, #10b981, #6366f1, #38bdf8);
-            background-size: 300% auto;
-            animation: gradientAnim 6s linear infinite;
-        }
-
-        .payment-table-wrapper {
-            width: 100%;
-            overflow-x: auto;
-            margin-top: 10px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            background: var(--input-bg);
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
-        }
-
-        .payment-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.88rem;
-        }
-
-        .payment-table th, .payment-table td {
-            padding: 14px 16px;
-            border-bottom: 1px solid var(--border);
-            vertical-align: middle;
-        }
-
-        .payment-table th {
-            background: var(--badge-bg);
-            color: var(--primary);
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-        }
-
-        .payment-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .payment-table tr:hover td {
-            background: rgba(56, 189, 248, 0.05);
-        }
-
-        .table-copy-btn {
-            background: var(--badge-bg);
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 7px 12px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 11.5px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 8px var(--primary-glow);
-        }
-
-        .table-copy-btn:hover {
-            background: var(--primary);
-            color: #fff;
-            box-shadow: 0 0 14px var(--primary);
-            transform: translateY(-2px);
-        }
-
-        .red-notice-badge {
-            background: linear-gradient(135deg, #dc2626, #ef4444);
-            color: #fff;
-            font-size: 10px;
-            font-weight: 800;
-            padding: 4px 8px;
-            border-radius: 6px;
-            display: inline-block;
-            margin-top: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 0 10px rgba(220, 38, 38, 0.4);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .pro-badge-meta {
-            font-size: 0.7rem;
-            background: var(--badge-bg);
-            color: var(--primary);
-            padding: 2px 6px;
-            border-radius: 4px;
-            border: 1px solid var(--border);
-            display: inline-block;
-            margin-bottom: 3px;
-            font-weight: 700;
-        }
-
         .reviews-marquee-container {
             overflow: hidden;
             width: 100%;
@@ -1576,6 +1465,92 @@
 
         .stars { color: #f59e0b; margin-bottom: 8px; font-size: 13px; }
         .review-card p { font-size: 0.92rem; color: var(--text-sub); font-style: italic; }
+
+        /* REVIEW SUBMISSION FORM STYLING */
+        .review-form-container {
+            max-width: 700px;
+            margin: 40px auto 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+        }
+
+        .review-form-container h3 {
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .review-form-container p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .review-form-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .review-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media(max-width: 768px) {
+            .review-form-row { grid-template-columns: 1fr; }
+        }
+
+        .review-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .review-input-group label {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            font-weight: 600;
+        }
+
+        .review-input, .review-textarea {
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            padding: 12px 14px;
+            border-radius: 10px;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .review-input:focus, .review-textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .star-rating-select {
+            display: flex;
+            gap: 8px;
+            font-size: 20px;
+            color: #f59e0b;
+            cursor: pointer;
+        }
+
+        .star-rating-select i {
+            transition: transform 0.2s;
+        }
+        .star-rating-select i:hover {
+            transform: scale(1.2);
+        }
 
         footer {
             background: var(--footer-bg);
@@ -1836,7 +1811,65 @@
             #adminDashboardSection { overflow-y: auto; }
             #agentChatModal { width: 90vw; right: 5vw; bottom: 20px; }
         }
-    </style>
+    
+/* AURA NET.LK — Smooth Unlimited Reviews */
+.reviews-smooth-track{
+  display:flex !important;
+  width:max-content !important;
+  gap:24px !important;
+  animation:auraReviewsSmooth 45s linear infinite !important;
+  will-change:transform;
+}
+.reviews-smooth-track:hover{animation-play-state:paused !important}
+@keyframes auraReviewsSmooth{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+.review-card{flex:0 0 340px}
+@media(max-width:700px){
+  .review-card{flex-basis:280px}
+  .reviews-smooth-track{gap:14px !important;animation-duration:35s !important}
+}
+
+
+/* === AURA NET.LK BOOM / SMOOTH UNLIMITED REVIEWS === */
+#reviewsGrid{
+  display:flex !important;
+  width:max-content !important;
+  gap:28px !important;
+  align-items:stretch !important;
+  animation:auraReviewsBoom 55s linear infinite !important;
+  will-change:transform;
+}
+.review-lane{
+  display:flex !important;
+  gap:28px !important;
+  flex-shrink:0 !important;
+}
+.review-modern-card{
+  width:340px !important;
+  min-width:340px !important;
+  flex:0 0 340px !important;
+  transform:translateZ(0);
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.review-modern-card:hover{
+  transform:translateY(-8px) scale(1.02);
+}
+#reviewsGrid:hover{
+  animation-play-state:paused !important;
+}
+@keyframes auraReviewsBoom{
+  from{transform:translateX(0)}
+  to{transform:translateX(calc(-50% - 14px))}
+}
+@media(max-width:760px){
+  #reviewsGrid{gap:16px !important;animation-duration:42s !important}
+  .review-lane{gap:16px !important}
+  .review-modern-card{width:285px !important;min-width:285px !important;flex-basis:285px !important}
+}
+
+</style>
 </head>
 <body>
 
@@ -2065,7 +2098,7 @@
                         <div class="bank-row"><span>Branch:</span> <strong>Ambalanthota Branch</strong></div>
                     </div>
 
-                    <!-- EZ Cash Details Card with Modern Clean Tab & Notice Added -->
+                    <!-- EZ Cash Details Card with Notice Added (Updated WhatsApp number) -->
                     <div class="bank-details-card" id="ezDetailsCard">
                         <div class="bank-row"><span>EZ Cash Mobile:</span> <strong>074 225 1615</strong></div>
                         <div class="bank-row"><span>Account Holder:</span> <strong>AURA NET.LK</strong></div>
@@ -2092,7 +2125,7 @@
                 </div>
             </div>
 
-            <!-- LIVE AGENT CHAT POPUP WIDGET (INSIDE DASHBOARD ONLY) -->
+            <!-- LIVE AGENT CHAT POPUP WIDGET -->
             <div id="agentChatModal">
                 <div class="chat-header">
                     <div class="chat-agent-info">
@@ -2135,13 +2168,13 @@
             <li><a href="#pricing">Plans</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#reviews">Verified Reviews</a></li>
-            <li><a href="#payment">Payments</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a onclick="toggleAdminDashboard(true); return false;" class="nav-pill-btn-blue" style="cursor: pointer;"><i class="fa-solid fa-gauge-high"></i> DASHBOARD</a></li>
+            <li><a onclick="toggleAdminDashboard(true); return false;" class="nav-pill-btn-blue" style="cursor: pointer;"><i class="fa-solid fa-gauge-high"></i> GET PAID PLAN</a></li>
             <li><button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle Dark/Light Mode"><i class="fa-solid fa-moon" id="themeIcon"></i></button></li>
         </ul>
     </nav>
 
+    <!-- BOMB HOME SECTION -->
     <section class="hero" id="home">
         <div class="hero-globe-container"><i class="fa-solid fa-robot"></i></div>
         <div class="section-header" style="margin-bottom: 20px;"><span class="tag">Digital Solutions Agency</span></div>
@@ -2207,6 +2240,7 @@
         </div>
     </section>
 
+    <!-- PROFESSIONAL & COMPACT "OUR CORE SERVICES" SECTION -->
     <section id="services">
         <div class="section-header">
             <span class="tag">What We Offer</span>
@@ -2252,11 +2286,10 @@
         <div class="section-header">
             <span class="tag">High-Speed Connectivity</span>
             <h2>Official Internet Packages & Pricing</h2>
-            <p>Browse our complete official tunnel packages below or open Dashboard to place your order!</p>
+            <p>Browse our complete official tunnel packages below or open Get Paid Plan to place your order!</p>
         </div>
 
         <div class="price-grid" id="pricingGrid">
-            <!-- Card 1: 100GB Tunnel -->
             <div class="pricing-card-ss">
                 <h3 class="plan-title-ss">100GB Tunnel</h3>
                 <div class="plan-price-ss">Rs.250<span>/month</span></div>
@@ -2266,12 +2299,9 @@
                     <li><i class="fa-solid fa-check"></i> Low Ping Gaming Ready</li>
                     <li><i class="fa-solid fa-check"></i> All SL Networks Supported</li>
                 </ul>
-                <button class="plan-btn-ss" onclick="toggleAdminDashboard(true)">
-                    Open Dashboard
-                </button>
+                <button class="plan-btn-ss" onclick="toggleAdminDashboard(true)">Open Get Paid Plan</button>
             </div>
 
-            <!-- Card 2: 200GB Tunnel -->
             <div class="pricing-card-ss">
                 <h3 class="plan-title-ss">200GB Tunnel</h3>
                 <div class="plan-price-ss">Rs.300<span>/month</span></div>
@@ -2281,12 +2311,9 @@
                     <li><i class="fa-solid fa-check"></i> Low Ping Gaming Ready</li>
                     <li><i class="fa-solid fa-check"></i> All SL Networks Supported</li>
                 </ul>
-                <button class="plan-btn-ss" onclick="toggleAdminDashboard(true)">
-                    Open Dashboard
-                </button>
+                <button class="plan-btn-ss" onclick="toggleAdminDashboard(true)">Open Get Paid Plan</button>
             </div>
 
-            <!-- Card 3: 300GB Tunnel -->
             <div class="pricing-card-ss">
                 <h3 class="plan-title-ss">300GB Tunnel</h3>
                 <div class="plan-price-ss">Rs.400<span>/month</span></div>
@@ -2296,12 +2323,9 @@
                     <li><i class="fa-solid fa-check"></i> Zero Speed Throttling</li>
                     <li><i class="fa-solid fa-check"></i> All SL Networks Supported</li>
                 </ul>
-                <button class="plan-btn-ss" onclick="toggleAdminDashboard(true)">
-                    Open Dashboard
-                </button>
+                <button class="plan-btn-ss" onclick="toggleAdminDashboard(true)">Open Get Paid Plan</button>
             </div>
 
-            <!-- Card 4: 1 TB Tunnel -->
             <div class="pricing-card-ss">
                 <h3 class="plan-title-ss">1 TB Tunnel</h3>
                 <div class="plan-price-ss">Rs.1,400<span>/month</span></div>
@@ -2311,12 +2335,9 @@
                     <li><i class="fa-solid fa-check"></i> Heavy Usage & Streaming Ready</li>
                     <li><i class="fa-solid fa-check"></i> All SL Networks Supported</li>
                 </ul>
-                <button class="plan-btn-ss" onclick="toggleAdminDashboard(true)">
-                    Open Dashboard
-                </button>
+                <button class="plan-btn-ss" onclick="toggleAdminDashboard(true)">Open Get Paid Plan</button>
             </div>
 
-            <!-- Card 5: Unlimited Ultra (Featured) -->
             <div class="pricing-card-ss featured">
                 <div class="plan-badge-top"><i class="fa-solid fa-fire"></i> BEST VALUE</div>
                 <h3 class="plan-title-ss">Unlimited Ultra</h3>
@@ -2327,12 +2348,9 @@
                     <li><i class="fa-solid fa-check"></i> Unlimited Data Bandwidth</li>
                     <li><i class="fa-solid fa-check"></i> All Sri Lankan Networks</li>
                 </ul>
-                <button class="plan-btn-ss" onclick="toggleAdminDashboard(true)">
-                    Open Dashboard
-                </button>
+                <button class="plan-btn-ss" onclick="toggleAdminDashboard(true)">Open Get Paid Plan</button>
             </div>
 
-            <!-- Card 6: 1 Year Unlimited -->
             <div class="pricing-card-ss">
                 <div class="plan-badge-top" style="border-color: #6366f1; color: #6366f1; background: rgba(99,102,241,0.15);"><i class="fa-solid fa-shield"></i> VIP PASS</div>
                 <h3 class="plan-title-ss">1 Year Unlimited</h3>
@@ -2343,9 +2361,7 @@
                     <li><i class="fa-solid fa-check"></i> Maximum Speed & Stability</li>
                     <li><i class="fa-solid fa-check"></i> All Sri Lankan Networks</li>
                 </ul>
-                <button class="plan-btn-ss" onclick="toggleAdminDashboard(true)">
-                    Open Dashboard
-                </button>
+                <button class="plan-btn-ss" onclick="toggleAdminDashboard(true)">Open Get Paid Plan</button>
             </div>
         </div>
     </section>
@@ -2390,188 +2406,632 @@
         </div>
     </section>
 
-    <!-- VERIFIED REVIEWS WITH INFINITE UNLIMITED LOOP DUPLICATION -->
-    <section id="reviews">
-        <div class="section-header">
-            <span class="tag">Client Testimonials / පාරිභෝගික අදහස්</span>
-            <h2>Verified Reviews (English & සිංහල)</h2>
-            <p>See what our valued clients across Sri Lanka say about our speeds and professional services.</p>
+    <!-- =========================================================
+         AURA NET.LK — MODERN UNLIMITED CUSTOMER REVIEWS
+         ========================================================= -->
+    <section id="reviews" class="reviews-pro-section">
+        <div class="reviews-pro-header">
+            <div class="reviews-eyebrow"><i class="fa-solid fa-sparkles"></i> CUSTOMER EXPERIENCE</div>
+            <h2>Unlimited <span>Reviews</span></h2>
+            <p>Real customer feedback, presented in a clean modern experience.</p>
         </div>
 
-        <div class="reviews-marquee-container">
-            <div class="reviews-track" id="reviewsTrack">
-                <!-- Original Reviews -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="avatar">K</div>
-                        <div class="reviewer-info">
-                            <h4>Kavindu Perera</h4>
-                            <span>Dialog Router User</span>
-                        </div>
-                    </div>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p>"AURA NET.LK is absolute magic! Got my SLT ZOOM package activated in less than 20 minutes. Full speeds with zero drops. Highly recommended!"</p>
-                </div>
+        <div class="reviews-pro-summary">
+            <div class="reviews-rating-box">
+                <div class="rating-number" id="reviewAverage">5.0</div>
+                <div class="rating-stars" id="reviewAverageStars"></div>
+                <div class="rating-caption"><strong id="reviewCount">0</strong> customer reviews</div>
+            </div>
 
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="avatar" style="background: linear-gradient(135deg, #10b981, #059669);">ච</div>
-                        <div class="reviewer-info">
-                            <h4>චතුර ප්‍රසාද්</h4>
-                            <span>ඩයලොග් රවුටර් පාවිච්චි කරන්නෙක්</span>
-                        </div>
-                    </div>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p>"පට්ට ස්පීඩ් එකක් තියෙනවා! විනාඩි 20න් පැකේජ් එක ඇක්ටිව් කරලා දුන්නා. සේවාව නම් උපරිමයි. ගොඩක් ස්තූතියි AURA NET.LK!"</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="avatar" style="background: linear-gradient(135deg, #6366f1, #a855f7);">S</div>
-                        <div class="reviewer-info">
-                            <h4>Sahan Madushanka</h4>
-                            <span>SLT Fibre User</span>
-                        </div>
-                    </div>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p>"Best tunnel service in Sri Lanka! Using the Unlimited Ultra package with zero issues. Speeds are super consistent for gaming and streaming."</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="avatar" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">න</div>
-                        <div class="reviewer-info">
-                            <h4>නදීශා සංදීපනී</h4>
-                            <span>ഹච් 4G පාවිච්චි කරන්නෙක්</span>
-                        </div>
-                    </div>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p>"ගොඩක් විශ්වාසවන්තයි. කියපු විදිහටම විනාඩි කිහිපයක් ඇතුළත වැඩේ කරලා දුන්නා. රෑටත් ස්පීඩ් එක කිසිම අවුලක් නැතුව වැඩ කරනවා."</p>
-                </div>
+            <div class="reviews-summary-copy">
+                <span class="summary-label">YOUR EXPERIENCE MATTERS</span>
+                <h3>Share your AURA NET.LK experience</h3>
+                <p>Leave your rating and feedback below. There is no fixed review limit on this website.</p>
+                <button type="button" class="review-cta-btn" onclick="document.getElementById('reviewFormBox').scrollIntoView({behavior:'smooth', block:'center'})">
+                    <i class="fa-solid fa-pen-to-square"></i> Write a Review
+                </button>
             </div>
         </div>
-    </section>
 
-    <section id="payment">
-        <div class="section-header">
-            <span class="tag">Secure Transactions</span>
-            <h2>Official Payment Details & EZ Cash Table</h2>
-            <p>Transfer funds securely via Bank or EZ Cash instantly using our professional payment table.</p>
-        </div>
-
-        <div class="payment-box">
-            <div class="payment-table-wrapper">
-                <table class="payment-table">
-                    <thead>
-                        <tr>
-                            <th>Payment Channel</th>
-                            <th>Beneficiary Name / Node</th>
-                            <th>Account / Mobile ID</th>
-                            <th>Clearing Branch & Remarks</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <span class="pro-badge-meta">PRIMARY CLEARING</span><br>
-                                <strong style="color: var(--primary);"><i class="fa-solid fa-building-columns"></i> Bank of Ceylon (BOC)</strong>
-                            </td>
-                            <td>
-                                <strong>AURA NET (Pvt) Ltd</strong><br>
-                                <span style="font-size: 0.75rem; color: var(--text-sub);">Enterprise Corporate Account</span>
-                            </td>
-                            <td><strong style="font-size: 1rem; letter-spacing: 0.6px;">91743654</strong></td>
-                            <td>
-                                <strong style="color: var(--text-main); font-size: 0.9rem;">Ambalanthota Branch</strong><br>
-                                <span style="font-size: 0.75rem; color: var(--text-sub);">Direct Corporate Branch Transfer Network</span>
-                            </td>
-                            <td><button class="table-copy-btn" onclick="copyText('91743654')"><i class="fa-regular fa-copy"></i> Copy</button></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="pro-badge-meta">INSTANT GATEWAY</span><br>
-                                <strong style="color: #ef4444;"><i class="fa-solid fa-wallet"></i> EZ Cash / Mobile Pay</strong>
-                            </td>
-                            <td>
-                                <strong>Dialog EZ Cash Node</strong><br>
-                                <span style="font-size: 0.75rem; color: var(--text-sub);">Automated Verification Portal</span>
-                            </td>
-                            <td><strong style="font-size: 1rem; letter-spacing: 0.6px;">074 225 1615</strong></td>
-                            <td>
-                                <span style="font-weight: 700; color: var(--text-main); font-size: 0.88rem;">SLT ZOOM / BYPASS CLEARING</span><br>
-                                <span class="red-notice-badge"><i class="fa-solid fa-bullhorn"></i> Red Notice: + LKR 60 Up Policy</span>
-                            </td>
-                            <td><button class="table-copy-btn" onclick="copyText('0742251615')"><i class="fa-regular fa-copy"></i> Copy</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="reviews-toolbar">
+            <div>
+                <span class="toolbar-kicker">CUSTOMER VOICES</span>
+                <h3>What customers are saying</h3>
+            </div>
+            <div class="review-sort-wrap">
+                <button type="button" class="review-sort-btn active" id="sortNewestBtn" onclick="sortReviews('newest')">
+                    <i class="fa-solid fa-clock-rotate-left"></i> Latest
+                </button>
+                <button type="button" class="review-sort-btn" id="sortOldestBtn" onclick="sortReviews('oldest')">
+                    <i class="fa-solid fa-arrow-down-wide-short"></i> Oldest
+                </button>
             </div>
         </div>
-    </section>
 
-    <section id="mission" style="padding-bottom: 20px;">
-        <div class="mission-section">
-            <span class="tag">Our Vision</span>
-            <h3>Our <span>Mission</span></h3>
-            <p>Our mission at AURA NET.LK is to redefine digital freedom in Sri Lanka. We engineer the strategic edge needed for modern digital excellence. From high-velocity monetization strategies to secure enterprise infrastructure, every component of our ecosystem is built on technical transparency and user empowerment.</p>
+        <div class="reviews-scroll-viewport" id="reviewsViewport">
+            <div class="reviews-scroll-track" id="reviewsGrid">
+                <!-- Reviews are rendered by JavaScript -->
+            </div>
+        </div>
+
+        <div class="reviews-empty-pro" id="reviewsEmpty" style="display:none;">
+            <div class="empty-review-icon"><i class="fa-regular fa-comments"></i></div>
+            <h3>No reviews yet</h3>
+            <p>Be the first customer to share an experience.</p>
+        </div>
+
+        <div class="review-form-pro" id="reviewFormBox">
+            <div class="review-form-heading">
+                <div class="form-heading-icon"><i class="fa-solid fa-message"></i></div>
+                <div>
+                    <span>LEAVE FEEDBACK</span>
+                    <h3>Write your review</h3>
+                </div>
+            </div>
+
+            <form onsubmit="addNewReview(event)">
+                <div class="review-form-fields">
+                    <div class="review-field">
+                        <label for="clientReviewName">Your Name</label>
+                        <input type="text" id="clientReviewName" maxlength="60" placeholder="e.g. Kasun Silva" autocomplete="name" required>
+                    </div>
+                    <div class="review-field">
+                        <label for="clientReviewRole">Network / Package</label>
+                        <input type="text" id="clientReviewRole" maxlength="80" placeholder="e.g. Dialog 4G User" required>
+                    </div>
+                </div>
+
+                <div class="review-field">
+                    <label>Rating</label>
+                    <div class="modern-rating-picker" id="starRatingSelect" aria-label="Choose rating">
+                        <button type="button" onclick="setRating(1)" data-val="1" aria-label="1 star"><i class="fa-solid fa-star"></i></button>
+                        <button type="button" onclick="setRating(2)" data-val="2" aria-label="2 stars"><i class="fa-solid fa-star"></i></button>
+                        <button type="button" onclick="setRating(3)" data-val="3" aria-label="3 stars"><i class="fa-solid fa-star"></i></button>
+                        <button type="button" onclick="setRating(4)" data-val="4" aria-label="4 stars"><i class="fa-solid fa-star"></i></button>
+                        <button type="button" onclick="setRating(5)" data-val="5" aria-label="5 stars"><i class="fa-solid fa-star"></i></button>
+                    </div>
+                </div>
+
+                <div class="review-field">
+                    <div class="review-label-row">
+                        <label for="clientReviewText">Your Review</label>
+                        <span id="reviewCharCount">0 / 600</span>
+                    </div>
+                    <textarea id="clientReviewText" maxlength="600" rows="5" placeholder="Tell us about your experience..." required></textarea>
+                </div>
+
+                <button type="submit" class="publish-review-btn">
+                    <span><i class="fa-solid fa-paper-plane"></i> Publish Review</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <div class="review-storage-note">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Reviews scroll continuously with no fixed display limit. Reviews are saved in this browser; a shared public database needs a backend.
+                </div>
+            </form>
         </div>
     </section>
 
+    <style>
+        /* =========================================================
+           MODERN REVIEWS — AURA NET.LK
+           ========================================================= */
+        .reviews-pro-section{
+            position:relative;
+            overflow:hidden;
+            padding:105px 8%;
+        }
+        .reviews-pro-section::before{
+            content:"";
+            position:absolute;
+            width:520px;
+            height:520px;
+            top:5%;
+            left:-260px;
+            border-radius:50%;
+            background:radial-gradient(circle, rgba(56,189,248,.13), transparent 68%);
+            pointer-events:none;
+        }
+        .reviews-pro-section::after{
+            content:"";
+            position:absolute;
+            width:460px;
+            height:460px;
+            bottom:-180px;
+            right:-180px;
+            border-radius:50%;
+            background:radial-gradient(circle, rgba(99,102,241,.13), transparent 68%);
+            pointer-events:none;
+        }
+        .reviews-pro-header{
+            position:relative;
+            z-index:1;
+            text-align:center;
+            max-width:760px;
+            margin:0 auto 42px;
+        }
+        .reviews-eyebrow{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            padding:7px 13px;
+            border:1px solid rgba(56,189,248,.28);
+            background:rgba(56,189,248,.07);
+            color:#38bdf8;
+            border-radius:999px;
+            font-size:11px;
+            font-weight:800;
+            letter-spacing:1.5px;
+        }
+        .reviews-pro-header h2{
+            margin:15px 0 10px;
+            font-size:clamp(2.2rem,5vw,4rem);
+            line-height:1.05;
+            font-weight:900;
+            letter-spacing:-.045em;
+        }
+        .reviews-pro-header h2 span{
+            color:#38bdf8;
+            text-shadow:0 0 28px rgba(56,189,248,.35);
+        }
+        .reviews-pro-header p{
+            color:var(--text-sub);
+            font-size:1rem;
+        }
+        .reviews-pro-summary{
+            position:relative;
+            z-index:1;
+            max-width:1080px;
+            margin:0 auto 55px;
+            display:grid;
+            grid-template-columns:280px 1fr;
+            gap:1px;
+            overflow:hidden;
+            border:1px solid rgba(56,189,248,.22);
+            border-radius:24px;
+            background:rgba(56,189,248,.10);
+            box-shadow:0 18px 60px rgba(0,0,0,.25);
+        }
+        .reviews-rating-box{
+            padding:34px 28px;
+            text-align:center;
+            background:linear-gradient(145deg,rgba(56,189,248,.13),rgba(99,102,241,.08));
+        }
+        .rating-number{
+            font-size:3.3rem;
+            line-height:1;
+            font-weight:900;
+            color:#fff;
+        }
+        .rating-stars,.modern-stars{
+            color:#f59e0b;
+            letter-spacing:2px;
+            margin:10px 0 8px;
+            text-shadow:0 0 12px rgba(245,158,11,.35);
+        }
+        .rating-caption{
+            color:var(--text-sub);
+            font-size:.78rem;
+        }
+        .rating-caption strong{color:#fff;}
+        .reviews-summary-copy{
+            padding:34px 38px;
+            background:rgba(3,7,18,.48);
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+        .summary-label,.toolbar-kicker{
+            color:#38bdf8;
+            font-size:10px;
+            font-weight:900;
+            letter-spacing:1.5px;
+        }
+        .reviews-summary-copy h3{
+            font-size:1.55rem;
+            margin:7px 0 6px;
+            font-weight:800;
+        }
+        .reviews-summary-copy p{
+            color:var(--text-sub);
+            font-size:.9rem;
+            margin-bottom:17px;
+        }
+        .review-cta-btn{
+            width:max-content;
+            border:1px solid rgba(56,189,248,.45);
+            background:rgba(56,189,248,.10);
+            color:#38bdf8;
+            border-radius:10px;
+            padding:10px 15px;
+            font-size:.82rem;
+            font-weight:800;
+            cursor:pointer;
+            transition:.25s;
+        }
+        .review-cta-btn:hover{
+            background:#38bdf8;
+            color:#030712;
+            transform:translateY(-2px);
+            box-shadow:0 10px 25px rgba(56,189,248,.25);
+        }
+        .reviews-toolbar{
+            position:relative;
+            z-index:1;
+            max-width:1080px;
+            margin:0 auto 22px;
+            display:flex;
+            justify-content:space-between;
+            align-items:end;
+            gap:20px;
+        }
+        .reviews-toolbar h3{
+            margin-top:4px;
+            font-size:1.45rem;
+            font-weight:850;
+        }
+        .review-sort-wrap{
+            display:flex;
+            gap:7px;
+            padding:4px;
+            border:1px solid var(--border);
+            border-radius:12px;
+            background:rgba(3,7,18,.5);
+        }
+        .review-sort-btn{
+            border:0;
+            background:transparent;
+            color:var(--text-sub);
+            padding:8px 11px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:.72rem;
+            font-weight:800;
+        }
+        .review-sort-btn.active,.review-sort-btn:hover{
+            color:#fff;
+            background:rgba(56,189,248,.15);
+        }
+        .reviews-scroll-viewport{
+            position:relative;
+            z-index:1;
+            max-width:1080px;
+            margin:0 auto;
+            overflow:hidden;
+            padding:12px 0 28px;
+            mask-image:linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+            -webkit-mask-image:linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+        }
+        .reviews-scroll-track{
+            display:flex;
+            align-items:stretch;
+            gap:18px;
+            width:max-content;
+            will-change:transform;
+            animation:reviewsInfiniteScroll 42s linear infinite;
+        }
+        .reviews-scroll-viewport:hover .reviews-scroll-track,
+        .reviews-scroll-viewport:focus-within .reviews-scroll-track{
+            animation-play-state:paused;
+        }
+        @keyframes reviewsInfiniteScroll{
+            from{transform:translate3d(0,0,0)}
+            to{transform:translate3d(-50%,0,0)}
+        }
+        .reviews-scroll-viewport::before,
+        .reviews-scroll-viewport::after{
+            content:"";
+            position:absolute;
+            top:0;
+            bottom:0;
+            width:80px;
+            z-index:3;
+            pointer-events:none;
+        }
+        .reviews-scroll-viewport::before{
+            left:0;
+            background:linear-gradient(90deg,var(--bg-main, #030712),transparent);
+        }
+        .reviews-scroll-viewport::after{
+            right:0;
+            background:linear-gradient(-90deg,var(--bg-main, #030712),transparent);
+        }
+        .review-modern-card{
+            position:relative;
+            width:330px;
+            flex:0 0 330px;
+            background:linear-gradient(145deg,rgba(15,23,42,.90),rgba(3,7,18,.80));
+            border:1px solid rgba(56,189,248,.18);
+            border-radius:19px;
+            padding:22px;
+            min-height:230px;
+            backdrop-filter:blur(15px);
+            box-shadow:0 10px 35px rgba(0,0,0,.22);
+            transition:.3s ease;
+            animation:reviewCardIn .4s ease both;
+        }
+        .review-modern-card::before{
+            content:"";
+            position:absolute;
+            left:0;top:20px;bottom:20px;
+            width:3px;
+            border-radius:0 5px 5px 0;
+            background:linear-gradient(#38bdf8,#6366f1);
+            box-shadow:0 0 14px rgba(56,189,248,.45);
+        }
+        .review-modern-card:hover{
+            transform:translateY(-5px);
+            border-color:rgba(56,189,248,.48);
+            box-shadow:0 18px 45px rgba(0,0,0,.35),0 0 25px rgba(56,189,248,.08);
+        }
+        @keyframes reviewCardIn{
+            from{opacity:0;transform:translateY(10px)}
+            to{opacity:1;transform:translateY(0)}
+        }
+        .modern-review-head{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            margin-bottom:12px;
+        }
+        .modern-avatar{
+            width:43px;height:43px;
+            flex:0 0 43px;
+            border-radius:13px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:linear-gradient(135deg,#38bdf8,#6366f1);
+            color:#fff;
+            font-weight:900;
+            box-shadow:0 7px 20px rgba(56,189,248,.18);
+        }
+        .modern-reviewer{
+            min-width:0;
+            flex:1;
+        }
+        .modern-reviewer h4{
+            font-size:.88rem;
+            color:#fff;
+            font-weight:800;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        .review-verified-badge{
+            color:#38bdf8;
+            font-size:.85rem;
+            opacity:.9;
+            flex:0 0 auto;
+        }
+        .modern-reviewer span{
+            display:block;
+            color:#94a3b8;
+            font-size:.68rem;
+            margin-top:2px;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        .modern-stars{
+            margin:0 0 11px;
+            font-size:.72rem;
+        }
+        .modern-review-message{
+            color:#cbd5e1;
+            font-size:.82rem;
+            line-height:1.7;
+        }
+        .modern-review-date{
+            display:flex;
+            align-items:center;
+            gap:5px;
+            color:#64748b;
+            font-size:.64rem;
+            margin-top:16px;
+            padding-top:11px;
+            border-top:1px dashed rgba(148,163,184,.14);
+        }
+        .reviews-empty-pro{
+            max-width:1080px;
+            margin:0 auto 24px;
+            padding:45px 20px;
+            text-align:center;
+            border:1px dashed rgba(56,189,248,.25);
+            border-radius:20px;
+            background:rgba(56,189,248,.03);
+        }
+        .empty-review-icon{
+            width:54px;height:54px;
+            margin:0 auto 12px;
+            border-radius:16px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:#38bdf8;
+            background:rgba(56,189,248,.09);
+            font-size:21px;
+        }
+        .reviews-empty-pro h3{font-size:1.05rem;margin-bottom:4px;}
+        .reviews-empty-pro p{color:var(--text-sub);font-size:.82rem;}
+        .review-form-pro{
+            position:relative;
+            z-index:1;
+            max-width:1080px;
+            margin:52px auto 0;
+            padding:30px;
+            border:1px solid rgba(56,189,248,.22);
+            border-radius:22px;
+            background:linear-gradient(145deg,rgba(15,23,42,.88),rgba(3,7,18,.82));
+            box-shadow:0 18px 55px rgba(0,0,0,.28);
+        }
+        .review-form-heading{
+            display:flex;
+            align-items:center;
+            gap:13px;
+            margin-bottom:23px;
+        }
+        .form-heading-icon{
+            width:43px;height:43px;
+            border-radius:12px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:#38bdf8;
+            background:rgba(56,189,248,.10);
+            border:1px solid rgba(56,189,248,.24);
+        }
+        .review-form-heading span{
+            color:#38bdf8;
+            font-size:9px;
+            font-weight:900;
+            letter-spacing:1.4px;
+        }
+        .review-form-heading h3{font-size:1.35rem;margin-top:2px;}
+        .review-form-fields{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:15px;
+        }
+        .review-field{margin-bottom:15px;}
+        .review-field label{
+            display:block;
+            color:#cbd5e1;
+            font-size:.72rem;
+            font-weight:800;
+            margin-bottom:7px;
+        }
+        .review-field input,.review-field textarea{
+            width:100%;
+            border:1px solid rgba(56,189,248,.20);
+            outline:none;
+            border-radius:11px;
+            background:rgba(3,7,18,.70);
+            color:#fff;
+            padding:12px 13px;
+            font-size:.8rem;
+            transition:.25s;
+        }
+        .review-field textarea{resize:vertical;min-height:120px;}
+        .review-field input:focus,.review-field textarea:focus{
+            border-color:#38bdf8;
+            box-shadow:0 0 0 3px rgba(56,189,248,.08),0 0 20px rgba(56,189,248,.10);
+        }
+        .modern-rating-picker{
+            display:flex;
+            gap:5px;
+        }
+        .modern-rating-picker button{
+            width:38px;height:38px;
+            border:1px solid rgba(245,158,11,.20);
+            border-radius:9px;
+            background:rgba(245,158,11,.05);
+            color:#475569;
+            cursor:pointer;
+            transition:.2s;
+        }
+        .modern-rating-picker button.active,.modern-rating-picker button:hover{
+            color:#f59e0b;
+            border-color:rgba(245,158,11,.55);
+            background:rgba(245,158,11,.10);
+            transform:translateY(-2px);
+        }
+        .review-label-row{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        .review-label-row span{font-size:.66rem;color:#64748b;}
+        .publish-review-btn{
+            width:100%;
+            border:0;
+            border-radius:11px;
+            padding:13px 16px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background:linear-gradient(135deg,#38bdf8,#0284c7);
+            color:#030712;
+            font-size:.8rem;
+            font-weight:900;
+            cursor:pointer;
+            box-shadow:0 10px 30px rgba(56,189,248,.20);
+            transition:.25s;
+        }
+        .publish-review-btn:hover{
+            transform:translateY(-2px);
+            box-shadow:0 15px 35px rgba(56,189,248,.32);
+            filter:brightness(1.08);
+        }
+        .review-storage-note{
+            margin-top:13px;
+            text-align:center;
+            color:#64748b;
+            font-size:.64rem;
+            line-height:1.5;
+        }
+        .review-storage-note i{color:#38bdf8;margin-right:4px;}
+        @media(max-width:900px){
+            .review-modern-card{width:310px;}
+            .reviews-scroll-track{animation-duration:38s;}
+        }
+        @media(max-width:700px){
+            .reviews-pro-section{padding:75px 5%;}
+            .review-modern-card{width:285px; min-height:215px;}
+            .reviews-scroll-viewport{margin-left:-5%;margin-right:-5%;max-width:none;padding-left:5%;padding-right:5%;}
+            .reviews-scroll-track{animation-duration:34s;}
+            .reviews-pro-summary{grid-template-columns:1fr;}
+            .reviews-rating-box{padding:27px 20px;}
+            .reviews-summary-copy{padding:27px 24px;}
+            .reviews-toolbar{align-items:flex-start;flex-direction:column;}
+            .reviews-grid-pro{grid-template-columns:1fr;}
+            .review-form-fields{grid-template-columns:1fr;gap:0;}
+            .review-form-pro{padding:22px 18px;}
+        }
+    </style>
+
+    <!-- CONTACT SECTION (Updated WhatsApp link with 0742251615) -->
     <section id="contact">
         <div class="section-header">
             <span class="tag">Get In Touch</span>
-            <h2>Contact Us Table</h2>
-            <p>Connect with our fast activation & support team available 24/7.</p>
+            <h2>Contact AURA NET.LK</h2>
+            <p>Reach out to our support team directly via WhatsApp or quick inquiry channels.</p>
         </div>
 
         <div class="contact-wrapper">
             <div class="contact-info-side">
-                <h3>Support Channels</h3>
-                <p style="color: var(--text-sub); margin-bottom: 12px; font-size: 0.88rem;">Reach out directly through our verified professional contact channels below:</p>
-                
+                <h3>Direct Support Channels</h3>
+                <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 15px;">Connect with our active management and support team instantly.</p>
                 <div class="contact-table-box">
                     <a href="https://wa.me/94742251615" target="_blank" class="contact-channel-row">
                         <div class="channel-left-info">
-                            <div class="channel-icon" style="color: #25D366;"><i class="fa-brands fa-whatsapp"></i></div>
-                            <div class="channel-details"><span>WhatsApp Support</span><strong>+94 74 225 1615</strong></div>
+                            <div class="channel-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div class="channel-details">
+                                <span>WhatsApp Support</span>
+                                <strong>074 225 1615</strong>
+                            </div>
                         </div>
-                        <span class="channel-action-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Chat</span>
-                    </a>
-
-                    <a href="mailto:aura.creations.lksl@gmail.com" class="contact-channel-row">
-                        <div class="channel-left-info">
-                            <div class="channel-icon" style="color: #38bdf8;"><i class="fa-solid fa-envelope"></i></div>
-                            <div class="channel-details"><span>Official Gmail</span><strong>aura.creations.lksl@gmail.com</strong></div>
-                        </div>
-                        <span class="channel-action-badge"><i class="fa-solid fa-paper-plane"></i> Mail</span>
+                        <span class="channel-action-badge">Chat Now</span>
                     </a>
                 </div>
             </div>
 
             <div class="form-side">
-                <form onsubmit="return validateForm(event)">
+                <form onsubmit="sendInquiry(event)">
                     <div class="form-group">
                         <label>Your Name</label>
-                        <input type="text" class="form-control" placeholder="Enter your name" required>
+                        <input type="text" class="form-control" id="inquiryName" placeholder="e.g. Kamal Perera" required>
                     </div>
                     <div class="form-group">
-                        <label>Your Email or Phone</label>
-                        <input type="text" class="form-control" placeholder="Enter email or phone" required>
+                        <label>WhatsApp Number</label>
+                        <input type="text" class="form-control" id="inquiryPhone" placeholder="e.g. 0771234567" required>
                     </div>
                     <div class="form-group">
-                        <label>Message</label>
-                        <textarea class="form-control" rows="3" placeholder="How can we help you?" required></textarea>
+                        <label>Inquiry Message</label>
+                        <textarea class="form-control" id="inquiryMsg" rows="3" placeholder="Type your message here..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary" style="margin-top: 5px;"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+                    <button type="submit" class="btn-primary" style="width: 100%; text-align: center; margin-top: 5px;"><i class="fa-brands fa-whatsapp"></i> Send via WhatsApp</button>
                 </form>
             </div>
         </div>
@@ -2581,11 +3041,12 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>AURA NET.LK</h4>
-                <p>Premier digital agency offering cutting-edge web development, graphic design, and high-speed tunnel bypass packages across Sri Lanka.</p>
+                <p>Providing cutting-edge digital web solutions, high-speed tunnel packages, and professional editing services across Sri Lanka.</p>
                 <div class="footer-socials">
                     <a href="https://wa.me/94742251615" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="mailto:aura.creations.lksl@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="#home"><i class="fa-solid fa-globe"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -2594,69 +3055,83 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#monitor">Network Status</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#pricing">Plans</a></li>
+                    <li><a href="#pricing">Internet Plans</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Services</h4>
+                <h4>Support & Legal</h4>
                 <ul>
-                    <li><a href="#services">Web Development</a></li>
-                    <li><a href="#services">Internet Bypass</a></li>
-                    <li><a href="#services">Graphic Design</a></li>
+                    <li><a href="#faq">FAQ Help</a></li>
+                    <li><a href="#reviews">Verified Reviews</a></li>
+                    <li><a href="#contact">Contact Support</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Contact Info</h4>
-                <ul>
-                    <li><a href="https://wa.me/94742251615" target="_blank"><i class="fa-brands fa-whatsapp" style="color: var(--success);"></i> +94 74 225 1615</a></li>
-                    <li><a href="mailto:aura.creations.lksl@gmail.com"><i class="fa-solid fa-envelope" style="color: var(--primary);"></i> aura.creations.lksl@gmail.com</a></li>
-                    <li><a><i class="fa-solid fa-location-dot" style="color: #ef4444;"></i> Sri Lanka</a></li>
-                </ul>
+                <h4>Secure Contact</h4>
+                <p><i class="fa-solid fa-phone" style="color: var(--primary);"></i> 074 225 1615</p>
+                <p><i class="fa-solid fa-envelope" style="color: var(--primary);"></i> aura.creations.lksl@gmail.com</p>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 AURA NET.LK. All Rights Reserved.</p>
-            <p class="created-by">created by aura.creations.lksl</p>
+            <div class="created-by">Designed & Developed by AURA NET.LK Agency</div>
         </div>
     </footer>
 
-    <!-- COMMUNITY FLOATING WIDGET -->
     <div class="community-card-widget">
         <div class="comm-header">
             <span>AURA Community</span>
             <i class="fa-solid fa-circle-check"></i>
         </div>
-        <p class="comm-desc">Join our official WhatsApp group for instant updates, server status & offers!</p>
-        <div class="comm-badge"><i class="fa-solid fa-users"></i> 1,450+ Active Members</div>
-        <a href="https://wa.me/94742251615" target="_blank" class="comm-btn">
-            <i class="fa-brands fa-whatsapp" style="font-size: 16px;"></i> Join WhatsApp Group
-        </a>
+        <div class="comm-desc">Join our official WhatsApp group for instant updates, server configs & promotions!</div>
+        <div class="comm-badge"><i class="fa-solid fa-users"></i> 1,450+ Members</div>
+        <a href="https://chat.whatsapp.com/invite/your-group-link" target="_blank" class="comm-btn"><i class="fa-brands fa-whatsapp"></i> Join WhatsApp Group</a>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- JAVASCRIPT LOGIC (Updated with new WhatsApp number 0742251615) -->
     <script>
-        // Cursor Glow Follow
+        // Cursor Glow
         const cursorGlow = document.getElementById('cursor-glow');
-        window.addEventListener('mousemove', (e) => {
+        document.addEventListener('mousemove', (e) => {
             cursorGlow.style.left = e.clientX + 'px';
             cursorGlow.style.top = e.clientY + 'px';
         });
 
-        // Theme Toggle Functionality
+        // Theme Toggle
         function toggleTheme() {
             document.body.classList.toggle('light-theme');
             const icon = document.getElementById('themeIcon');
             if(document.body.classList.contains('light-theme')) {
-                icon.className = "fa-solid fa-sun";
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
             } else {
-                icon.className = "fa-solid fa-moon";
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
             }
         }
 
-        // Dashboard Toggle
+        // Copy Text Function
+        function copyText(txt) {
+            navigator.clipboard.writeText(txt);
+            alert('Copied to clipboard: ' + txt);
+        }
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
+        }
+
+        // Admin Dashboard Toggle
         function toggleAdminDashboard(show) {
             const dash = document.getElementById('adminDashboardSection');
-            dash.style.display = show ? 'block' : 'none';
+            if(show) {
+                dash.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            } else {
+                dash.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         }
 
         // Switch Network Tabs in Dashboard
@@ -2669,105 +3144,103 @@
             if(targetList) targetList.classList.add('active-list');
         }
 
-        // Selected Package State variables
-        let currentSelectedPackage = "SLT ZOOM (Fibre, 4G, ADSL)";
-        let currentSelectedPayment = "BOC Bank";
-        let uploadedFileName = "";
-
+        // Select Package Item
+        let selectedPkgName = "SLT ZOOM (Fibre, 4G, ADSL)";
         function selectPackage(pkgName, event) {
             document.querySelectorAll('.pkg-card-item').forEach(c => c.classList.remove('selected'));
-            if(event && event.currentTarget) {
-                event.currentTarget.classList.add('selected');
-            }
-            currentSelectedPackage = pkgName;
+            const card = event.currentTarget;
+            card.classList.add('selected');
+            selectedPkgName = pkgName;
             document.getElementById('selectedPkgTitle').innerText = pkgName;
         }
 
-        function updatePrice() {
-            const selectEl = document.getElementById('bandwidthSelect');
-            const priceVal = selectEl.value;
-            let formattedPrice = "LKR." + Number(priceVal).toLocaleString();
-            if(priceVal === "7000") {
-                formattedPrice = "LKR.7,000";
-            }
-            document.getElementById('totalPriceDisplay').innerText = formattedPrice;
-        }
-
+        // Payment Method Select
+        let selectedPaymentMethod = "BOC Bank";
         function selectPayment(methodKey, event) {
             document.querySelectorAll('.pay-method-btn').forEach(b => b.classList.remove('active'));
-            if(event && event.currentTarget) {
-                event.currentTarget.classList.add('active');
-            }
+            event.currentTarget.classList.add('active');
 
             document.getElementById('bocDetailsCard').classList.remove('active-bank');
             document.getElementById('ezDetailsCard').classList.remove('active-bank');
 
             if(methodKey === 'boc') {
-                currentSelectedPayment = "BOC Bank";
+                selectedPaymentMethod = "BOC Bank";
                 document.getElementById('bocDetailsCard').classList.add('active-bank');
-            } else if(methodKey === 'ez') {
-                currentSelectedPayment = "EZ Cash";
+            } else {
+                selectedPaymentMethod = "EZ Cash";
                 document.getElementById('ezDetailsCard').classList.add('active-bank');
             }
         }
 
+        // Update Price Calculation
+        function updatePrice() {
+            const select = document.getElementById('bandwidthSelect');
+            const val = select.value;
+            document.getElementById('totalPriceDisplay').innerText = "LKR." + val;
+        }
+
+        // File Receipt Handler
+        let uploadedReceiptName = "No Receipt Uploaded";
         function handleFile(input) {
             if(input.files && input.files[0]) {
-                uploadedFileName = input.files[0].name;
-                document.getElementById('receiptLabelText').innerText = "Selected: " + uploadedFileName;
+                uploadedReceiptName = input.files[0].name;
+                document.getElementById('receiptLabelText').innerText = "Attached: " + uploadedReceiptName;
             }
         }
 
-        // FAQ Toggle
-        function toggleFaq(el) {
-            const item = el.parentElement;
-            item.classList.toggle('active');
-        }
+        // Submit V2Ray Order via WhatsApp (Updated number: 94742251615)
+        function submitOrder() {
+            const username = document.getElementById('v2rayUser').value.trim();
+            const bandwidthText = document.getElementById('bandwidthSelect').options[document.getElementById('bandwidthSelect').selectedIndex].text;
+            const priceVal = document.getElementById('totalPriceDisplay').innerText;
 
-        // Copy Text Function
-        function copyText(txt) {
-            navigator.clipboard.writeText(txt);
-            alert("Copied to clipboard: " + txt);
-        }
-
-        // Contact Form Validation
-        function validateForm(e) {
-            e.preventDefault();
-            alert("Thank you! Your message has been sent successfully to AURA NET.LK support.");
-            e.target.reset();
-            return false;
-        }
-
-        // Infinite Unlimited Reviews Marquee Cloning Loop
-        window.addEventListener('DOMContentLoaded', () => {
-            const track = document.getElementById('reviewsTrack');
-            if(track) {
-                // Duplicate all review cards inside track to achieve smooth infinite endless loop effect
-                track.innerHTML += track.innerHTML;
+            if(!username) {
+                alert('Please enter your V2Ray username!');
+                document.getElementById('v2rayUser').focus();
+                return;
             }
-        });
 
-        // Dashboard Live Agent Chat Functions
-        function toggleAgentChat(show) {
+            const waMessage = `*NEW AURA NET.LK V2RAY ORDER*%0A%0A` +
+                              `• *Package:* ${selectedPkgName}%0A` +
+                              `• *V2Ray Username:* ${username}%0A` +
+                              `• *Bandwidth/Plan:* ${bandwidthText}%0A` +
+                              `• *Total Price:* ${priceVal}%0A` +
+                              `• *Payment Method:* ${selectedPaymentMethod}%0A` +
+                              `• *Receipt Status:* ${uploadedReceiptName}%0A%0A` +
+                              `Please verify and activate my account!`;
+
+            window.open(`https://wa.me/94742251615?text=${waMessage}`, '_blank');
+        }
+
+        // Live Agent Chat Functions
+        function toggleAgentChat(open) {
             const modal = document.getElementById('agentChatModal');
-            modal.style.display = show ? 'flex' : 'none';
+            if(open) {
+                modal.style.display = 'flex';
+            } else {
+                modal.style.display = 'none';
+            }
         }
 
         function sendChatMessage() {
             const input = document.getElementById('chatInputText');
-            const msg = input.value.trim();
-            if(!msg) return;
+            const txt = input.value.trim();
+            if(!txt) return;
 
             const box = document.getElementById('chatMessagesBox');
             
-            // Append user message
-            box.innerHTML += `<div class="chat-bubble user">${msg}</div>`;
+            const userBubble = document.createElement('div');
+            userBubble.className = 'chat-bubble user';
+            userBubble.innerText = txt;
+            box.appendChild(userBubble);
             input.value = '';
             box.scrollTop = box.scrollHeight;
 
-            // Simulated Auto Reply after 1 second
             setTimeout(() => {
-                box.innerHTML += `<div class="chat-bubble agent">Thank you for messaging AURA NET.LK support! Sehas Sadika or an active agent will review your request and connect shortly. You can also place orders directly via Dashboard.</div>`;
+                const agentBubble = document.createElement('div');
+                agentBubble.className = 'chat-bubble agent';
+                agentBubble.innerText = "Thank you for your message! Our agent will assist you shortly, or you can contact us via WhatsApp (074 225 1615) for faster processing.";
+                box.appendChild(agentBubble);
                 box.scrollTop = box.scrollHeight;
             }, 1000);
         }
@@ -2778,33 +3251,366 @@
             }
         }
 
-        // Submit Order from Dashboard via WhatsApp
-        function submitOrder() {
-            const v2user = document.getElementById('v2rayUser').value.trim();
-            const bandwidth = document.getElementById('bandwidthSelect');
-            const selectedBandwidthText = bandwidth.options[bandwidth.selectedIndex].text;
-            const priceVal = bandwidth.value;
-            let formattedPrice = "LKR. " + Number(priceVal).toLocaleString();
-            if(priceVal === "7000") formattedPrice = "LKR. 7,000";
+        // =========================================================
+        // AURA NET.LK — MODERN UNLIMITED REVIEWS ENGINE
+        // =========================================================
+        let currentRating = 5;
+        let reviewsNewestFirst = true;
 
-            if(!v2user) {
-                alert("Please enter a valid V2Ray Username!");
-                document.getElementById('v2rayUser').focus();
+        const defaultReviews = [
+            {
+                        "id": "seed-101",
+                        "name": "Kavindu Perera",
+                        "role": "Dialog Router User",
+                        "rating": 5,
+                        "text": "AURA NET.LK service eka super. Package eka ikmanata active kala, connection ekath smooth.",
+                        "date": "2026-09-01T10:30:00"
+            },
+            {
+                        "id": "seed-102",
+                        "name": "චතුර ප්‍රසාද්",
+                        "role": "ඩයලොග් රවුටර් පාවිච්චි කරන්නෙක්",
+                        "rating": 5,
+                        "text": "පට්ට service එකක්. Activation එක ඉක්මනට දුන්නා, speed එකත් හොඳටම තිබ්බා.",
+                        "date": "2026-09-03T14:20:00"
+            },
+            {
+                        "id": "seed-103",
+                        "name": "Sahan Madushanka",
+                        "role": "SLT Fibre User",
+                        "rating": 5,
+                        "text": "Gaming and streaming වලට smooth. Service එක easy to use and reliable.",
+                        "date": "2026-09-05T09:15:00"
+            },
+            {
+                        "id": "seed-104",
+                        "name": "Dulanjan Silva",
+                        "role": "Hutch 4G User",
+                        "rating": 5,
+                        "text": "Payment කරලා ටික වෙලාවකින් package එක active කරලා දුන්නා. Really good service.",
+                        "date": "2026-09-06T11:40:00"
+            },
+            {
+                        "id": "seed-105",
+                        "name": "Hasini Fernando",
+                        "role": "Dialog Data User",
+                        "rating": 5,
+                        "text": "YouTube සහ TikTok use කරන්න හොඳයි. Customer service එකත් friendly.",
+                        "date": "2026-09-07T16:10:00"
+            },
+            {
+                        "id": "seed-106",
+                        "name": "Nipun Jayasinghe",
+                        "role": "Gaming Customer",
+                        "rating": 5,
+                        "text": "Gaming වලට connection එක stable. Setup එකත් ලේසියි. AURA NET.LK recommended by my friends.",
+                        "date": "2026-09-08T18:25:00"
+            },
+            {
+                        "id": "seed-107",
+                        "name": "Tharindu Lakshan",
+                        "role": "PC User",
+                        "rating": 5,
+                        "text": "PC එකෙන් use කරද්දි smooth. Activation එකට unnecessary delay එකක් තිබ්බේ නෑ.",
+                        "date": "2026-09-09T08:55:00"
+            },
+            {
+                        "id": "seed-108",
+                        "name": "Isuru Madushan",
+                        "role": "Dialog Router User",
+                        "rating": 5,
+                        "text": "Package details clear. Payment confirmation දුන්නට පස්සේ service එක ඉක්මනට ලැබුණා.",
+                        "date": "2026-09-10T12:35:00"
+            },
+            {
+                        "id": "seed-109",
+                        "name": "ෂෙහාන් ප්‍රනාන්දු",
+                        "role": "Hutch User",
+                        "rating": 5,
+                        "text": "Speed එක හොඳයි. Social media use කරන අයට useful package එකක්.",
+                        "date": "2026-09-11T15:05:00"
+            },
+            {
+                        "id": "seed-110",
+                        "name": "Ravindu Perera",
+                        "role": "SLT Fibre User",
+                        "rating": 5,
+                        "text": "Streaming වලදි experience එක smooth. Customer support එකෙන් reply එකත් ඉක්මනට ආවා.",
+                        "date": "2026-09-12T10:15:00"
+            },
+            {
+                        "id": "seed-111",
+                        "name": "Malith Sandaruwan",
+                        "role": "Android User",
+                        "rating": 5,
+                        "text": "Android එකේ setup කරගන්න easy. Package activation එක fast.",
+                        "date": "2026-09-13T17:45:00"
+            },
+            {
+                        "id": "seed-112",
+                        "name": "Ayesh Wickramasinghe",
+                        "role": "YouTube & TikTok User",
+                        "rating": 5,
+                        "text": "Daily social media use එකට හොඳ service එකක්. Speed එක consistent.",
+                        "date": "2026-09-14T13:20:00"
+            },
+            {
+                        "id": "seed-113",
+                        "name": "නිමේෂ් කාවින්ද",
+                        "role": "Mobile Data User",
+                        "rating": 5,
+                        "text": "Price එකට හොඳ service එකක්. Activation එකත් quick. ආයෙත් ගන්නවා.",
+                        "date": "2026-09-15T09:40:00"
+            },
+            {
+                        "id": "seed-114",
+                        "name": "Kevin Fernando",
+                        "role": "PC & Gaming User",
+                        "rating": 5,
+                        "text": "PC gaming සහ browsing දෙකටම smooth experience එකක් ලැබුණා.",
+                        "date": "2026-09-16T19:10:00"
+            },
+            {
+                        "id": "seed-115",
+                        "name": "සචින් දිල්ෂාන්",
+                        "role": "Dialog Data User",
+                        "rating": 5,
+                        "text": "Service එක professional. Payment එකෙන් පස්සේ instructions ටිකත් clearව දුන්නා.",
+                        "date": "2026-09-17T11:05:00"
+            },
+            {
+                        "id": "seed-116",
+                        "name": "Dinuka Maduranga",
+                        "role": "Laptop User",
+                        "rating": 5,
+                        "text": "Laptop එකෙන් use කරන්න setup එක simple. Connection එක stable.",
+                        "date": "2026-09-18T14:50:00"
+            }
+];
+
+        function escapeReviewText(value) {
+            const div = document.createElement('div');
+            div.textContent = String(value ?? '');
+            return div.innerHTML;
+        }
+
+        function getStoredReviews() {
+            try {
+                const raw = localStorage.getItem('auraNetUnlimitedReviews_v3');
+                if (!raw) {
+                    localStorage.setItem('auraNetUnlimitedReviews_v3', JSON.stringify(defaultReviews));
+                    return [...defaultReviews];
+                }
+
+                const parsed = JSON.parse(raw);
+                if (!Array.isArray(parsed)) return [...defaultReviews];
+
+                // Remove accidental duplicates by customer + review text.
+                const unique = [];
+                const seen = new Set();
+
+                parsed.forEach(review => {
+                    const key = `${String(review.name || '').trim().toLowerCase()}|${String(review.text || '').trim().toLowerCase()}`;
+                    if (!seen.has(key)) {
+                        seen.add(key);
+                        unique.push(review);
+                    }
+                });
+
+                return unique;
+            } catch (err) {
+                return [...defaultReviews];
+            }
+        }
+
+        function saveStoredReviews(reviews) {
+            try {
+                localStorage.setItem('auraNetUnlimitedReviews_v3', JSON.stringify(reviews));
+            } catch (err) {
+                console.warn('Could not save reviews locally.', err);
+            }
+        }
+
+        function formatReviewDate(dateValue) {
+            const date = new Date(dateValue);
+            if (Number.isNaN(date.getTime())) return 'Customer Review';
+            return date.toLocaleDateString(undefined, {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        }
+
+        function renderStars(rating, compact = false) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                stars += `<i class="fa-${i <= rating ? 'solid' : 'regular'} fa-star"></i>`;
+            }
+            return stars;
+        }
+
+        function renderReviews() {
+            const track = document.getElementById('reviewsGrid');
+            const empty = document.getElementById('reviewsEmpty');
+            if (!track) return;
+
+            let reviews = getStoredReviews();
+            reviews.sort((a, b) => {
+                const da = new Date(a.date || 0).getTime();
+                const db = new Date(b.date || 0).getTime();
+                return reviewsNewestFirst ? db - da : da - db;
+            });
+
+            track.innerHTML = '';
+
+            if (!reviews.length) {
+                if (empty) empty.style.display = 'block';
+            } else {
+                if (empty) empty.style.display = 'none';
+
+                // Two complete lanes create a seamless loop without back-to-back duplicate cards.
+                const laneA = document.createElement('div');
+                const laneB = document.createElement('div');
+                laneA.className = 'review-lane';
+                laneB.className = 'review-lane';
+
+                const buildCard = (review) => {
+                    const safeName = escapeReviewText(review.name);
+                    const safeRole = escapeReviewText(review.role);
+                    const safeText = escapeReviewText(review.text);
+                    const initial = escapeReviewText((review.name || '?').trim().charAt(0).toUpperCase() || '?');
+                    const rating = Math.max(1, Math.min(5, Number(review.rating) || 5));
+
+                    const card = document.createElement('article');
+                    card.className = 'review-modern-card';
+                    card.setAttribute('tabindex', '0');
+                    card.innerHTML = `
+                        <div class="modern-review-head">
+                            <div class="modern-avatar">${initial}</div>
+                            <div class="modern-reviewer">
+                                <h4>${safeName}</h4>
+                                <span>${safeRole}</span>
+                            </div>
+                            <div class="review-verified-badge" title="Customer review"><i class="fa-solid fa-circle-check"></i></div>
+                        </div>
+                        <div class="modern-stars">${renderStars(rating)}</div>
+                        <p class="modern-review-message">“${safeText}”</p>
+                        <div class="modern-review-date">
+                            <i class="fa-regular fa-calendar"></i>
+                            ${formatReviewDate(review.date)}
+                        </div>
+                    `;
+                    return card;
+                };
+
+                reviews.forEach(review => laneA.appendChild(buildCard(review)));
+                reviews.forEach(review => laneB.appendChild(buildCard(review)));
+
+                track.innerHTML = '';
+                track.appendChild(laneA);
+                track.appendChild(laneB);
+
+                // Keep a stable speed as the number of reviews grows as the number of reviews grows.
+                const duration = Math.max(26, Math.min(95, reviews.length * 8 + 20));
+                track.style.animationDuration = `${duration}s`;
+            }
+
+            const count = reviews.length;
+            const average = count
+                ? (reviews.reduce((sum, review) => sum + (Number(review.rating) || 0), 0) / count).toFixed(1)
+                : '0.0';
+
+            const countEl = document.getElementById('reviewCount');
+            const avgEl = document.getElementById('reviewAverage');
+            const avgStarsEl = document.getElementById('reviewAverageStars');
+
+            if (countEl) countEl.textContent = count.toLocaleString();
+            if (avgEl) avgEl.textContent = average;
+            if (avgStarsEl) avgStarsEl.innerHTML = renderStars(Math.round(Number(average) || 0));
+        }
+
+        function setRating(val) {
+            currentRating = Math.max(1, Math.min(5, Number(val) || 5));
+            document.querySelectorAll('#starRatingSelect button').forEach((button, index) => {
+                button.classList.toggle('active', index < currentRating);
+            });
+        }
+
+        function sortReviews(mode) {
+            reviewsNewestFirst = mode !== 'oldest';
+
+            document.getElementById('sortNewestBtn')?.classList.toggle('active', reviewsNewestFirst);
+            document.getElementById('sortOldestBtn')?.classList.toggle('active', !reviewsNewestFirst);
+
+            renderReviews();
+        }
+
+        function addNewReview(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('clientReviewName').value.trim();
+            const role = document.getElementById('clientReviewRole').value.trim();
+            const text = document.getElementById('clientReviewText').value.trim();
+
+            if (!name || !role || !text) return;
+
+            const reviews = getStoredReviews();
+
+            const duplicate = reviews.some(r =>
+                String(r.name || '').trim().toLowerCase() === name.toLowerCase() &&
+                String(r.text || '').trim().toLowerCase() === text.toLowerCase()
+            );
+            if (duplicate) {
+                alert('This customer review is already added.');
                 return;
             }
 
-            let waMsg = `🚀 *NEW V2RAY ORDER - AURA NET.LK* 🚀%00` +
-                        `----------------------------------------%00` +
-                        `📌 *Package:* ${currentSelectedPackage}%00` +
-                        `👤 *V2Ray Username:* ${v2user}%00` +
-                        `📊 *Data Bandwidth Limit:* ${selectedBandwidthText}%00` +
-                        `💰 *Total Amount:* ${formattedPrice}%00` +
-                        `💳 *Payment Method:* ${currentSelectedPayment}%00` +
-                        `🖼️ *Receipt File:* ${uploadedFileName ? uploadedFileName : 'Not Attached Yet'}%00` +
-                        `----------------------------------------%00` +
-                        `Please verify my payment and activate my account!`;
+            reviews.push({
+                id: `review-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
+                name,
+                role,
+                rating: currentRating,
+                text,
+                date: new Date().toISOString()
+            });
 
-            window.open(`https://wa.me/94742251615?text=${waMsg}`, '_blank');
+            saveStoredReviews(reviews);
+
+            e.target.reset();
+            document.getElementById('reviewCharCount').textContent = '0 / 600';
+            setRating(5);
+            reviewsNewestFirst = true;
+            sortReviews('newest');
+            document.getElementById('reviews').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            setTimeout(() => {
+                alert('Thank you! Your review has been published.');
+            }, 100);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setRating(5);
+            renderReviews();
+
+            const reviewText = document.getElementById('clientReviewText');
+            const counter = document.getElementById('reviewCharCount');
+
+            if (reviewText && counter) {
+                reviewText.addEventListener('input', () => {
+                    counter.textContent = `${reviewText.value.length} / 600`;
+                });
+            }
+        });
+
+        // Inquiry Form via WhatsApp (Updated number: 94742251615)
+        function sendInquiry(e) {
+            e.preventDefault();
+            const name = document.getElementById('inquiryName').value.trim();
+            const phone = document.getElementById('inquiryPhone').value.trim();
+            const msg = document.getElementById('inquiryMsg').value.trim();
+
+            const text = `*New Website Inquiry*%0A%0A• *Name:* ${name}%0A• *Phone:* ${phone}%0A• *Message:* ${msg}`;
+            window.open(`https://wa.me/94742251615?text=${text}`, '_blank');
         }
     </script>
 </body>
