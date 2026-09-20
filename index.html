@@ -51,8 +51,7 @@
             letter-spacing: -0.01em;
         }
 
-        html { 
-            scroll-behavior: smooth;
+        html {
         }
 
         body {
@@ -2034,36 +2033,13 @@
     bottom:12px;
   }
 }
-
-
-/* ===== AURA NET.LK — ULTRA SMOOTH WHOLE-SITE SCROLL ===== */
-html{
-  scroll-behavior:smooth !important;
-  scroll-padding-top:90px;
-}
-body{
-  overscroll-behavior-y:none;
-}
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto !important;}
-}
-
-</style>
-
-<style id="aura-normal-smooth">
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
+<style id="aura-true-normal-scroll">
+html { scroll-behavior: auto; }
+body { overflow-x: hidden; }
 .aura-community-side-tab {
-  transition: transform .25s ease, box-shadow .25s ease, opacity .25s ease;
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
 }
-.aura-community-side-tab:hover {
-  transform: translateY(-50%) translateX(-4px);
-}
+.aura-community-side-tab:hover { transform: translateY(-50%) translateX(-3px); }
 </style>
 
 </head>
@@ -3835,74 +3811,5 @@ html {
   }, {passive:true});
 })();
 </script>
-
-
-<script>
-/* ===== AURA NET.LK — Smooth mouse-wheel scrolling ===== */
-(function(){
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  let targetY = window.scrollY;
-  let currentY = window.scrollY;
-  let rafId = null;
-  let isAnimating = false;
-
-  function clamp(value, min, max){
-    return Math.max(min, Math.min(max, value));
-  }
-
-  function animate(){
-    currentY += (targetY - currentY) * 0.12;
-
-    if (Math.abs(targetY - currentY) < 0.5){
-      currentY = targetY;
-      window.scrollTo(0, currentY);
-      rafId = null;
-      isAnimating = false;
-      return;
-    }
-
-    window.scrollTo(0, currentY);
-    rafId = requestAnimationFrame(animate);
-  }
-
-  window.addEventListener('wheel', function(e){
-    // Keep browser zoom and horizontal gestures untouched.
-    if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
-
-    e.preventDefault();
-
-    const maxY = Math.max(
-      0,
-      document.documentElement.scrollHeight - window.innerHeight
-    );
-
-    targetY = clamp(targetY + e.deltaY * 0.72, 0, maxY);
-
-    if (!isAnimating){
-      currentY = window.scrollY;
-      isAnimating = true;
-      rafId = requestAnimationFrame(animate);
-    }
-  }, {passive:false});
-
-  // Keep programmatic anchor scrolling and keyboard scrolling in sync.
-  window.addEventListener('scroll', function(){
-    if (!isAnimating){
-      targetY = window.scrollY;
-      currentY = window.scrollY;
-    }
-  }, {passive:true});
-
-  // Smooth Home/End/PageUp/PageDown behaviour.
-  window.addEventListener('keydown', function(e){
-    if (['Home','End','PageUp','PageDown'].includes(e.key)){
-      targetY = window.scrollY;
-      currentY = window.scrollY;
-    }
-  });
-})();
-</script>
-
 </body>
 </html>
