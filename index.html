@@ -1869,6 +1869,160 @@
   .review-modern-card{width:285px !important;min-width:285px !important;flex-basis:285px !important}
 }
 
+
+/* AURA NET.LK — Compact Write Your Review */
+#reviews .review-form,
+#reviews .write-review,
+#reviews .review-submit-box,
+#reviews .review-form-card {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#reviews textarea {
+  min-height: 105px !important;
+  max-height: 150px;
+}
+#reviews .review-form input,
+#reviews .review-form select,
+#reviews .review-form textarea {
+  padding: 10px 12px !important;
+  font-size: 14px !important;
+}
+#reviews .review-form h3,
+#reviews .review-form h2 {
+  font-size: 20px !important;
+  margin-bottom: 10px !important;
+}
+@media (max-width: 700px) {
+  #reviews .review-form,
+  #reviews .write-review,
+  #reviews .review-submit-box,
+  #reviews .review-form-card {
+    max-width: 94%;
+  }
+  #reviews .review-form h3,
+  #reviews .review-form h2 {
+    font-size: 18px !important;
+  }
+}
+
+
+/* AURA NET.LK — AURA Community Entry Popup */
+.aura-community-overlay{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .35s ease, visibility .35s ease;
+}
+.aura-community-overlay.aura-show{
+  opacity:1;
+  visibility:visible;
+}
+.aura-community-modal{
+  position:relative;
+  width:min(430px, 94vw);
+  padding:30px 26px 24px;
+  border:1px solid rgba(0,220,255,.35);
+  border-radius:24px;
+  text-align:center;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0,210,255,.18), transparent 48%),
+    linear-gradient(145deg, rgba(16,22,30,.98), rgba(5,9,14,.98));
+  box-shadow:0 25px 80px rgba(0,0,0,.65), 0 0 45px rgba(0,210,255,.12);
+  transform:translateY(18px) scale(.96);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.aura-community-overlay.aura-show .aura-community-modal{
+  transform:translateY(0) scale(1);
+}
+.aura-community-close{
+  position:absolute;
+  top:10px;
+  right:12px;
+  width:34px;
+  height:34px;
+  border:0;
+  border-radius:50%;
+  color:#fff;
+  background:rgba(255,255,255,.08);
+  font-size:24px;
+  line-height:34px;
+  cursor:pointer;
+}
+.aura-community-icon{
+  width:68px;
+  height:68px;
+  margin:0 auto 12px;
+  display:grid;
+  place-items:center;
+  border-radius:20px;
+  font-size:31px;
+  background:rgba(0,210,255,.10);
+  border:1px solid rgba(0,210,255,.28);
+  box-shadow:0 0 30px rgba(0,210,255,.14);
+}
+.aura-community-badge{
+  display:inline-block;
+  padding:6px 11px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  color:#8eeeff;
+  background:rgba(0,210,255,.10);
+  border:1px solid rgba(0,210,255,.22);
+}
+.aura-community-modal h2{
+  margin:14px 0 8px;
+  color:#fff;
+  font-size:28px;
+  line-height:1.15;
+}
+.aura-community-modal p{
+  margin:0 auto 20px;
+  max-width:340px;
+  color:rgba(255,255,255,.68);
+  font-size:14px;
+  line-height:1.6;
+}
+.aura-community-whatsapp{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  width:100%;
+  min-height:48px;
+  border-radius:13px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  background:linear-gradient(135deg,#12d66f,#079b50);
+  box-shadow:0 10px 28px rgba(18,214,111,.18);
+  transition:transform .2s ease, filter .2s ease;
+}
+.aura-community-whatsapp:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.08);
+}
+.aura-community-later{
+  margin-top:12px;
+  border:0;
+  background:transparent;
+  color:rgba(255,255,255,.45);
+  cursor:pointer;
+  font-size:12px;
+}
+
 </style>
 </head>
 <body>
@@ -3613,5 +3767,57 @@
             window.open(`https://wa.me/94742251615?text=${text}`, '_blank');
         }
     </script>
+
+<!-- AURA COMMUNITY POPUP -->
+<div id="auraCommunityPopup" class="aura-community-overlay" aria-hidden="true">
+  <div class="aura-community-modal" role="dialog" aria-modal="true" aria-labelledby="auraCommunityTitle">
+    <button class="aura-community-close" id="auraCommunityClose" aria-label="Close">×</button>
+    <div class="aura-community-icon">🌐</div>
+    <div class="aura-community-badge">AURA COMMUNITY</div>
+    <h2 id="auraCommunityTitle">Join AURA Community</h2>
+    <p>Stay updated with AURA NET.LK packages, offers, service updates and support.</p>
+    <a class="aura-community-whatsapp"
+       href="https://wa.me/94742251615"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span>💬</span> Join on WhatsApp
+    </a>
+    <button class="aura-community-later" id="auraCommunityLater">Maybe Later</button>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById("auraCommunityPopup");
+  const closeBtn = document.getElementById("auraCommunityClose");
+  const laterBtn = document.getElementById("auraCommunityLater");
+
+  if (!popup) return;
+
+  function closeCommunityPopup() {
+    popup.classList.remove("aura-show");
+    popup.setAttribute("aria-hidden", "true");
+  }
+
+  // Show automatically when the site opens.
+  setTimeout(() => {
+    popup.classList.add("aura-show");
+    popup.setAttribute("aria-hidden", "false");
+  }, 700);
+
+  closeBtn?.addEventListener("click", closeCommunityPopup);
+  laterBtn?.addEventListener("click", closeCommunityPopup);
+
+  popup.addEventListener("click", function(e) {
+    if (e.target === popup) closeCommunityPopup();
+  });
+
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeCommunityPopup();
+  });
+});
+</script>
+
 </body>
 </html>
