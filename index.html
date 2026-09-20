@@ -2049,6 +2049,23 @@ body{
 }
 
 </style>
+
+<style id="aura-normal-smooth">
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+.aura-community-side-tab {
+  transition: transform .25s ease, box-shadow .25s ease, opacity .25s ease;
+}
+.aura-community-side-tab:hover {
+  transform: translateY(-50%) translateX(-4px);
+}
+</style>
+
 </head>
 <body>
 
