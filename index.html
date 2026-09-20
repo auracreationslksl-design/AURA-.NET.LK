@@ -2041,53 +2041,6 @@ body { overflow-x: hidden; }
 }
 .aura-community-side-tab:hover { transform: translateY(-50%) translateX(-3px); }
 </style>
-
-
-<style id="aura-payment-zip-style">
-.payment-zip-upload-box{
-    border:1px dashed rgba(56,189,248,.65);
-    background:rgba(3,7,18,.78);
-    padding:14px;
-    border-radius:12px;
-    margin:-6px 0 20px;
-    box-shadow:0 0 18px rgba(56,189,248,.10);
-    transition:.25s ease;
-}
-.payment-zip-upload-box:hover{
-    border-color:#38bdf8;
-    background:rgba(56,189,248,.10);
-    box-shadow:0 0 28px rgba(56,189,248,.25);
-}
-.payment-zip-upload-box.ready{
-    border-color:#10b981;
-    box-shadow:0 0 25px rgba(16,185,129,.25);
-}
-.payment-zip-upload-box label{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    color:#cbd5e1;
-    cursor:pointer;
-}
-.payment-zip-upload-box label > i{
-    color:#38bdf8;
-    font-size:20px;
-}
-.payment-zip-upload-box strong{
-    display:block;
-    color:#fff;
-    font-size:11px;
-    letter-spacing:.6px;
-}
-.payment-zip-upload-box small{
-    display:block;
-    color:#94a3b8;
-    margin-top:4px;
-    font-size:10px;
-}
-.payment-zip-upload-box input{display:none;}
-</style>
-
 </head>
 <body>
 
@@ -2308,22 +2261,7 @@ body { overflow-x: hidden; }
                             <i class="fa-solid fa-wallet"></i> EZ Cash
                         </div>
                     </div>
-
-                    <div class="payment-zip-upload-box" id="paymentZipUploadBox">
-                        <label for="paymentMethodZipInput">
-                            <i class="fa-solid fa-file-zipper"></i>
-                            <span>
-                                <strong>PAYMENT METHODS ZIP FILE *</strong>
-                                <small id="paymentZipLabel">Add the official payment-method ZIP file before package submission.</small>
-                            </span>
-                            <input type="file" id="paymentMethodZipInput" accept=".zip,application/zip" onchange="handlePaymentZip(this)">
-                        </label>
-                    </div>
-
-                    <!-- BOC Bank Details Card -->
-                    <div class="bank-details-card active-bank" id="bocDetailsCard">
-                        <div class="bank-row"><span>Account Name:</span> <strong>AURA NET (Pvt) Ltd</strong></div>
-                        <div class="bank-row"><span>Account Number:</span> <strong>91743654</strong></div>
+<div class="bank-row"><span>Account Number:</span> <strong>91743654</strong></div>
                         <div class="bank-row"><span>Branch:</span> <strong>Ambalanthota Branch</strong></div>
                     </div>
 
@@ -3408,45 +3346,8 @@ body { overflow-x: hidden; }
 
 
         // Payment Methods ZIP File Requirement
-        function paymentZipReady() {
-            const input = document.getElementById('paymentMethodZipInput');
-            return !!(input && input.files && input.files.length && /\.zip$/i.test(input.files[0].name));
-        }
-
-        function handlePaymentZip(input) {
-            const file = input && input.files ? input.files[0] : null;
-            const box = document.getElementById('paymentZipUploadBox');
-            const label = document.getElementById('paymentZipLabel');
-
-            if (!file) {
-                if (box) box.classList.remove('ready');
-                if (label) label.textContent = 'Add the official payment-method ZIP file before package submission.';
-                return;
-            }
-
-            const isZip = /\.zip$/i.test(file.name) || file.type === 'application/zip' || file.type === 'application/x-zip-compressed';
-            if (!isZip) {
-                input.value = '';
-                if (box) box.classList.remove('ready');
-                if (label) label.textContent = 'Only a ZIP file is allowed.';
-                alert('Payment Methods වල ZIP file එකක් විතරයි add කරන්න පුළුවන්.');
-                return;
-            }
-
-            if (box) box.classList.add('ready');
-            if (label) label.textContent = '✓ Added: ' + file.name;
-        }
-
-        function requirePaymentZip(e) {
-            if (paymentZipReady()) return true;
-            if (e) e.preventDefault();
-            alert('Package එක buy/submit කරන්න කලින් Dashboard → Payment Methods වල ZIP file එක add කරන්න.');
-            return false;
-        }
-
-        // Submit V2Ray Order via WhatsApp (Updated number: 94742251615)
+// Submit V2Ray Order via WhatsApp (Updated number: 94742251615)
         function submitOrder(e) {
-            if (!requirePaymentZip(e)) return;
             const username = document.getElementById('v2rayUser').value.trim();
             const bandwidthText = document.getElementById('bandwidthSelect').options[document.getElementById('bandwidthSelect').selectedIndex].text;
             const priceVal = document.getElementById('totalPriceDisplay').innerText;
