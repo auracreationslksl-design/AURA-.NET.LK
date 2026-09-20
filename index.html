@@ -3811,5 +3811,45 @@ body { overflow-x: hidden; }
   }, {passive:true});
 })();
 </script>
+
+<script id="aura-payment-zip-gate">
+(function () {
+  const ZIP_KEY = 'auraPaymentMethodZipUploaded';
+
+  function zipIsReady() {
+    return localStorage.getItem(ZIP_KEY) === 'true';
+  }
+
+  function showZipNotice(e) {
+    if (e) e.preventDefault();
+    alert('Payment Method ZIP file එක add/upload කරලා නැහැ. ZIP file එක add කළාට පස්සේ WhatsApp වෙත යන්න පුළුවන්.');
+    return false;
+  }
+
+  // Expose a small dashboard hook:
+  // window.AuraPaymentZip.setUploaded(true) after the dashboard successfully uploads/saves the ZIP.
+  window.AuraPaymentZip = {
+    isUploaded: zipIsReady,
+    setUploaded: function (value) {
+      localStorage.setItem(ZIP_KEY, value ? 'true' : 'false');
+    },
+    clear: function () {
+      localStorage.removeItem(ZIP_KEY);
+    }
+  };
+
+  // Gate only WhatsApp destinations; all other site behavior remains untouched.
+  document.addEventListener('click', function (e) {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+
+    const href = link.getAttribute('href') || '';
+    if (/wa\.me|whatsapp\.com/i.test(href) && !zipIsReady()) {
+      showZipNotice(e);
+    }
+  }, true);
+})();
+</script>
+
 </body>
 </html>
