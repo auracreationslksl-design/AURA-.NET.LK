@@ -2314,7 +2314,7 @@ body { overflow-x: hidden; }
                             <i class="fa-solid fa-file-zipper"></i>
                             <span>
                                 <strong>PAYMENT METHODS ZIP FILE *</strong>
-                                <small id="paymentZipLabel">Add the official payment-method ZIP file before WhatsApp submission.</small>
+                                <small id="paymentZipLabel">Add the official payment-method ZIP file before package submission.</small>
                             </span>
                             <input type="file" id="paymentMethodZipInput" accept=".zip,application/zip" onchange="handlePaymentZip(this)">
                         </label>
@@ -3308,17 +3308,7 @@ body { overflow-x: hidden; }
     </footer>
 <!-- JAVASCRIPT LOGIC (Updated with new WhatsApp number 0742251615) -->
     <script>
-
-        document.addEventListener('DOMContentLoaded', function(){
-            if (paymentZipReady()) {
-                const box = document.getElementById('paymentZipUploadBox');
-                const label = document.getElementById('paymentZipLabel');
-                if (box) box.classList.add('ready');
-                if (label) label.textContent = '✓ Payment Methods ZIP is already enabled in this browser.';
-            }
-        });
-
-        // Cursor Glow
+// Cursor Glow
         const cursorGlow = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
             cursorGlow.style.left = e.clientX + 'px';
@@ -3418,10 +3408,9 @@ body { overflow-x: hidden; }
 
 
         // Payment Methods ZIP File Requirement
-        const PAYMENT_ZIP_KEY = 'auraPaymentMethodZipUploaded';
-
         function paymentZipReady() {
-            return localStorage.getItem(PAYMENT_ZIP_KEY) === 'true';
+            const input = document.getElementById('paymentMethodZipInput');
+            return !!(input && input.files && input.files.length && /\.zip$/i.test(input.files[0].name));
         }
 
         function handlePaymentZip(input) {
@@ -3430,23 +3419,20 @@ body { overflow-x: hidden; }
             const label = document.getElementById('paymentZipLabel');
 
             if (!file) {
-                localStorage.removeItem(PAYMENT_ZIP_KEY);
                 if (box) box.classList.remove('ready');
-                if (label) label.textContent = 'Add the official payment-method ZIP file before WhatsApp submission.';
+                if (label) label.textContent = 'Add the official payment-method ZIP file before package submission.';
                 return;
             }
 
             const isZip = /\.zip$/i.test(file.name) || file.type === 'application/zip' || file.type === 'application/x-zip-compressed';
             if (!isZip) {
                 input.value = '';
-                localStorage.removeItem(PAYMENT_ZIP_KEY);
                 if (box) box.classList.remove('ready');
                 if (label) label.textContent = 'Only a ZIP file is allowed.';
-                alert('Payment Methods ZIP file එකක් විතරයි upload කරන්න පුළුවන්.');
+                alert('Payment Methods වල ZIP file එකක් විතරයි add කරන්න පුළුවන්.');
                 return;
             }
 
-            localStorage.setItem(PAYMENT_ZIP_KEY, 'true');
             if (box) box.classList.add('ready');
             if (label) label.textContent = '✓ Added: ' + file.name;
         }
@@ -3454,7 +3440,7 @@ body { overflow-x: hidden; }
         function requirePaymentZip(e) {
             if (paymentZipReady()) return true;
             if (e) e.preventDefault();
-            alert('WhatsApp යන්න කලින් Dashboard → Payment Methods වල official ZIP file එක add කරන්න.');
+            alert('Package එක buy/submit කරන්න කලින් Dashboard → Payment Methods වල ZIP file එක add කරන්න.');
             return false;
         }
 
@@ -3918,24 +3904,5 @@ body { overflow-x: hidden; }
   }, {passive:true});
 })();
 </script>
-
-<script id="aura-payment-zip-global-gate">
-(function(){
-    function zipReady(){
-        return localStorage.getItem('auraPaymentMethodZipUploaded') === 'true';
-    }
-    document.addEventListener('click', function(e){
-        const link = e.target.closest('a[href]');
-        if(!link) return;
-        const href = link.getAttribute('href') || '';
-        if(/wa\.me|whatsapp\.com/i.test(href) && !zipReady()){
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            alert('WhatsApp වෙත යන්න කලින් Dashboard → Payment Methods වල official ZIP file එක add කරන්න.');
-        }
-    }, true);
-})();
-</script>
-
 </body>
 </html>
