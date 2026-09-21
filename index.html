@@ -2041,6 +2041,10 @@ body { overflow-x: hidden; }
 }
 .aura-community-side-tab:hover { transform: translateY(-50%) translateX(-3px); }
 </style>
+
+
+
+
 </head>
 <body>
 
@@ -2284,11 +2288,12 @@ body { overflow-x: hidden; }
                         </div>
                     </div>
 
-                    <div class="upload-receipt-box">
-                        <label>
-                            <i class="fa-solid fa-cloud-arrow-up" style="font-size: 16px; color: #38bdf8;"></i>
-                            <span id="receiptLabelText">Choose Receipt Image (PNG / JPG / Screenshot) *</span>
-                            <input type="file" id="receiptFileInput" accept="image/*" onchange="handleFile(this)">
+                    <!-- Payment Receipt Upload — Required for Dashboard V2Ray Order -->
+                    <div class="upload-receipt-box" id="receiptUploadBox">
+                        <label for="receiptImageInput">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <span id="receiptUploadLabel">Choose Receipt Image (PNG / JPG / Screenshot) *</span>
+                            <input type="file" id="receiptImageInput" accept="image/png,image/jpeg,image/jpg,image/webp" onchange="handleReceiptImage(this)">
                         </label>
                     </div>
 
@@ -3340,17 +3345,53 @@ body { overflow-x: hidden; }
             document.getElementById('totalPriceDisplay').innerText = "LKR." + val;
         }
 
-        // File Receipt Handler
-        let uploadedReceiptName = "No Receipt Uploaded";
-        function handleFile(input) {
-            if(input.files && input.files[0]) {
-                uploadedReceiptName = input.files[0].name;
-                document.getElementById('receiptLabelText').innerText = "Attached: " + uploadedReceiptName;
+        // Payment Receipt Requirement — Dashboard only
+        // A valid receipt image must be selected before the Dashboard V2Ray order can open WhatsApp.
+        let receiptImageUploaded = false;
+
+        function receiptImageReady() {
+            return receiptImageUploaded === true;
+        }
+
+        function handleReceiptImage(input) {
+            const file = input && input.files ? input.files[0] : null;
+            const box = document.getElementById('receiptUploadBox');
+            const label = document.getElementById('receiptUploadLabel');
+
+            if (!file) {
+                receiptImageUploaded = false;
+                if (box) box.classList.remove('ready');
+                if (label) label.textContent = 'Choose Receipt Image (PNG / JPG / Screenshot) *';
+                return;
             }
+
+            const isImage = /^image\/(png|jpeg|jpg|webp)$/i.test(file.type) || /\.(png|jpe?g|webp)$/i.test(file.name);
+            if (!isImage || file.size < 1024) {
+                input.value = '';
+                receiptImageUploaded = false;
+                if (box) box.classList.remove('ready');
+                if (label) label.textContent = 'Choose Receipt Image (PNG / JPG / Screenshot) *';
+                alert('Valid payment receipt image එකක් (PNG / JPG / WEBP) upload කරන්න.');
+                return;
+            }
+
+            receiptImageUploaded = true;
+            if (box) box.classList.add('ready');
+            if (label) label.textContent = '✓ Receipt Added: ' + file.name;
+        }
+
+        function requirePaymentFiles(e) {
+            if (!receiptImageReady()) {
+                if (e) e.preventDefault();
+                alert('WhatsApp යන්න කලින් සල්ලි ගෙවපු Receipt Image එක upload කරන්න.');
+                return false;
+            }
+            return true;
         }
 
         // Submit V2Ray Order via WhatsApp (Updated number: 94742251615)
         function submitOrder(e) {
+            if (!requirePaymentFiles(e)) return;
             const username = document.getElementById('v2rayUser').value.trim();
             const bandwidthText = document.getElementById('bandwidthSelect').options[document.getElementById('bandwidthSelect').selectedIndex].text;
             const priceVal = document.getElementById('totalPriceDisplay').innerText;
@@ -3367,7 +3408,7 @@ body { overflow-x: hidden; }
                               `• *Bandwidth/Plan:* ${bandwidthText}%0A` +
                               `• *Total Price:* ${priceVal}%0A` +
                               `• *Payment Method:* ${selectedPaymentMethod}%0A` +
-                              `• *Receipt Status:* ${uploadedReceiptName}%0A%0A` +
+                              `%0A` +
                               `Please verify and activate my account!`;
 
             window.open(`https://wa.me/94742251615?text=${waMessage}`, '_blank');
@@ -3809,23 +3850,7 @@ body { overflow-x: hidden; }
 })();
 </script>
 
-<script id="aura-payment-zip-global-gate">
-(function(){
-    function zipReady(){
-        return localStorage.getItem('auraPaymentMethodZipUploaded') === 'true';
-    }
-    document.addEventListener('click', function(e){
-        const link = e.target.closest('a[href]');
-        if(!link) return;
-        const href = link.getAttribute('href') || '';
-        if(/wa\.me|whatsapp\.com/i.test(href) && !zipReady()){
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            alert('WhatsApp වෙත යන්න කලින් Dashboard → Payment Methods වල official ZIP file එක add කරන්න.');
-        }
-    }, true);
-})();
-</script>
+
 
 </body>
 </html>
