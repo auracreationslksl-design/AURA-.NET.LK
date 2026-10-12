@@ -2101,10 +2101,52 @@ body { overflow-x: hidden; }
 @media(max-width:800px){#adminDashboardSection .sidebar{display:none!important;}#adminDashboardSection .dash-main-pane{grid-template-columns:1fr!important;padding-top:72px!important;}#adminDashboardSection .checkout-pane{border-left:0!important;}#adminDashboardSection .dash-main-pane::before{left:18px;font-size:14px;}#adminDashboardSection .packages-pane{padding:20px 16px 30px!important;}}
 </style>
 
+
+<style id="aura-home-auth-upgrade">
+/* Homepage split hero: clean background, no distracting grid boxes */
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{scrollbar-gutter:stable;}
+#cursor-glow{opacity:.22}
+.aura-home-hero{min-height:calc(100vh - 145px)!important;padding:72px 8%!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(380px,.98fr)!important;gap:42px;align-items:center!important;text-align:left!important;position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(90deg,rgba(2,7,18,.92) 0%,rgba(2,7,18,.78) 48%,rgba(2,7,18,.62) 100%),var(--bg-wallpaper) center/cover no-repeat!important}
+.aura-home-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 85% 45%,rgba(46,160,255,.18),transparent 43%),linear-gradient(180deg,rgba(2,7,18,.08),rgba(2,7,18,.55));pointer-events:none}
+.aura-home-copy{min-width:0;position:relative;z-index:1}.aura-home-tag{text-align:left!important;margin:0 0 18px!important}.aura-home-hero .hero-globe-container{display:none!important}.aura-home-hero h1{font-size:clamp(2.5rem,4.2vw,4.2rem)!important;max-width:720px;line-height:1.13!important;margin-bottom:20px!important}.aura-home-hero p{max-width:650px!important;font-size:1.05rem!important;margin:0 0 25px!important;color:#c4d0e2!important}.aura-home-buttons{justify-content:flex-start!important;gap:12px!important}.aura-home-buttons .btn-primary,.aura-home-buttons .btn-outline{border-radius:9px!important}.aura-home-hint{display:flex;align-items:center;gap:10px;color:#a8b5ca;font-size:11px;margin:12px 0 0 10px}.aura-home-hint span{width:22px;height:2px;background:var(--primary);display:inline-block}.aura-home-status{justify-content:flex-start!important;display:flex!important;width:max-content;max-width:100%;gap:15px!important;margin-top:26px!important;padding:12px 15px!important;border-radius:13px!important;background:rgba(12,20,34,.78)!important;border:1px solid rgba(56,189,248,.25)!important}.aura-home-status .status-item{font-size:11px!important;gap:5px!important}.aura-home-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;position:relative;z-index:1}.aura-feature-card{min-height:96px;padding:18px 14px;display:flex;align-items:flex-start;gap:11px;position:relative;text-decoration:none;color:#f7faff;background:rgba(20,27,39,.83);border:1px solid rgba(148,163,184,.15);border-radius:9px;backdrop-filter:blur(12px);transition:transform .22s ease,border-color .22s ease,background .22s ease}.aura-feature-card:hover{transform:translateY(-4px);border-color:var(--primary);background:rgba(20,34,51,.94)}.aura-feature-icon{width:34px;height:34px;flex:0 0 34px;border-radius:7px;display:grid;place-items:center;color:var(--primary);background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25)}.aura-feature-card strong{display:block;font-size:13px;margin:1px 16px 5px 0}.aura-feature-card small{display:block;color:#aab5c5;font-size:10.5px;line-height:1.45}.aura-feature-link{position:absolute;right:12px;top:13px;color:var(--primary);font-size:10px}
+/* Client authentication modal inspired by the supplied login reference */
+.client-auth-modal{position:fixed;inset:0;z-index:100500;display:none;align-items:center;justify-content:center;padding:22px}.client-auth-modal.is-open{display:flex}.client-auth-backdrop{position:absolute;inset:0;background:rgba(1,5,15,.78);backdrop-filter:blur(10px)}.client-auth-card{width:min(900px,96vw);min-height:500px;max-height:calc(100vh - 36px);display:grid;grid-template-columns:1fr .95fr;position:relative;z-index:1;overflow:auto;border:1px solid rgba(119,157,220,.25);border-radius:20px;background:#0c1a36;box-shadow:0 30px 100px rgba(0,0,0,.55)}.client-auth-form-panel{padding:30px 36px 24px;background:linear-gradient(150deg,rgba(17,37,78,.98),rgba(7,18,39,.98));color:#f5f8ff}.client-auth-brand{font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:28px}.client-auth-brand i{color:#38bdf8}.client-auth-intro{display:flex;gap:13px;align-items:center;margin-bottom:22px}.client-auth-symbol{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:rgba(59,130,246,.15);color:#60a5fa;font-size:18px}.client-auth-intro h2{font-size:21px;margin:0 0 3px}.client-auth-intro p{font-size:12px;color:#9db4d7;margin:0}.client-auth-form-panel form>label,.client-auth-password-label label{display:block;font-size:12px;font-weight:700;margin:14px 0 8px;color:#e8efff}.client-auth-input{width:100%;height:45px;border-radius:13px;border:1px solid rgba(148,163,184,.26);background:#061120;color:#fff;padding:0 14px;outline:none;margin-bottom:7px}.client-auth-input:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.12)}.client-auth-password-label{display:flex;align-items:center;justify-content:space-between}.client-auth-password-label button{border:0;background:none;color:#60a5fa;cursor:pointer;font-size:11px}.client-auth-submit,.client-auth-register{width:100%;min-height:43px;border:0;border-radius:12px;cursor:pointer;font-weight:700;margin-top:10px;transition:filter .2s,transform .2s}.client-auth-submit{background:#3b82f6;color:#061226}.client-auth-submit:hover,.client-auth-register:hover{filter:brightness(1.12);transform:translateY(-1px)}.client-auth-note{font-size:10px;color:#9db4d7;line-height:1.5;margin:9px 0}.client-auth-or{display:flex;align-items:center;gap:12px;color:#9db4d7;font-size:11px;margin:16px 0}.client-auth-or:before,.client-auth-or:after{content:"";height:1px;flex:1;background:rgba(148,163,184,.2)}.client-auth-register{margin-top:0;background:#075c7c;color:#f0faff}.client-auth-footer{text-align:center;color:#6e85a8;font-size:10px;margin-top:21px}.client-auth-close{position:absolute;right:12px;top:10px;z-index:3;width:32px;height:32px;border:0;border-radius:50%;background:rgba(4,10,24,.6);color:#fff;font-size:25px;cursor:pointer}.client-auth-art{min-height:500px;position:relative;background:linear-gradient(180deg,rgba(4,10,25,.05),rgba(4,10,25,.78)),url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1100&q=85') center/cover no-repeat}.client-art-shade{position:absolute;inset:0;background:linear-gradient(135deg,rgba(50,90,190,.16),transparent 45%,rgba(8,12,30,.45))}.client-art-caption{position:absolute;left:28px;right:25px;bottom:30px;color:white}.client-art-caption>span{font-size:10px;letter-spacing:2px;color:#7dd3fc;font-weight:800}.client-art-caption h3{font-size:27px;margin:8px 0}.client-art-caption p{font-size:12px;color:#d4deef;margin:0 0 17px}.client-art-caption a{display:inline-flex;gap:8px;align-items:center;color:#fff;text-decoration:none;background:rgba(5,15,30,.62);border:1px solid rgba(125,211,252,.4);border-radius:20px;padding:9px 13px;font-size:12px}
+@media(max-width:900px){.aura-home-hero{grid-template-columns:1fr!important;gap:32px;padding:58px 6%!important;min-height:auto!important}.aura-home-feature-grid{max-width:700px;width:100%}.aura-home-status{width:auto;flex-wrap:wrap}.client-auth-card{max-width:520px;grid-template-columns:1fr;min-height:0}.client-auth-art{display:none}.client-auth-form-panel{padding:28px 26px 24px}}
+@media(max-width:560px){.aura-home-hero{padding:42px 20px!important}.aura-home-hero h1{font-size:2.25rem!important}.aura-home-feature-grid{grid-template-columns:1fr 1fr;gap:9px}.aura-feature-card{padding:13px 10px;min-height:105px;gap:8px}.aura-feature-card strong{font-size:11px}.aura-feature-card small{font-size:9.5px}.aura-feature-icon{width:29px;height:29px;flex-basis:29px;font-size:12px}.aura-home-status{gap:8px!important;padding:10px!important}.aura-home-status .status-item{font-size:10px!important}.client-auth-modal{padding:12px}.client-auth-form-panel{padding:27px 20px 20px}.client-auth-brand{margin-bottom:22px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.aura-feature-card,.client-auth-submit,.client-auth-register{transition:none}}
+</style>
+
 </head>
 <body>
 
     <div id="cursor-glow"></div>
+
+    <!-- CLIENT LOGIN / REGISTER GATE -->
+    <div id="clientAuthModal" class="client-auth-modal" aria-hidden="true">
+      <div class="client-auth-backdrop" onclick="closeClientAuth()"></div>
+      <div class="client-auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+        <button class="client-auth-close" onclick="closeClientAuth()" aria-label="Close login">&times;</button>
+        <div class="client-auth-form-panel">
+          <div class="client-auth-brand"><i class="fa-solid fa-bolt"></i> AURA NET.LK</div>
+          <div class="client-auth-intro"><span class="client-auth-symbol"><i class="fa-solid fa-arrow-right-to-bracket"></i></span><div><h2 id="authTitle">Client Login</h2><p id="authSubtitle">Sign in to continue to your dashboard</p></div></div>
+          <form id="clientAuthForm" onsubmit="handleClientAuth(event)">
+            <label for="clientAuthEmail">Email or Username</label>
+            <input id="clientAuthEmail" class="client-auth-input" autocomplete="username" required placeholder="Enter email or username">
+            <label for="clientAuthPhone" id="authPhoneLabel" style="display:none">Phone Number</label>
+            <input id="clientAuthPhone" class="client-auth-input" autocomplete="tel" type="tel" placeholder="Phone number" style="display:none">
+            <div class="client-auth-password-label"><label for="clientAuthPassword">Password</label><button type="button" onclick="toggleAuthPassword()">Show / Hide</button></div>
+            <input id="clientAuthPassword" class="client-auth-input" type="password" autocomplete="current-password" minlength="4" required placeholder="Enter password">
+            <p class="client-auth-note" id="clientAuthNote">Demo interface: account verification requires a secure server.</p>
+            <button class="client-auth-submit" type="submit" id="clientAuthSubmit">Login <i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+          <div class="client-auth-or"><span>OR</span></div>
+          <button class="client-auth-register" type="button" onclick="switchClientAuthMode()" id="clientAuthSwitch">Create a client account</button>
+          <div class="client-auth-footer">AURA NET.LK · Client Area</div>
+        </div>
+        <div class="client-auth-art"><div class="client-art-shade"></div><div class="client-art-caption"><span>YOUR DIGITAL WORLD</span><h3>Connect. Create. Play.</h3><p>Internet services and digital solutions, in one place.</p><a href="https://wa.me/94742251615" target="_blank" rel="noopener"> <i class="fa-brands fa-whatsapp"></i> 074 225 1615</a></div></div>
+      </div>
+    </div>
 
     <!-- FULL SCREEN BOMB VIP DASHBOARD & ORDER CENTER OVERLAY -->
     <div id="adminDashboardSection">
@@ -2405,21 +2447,28 @@ body { overflow-x: hidden; }
         </ul>
     </nav>
 
-    <!-- BOMB HOME SECTION -->
-    <section class="hero" id="home">
-        <div class="hero-globe-container"><i class="fa-solid fa-robot"></i></div>
-        <div class="section-header" style="margin-bottom: 20px;"><span class="tag">Digital Solutions Agency</span></div>
-        <h1>Elevate Your Digital Experience With <span>AURA NET.LK</span></h1>
-        <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass Packages, and Professional Services.</p>
-        <div class="btn-group">
-            <a href="#services" class="btn-primary">Our Services</a>
-            <a href="#pricing" class="btn-outline">Internet Plans</a>
+    <!-- AURA NET.LK HOME — modern split layout -->
+    <section class="hero aura-home-hero" id="home">
+        <div class="aura-home-copy">
+            <div class="section-header aura-home-tag" style="margin-bottom:18px"><span class="tag">Digital Solutions Agency</span></div>
+            <h1>Elevate Your Digital Experience With <span>AURA NET.LK</span></h1>
+            <p>Providing high-performance Web Development, reliable High-Speed Internet Bypass Packages, and Professional Services.</p>
+            <div class="btn-group aura-home-buttons">
+                <a href="#services" class="btn-primary">Our Services <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#pricing" class="btn-outline">Internet Plans <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <div class="aura-home-hint"><span></span> Explore AURA NET.LK services</div>
+            <div class="status-container aura-home-status">
+                <div class="status-item"><span class="status-dot"></span> Servers: <strong>ONLINE</strong></div>
+                <div class="status-item"><i class="fa-solid fa-gauge-high" style="color:var(--primary)"></i> Ping: <strong>14ms</strong></div>
+                <div class="status-item"><i class="fa-solid fa-shield-halved" style="color:var(--success)"></i> Security: <strong>Encrypted</strong></div>
+            </div>
         </div>
-
-        <div class="status-container">
-            <div class="status-item"><span class="status-dot"></span> Servers: <strong>ONLINE</strong></div>
-            <div class="status-item"><i class="fa-solid fa-gauge-high" style="color: var(--primary);"></i> Ping: <strong>14ms</strong></div>
-            <div class="status-item"><i class="fa-solid fa-shield-halved" style="color: var(--success);"></i> Security: <strong>Encrypted</strong></div>
+        <div class="aura-home-feature-grid" aria-label="Quick links">
+            <a class="aura-feature-card" href="#services"><span class="aura-feature-icon"><i class="fa-solid fa-laptop-code"></i></span><span><strong>Web Development</strong><small>Explore our digital services</small></span><i class="fa-solid fa-arrow-up-right-from-square aura-feature-link"></i></a>
+            <a class="aura-feature-card" href="#pricing"><span class="aura-feature-icon"><i class="fa-solid fa-globe"></i></span><span><strong>Internet Packages</strong><small>View available plans</small></span><i class="fa-solid fa-arrow-up-right-from-square aura-feature-link"></i></a>
+            <a class="aura-feature-card" href="#services"><span class="aura-feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span><span><strong>Creative Services</strong><small>Design and editing solutions</small></span><i class="fa-solid fa-arrow-up-right-from-square aura-feature-link"></i></a>
+            <a class="aura-feature-card" href="#contact"><span class="aura-feature-icon"><i class="fa-solid fa-headset"></i></span><span><strong>Contact AURA</strong><small>Get in touch with our team</small></span><i class="fa-solid fa-arrow-up-right-from-square aura-feature-link"></i></a>
         </div>
     </section>
 
@@ -3344,16 +3393,50 @@ body { overflow-x: hidden; }
         }
 
         // Admin Dashboard Toggle
+        let clientAuthMode = 'login';
         function toggleAdminDashboard(show) {
+            if (show) { openClientAuth(); return; }
             const dash = document.getElementById('adminDashboardSection');
-            if(show) {
-                dash.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            } else {
-                dash.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
+            if (dash) dash.style.display = 'none';
+            document.body.style.overflow = '';
         }
+        function openClientAuth() {
+            const modal = document.getElementById('clientAuthModal');
+            if (!modal) { const dash=document.getElementById('adminDashboardSection'); if(dash) dash.style.display='block'; return; }
+            modal.classList.add('is-open'); modal.setAttribute('aria-hidden','false');
+            document.body.style.overflow='hidden';
+            setTimeout(()=>document.getElementById('clientAuthEmail')?.focus(),100);
+        }
+        function closeClientAuth() {
+            const modal=document.getElementById('clientAuthModal');
+            if(modal){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');}
+            document.body.style.overflow='';
+        }
+        function switchClientAuthMode() {
+            clientAuthMode = clientAuthMode === 'login' ? 'register' : 'login';
+            const registering = clientAuthMode === 'register';
+            document.getElementById('authTitle').textContent = registering ? 'Create Account' : 'Client Login';
+            document.getElementById('authSubtitle').textContent = registering ? 'Register to access the client area' : 'Sign in to continue to your dashboard';
+            document.getElementById('authPhoneLabel').style.display = registering ? 'block' : 'none';
+            const phone=document.getElementById('clientAuthPhone'); phone.style.display=registering?'block':'none'; phone.required=registering;
+            document.getElementById('clientAuthSubmit').innerHTML = registering ? 'Register <i class="fa-solid fa-arrow-right"></i>' : 'Login <i class="fa-solid fa-arrow-right"></i>';
+            document.getElementById('clientAuthSwitch').textContent = registering ? 'Already have an account? Login' : 'Create a client account';
+            document.getElementById('clientAuthPassword').autocomplete = registering ? 'new-password' : 'current-password';
+            document.getElementById('clientAuthNote').textContent = 'Front-end preview only. Secure account creation and password verification need a server/database.';
+        }
+        function toggleAuthPassword(){const p=document.getElementById('clientAuthPassword');p.type=p.type==='password'?'text':'password';}
+        function handleClientAuth(e) {
+            e.preventDefault();
+            const email=document.getElementById('clientAuthEmail').value.trim();
+            const password=document.getElementById('clientAuthPassword').value;
+            if(!email || !password) return;
+            // No credentials are stored locally. This preview opens the existing package dashboard only.
+            closeClientAuth();
+            const dash=document.getElementById('adminDashboardSection');
+            if(dash){dash.style.display='block';document.body.style.overflow='hidden';}
+            // No alert popup: continue directly to the existing client dashboard preview.
+        }
+        document.addEventListener('keydown', e=>{if(e.key==='Escape') closeClientAuth();});
 
         // Switch Network Tabs in Dashboard
         function switchNetwork(netKey, tabEl) {
@@ -3907,6 +3990,108 @@ body { overflow-x: hidden; }
 
 
 <style>
+
+
+<style id="aura-seamless-wallpaper-scroll-fix">
+/* Use the existing site wallpaper once across the page, not a second cropped copy inside Home. */
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body {
+  background-color: var(--bg-main) !important;
+  background-image: linear-gradient(rgba(3,7,18,.70), rgba(3,7,18,.70)), var(--bg-wallpaper) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  overflow-x: hidden !important;
+}
+.aura-home-hero {
+  background: transparent !important;
+  background-image: none !important;
+  isolation: isolate;
+}
+.aura-home-hero::before {
+  background: linear-gradient(90deg, rgba(2,7,18,.32), rgba(2,7,18,.10) 60%, rgba(2,7,18,.22)) !important;
+  pointer-events: none;
+}
+/* The original background remains visible continuously while scrolling through sections. */
+body > section:not(.aura-home-hero),
+main > section:not(.aura-home-hero),
+section:not(.aura-home-hero) {
+  background-attachment: scroll;
+}
+.aura-scroll-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.aura-scroll-reveal.aura-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .aura-scroll-reveal { opacity: 1; transform: none; transition: none; }
+}
+@media (max-width: 760px) {
+  body { background-attachment: scroll !important; background-position: center top !important; }
+  .aura-home-hero { background: transparent !important; }
+}
+</style>
+<style id="aura-premium-scroll-reveal">
+/* Premium, smooth section entrance: content reveals as the visitor reaches it. */
+.aura-scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  filter: blur(3px);
+  transition: opacity .85s cubic-bezier(.22,1,.36,1),
+              transform .85s cubic-bezier(.22,1,.36,1),
+              filter .85s cubic-bezier(.22,1,.36,1);
+  will-change: opacity, transform, filter;
+}
+.aura-scroll-reveal.aura-in-view {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+  filter: blur(0);
+}
+.aura-reveal-child {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition: opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1);
+}
+.aura-in-view .aura-reveal-child { opacity: 1; transform: translate3d(0,0,0); }
+.aura-in-view .aura-reveal-child:nth-child(1) { transition-delay: .06s; }
+.aura-in-view .aura-reveal-child:nth-child(2) { transition-delay: .13s; }
+.aura-in-view .aura-reveal-child:nth-child(3) { transition-delay: .20s; }
+.aura-in-view .aura-reveal-child:nth-child(4) { transition-delay: .27s; }
+.aura-in-view .aura-reveal-child:nth-child(5) { transition-delay: .34s; }
+@media (prefers-reduced-motion: reduce) {
+  .aura-scroll-reveal, .aura-reveal-child { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+}
+</style>
+<script id="aura-scroll-reveal-fix">
+document.addEventListener('DOMContentLoaded', function () {
+  // Animate only top-level page sections to prevent nested sections from being hidden accidentally.
+  const candidates = Array.from(document.querySelectorAll('main > section, body > section, body > main > section'));
+  const sections = candidates.filter((section, index) => candidates.indexOf(section) === index)
+    .filter(section => !section.closest('#adminDashboardSection, #clientAuthModal'))
+    .filter(section => !section.classList.contains('aura-home-hero'));
+  if (!('IntersectionObserver' in window)) return;
+  sections.forEach(section => {
+    section.classList.add('aura-scroll-reveal');
+    const children = Array.from(section.children).filter(el => !el.matches('script, style, .aura-scroll-reveal'));
+    children.forEach(el => el.classList.add('aura-reveal-child'));
+  });
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('aura-in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { root: null, rootMargin: '0px 0px -7% 0px', threshold: 0.04 });
+  sections.forEach(section => observer.observe(section));
+});
+</script>
 
 </body>
 </html>
