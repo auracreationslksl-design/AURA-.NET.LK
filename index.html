@@ -2096,7 +2096,7 @@ body { overflow-x: hidden; }
 @media(max-width:1100px){#adminDashboardSection .dash-main-pane{grid-template-columns:minmax(0,1fr) 390px!important;}#adminDashboardSection .sidebar{width:220px!important;min-width:220px!important;}#adminDashboardSection .dash-main-pane::before{font-size:17px;}}
 @media(max-width:800px){#adminDashboardSection .sidebar{display:none!important;}#adminDashboardSection .dash-main-pane{grid-template-columns:1fr!important;padding-top:72px!important;}#adminDashboardSection .checkout-pane{border-left:0!important;}#adminDashboardSection .dash-main-pane::before{left:18px;font-size:14px;}#adminDashboardSection .packages-pane{padding:20px 16px 30px!important;}}
 </style>
-<style id="aura-home-auth-upgrade">
+<style id="nexora-home-auth-upgrade">
 /* Homepage split hero: clean background, no distracting grid boxes */
 html{scroll-behavior:smooth;scroll-padding-top:95px}
 body{scrollbar-gutter:stable;}
@@ -3359,7 +3359,7 @@ footer a:hover, .footer a:hover { color:var(--aura-purple-bright) !important; }
 </div>
 </div>
 <div class="footer-bottom">
-<p>© 2026 NEXORA NET.LK All Rights Reserved.</p>
+<p>© 2026 NEXORA NET.LK   All Rights Reserved.</p>
 <div class="created-by">Designed &amp; Developed by NEXORA X ADMIN </div>
 </div>
 </footer>
@@ -4371,7 +4371,7 @@ window.addEventListener('message', function(event) {
 <script id="nexora-whatsapp-order-navigation-fix">
 (function () {
   var ORDER_KEY = 'nexora_v2ray_orders_v1';
-  var ACTIVATION_DELAY = 5 * 60 * 1000; // 5 minutes
+  var ACTIVATION_DELAY = 5 * 60 * 1000; // 10 minutes
   function readOrders() { try { var v=localStorage.getItem(ORDER_KEY); var a=v?JSON.parse(v):[]; return Array.isArray(a)?a:[]; } catch(e) { return []; } }
   function writeOrders(a) { try { localStorage.setItem(ORDER_KEY, JSON.stringify(a)); return true; } catch(e) { console.warn('Could not persist NEXORA orders:',e); return false; } }
   function syncOrdersToDashboard() { var a=readOrders(); document.querySelectorAll('iframe').forEach(function(f){try{f.contentWindow.postMessage({type:'NEXORA_SYNC_ORDERS',orders:a},'*');}catch(e){}}); }
